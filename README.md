@@ -1,5 +1,5 @@
 # Equipo 06 - Proyecto Integrador
-### Carrera de Ingeniería Ambiental / Informática / Industrial  
+### Carrera de Ingeniería Ambiental / Informática
 **Universidad Peruana Cayetano Heredia**
 
 ---
