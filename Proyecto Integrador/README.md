@@ -1,4 +1,4 @@
-# FundDiseño
+# Proyecto Integrador
 
 Esta carpeta debe contener todo lo relacionado al avance del proyecto, incluyendo:
 
