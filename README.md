@@ -11,7 +11,6 @@
 
 ##  Sistema inteligente de detección de desperdicio energético en ambientes
 ---
----
 ## 🌍 Descripción del Equipo
 
 Somos el **Equipo 06** del curso **Proyecto Integrador 2026-2**, conformado por estudiantes de **Ingeniería Ambiental e Ingeniería Informática**.
