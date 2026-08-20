@@ -59,5 +59,42 @@ Contribuir al desarrollo de edificios y espacios más eficientes y sostenibles, 
 
 ---
 
-## 📌 Resumen Final  
-Este README resume quiénes somos, qué nos motiva y en qué ODS queremos enfocar nuestro trabajo durante el curso.  
+## ## 📌 Resumen Final
+
+<p align="center">
+  ⚡ ───────────── 🌱 🤖 🌍 ───────────── ⚡
+</p>
+
+Este README presenta quiénes somos como **Equipo 06**, la problemática que buscamos abordar y la propuesta que desarrollaremos durante el curso **Proyecto Integrador 2026-2**.
+
+Nuestro proyecto propone un **Sistema Inteligente de Detección de Desperdicio Energético en Ambientes**, integrando tecnologías como **IoT, sensores y Machine Learning** para monitorear el consumo eléctrico, identificar comportamientos anómalos y generar alertas ante posibles situaciones de desperdicio energético.
+
+Además, el sistema permitirá visualizar indicadores como:
+
+- ⚡ **Consumo energético:** kWh
+- 💸 **Costo energético estimado:** S/
+- 🌱 **Emisiones asociadas:** kg CO₂e
+- 🚨 **Detección de posibles desperdicios energéticos**
+
+De esta manera, buscamos transformar los datos obtenidos en **información útil para la toma de decisiones**, promoviendo un uso más eficiente y responsable de la energía.
+
+> 🌱 **Nuestro propósito:** Convertir datos en decisiones que ayuden a reducir el desperdicio energético y su impacto ambiental.
+
+### 🌍 ODS relacionados
+
+<p align="center">
+  ⚡ <b>ODS 7</b> &nbsp; • &nbsp;
+  🏙️ <b>ODS 11</b> &nbsp; • &nbsp;
+  ♻️ <b>ODS 12</b> &nbsp; • &nbsp;
+  🌎 <b>ODS 13</b>
+</p>
+
+---
+
+<p align="center">
+  💡 <b>Tecnología + Eficiencia Energética + Sostenibilidad</b> 🌱
+</p>
+
+<p align="center">
+  <i>Equipo 06 | Proyecto Integrador 2026-2</i>
+</p>
