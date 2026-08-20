@@ -56,7 +56,7 @@ Contribuir al desarrollo de edificios y espacios más eficientes y sostenibles, 
 | <img src="Recursos/Imágenes/2.png" width="90"/> | **Mónica Cristina Huaman Bernal** | Responsable de investigación | Gestión ambiental, desarrollo comunitario |
 | <img src="Recursos/Imágenes/3.png" width="90"/> | **Piero Cemei Romero Meza** | Diseñador/a | Diseño de prototipos, creatividad aplicada |
 | <img src="/Recursos/Imágenes/integrante2.png" width="90"/> | **Josue Enmanuel Sayago Morán** | Encargado/a de documentación | Comunicación científica, redacción técnica |
-| <img src="/Recursos/Imágenes/integrante1.png" width="90"/> | **Diego Alessandre Murga Saavedra** | Programador/a - Modelador/a | Programación, análisis de datos, simulación |
+| <img src="Recursos/Imágenes/5.png" width="90"/> | **Diego Alessandre Murga Saavedra** | Programador/a - Modelador/a | Programación, análisis de datos, simulación |
 
 ---
 
@@ -93,6 +93,7 @@ De esta manera, buscamos transformar los datos recopilados en información útil
   🌎 <b>ODS 13</b>
 </p>
 
+---
 ---
 
 <p align="center">
