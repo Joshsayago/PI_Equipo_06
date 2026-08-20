@@ -71,12 +71,15 @@ Nuestro proyecto propone un **Sistema Inteligente de Detección de Desperdicio E
 
 Además, el sistema permitirá visualizar indicadores como:
 
-- ⚡ **Consumo energético:** kWh
-- 💸 **Costo energético estimado:** S/
-- 🌱 **Emisiones asociadas:** kg CO₂e
-- 🚨 **Detección de posibles desperdicios energéticos**
+El sistema permitirá visualizar información relevante como:
 
-De esta manera, buscamos transformar los datos obtenidos en **información útil para la toma de decisiones**, promoviendo un uso más eficiente y responsable de la energía.
+- ⚡ **Consumo energético:** kWh
+- ⚠️ **Energía asociada al consumo anómalo:** kWh
+- 💸 **Costo energético estimado:** S/
+- 🌱 **Emisiones de GEI asociadas:** kg CO₂e
+- 🚨 **Alertas de posibles situaciones de desperdicio energético**
+
+De esta manera, buscamos transformar los datos recopilados en información útil para identificar consumos anómalos, evaluar su impacto y facilitar una gestión más eficiente y responsable de la energía.
 
 > 🌱 **Nuestro propósito:** Convertir datos en decisiones que ayuden a reducir el desperdicio energético y su impacto ambiental.
 
