@@ -9,7 +9,7 @@
 
 <h3 align="center">PROYECTOS PARA INGENIERIA – GRUPO 6</h3>
 
-##  🐢 Sistema de Monitoreo para huevos de especies costeras
+##  Sistema inteligente de detección de desperdicio energético en ambientes
 ---
 
 ## 🌍 Descripción del Equipo 
