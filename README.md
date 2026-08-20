@@ -28,7 +28,7 @@ Nos interesa trabajar en los siguientes **Objetivos de Desarrollo Sostenible (OD
 
 | Foto | Nombre | Rol | Intereses |
 |------|--------|-----|-----------|
-| <img src="Recursos/Imágenes/4d5f001f-1cba-4514-9a8c-3292f258ea6d (1).png" width="90"/> | **Belevan Amaro Bertha Dominik** | Líder del equipo | Innovación social, sostenibilidad |
+| <img src="1.png" width="90"/> | **Belevan Amaro Bertha Dominik** | Líder del equipo | Innovación social, sostenibilidad |
 | <img src="/Recursos/Imágenes/integrante2.png" width="90"/> | **Mónica Cristina Huaman Bernal** | Responsable de investigación | Gestión ambiental, desarrollo comunitario |
 | <img src="/Recursos/Imágenes/integrante1.png" width="90"/> | **Piero Cemei Romero Meza** | Diseñador/a | Diseño de prototipos, creatividad aplicada |
 | <img src="/Recursos/Imágenes/integrante2.png" width="90"/> | **Josue Enmanuel Sayago Morán** | Encargado/a de documentación | Comunicación científica, redacción técnica |
