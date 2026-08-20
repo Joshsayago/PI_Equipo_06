@@ -23,12 +23,12 @@ Nuestro proyecto busca desarrollar un **sistema inteligente de detección de des
 
 ### 🎯 Objetivos de Desarrollo Sostenible (ODS)
 
-| ODS | Meta | Aplicación propuesta en el proyecto | Impacto esperado |
-|---|---|---|---|
-| ⚡ **ODS 7: Energía asequible y no contaminante** | **Meta 7.3:** Mejorar la eficiencia energética. | Se propone monitorear el consumo eléctrico y detectar comportamientos anómalos mediante IoT y Machine Learning. | ⚡ **Contribuir a reducir el desperdicio energético** y promover un uso más eficiente de la electricidad. |
-| 🏙️ **ODS 11: Ciudades y comunidades sostenibles** | **Meta 11.6:** Reducir el impacto ambiental negativo de las ciudades. | Se busca implementar un sistema de monitoreo inteligente que permita identificar posibles consumos innecesarios en ambientes y edificios. | 🏢 **Promover espacios más eficientes y sostenibles** mediante una mejor gestión del consumo energético. |
-| ♻️ **ODS 12: Producción y consumo responsables** | **Meta 12.2:** Lograr el uso eficiente y sostenible de los recursos naturales. | El sistema buscará transformar los datos de consumo en información que permita reconocer posibles desperdicios y estimar su costo. | 📊 **Fomentar un consumo energético más responsable** y facilitar la toma de decisiones. |
-| 🌱 **ODS 13: Acción por el clima** | **Meta 13.3:** Mejorar la sensibilización y las capacidades frente al cambio climático. | Se plantea estimar las emisiones de GEI asociadas al consumo energético anómalo y mostrarlas mediante un dashboard. | 🌎 **Generar mayor conciencia sobre el impacto climático** del consumo energético mediante indicadores en kg CO₂e. |
+| ODS | Meta | Impacto esperado |
+|---|---|---|
+| ⚡ **ODS 7: Energía asequible y no contaminante** | **Meta 7.3:** Mejorar la eficiencia energética. | ⚡ **Contribuir a reducir el desperdicio energético**, mediante la detección de consumos anómalos y promoviendo un uso más eficiente de la electricidad. |
+| 🏙️ **ODS 11: Ciudades y comunidades sostenibles** | **Meta 11.6:** Reducir el impacto ambiental negativo de las ciudades. | 🏢 **Promover ambientes y edificios más eficientes y sostenibles**, mediante una mejor gestión del consumo energético. |
+| ♻️ **ODS 12: Producción y consumo responsables** | **Meta 12.2:** Lograr el uso eficiente y sostenible de los recursos naturales. | 📊 **Fomentar un consumo energético más responsable**, facilitando la identificación de posibles desperdicios y una mejor toma de decisiones. |
+| 🌱 **ODS 13: Acción por el clima** | **Meta 13.3:** Mejorar la sensibilización y las capacidades frente al cambio climático. | 🌎 **Generar conciencia sobre el impacto ambiental del consumo energético**, mediante la estimación de emisiones de GEI asociadas en kg CO₂e. |
 
 ---
 
