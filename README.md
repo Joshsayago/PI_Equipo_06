@@ -31,7 +31,15 @@ Nos interesa trabajar en los siguientes **Objetivos de Desarrollo Sostenible (OD
 </p>
 
 ---
+🎯 Misión
 
+Desarrollar un sistema inteligente de monitoreo energético que, mediante IoT y Machine Learning, permita detectar posibles desperdicios de electricidad en tiempo real y brindar información útil sobre su impacto energético, económico y ambiental.
+
+👁️ Visión
+
+Contribuir al desarrollo de edificios y espacios más eficientes y sostenibles, promoviendo el uso responsable de la energía mediante tecnologías inteligentes que ayuden a reducir el desperdicio y las emisiones de gases de efecto invernadero.
+
+---
 ## 👥 Integrantes del Equipo  
 
 | Foto | Nombre | Rol | Intereses |
