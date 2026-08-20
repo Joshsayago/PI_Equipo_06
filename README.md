@@ -59,7 +59,7 @@ Contribuir al desarrollo de edificios y espacios más eficientes y sostenibles, 
 
 ---
 
-## ## 📌 Resumen Final
+##  📌 Resumen Final
 
 <p align="center">
   ⚡ ───────────── 🌱 🤖 🌍 ───────────── ⚡
