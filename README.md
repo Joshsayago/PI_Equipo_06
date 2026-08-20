@@ -11,7 +11,7 @@
 
 ##  Sistema inteligente de detección de desperdicio energético en ambientes
 ---
-
+---
 ## 🌍 Descripción del Equipo
 
 Somos el **Equipo 06** del curso **Proyecto Integrador 2026-2**, conformado por estudiantes de **Ingeniería Ambiental e Ingeniería Informática**.
@@ -19,7 +19,7 @@ Somos el **Equipo 06** del curso **Proyecto Integrador 2026-2**, conformado por 
 Nuestro proyecto busca desarrollar un **sistema inteligente de detección de desperdicio energético en ambientes**, integrando **IoT, sensores y Machine Learning** para monitorear el consumo eléctrico, detectar comportamientos anómalos y estimar su impacto energético, económico y ambiental.
 
 ---
-
+---
 
 ### 🎯 Objetivos de Desarrollo Sostenible (ODS)
 
@@ -31,6 +31,7 @@ Nuestro proyecto busca desarrollar un **sistema inteligente de detección de des
 | 🌱 **ODS 13: Acción por el clima** | **Meta 13.3:** Mejorar la sensibilización y las capacidades frente al cambio climático. | 🌎 **Generar conciencia sobre el impacto ambiental del consumo energético**, mediante la estimación de emisiones de GEI asociadas en kg CO₂e. |
 
 ---
+---
 
 ## 📸 Fotografía del Equipo  
 <p align="center">
@@ -39,6 +40,7 @@ Nuestro proyecto busca desarrollar un **sistema inteligente de detección de des
 </p>
 
 ---
+---
 🎯 Misión
 
 Desarrollar un sistema inteligente de monitoreo energético que, mediante IoT y Machine Learning, permita detectar posibles desperdicios de electricidad en tiempo real y brindar información útil sobre su impacto energético, económico y ambiental.
@@ -46,7 +48,7 @@ Desarrollar un sistema inteligente de monitoreo energético que, mediante IoT y 
 👁️ Visión
 
 Contribuir al desarrollo de edificios y espacios más eficientes y sostenibles, promoviendo el uso responsable de la energía mediante tecnologías inteligentes que ayuden a reducir el desperdicio y las emisiones de gases de efecto invernadero.
-
+---
 ---
 ## 👥 Integrantes del Equipo  
 
@@ -55,11 +57,11 @@ Contribuir al desarrollo de edificios y espacios más eficientes y sostenibles, 
 | <img src="Recursos/Imágenes/1.jpg" width="90"/> | **Belevan Amaro Bertha Dominik** | Líder del equipo | Innovación social, sostenibilidad |
 | <img src="Recursos/Imágenes/2.png" width="90"/> | **Mónica Cristina Huaman Bernal** | Responsable de investigación | Gestión ambiental, desarrollo comunitario |
 | <img src="Recursos/Imágenes/3.png" width="90"/> | **Piero Cemei Romero Meza** | Diseñador/a | Diseño de prototipos, creatividad aplicada |
-| <img src="/Recursos/Imágenes/integrante2.png" width="90"/> | **Josue Enmanuel Sayago Morán** | Encargado/a de documentación | Comunicación científica, redacción técnica |
+| <img src="Recursos/Imágenes/4.png" width="90"/> | **Josue Enmanuel Sayago Morán** | Encargado/a de documentación | Comunicación científica, redacción técnica |
 | <img src="Recursos/Imágenes/5.png" width="90"/> | **Diego Alessandre Murga Saavedra** | Programador/a - Modelador/a | Programación, análisis de datos, simulación |
 
 ---
-
+---
 ##  📌 Resumen Final
 
 <p align="center">
@@ -93,7 +95,6 @@ De esta manera, buscamos transformar los datos recopilados en información útil
   🌎 <b>ODS 13</b>
 </p>
 
----
 ---
 
 <p align="center">
