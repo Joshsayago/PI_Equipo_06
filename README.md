@@ -9,11 +9,10 @@ Somos el **Equipo 06** del curso **Proyecto Integrador 2026-2**, conformado por 
 Nuestro objetivo es aplicar la metodología de diseño para generar soluciones innovadoras con impacto social, tecnológico y ambiental.  
 
 Nos interesa trabajar en los siguientes **Objetivos de Desarrollo Sostenible (ODS):**  
-- ODS 3: Salud y Bienestar  
-- ODS 6: Agua Limpia y Saneamiento  
-- ODS 9: Industria, Innovación e Infraestructura  
-- ODS 11: Ciudades y Comunidades Sostenibles  
-- ODS 13: Acción por el Clima  
+* ODS 7: Energía asequible y no contaminante.
+* ODS 11: Ciudades y comunidades sostenibles.
+* ODS 12: Producción y consumo responsables.
+* ODS 13: Acción por el clima.
 
 ---
 
