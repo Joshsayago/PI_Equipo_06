@@ -18,7 +18,7 @@ Somos el **Equipo 06** del curso **Proyecto Integrador 2026-2**, conformado por 
 
 Nuestro proyecto busca desarrollar un **sistema inteligente de detección de desperdicio energético en ambientes**, integrando **IoT, sensores y Machine Learning** para monitorear el consumo eléctrico, detectar comportamientos anómalos y estimar su impacto energético, económico y ambiental.
 
-
+---
 ### 🎯 Objetivos de Desarrollo Sostenible (ODS)
 
 
@@ -28,6 +28,7 @@ Nuestro proyecto busca desarrollar un **sistema inteligente de detección de des
 | 🏙️ **ODS 11: Ciudades y comunidades sostenibles** | **Meta 11.6:** Reducir el impacto ambiental negativo de las ciudades. | Aplicamos monitoreo inteligente para identificar consumos innecesarios en ambientes y edificios. | 🏢 **Espacios más eficientes y sostenibles**, con una mejor gestión energética. |
 | ♻️ **ODS 12: Producción y consumo responsables** | **Meta 12.2:** Lograr el uso eficiente y sostenible de los recursos naturales. | Transformamos los datos de consumo en información que permite identificar posibles desperdicios y su costo. | 📊 **Consumo energético más responsable** y mejor toma de decisiones. |
 | 🌱 **ODS 13: Acción por el clima** | **Meta 13.3:** Mejorar la sensibilización y capacidades frente al cambio climático. | Estimamos las emisiones de GEI asociadas al consumo energético anómalo. | 🌎 **Visualización del impacto climático** mediante indicadores en kg CO₂e. |
+
 ---
 
 ## 📸 Fotografía del Equipo  
