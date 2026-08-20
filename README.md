@@ -12,16 +12,20 @@
 ##  Sistema inteligente de detección de desperdicio energético en ambientes
 ---
 
-## 🌍 Descripción del Equipo 
-Somos el **Equipo 06** del curso **Proyecto Integrador 2026-2**, conformado por estudiantes de la carrera de Ingeniería Ambiental / Informática / Industrial.  
-Nuestro objetivo es aplicar la metodología de diseño para generar soluciones innovadoras con impacto social, tecnológico y ambiental.  
+## 🌍 Descripción del Equipo
 
-Nos interesa trabajar en los siguientes **Objetivos de Desarrollo Sostenible (ODS):**  
-* ODS 7: Energía asequible y no contaminante.
-* ODS 11: Ciudades y comunidades sostenibles.
-* ODS 12: Producción y consumo responsables.
-* ODS 13: Acción por el clima.
+Somos el **Equipo 06** del curso **Proyecto Integrador 2026-2**, conformado por estudiantes de **Ingeniería Ambiental e Ingeniería Informática**.
 
+Nuestro proyecto busca desarrollar un **sistema inteligente de detección de desperdicio energético en ambientes**, integrando **IoT, sensores y Machine Learning** para monitorear el consumo eléctrico, detectar comportamientos anómalos y estimar su impacto energético, económico y ambiental.
+
+### 🎯 Objetivos de Desarrollo Sostenible (ODS)
+
+| ODS | Meta | Aplicación en el proyecto | Impacto |
+|---|---|---|---|
+| ⚡ **ODS 7: Energía asequible y no contaminante** | **Meta 7.3:** Mejorar la eficiencia energética. | Monitoreamos el consumo eléctrico y detectamos comportamientos anómalos mediante IoT y Machine Learning. | ⚡ **Menor desperdicio energético** y uso más eficiente de la electricidad. |
+| 🏙️ **ODS 11: Ciudades y comunidades sostenibles** | **Meta 11.6:** Reducir el impacto ambiental negativo de las ciudades. | Aplicamos monitoreo inteligente para identificar consumos innecesarios en ambientes y edificios. | 🏢 **Espacios más eficientes y sostenibles**, con una mejor gestión energética. |
+| ♻️ **ODS 12: Producción y consumo responsables** | **Meta 12.2:** Lograr el uso eficiente y sostenible de los recursos naturales. | Transformamos los datos de consumo en información que permite identificar posibles desperdicios y su costo. | 📊 **Consumo energético más responsable** y mejor toma de decisiones. |
+| 🌱 **ODS 13: Acción por el clima** | **Meta 13.3:** Mejorar la sensibilización y capacidades frente al cambio climático. | Estimamos las emisiones de GEI asociadas al consumo energético anómalo. | 🌎 **Visualización del impacto climático** mediante indicadores en kg CO₂e. |
 ---
 
 ## 📸 Fotografía del Equipo  
