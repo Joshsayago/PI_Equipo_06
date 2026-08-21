@@ -9,15 +9,21 @@
 
 <h3 align="center">PROYECTOS PARA INGENIERIA – GRUPO 6</h3>
 
-##  🏠 CrackScan
+## 🏠 CrackScan
 Dispositivo portátil para detección y registro de grietas en estructuras de concreto en zonas rurales
 ---
+
+## ⚠️ Problematica
+
+La inspección de **estructuras de concreto en zonas rurales** puede verse limitada por el **acceso reducido a herramientas tecnológicas especializadas, conectividad a Internet** y recursos para **realizar evaluaciones preliminares**. La identificación y registro de grietas suele requerir una inspección manual, dificultando la recopilación sistemática de información sobre su ubicación y características.
+
+**CrackScan** busca **facilitar** esta primera etapa de inspección mediante una herramienta portátil capaz de analizar imágenes y registrar información relevante sobre las grietas encontradas.
 
 ## 🌍 Descripción del Equipo
 
 Somos el **Equipo 06** del curso **Proyecto Integrador 2026-2**, conformado por estudiantes de **Ingeniería Ambiental e Ingeniería Informática**.
 
-Nuestro proyecto busca desarrollar **CrackScan**, un **dispositivo portátil e inteligente para la detección y registro de grietas en estructuras de concreto**, integrando **visión computacional, Machine Learning y georreferenciación**.
+**CrackScan** es un **dispositivo portátil e inteligente** capaz de detectar y **registrar grietas en estructuras de concreto** mediante el análisis automatizado de imágenes, identificando su ubicación, orientación, longitud y ancho aproximado para facilitar la priorización de inspecciones técnicas.
 
 El sistema está orientado principalmente a **zonas rurales**, permitiendo realizar inspecciones preliminares de manera autónoma y sin depender de conexión a Internet, con el objetivo de facilitar la identificación y registro de estructuras que requieran una evaluación técnica más detallada.
 
