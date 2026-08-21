@@ -12,7 +12,6 @@
 ##  🏠 CrackScan
 Dispositivo portátil para detección y registro de grietas en estructuras de concreto en zonas rurales
 ---
-## ---
 
 ## 🌍 Descripción del Equipo
 
