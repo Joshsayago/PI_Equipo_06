@@ -38,8 +38,7 @@ El sistema está orientado principalmente a **zonas rurales**, permitiendo reali
   <em>Figura 1. Fotografía del equipo 06</em>
 </p>
 
----
----
+
 ---
 
 ## 🎯 Misión
@@ -52,7 +51,7 @@ Desarrollar una **herramienta portátil, accesible e inteligente** que facilite 
 
 Convertir **CrackScan** en una herramienta tecnológica **confiable, accesible y escalable** que contribuya al monitoreo preventivo de estructuras de concreto y facilite la identificación temprana de posibles daños en comunidades rurales.
 
----
+
 ---
 ## 👥 Integrantes del Equipo  
 
@@ -64,7 +63,7 @@ Convertir **CrackScan** en una herramienta tecnológica **confiable, accesible y
 | <img src="Recursos/Imágenes/4.png" width="80"/> | **Josue Enmanuel Sayago Morán** | Encargado/a de documentación | Comunicación científica, redacción técnica |
 | <img src="Recursos/Imágenes/5.png" width="90"/> | **Diego Alessandre Murga Saavedra** | Programador/a - Modelador/a | Programación, análisis de datos, simulación |
 
----
+
 ---
 ## 📌 Resumen Final
 
