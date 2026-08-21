@@ -57,11 +57,11 @@ Convertir **CrackScan** en una herramienta tecnológica **confiable, accesible y
 
 | Foto | Nombre | Rol | Intereses |
 |------|--------|-----|-----------|
-| <img src="Recursos/Imágenes/1.jpg" width="90"/> | **Belevan Amaro Bertha Dominik** | Líder del equipo | Innovación social, sostenibilidad |
-| <img src="Recursos/Imágenes/2.png" width="90"/> | **Mónica Cristina Huaman Bernal** | Responsable de investigación | Gestión ambiental, desarrollo comunitario |
-| <img src="Recursos/Imágenes/3.png" width="90"/> | **Piero Cemei Romero Meza** | Diseñador | Diseño de prototipos, creatividad aplicada |
-| <img src="Recursos/Imágenes/4.png" width="80"/> | **Josue Enmanuel Sayago Morán** | Encargado/a de documentación | Comunicación científica, redacción técnica |
-| <img src="Recursos/Imágenes/5.png" width="90"/> | **Diego Alessandre Murga Saavedra** | Programador/a - Modelador/a | Programación, análisis de datos, simulación |
+| <img src="Recursos/Imágenes/1.jpg" width="90"/> | **Belevan Amaro, Bertha Dominik** | Líder del equipo | Innovación social, sostenibilidad |
+| <img src="Recursos/Imágenes/2.png" width="90"/> | **Huaman Bernal, Mónica Cristina** | Responsable de investigación | Gestión ambiental, desarrollo comunitario |
+| <img src="Recursos/Imágenes/3.png" width="90"/> | **Romero Meza, Piero Cemei** | Diseñador | Diseño de prototipos, creatividad aplicada |
+| <img src="Recursos/Imágenes/4.png" width="80"/> | **Sayago Morán, Josue Enmanuel** | Encargado/a de documentación | Comunicación científica, redacción técnica |
+| <img src="Recursos/Imágenes/5.png" width="90"/> | **Murga Saavedra, Diego Alessandre** | Programador/a - Modelador/a | Programación, análisis de datos, simulación |
 
 
 ---
