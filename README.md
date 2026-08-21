@@ -68,11 +68,11 @@ Convertir **CrackScan** en una herramienta tecnológica **confiable, accesible y
 ## 📌 Resumen Final
 
 <p align="center">
-  🏗️ ───────────── 🔎 🤖 📍 ───────────── 🏠
+  🏗️ ────────────────────────── 🏠
 </p>
 
 Este README presenta quiénes somos como **Equipo 06**, la problemática que buscamos abordar y la propuesta que desarrollaremos durante el curso **Proyecto Integrador 2026-2**.
-
+ 
 Nuestro proyecto propone **CrackScan**, un **dispositivo portátil e inteligente para la detección y registro de grietas en estructuras de concreto**, integrando tecnologías como **visión computacional, Machine Learning y georreferenciación**.
 
 El sistema está orientado principalmente a **zonas rurales**, donde el acceso a herramientas tecnológicas especializadas y la conectividad pueden ser limitados. Por ello, CrackScan estará diseñado para realizar **inspecciones preliminares de manera autónoma y sin depender de conexión a Internet**.
