@@ -9,27 +9,28 @@
 
 <h3 align="center">PROYECTOS PARA INGENIERIA – GRUPO 6</h3>
 
-##  Sistema inteligente de detección de desperdicio energético en ambientes
+##  🏠 CrackScan
+Dispositivo portátil para detección y registro de grietas en estructuras de concreto en zonas rurales
 ---
+## ---
+
 ## 🌍 Descripción del Equipo
 
 Somos el **Equipo 06** del curso **Proyecto Integrador 2026-2**, conformado por estudiantes de **Ingeniería Ambiental e Ingeniería Informática**.
 
-Nuestro proyecto busca desarrollar un **sistema inteligente de detección de desperdicio energético en ambientes**, integrando **IoT, sensores y Machine Learning** para monitorear el consumo eléctrico, detectar comportamientos anómalos y estimar su impacto energético, económico y ambiental.
+Nuestro proyecto busca desarrollar **CrackScan**, un **dispositivo portátil e inteligente para la detección y registro de grietas en estructuras de concreto**, integrando **visión computacional, Machine Learning y georreferenciación**.
 
----
+El sistema está orientado principalmente a **zonas rurales**, permitiendo realizar inspecciones preliminares de manera autónoma y sin depender de conexión a Internet, con el objetivo de facilitar la identificación y registro de estructuras que requieran una evaluación técnica más detallada.
+
 ---
 
 ### 🎯 Objetivos de Desarrollo Sostenible (ODS)
 
 | ODS | Meta | Impacto esperado |
 |---|---|---|
-| ⚡ **ODS 7: Energía asequible y no contaminante** | **Meta 7.3:** Mejorar la eficiencia energética. | ⚡ **Contribuir a reducir el desperdicio energético**, mediante la detección de consumos anómalos y promoviendo un uso más eficiente de la electricidad. |
-| 🏙️ **ODS 11: Ciudades y comunidades sostenibles** | **Meta 11.6:** Reducir el impacto ambiental negativo de las ciudades. | 🏢 **Promover ambientes y edificios más eficientes y sostenibles**, mediante una mejor gestión del consumo energético. |
-| ♻️ **ODS 12: Producción y consumo responsables** | **Meta 12.2:** Lograr el uso eficiente y sostenible de los recursos naturales. | 📊 **Fomentar un consumo energético más responsable**, facilitando la identificación de posibles desperdicios y una mejor toma de decisiones. |
-| 🌱 **ODS 13: Acción por el clima** | **Meta 13.3:** Mejorar la sensibilización y las capacidades frente al cambio climático. | 🌎 **Generar conciencia sobre el impacto ambiental del consumo energético**, mediante la estimación de emisiones de GEI asociadas en kg CO₂e. |
+| 🏗️ **ODS 9: Industria, innovación e infraestructura** | **Meta 9.1:** Desarrollar infraestructuras fiables, sostenibles, resilientes y de calidad. | 🔎 **Contribuir al monitoreo preventivo de infraestructuras de concreto**, facilitando la detección y registro de grietas mediante una herramienta portátil. |
+| 🏘️ **ODS 11: Ciudades y comunidades sostenibles** | **Meta 11.5:** Reducir las pérdidas y afectaciones ocasionadas por desastres. | 🛡️ **Apoyar la identificación temprana de estructuras que requieran inspección especializada**, especialmente en comunidades rurales con acceso limitado a herramientas tecnológicas. |
 
----
 ---
 
 ## 📸 Fotografía del Equipo  
@@ -40,13 +41,18 @@ Nuestro proyecto busca desarrollar un **sistema inteligente de detección de des
 
 ---
 ---
-🎯 Misión
+---
 
-Desarrollar un sistema inteligente de monitoreo energético que, mediante IoT y Machine Learning, permita detectar posibles desperdicios de electricidad en tiempo real y brindar información útil sobre su impacto energético, económico y ambiental.
+## 🎯 Misión
 
-👁️ Visión
+Desarrollar una **herramienta portátil, accesible e inteligente** que facilite la detección y registro de grietas en estructuras de concreto mediante **visión computacional y Machine Learning**, contribuyendo a realizar inspecciones preliminares en zonas rurales con acceso limitado a tecnología especializada.
 
-Contribuir al desarrollo de edificios y espacios más eficientes y sostenibles, promoviendo el uso responsable de la energía mediante tecnologías inteligentes que ayuden a reducir el desperdicio y las emisiones de gases de efecto invernadero.
+---
+
+## 👁️ Visión
+
+Convertir **CrackScan** en una herramienta tecnológica **confiable, accesible y escalable** que contribuya al monitoreo preventivo de estructuras de concreto y facilite la identificación temprana de posibles daños en comunidades rurales.
+
 ---
 ---
 ## 👥 Integrantes del Equipo  
@@ -61,43 +67,44 @@ Contribuir al desarrollo de edificios y espacios más eficientes y sostenibles, 
 
 ---
 ---
-##  📌 Resumen Final
+## 📌 Resumen Final
 
 <p align="center">
-  ⚡ ───────────── 🌱 🤖 🌍 ───────────── ⚡
+  🏗️ ───────────── 🔎 🤖 📍 ───────────── 🏠
 </p>
 
 Este README presenta quiénes somos como **Equipo 06**, la problemática que buscamos abordar y la propuesta que desarrollaremos durante el curso **Proyecto Integrador 2026-2**.
 
-Nuestro proyecto propone un **Sistema Inteligente de Detección de Desperdicio Energético en Ambientes**, integrando tecnologías como **IoT, sensores y Machine Learning** para monitorear el consumo eléctrico, identificar comportamientos anómalos y generar alertas ante posibles situaciones de desperdicio energético.
+Nuestro proyecto propone **CrackScan**, un **dispositivo portátil e inteligente para la detección y registro de grietas en estructuras de concreto**, integrando tecnologías como **visión computacional, Machine Learning y georreferenciación**.
 
-Además, el sistema permitirá visualizar indicadores como:
+El sistema está orientado principalmente a **zonas rurales**, donde el acceso a herramientas tecnológicas especializadas y la conectividad pueden ser limitados. Por ello, CrackScan estará diseñado para realizar **inspecciones preliminares de manera autónoma y sin depender de conexión a Internet**.
 
-El sistema permitirá visualizar información relevante como:
+El sistema permitirá obtener y almacenar información relevante como:
 
-- ⚡ **Consumo energético:** kWh
-- ⚠️ **Energía asociada al consumo anómalo:** kWh
-- 💸 **Costo energético estimado:** S/
-- 🌱 **Emisiones de GEI asociadas:** kg CO₂e
-- 🚨 **Alertas de posibles situaciones de desperdicio energético**
+- 🔎 **Detección de grietas:** identificación automática mediante visión computacional.
+- 🖼️ **Localización de grietas:** reconocimiento de la zona afectada dentro de la imagen.
+- 📐 **Orientación de la grieta:** vertical, horizontal o diagonal.
+- 📍 **Georreferenciación:** registro de la ubicación de cada inspección mediante GPS.
+- 💾 **Registro offline:** almacenamiento local de imágenes y resultados sin necesidad de Internet.
+- 📋 **Historial de inspecciones:** organización de los registros para facilitar su posterior revisión.
 
-De esta manera, buscamos transformar los datos recopilados en información útil para identificar consumos anómalos, evaluar su impacto y facilitar una gestión más eficiente y responsable de la energía.
+De esta manera, buscamos transformar imágenes y datos recopilados en **información útil para apoyar inspecciones preliminares**, facilitando la identificación y registro de estructuras de concreto que requieran una evaluación técnica más detallada.
 
-> 🌱 **Nuestro propósito:** Convertir datos en decisiones que ayuden a reducir el desperdicio energético y su impacto ambiental.
+> 🏗️ **Nuestro propósito:** Acercar herramientas inteligentes de inspección a comunidades rurales mediante una solución portátil, accesible y autónoma.
 
-### 🌍 ODS relacionados
+## 🌍 ODS relacionados
 
 <p align="center">
-  ⚡ <b>ODS 7</b> &nbsp; • &nbsp;
-  🏙️ <b>ODS 11</b> &nbsp; • &nbsp;
-  ♻️ <b>ODS 12</b> &nbsp; • &nbsp;
-  🌎 <b>ODS 13</b>
+  🏗️ <b>ODS 9: Industria, innovación e infraestructura</b>
+  &nbsp; • &nbsp;
+  🏘️ <b>ODS 11: Ciudades y comunidades sostenibles</b>
 </p>
 
 ---
 
 <p align="center">
-  💡 <b>Tecnología + Eficiencia Energética + Sostenibilidad</b> 🌱
+  💡 <b>Tecnología + Prevención + Infraestructura Resiliente</b> 🏗️
+</p>
 </p>
 
 <p align="center">
