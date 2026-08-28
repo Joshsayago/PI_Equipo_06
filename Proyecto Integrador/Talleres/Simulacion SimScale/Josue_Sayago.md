@@ -19,7 +19,7 @@ Se utilizó una fuerza de **5 N**, superior al peso estático estimado de la cá
 La simulación permite observar una mayor concentración de esfuerzos en los **puntos de unión entre el asa y la carcasa**, debido a que estas zonas transmiten la carga hacia el cuerpo principal de la cámara.
 
 <p align="center">
-  <img src="Recursos/Imágenes/simulacion_traccion_correa_5N.png" width="700">
+  <img src="Recursos/Imágenes/Josue_simscale.png" width="700">
 </p>
 
 <p align="center">
