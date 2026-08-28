@@ -20,4 +20,4 @@ que la rosca interna se dañe durante el armado.
 * **Fijación segura:** Es la fuerza justa para que las piezas no queden sueltas en su posición final.
 
 ## Resultados de la Simulación
-![Resultados de la simulación de torque](Recursos/Imágenes/PIERO_taller2.png)
+![Resultados de la simulación de torque](PI_Equipo_06/Recursos/Imágenes/PIERO_taller2.png)
