@@ -3,6 +3,4 @@ Justificación
 Se realizó una simulación estática en SimScale para evaluar los esfuerzos en la carcasa de PLA. Los cuatro huecos corresponden a los puntos donde se colocarán los tornillos para unir la estructura. Se consideró una carga total de 5 N, distribuida entre los cuatro puntos, aplicando 1.25 N por hueco. El análisis permitió identificar las zonas de mayor esfuerzo alrededor de las fijaciones.
 ### Simulación estructural de la carcasa
 
-<p align="center">
-  <img src="images/simulacion_von_mises.png" width="750">
-</p>
+<img width="1918" height="1028" alt="image" src="https://github.com/user-attachments/assets/ad2d2dd1-c7f3-4213-a9d4-4e2ad5225659" />
