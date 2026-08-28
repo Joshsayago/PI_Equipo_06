@@ -12,7 +12,7 @@ P = m \cdot g
 P = 0.35 \cdot 9.81 \approx 3.43\ N
 \]
 
-<img width="1917" height="932" alt="image" src="https://github.com/user-attachments/assets/35c244b6-2220-4cb9-89d4-2d4df9047d7a" />
+<img width="1917" height="932" alt="image" src="Recursos/Imágenes/Josue_simscale.png" />
 
 Se utilizó una fuerza de **5 N**, superior al peso estático estimado de la cámara, con el propósito de considerar esfuerzos adicionales que pueden producirse durante su manipulación, como el levantamiento mediante la correa o pequeños tirones.
 
