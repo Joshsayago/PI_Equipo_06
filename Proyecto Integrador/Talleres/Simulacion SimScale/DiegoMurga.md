@@ -42,5 +42,3 @@ Debido a que el esfuerzo obtenido es relativamente bajo para una pieza fabricada
 La simulación permitió identificar que los **puntos de unión del asa con la carcasa son las zonas más críticas del diseño**, debido a la concentración de esfuerzos producida por la transferencia de la carga.
 
 Sin embargo, para la condición evaluada de **5 N**, equivalente aproximadamente al peso estimado de una cámara de **500 g**, los esfuerzos obtenidos permanecen en niveles bajos. Por lo tanto, el diseño presenta un comportamiento estructural adecuado frente a la carga estática considerada.
-
-como hago que es link se abra en otra pestania
