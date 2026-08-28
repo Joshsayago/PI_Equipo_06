@@ -11,6 +11,7 @@ P = m \cdot g
 \[
 P = 0.35 \cdot 9.81 \approx 3.43\ N
 \]
+<img width="1872" height="876" alt="Captura de pantalla 2026-08-27 194944" src="https://github.com/user-attachments/assets/f2ef3d05-96d8-4b70-9cc0-232a3abd1c00" />
 
 <img width="1917" height="932" alt="image" src="Recursos/Imágenes/Josue_simscale.png" />
 
