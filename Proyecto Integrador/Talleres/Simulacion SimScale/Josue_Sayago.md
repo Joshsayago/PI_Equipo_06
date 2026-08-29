@@ -1,28 +1,18 @@
-### Simulación de fuerza de tracción en la correa
+## Descripción de la Simulación
 
-Para evaluar la resistencia estructural de la zona de sujeción de la cámara, se realizó una simulación aplicando una **fuerza de tracción de 5 N** sobre el asa destinada a la colocación de la correa.
+Para evaluar la resistencia estructural de los puntos de montaje de la placa, se realizó una simulación aplicando una fuerza horizontal de 5 N directamente sobre las caras internas de los cuatro orificios cilíndricos. 
 
-La fuerza aplicada busca representar la carga generada cuando la cámara es sostenida o levantada mediante la correa. Considerando una masa estimada del dispositivo de aproximadamente **350 g**, su peso es:
+La fuerza aplicada busca representar el empuje lateral o la carga de corte que experimentan las uniones (como pernos o pasadores) cuando el ensamblaje es sometido a un esfuerzo transversal durante su operación. Para este análisis, se restringió el movimiento del componente configurando un soporte fijo (*fixed support*) sobre el cuerpo principal de la estructura, lo que permite evaluar cómo se distribuye la tensión al resistir esta tracción en los anclajes.
 
-\[
-P = m \cdot g
-\]
-
-\[
-P = 0.35 \cdot 9.81 \approx 3.43\ N
-\]
 <img width="1872" height="876" alt="Captura de pantalla 2026-08-27 194944" src="https://github.com/user-attachments/assets/f2ef3d05-96d8-4b70-9cc0-232a3abd1c00" />
 
-<img width="1917" height="932" alt="image" src="Recursos/Imágenes/Josue_simscale.png" />
 
-Se utilizó una fuerza de **5 N**, superior al peso estático estimado de la cámara, con el propósito de considerar esfuerzos adicionales que pueden producirse durante su manipulación, como el levantamiento mediante la correa o pequeños tirones.
+## Análisis de Esfuerzos
 
-La simulación permite observar una mayor concentración de esfuerzos en los **puntos de unión entre el asa y la carcasa**, debido a que estas zonas transmiten la carga hacia el cuerpo principal de la cámara.
+Debido a que el esfuerzo máximo obtenido (40.96 kPa) es extremadamente bajo para cualquier material de fabricación estándar, como el PLA o resinas de impresión, el análisis indica que, bajo una carga estática horizontal de 5 N, la zona de las fijaciones no presenta un nivel de riesgo estructural.
 
-<p align="center">
-  <img src="Recursos/Imágenes/Josue_simscale.png" width="700">
-</p>
+## Conclusión
 
-<p align="center">
-  <em>Figura: Simulación de una fuerza de tracción de 5 N aplicada sobre el asa de la cámara.</em>
-</p>
+La simulación permitió identificar que los bordes de los cuatro orificios cilíndricos son puntos donde se concentra tensión, debido a la resistencia que oponen al recibir directamente la fuerza horizontal mientras el cuerpo de la pieza se mantiene restringido por el soporte fijo.
+
+Sin embargo, para la condición evaluada de 5 N (que representa un empuje lateral), los esfuerzos de Von Mises generados son insignificantes en comparación con el límite de fluencia de cualquier plástico, en este caso PLA. Por lo tanto, el diseño presenta un comportamiento estructural sumamente robusto frente a la carga estática considerada, garantizando que los anclajes no sufrirán desgarros ni deformaciones permanentes.
