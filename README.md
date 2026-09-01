@@ -40,7 +40,7 @@ El sistema está orientado principalmente a **zonas rurales**, permitiendo reali
 
 ## 📸 Fotografía del Equipo  
 <p align="center">
-<img width="1408" height="768" alt="foto_equipo_06" src="Recursos/Imágenes/foto_equipo_06.png" />
+<img width="1408" height="768" alt="foto_equipo_06" src="Recursos/Imágenes/IMAGEN.png" />
   <em>Figura 1. Fotografía del equipo 06</em>
 </p>
 
