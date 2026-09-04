@@ -6,14 +6,9 @@
 
 ---
 ## DOMINIO MECÁNICO
+<img width="705" height="982" alt="image" src="https://github.com/user-attachments/assets/dffc71e3-8bc8-4754-bfdf-9a0e814b4815" />
 
-| FUNCIONES PARCIALES | PORTADOR 1 | PORTADOR 2 | PORTADOR 3 |
-| :--- | :--- | :--- | :--- |
-| Proteger componentes | Carcasa impresa en 3D <img width="80" height="80" alt="image" src="https://github.com/user-attachments/assets/ea01b9e6-ff16-4e5d-9005-2245001d48dc" /> | Carcasa de acrílico <img width="80" height="80" alt="image" src="https://github.com/user-attachments/assets/06dd2beb-94a1-4433-af47-429f48d0320e" /> | Caja plástica <img width="80" height="80" alt="Captura de pantalla 2026-09-03 225443" src="https://github.com/user-attachments/assets/65146490-5358-4096-a068-4d883ef8c4b8" /> |
-| Facilitar sujeción | Empuñadura ergonómica <img width="80" height="80" alt="image" src="https://github.com/user-attachments/assets/6cc4626e-180f-4fa0-baeb-dbbaff958fc8" /> | Correa de mano <img width="80" height="80" alt="image" src="https://github.com/user-attachments/assets/29c0ce88-2e31-40c6-babe-7728774855be" />  | Carcasa de agarre directo <img width="80" height="80" alt="image" src="https://github.com/user-attachments/assets/48981bff-4212-4018-87fd-4441c9ae52dc" /> |
-| Mantener distancia de captura | Separadores frontales <img width="80" height="80" alt="image" src="https://github.com/user-attachments/assets/204ef120-6480-4632-855d-1d93780920db" /> | Mar LG co frontal <img width="80" height="80" alt="image" src="https://github.com/user-attachments/assets/c90e13d5-3f8b-45ed-ba85-ff0b84271cf0" />  | Guía telescópica <img width="80" height="80" alt="image" src="https://github.com/user-attachments/assets/56a4f81c-bde5-4123-93e2-d5233ac9f32b" />   |
-| Facilitar acceso interno | Tapa desmontable <img width="80" height="80" alt="image" src="https://github.com/user-attachments/assets/f8cfc83b-17cd-4598-8763-0213e9736975" />   | Tapa con bisagra <img width="80" height="80" alt="image" src="https://github.com/user-attachments/assets/74c819a3-2f23-40af-8a82-a30eb69ef35f" />   | Carcasa modular <img width="80" height="80" alt="image" src="https://github.com/user-attachments/assets/145b8916-0520-4f7e-8f9b-c4b9a6be4b3f" /> |
-
+---
 ## DOMINIO DE ENERGÍA
 
 | FUNCIONES PARCIALES | PORTADOR 1 | PORTADOR 2 | PORTADOR 3 |
