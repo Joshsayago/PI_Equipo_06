@@ -4,10 +4,10 @@
 
 | FUNCIONES PARCIALES | PORTADOR 1 | PORTADOR 2 | PORTADOR 3 |
 | :--- | :--- | :--- | :--- |
-| Capturar imagen de la grieta | XIAO ESP32S3 Sense <img width="60" height="50" alt="image" src="https://github.com/user-attachments/assets/8f4ab4d8-d96a-42fa-b5cc-7df87db4aa45"/> | Maix Bit / Sipeed Maix <img width="60" height="50" alt="Captura de pantalla 2026-09-03 223432" src="https://github.com/user-attachments/assets/6212e3fb-fd45-49e0-b32d-51760935cfad" /> | Raspberry Pi Pico 2 W <img width="60" height="50" alt="image" src="https://github.com/user-attachments/assets/196f62bf-c90d-4559-8e64-4b111396bd51" />|  
-| Obtener geolocalización | GPS NEO-6M | GPS NEO-M8N | GPS del celular |
-| Iluminar superficie | GPS NEO-6M | Flash LED | Aro LED |
-| Conectividad | Wi-Fi | Bluetooth | USB |
+| Capturar imagen de la grieta | XIAO ESP32S3 Sense <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/8f4ab4d8-d96a-42fa-b5cc-7df87db4aa45"/> | Maix Bit / Sipeed Maix <img width="60" height="60" alt="Captura de pantalla 2026-09-03 223432" src="https://github.com/user-attachments/assets/6212e3fb-fd45-49e0-b32d-51760935cfad" /> | Raspberry Pi Pico 2 W <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/196f62bf-c90d-4559-8e64-4b111396bd51" />|  
+| Obtener geolocalización | GPS NEO-6M <img width="60" height="176" alt="image" src="https://github.com/user-attachments/assets/dcc3301b-dab0-4a9a-a4f3-836da300a85e" /> | GPS NEO-M8N <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/14499908-f2f4-47cf-9900-db7a039209b8" />  | GPS del celular <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/a3654560-2ba1-435e-b3df-a3ec21311f68" />|
+| Iluminar superficie | GPS NEO-6M <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/5dd4899f-3ccd-4473-a9b9-c87f24e1d419" /> | Flash LED <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/4fc22113-5ba1-4fb6-831f-df025c8d6717" />  | Aro LED <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/d519b753-b2d5-4ec6-b50a-306aa5d46482" /> |
+| Conectividad | Wi-Fi <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/13c16e6e-2811-4c94-a986-48b75d142e60" />  | Bluetooth <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/89e3ffa2-53e2-4d02-8171-3d1f3dc3b0e0" />| USB <img width="60" height="60" alt="image" src="https://github.com/user-attachments/assets/0af8bf2c-0ca3-414e-857c-1a1cc658d256" />|
 
 ## DOMINIO MECÁNICO
 
