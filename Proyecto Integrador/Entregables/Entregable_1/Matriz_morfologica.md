@@ -1,8 +1,8 @@
 # MATRIZ MORFOLÓGICA – Sistema portátil de detección de grietas en concreto
 
 ## DOMINIO ELECTRÓNICO
+<img width="705" height="982" alt="image" src="https://github.com/user-attachments/assets/97881a98-b670-4b9d-a288-79eb4a2efb51" />
 
-<img width="853" height="1085" alt="image" src="https://github.com/user-attachments/assets/1d68fd99-b2f3-4332-9789-b4131c338b2c" />
 
 ---
 ## DOMINIO MECÁNICO
