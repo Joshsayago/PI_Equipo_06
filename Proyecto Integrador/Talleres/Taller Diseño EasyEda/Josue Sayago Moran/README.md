@@ -1,4 +1,3 @@
-# Descripciones de las Imágenes del Proyecto PCB (EasyEDA)
 
 ## 1. Diagrama Esquemático
 <img width="1408" height="705" alt="image" src="https://github.com/user-attachments/assets/0cc85b56-3c62-4510-88a0-54276262237b" />
