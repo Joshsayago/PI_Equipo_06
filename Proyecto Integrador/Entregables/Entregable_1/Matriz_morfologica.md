@@ -2,7 +2,7 @@
 
 ## DOMINIO ELECTRÓNICO
 
-<img width="453" height="585" alt="image" src="https://github.com/user-attachments/assets/1d68fd99-b2f3-4332-9789-b4131c338b2c" />
+<img width="853" height="1085" alt="image" src="https://github.com/user-attachments/assets/1d68fd99-b2f3-4332-9789-b4131c338b2c" />
 
 ---
 ## DOMINIO MECÁNICO
