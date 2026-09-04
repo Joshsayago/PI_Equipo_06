@@ -9,7 +9,7 @@ Muestra las conexiones lógicas entre los componentes principales del circuito:
   * **U4:** Módulo GPS NEO-6M, conectado a través de pines de comunicación serial (TXD, RXD), PPS, GND y VCC.
   * **Orificios de montaje:** Varios puntos de montaje designados (MH1 a MH4)
 
---
+---
 ## 2. Vista General del Diseño PCB 
 <img width="1310" height="704" alt="image" src="https://github.com/user-attachments/assets/5afccd05-6b05-4cb4-a84a-66643feb2acc" />
 
