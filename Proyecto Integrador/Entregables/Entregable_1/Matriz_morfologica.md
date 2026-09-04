@@ -11,20 +11,12 @@
 ---
 ## DOMINIO DE ENERGÍA
 
-| FUNCIONES PARCIALES | PORTADOR 1 | PORTADOR 2 | PORTADOR 3 |
-| :--- | :--- | :--- | :--- |
-| Alimentar el sistema | Batería recargable Li-ion 18650 <img width="80" height="80" alt="image" src="https://github.com/user-attachments/assets/eab4d98b-22b2-49f5-94fc-f5b6ba24dce3" /> | Batería recargable Li-Po <img width="80" height="80" alt="image" src="https://github.com/user-attachments/assets/f1879364-2b2d-4046-abdb-6e44af64c01d" /> | Power bank <img width="80" height="80" alt="image" src="https://github.com/user-attachments/assets/fd1b2ad1-38aa-4ca6-bb7b-62471c190faa" />  |
-| Regular voltaje | Regulador integrado <img width="80" height="80" alt="image" src="https://github.com/user-attachments/assets/ee0a537d-9ccc-4900-a7b0-4a8ec7e1d6b3" />   | Convertidor DC-DC  <img width="80" height="80" alt="image" src="https://github.com/user-attachments/assets/b5dd1085-17f7-4e7f-a188-0e5c565888aa" /> | Módulo step-down <img width="80" height="80" alt="image" src="https://github.com/user-attachments/assets/a7314630-2b67-460a-99bb-4e4bb95dc3bf" /> |
-| Recargar dispositivo | Cable <img width="80" height="80" alt="image" src="https://github.com/user-attachments/assets/8b19eb3a-6de0-4843-8c05-99e34e3450ee" /> | Cargador externo <img width="80" height="80" alt="image" src="https://github.com/user-attachments/assets/05edb4fc-59ac-4429-8bf5-6c06e1e2ac07" /> | Panel solar <img width="80" height="80" alt="image" src="https://github.com/user-attachments/assets/23702fbf-6908-46e9-97f2-ac598b81b18e" /> |
+<img width="877" height="980" alt="image" src="https://github.com/user-attachments/assets/8653eab4-6bad-40a5-9e25-e4f9776ccbf7" />
 
+---
 ## DOMINIO DE CONTROL
 
-| FUNCIONES PARCIALES | PORTADOR 1 | PORTADOR 2 | PORTADOR 3 |
-| :--- | :--- | :--- | :--- |
-| Controlar el sistema | XIAO ESP32S3 Sense | Maix Bit / Sipeed Maix | Raspberry Pi Pico 2 W |
-| Iniciar captura | Pulsador físico | Aplicación móvil | Captura automática |
-| Controlar iluminación | Activación automática | Interruptor | Control por software |
-| Gestionar ubicación | Lectura automática del GPS | Activación manual | Ubicación desde celular |
+<img width="863" height="968" alt="image" src="https://github.com/user-attachments/assets/d08db113-0ca0-4158-95db-10c4669bcc31" />
 
 ## DOMINIO DE ACTUACIÓN
 
