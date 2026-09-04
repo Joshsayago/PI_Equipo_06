@@ -16,6 +16,7 @@
 
 - *DISEÑO 3D PCB:* La siguiente imagen presenta el modelado tridimensional (3D) del producto final. Esta vista interactiva simula el acabado estético y estructural definitivo, proyectando con alta fidelidad el resultado esperado tras el proceso de manufactura y fabricación industrial.
 <img width="1919" height="952" alt="Captura de pantalla 2026-09-03 192558" src="https://github.com/user-attachments/assets/d25ab655-e234-4c0e-9b6f-590f46039090" />
+<img width="2160" height="2401" alt="3D_PCB1_2026-09-03" src="https://github.com/user-attachments/assets/7ed18837-cea6-488f-9699-33fb5201c1da" />
 
 
 ----------------------------------
