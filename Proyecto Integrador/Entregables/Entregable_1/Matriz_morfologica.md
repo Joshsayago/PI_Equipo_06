@@ -26,7 +26,7 @@
 ---
 ## DOMINIO DE SOFTWARE
 
-<img width="624" height="867" alt="image" src="https://github.com/user-attachments/assets/e63ad280-e702-428b-ba3c-e9387b8e49f8" /> <img width="624" height="867" alt="image" src="https://github.com/user-attachments/assets/1dac0365-d41c-4c6b-97bd-4ffee4071863" />
+<img width="624" height="667" alt="image" src="https://github.com/user-attachments/assets/e63ad280-e702-428b-ba3c-e9387b8e49f8" /> <img width="624" height="667" alt="image" src="https://github.com/user-attachments/assets/1dac0365-d41c-4c6b-97bd-4ffee4071863" />
 
 
 
