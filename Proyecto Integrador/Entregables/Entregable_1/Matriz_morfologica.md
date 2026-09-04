@@ -18,26 +18,17 @@
 
 <img width="863" height="968" alt="image" src="https://github.com/user-attachments/assets/d08db113-0ca0-4158-95db-10c4669bcc31" />
 
+---
 ## DOMINIO DE ACTUACIÓN
 
-| FUNCIONES PARCIALES | PORTADOR 1 | PORTADOR 2 | PORTADOR 3 |
-| :--- | :--- | :--- | :--- |
-| Iluminar zona de captura | Aro LED | LED de alta intensidad | Flash LED |
-| Confirmar captura | LED indicador | Buzzer | Vibración |
-| Alertar al usuario | LED tipo semáforo | Buzzer | Notificación digital |
-| Mostrar estado del equipo | LED tipo semáforo | LED RGB | Indicadores LED |
+<img width="708" height="982" alt="image" src="https://github.com/user-attachments/assets/1b37f90b-db7b-40c6-9eb1-4968828bd124" />
 
+---
 ## DOMINIO DE SOFTWARE
 
-| FUNCIONES PARCIALES | PORTADOR 1 | PORTADOR 2 | PORTADOR 3 |
-| :--- | :--- | :--- | :--- |
-| Detectar grietas | Procesamiento de imágenes | Machine Learning | Detección de bordes |
-| Caracterizar grieta | Convertir píxeles a medidas | Escala milimetrada | Calibración por distancia |
-| Obtener información territorial | Base de datos GEPM | Mapa de riesgo | API geográfica |
-| Relacionar grieta y zona | Sistema de puntuación | Umbrales | Clasificación automática |
-| Clasificar prioridad | Baja / media / alta | Sistema de puntuación | Porcentaje |
-| Almacenar resultados | Base de datos | MicroSD | Memoria interna |
-| Visualizar resultados | Dashboard web | Aplicación móvil | Pantalla integrada |
+<img width="624" height="867" alt="image" src="https://github.com/user-attachments/assets/e63ad280-e702-428b-ba3c-e9387b8e49f8" /> <img width="624" height="867" alt="image" src="https://github.com/user-attachments/assets/1dac0365-d41c-4c6b-97bd-4ffee4071863" />
+
+
 
 ---
 
