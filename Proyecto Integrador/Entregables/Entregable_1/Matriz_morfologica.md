@@ -4,64 +4,162 @@
 
 | FUNCIONES PARCIALES | PORTADOR 1 | PORTADOR 2 | PORTADOR 3 |
 | :--- | :--- | :--- | :--- |
-| Capturar imagen de la grieta | XIAO ESP32S3 Sense <br><br> <img width="147" height="152" alt="image" src="https://github.com/user-attachments/assets/40132a3c-fc05-48ed-b647-20b1318dcf83" />| ESP32-CAM <br><br> <img width="145" height="137" alt="image" src="https://github.com/user-attachments/assets/caf8abe8-906e-42a0-a611-770fdfdfe1c3" />| Raspberry Pi Camera <br><br> <img width="157" height="147" alt="image" src="https://github.com/user-attachments/assets/b509fa88-447c-4a0e-a42c-83191bfe270f" />|
-| Obtener geolocalización | GPS NEO-6M <br><br> <img width="156" height="145" alt="image" src="https://github.com/user-attachments/assets/6dd37aa0-0316-4d38-99aa-3decf3a75424" />| GPS NEO-M8N <br><br> <img width="175" height="137" alt="image" src="https://github.com/user-attachments/assets/76ba4b0b-6dad-4266-aba7-1b1330e1443c" />| GPS del celular <br><br> <img width="161" height="142" alt="image" src="https://github.com/user-attachments/assets/a4bbc911-e0a8-44cc-8360-9c86bd577810" />|
-| Conectividad | Wi-Fi <br><br> <img width="152" height="147" alt="image" src="https://github.com/user-attachments/assets/8f2278bf-1630-464a-9316-230a0b2c78d2" />| Bluetooth <br><br> <img width="146" height="157" alt="image" src="https://github.com/user-attachments/assets/7a413ddd-c71d-45d8-9f66-15aa1d443c98" />| USB <br><br> <img width="151" height="142" alt="image" src="https://github.com/user-attachments/assets/a0b09959-a71f-457d-93e1-6ccd77cf26c7" />|
-
----
+| Capturar imagen de la grieta | XIAO ESP32S3 Sense | Maix Bit / Sipeed Maix | Raspberry Pi Pico 2 W |
+| Obtener geolocalización | GPS NEO-6M | GPS NEO-M8N | GPS del celular |
+| Iluminar superficie | GPS NEO-6M | Flash LED | Aro LED |
+| Conectividad | Wi-Fi | Bluetooth | USB |
 
 ## DOMINIO MECÁNICO
 
 | FUNCIONES PARCIALES | PORTADOR 1 | PORTADOR 2 | PORTADOR 3 |
 | :--- | :--- | :--- | :--- |
-| Proteger componentes | Carcasa impresa en 3D <br><br> <img width="157" height="115" alt="image" src="https://github.com/user-attachments/assets/75de67ac-8638-41aa-a8d1-7051c971ec90" />| Carcasa de acrílico <br><br> <img width="167" height="140" alt="image" src="https://github.com/user-attachments/assets/888f26e1-2923-402d-bf04-64eadbf4b5dd" />| Caja plástica <br><br> <img width="165" height="165" alt="image" src="https://github.com/user-attachments/assets/1bbc43fa-bd79-4b62-a08e-2655ec4a34e3" />|
-| Facilitar sujeción | Empuñadura ergonómica <br><br> <img width="155" height="172" alt="image" src="https://github.com/user-attachments/assets/30896a99-1c84-495c-a8fd-0955c4949fd9" />| Correa de mano <br><br> <img width="147" height="177" alt="image" src="https://github.com/user-attachments/assets/441140cb-d388-4afb-a910-eabe20021ac2" />| Carcasa de agarre directo <br><br> <img width="177" height="147" alt="image" src="https://github.com/user-attachments/assets/1c274ac5-51a7-46ad-9ae6-368d86f489a2" />|
-| Mantener distancia de captura | Separadores frontales <br><br> <img width="170" height="140" alt="image" src="https://github.com/user-attachments/assets/f07778fa-77f8-40e5-b376-9fa0c02d9cfb" />| Marco frontal <br><br> <img width="155" height="151" alt="image" src="https://github.com/user-attachments/assets/4807a4ea-cc90-4e8b-be87-c00870138fb2" />| Guía telescópica <br><br> <img width="137" height="127" alt="image" src="https://github.com/user-attachments/assets/092bfb60-9504-4f42-8324-d9638781d364" />|
-| Facilitar acceso interno | Tapa desmontable <br><br> <img width="175" height="192" alt="image" src="https://github.com/user-attachments/assets/703e83ab-e3c9-488a-b3a7-f87c4943211c" />| Tapa con bisagra <br><br> <img width="161" height="157" alt="image" src="https://github.com/user-attachments/assets/a6c7aa19-e738-40af-99d2-b8ddd59d5ffa" />| Carcasa modular <br><br> <img width="142" height="142" alt="image" src="https://github.com/user-attachments/assets/2d071a78-abc4-4c81-b9b6-1b91bf9e3bc4" />|
-
----
+| Proteger componentes | Carcasa impresa en 3D | Carcasa de acrílico | Caja plástica |
+| Facilitar sujeción | Empuñadura ergonómica | Correa de mano | Carcasa de agarre directo |
+| Mantener distancia de captura | Separadores frontales | Mar LG co frontal | Guía telescópica |
+| Facilitar acceso interno | Tapa desmontable | Tapa con bisagra | Carcasa modular |
 
 ## DOMINIO DE ENERGÍA
 
 | FUNCIONES PARCIALES | PORTADOR 1 | PORTADOR 2 | PORTADOR 3 |
 | :--- | :--- | :--- | :--- |
-| Alimentar el sistema | Batería recargable Li-ion 18650 <br><br> <img width="183" height="148" alt="image" src="https://github.com/user-attachments/assets/e7f205d9-5a13-41bb-90a7-cd8ee05e0af3" />| Batería recargable Li-Po <br><br> <img width="170" height="157" alt="image" src="https://github.com/user-attachments/assets/d683c7de-c108-4928-b85f-e15a25d70ec3" />| Power bank <br><br> <img width="160" height="162" alt="image" src="https://github.com/user-attachments/assets/ad8d8ada-d085-4885-9df2-561af0f8940b" />|
-| Regular voltaje | Regulador LDO <br><br> <img width="147" height="140" alt="image" src="https://github.com/user-attachments/assets/bd0f849a-ef34-4161-91db-a56053d55b74" />| Convertidor Buck (Step-Down) <br><br> <img width="167" height="155" alt="image" src="https://github.com/user-attachments/assets/a9a927bb-9ac3-4881-a71e-0437e6519ffe" />| Convertidor Buck-Boost <br><br> <img width="160" height="160" alt="image" src="https://github.com/user-attachments/assets/8d78dc43-a55a-4066-bdd8-7b95f4588c58" />|
-| Recargar dispositivo | Cable usb c a usb c <br><br> <img width="156" height="150" alt="image" src="https://github.com/user-attachments/assets/c0b0738f-69a4-41b7-aa31-04eac6cbb23c" />| Cargador externo <br><br> <img width="137" height="152" alt="image" src="https://github.com/user-attachments/assets/a16bf778-f382-4b11-a378-8388b000cd23" />| Base de carga <br><br> <img width="155" height="162" alt="image" src="https://github.com/user-attachments/assets/8b9be82d-091a-4ea6-885d-4e9e452fc7af" />|
-
----
+| Alimentar el sistema | Batería recargable Li-ion 18650 | Batería recargable Li-Po | Power bank |
+| Regular voltaje | Regulador integrado | Convertidor DC-DC | Módulo step-down |
+| Recargar dispositivo | Cable | Cargador externo | Panel solar |
 
 ## DOMINIO DE CONTROL
 
 | FUNCIONES PARCIALES | PORTADOR 1 | PORTADOR 2 | PORTADOR 3 |
 | :--- | :--- | :--- | :--- |
-| Controlar el sistema | XIAO ESP32S3 Sense <br><br> <img width="155" height="117" alt="image" src="https://github.com/user-attachments/assets/3af3cbd6-1360-4569-aa02-1c07b25ff08e" />| ESP32-CAM <br><br> <img width="155" height="140" alt="image" src="https://github.com/user-attachments/assets/ad1b4822-7583-4f68-b381-0252c08d7381" />| Raspberry Pi <br><br> <img width="165" height="118" alt="image" src="https://github.com/user-attachments/assets/89945894-dafa-4a15-b0e7-6b3cf133819f" />|
-| Iniciar captura | Pulsador físico <br><br> <img width="142" height="161" alt="image" src="https://github.com/user-attachments/assets/02c055ca-16c1-4ca6-a56b-c5d9a0d5c7a8" />| Aplicación móvil <br><br> <img width="157" height="152" alt="image" src="https://github.com/user-attachments/assets/4e5f05cf-2367-46c5-9732-83136eb1d03b" />| Captura automática <br><br> <img width="146" height="145" alt="image" src="https://github.com/user-attachments/assets/5946792c-fc67-4de5-b974-1172bf8fc190" />|
-| Controlar iluminación | Pulsador / interruptor <br><br> <img width="165" height="162" alt="image" src="https://github.com/user-attachments/assets/7c0daa09-1b0c-4e4f-87c6-4df4ec9ecaf1" />| Control por software <br><br> <img width="157" height="126" alt="image" src="https://github.com/user-attachments/assets/b2b23354-8759-462b-b768-f6f8aee144bd" />| Sensor + activación automática <br><br> <img width="167" height="137" alt="image" src="https://github.com/user-attachments/assets/a0715ec3-54e9-4dcd-b7df-fba1b928cfd4" />|
-| Gestionar ubicación | GPS dedicado automático <br><br> <img width="138" height="142" alt="image" src="https://github.com/user-attachments/assets/7d5013cd-f460-4dc8-a0ee-7071fa833657" />| GPS activado manualmente <br><br> <img width="140" height="141" alt="image" src="https://github.com/user-attachments/assets/a388b270-0c86-45ca-8d06-82e1374eb01a" />| Ubicación desde celular <br><br> <img width="165" height="97" alt="image" src="https://github.com/user-attachments/assets/207a1fd1-314e-4da7-87b3-12112d117efc" />|
-
----
+| Controlar el sistema | XIAO ESP32S3 Sense | Maix Bit / Sipeed Maix | Raspberry Pi Pico 2 W |
+| Iniciar captura | Pulsador físico | Aplicación móvil | Captura automática |
+| Controlar iluminación | Activación automática | Interruptor | Control por software |
+| Gestionar ubicación | Lectura automática del GPS | Activación manual | Ubicación desde celular |
 
 ## DOMINIO DE ACTUACIÓN
 
 | FUNCIONES PARCIALES | PORTADOR 1 | PORTADOR 2 | PORTADOR 3 |
 | :--- | :--- | :--- | :--- |
-| Iluminar zona de captura | Aro LED <br><br> <img width="156" height="177" alt="image" src="https://github.com/user-attachments/assets/f5c956f6-0f42-4ba1-b413-1885898624f8" />| LED de alta intensidad <br><br> <img width="171" height="165" alt="image" src="https://github.com/user-attachments/assets/83ff98e9-6cd3-4eb0-be7f-2816c99b9d2d" />| Flash LED <br><br> <img width="192" height="247" alt="image" src="https://github.com/user-attachments/assets/9bfc57a8-35e6-4603-982a-1342086367b5" />|
-| Confirmar captura | LED indicador <br><br> <img width="167" height="152" alt="image" src="https://github.com/user-attachments/assets/17d8b764-ca6e-4364-9c5c-34a1b8414b6c" />| Buzzer <br><br> <img width="147" height="150" alt="image" src="https://github.com/user-attachments/assets/53eb5b54-8d8d-4d50-8093-34d410158160" />| Vibración <br><br> <img width="165" height="87" alt="image" src="https://github.com/user-attachments/assets/fb1fd73a-48ad-4403-9036-7e0773578175" />|
-| Alertar al usuario | LED tipo semáforo <br><br> <img width="167" height="146" alt="image" src="https://github.com/user-attachments/assets/400ff8d3-cba2-4392-a83c-5c8cda3e515c" />| Buzzer <br><br> <img width="152" height="137" alt="image" src="https://github.com/user-attachments/assets/3b7ca4e2-a448-44ee-90bb-0dd9a09bc90b" />| Notificación digital <br><br> <img width="165" height="90" alt="image" src="https://github.com/user-attachments/assets/ae93c8d9-264c-4147-bfd9-bee2086b4082" />|
-| Mostrar estado del equipo | Pantalla OLED <br><br> <img width="130" height="137" alt="image" src="https://github.com/user-attachments/assets/84f5eab4-4186-49f1-9e77-7071bfe9fd80" />| LED RGB <br><br> <img width="155" height="152" alt="image" src="https://github.com/user-attachments/assets/0653a147-4711-4cc1-bc91-9c4162dab93b" />| Indicadores LED <br><br> <img width="162" height="110" alt="image" src="https://github.com/user-attachments/assets/fbcd9c61-7092-45cc-98ff-c32c6e8383a4" />|
-
----
+| Iluminar zona de captura | Aro LED | LED de alta intensidad | Flash LED |
+| Confirmar captura | LED indicador | Buzzer | Vibración |
+| Alertar al usuario | LED tipo semáforo | Buzzer | Notificación digital |
+| Mostrar estado del equipo | LED tipo semáforo | LED RGB | Indicadores LED |
 
 ## DOMINIO DE SOFTWARE
 
 | FUNCIONES PARCIALES | PORTADOR 1 | PORTADOR 2 | PORTADOR 3 |
 | :--- | :--- | :--- | :--- |
-| Detectar grietas | Procesamiento clásico de imágenes <br><br> <img width="180" height="105" alt="image" src="https://github.com/user-attachments/assets/c5408fb7-9130-42d7-9a7e-7ca9cfc62abb" />| Machine Learning <br><br> <img width="157" height="105" alt="image" src="https://github.com/user-attachments/assets/746bc1d2-b27e-43f9-8937-1b30e87bbb95" />| Deep Learning <br><br> <img width="207" height="127" alt="image" src="https://github.com/user-attachments/assets/2e21ce65-0591-4a7e-9960-bdc23cab43f3" />|
-| Caracterizar grieta | Orientación <br><br> <img width="145" height="147" alt="image" src="https://github.com/user-attachments/assets/f204e05a-7c78-4ff2-a66c-9b08e3b84bd8" />| Ancho + longitud <br><br> <img width="171" height="102" alt="image" src="https://github.com/user-attachments/assets/ee14432a-a416-4e7a-8e48-b04900b74426" />| Ancho + longitud + orientación <br><br> <img width="171" height="102" alt="image" src="https://github.com/user-attachments/assets/dd17bf7f-76c8-4486-9f12-8a28ef011c60" />|
-| Convertir píxeles a medidas | Marcador de referencia <br><br> <img width="165" height="55" alt="image" src="https://github.com/user-attachments/assets/4666d810-00a8-4f35-93aa-39cec08c246c" />| Escala milimetrada <br><br> <img width="156" height="72" alt="image" src="https://github.com/user-attachments/assets/19da1796-4d11-424d-89b7-8c8e09b4a032" />| Calibración por distancia <br><br> <img width="160" height="155" alt="image" src="https://github.com/user-attachments/assets/c37084a9-06b2-478e-b0ef-cb8356edb4ca" />|
-| Obtener información territorial | Base de datos pública <br><br> <img width="165" height="56" alt="image" src="https://github.com/user-attachments/assets/2019beb0-da52-4a5e-87ab-97d127fa2077" />| Mapa de riesgo <br><br> <img width="155" height="122" alt="image" src="https://github.com/user-attachments/assets/c243a44a-13d7-46b6-bf51-f3a35bcd0021" />| API geográfica <br><br> <img width="168" height="111" alt="image" src="https://github.com/user-attachments/assets/058ece0b-0b4e-4b93-9a05-f9264d9da3ef" />|
-| Relacionar grieta y zona | Reglas por umbral <br><br> <img width="165" height="122" alt="image" src="https://github.com/user-attachments/assets/7b9e1adc-152c-46cb-81d1-799075c45974" />| Sistema de puntuación <br><br> <img width="166" height="88" alt="image" src="https://github.com/user-attachments/assets/4315c168-5a38-4ac7-acd2-97ff75238b6b" />| Modelo de clasificación <br><br> <img width="160" height="117" alt="image" src="https://github.com/user-attachments/assets/00709d17-225a-4abe-a85e-be8910837506" />|
-| Clasificar prioridad | Baja / media / alta | Escala 1–5 | Porcentaje |
-| Almacenar resultados | Base de datos en la nube <br><br> <img width="161" height="82" alt="image" src="https://github.com/user-attachments/assets/a3618159-f076-4418-bb51-f936f9c2ee47" />| MicroSD <br><br> <img width="152" height="122" alt="image" src="https://github.com/user-attachments/assets/87894e35-f939-44e3-b1be-169b68c7b4f1" />| Memoria interna <br><br> <img width="167" height="176" alt="image" src="https://github.com/user-attachments/assets/6c131831-955d-472b-a9bd-dce9238948cb" />|
-| Visualizar resultados | Dashboard web <br><br> <img width="168" height="93" alt="image" src="https://github.com/user-attachments/assets/544871d2-9c52-4e75-a9f2-3d96bfe19b3f" />| Aplicación móvil <br><br> <img width="166" height="152" alt="image" src="https://github.com/user-attachments/assets/460e6f09-a378-4f17-925b-3a59cf39d0e1" />| Pantalla integrada <br><br> <img width="240" height="112" alt="image" src="https://github.com/user-attachments/assets/349e7f53-e651-49e3-ad3c-aef830e61e89" />|
+| Detectar grietas | Procesamiento de imágenes | Machine Learning | Detección de bordes |
+| Caracterizar grieta | Convertir píxeles a medidas | Escala milimetrada | Calibración por distancia |
+| Obtener información territorial | Base de datos GEPM | Mapa de riesgo | API geográfica |
+| Relacionar grieta y zona | Sistema de puntuación | Umbrales | Clasificación automática |
+| Clasificar prioridad | Baja / media / alta | Sistema de puntuación | Porcentaje |
+| Almacenar resultados | Base de datos | MicroSD | Memoria interna |
+| Visualizar resultados | Dashboard web | Aplicación móvil | Pantalla integrada |
+
+---
+
+**Leyenda:**
+* 1era opción (Amarillo)
+* 2da opción (Verde)
+* 3ra opción (Magenta)
+
+---
+
+## 1. Criterios de evaluación y pesos
+
+| CRITERIOS | PESO |
+| :--- | :--- |
+| Precisión en detección de grietas | 0.20 |
+| Caracterización de la grieta | 0.15 |
+| Portabilidad | 0.10 |
+| Facilidad de integración | 0.10 |
+| Consumo energético | 0.10 |
+| Autonomía | 0.10 |
+| Facilidad de uso | 0.10 |
+| Registro y almacenamiento de datos | 0.05 |
+| Costo de implementación | 0.05 |
+| Disponibilidad de componentes | 0.05 |
+| **TOTAL** | **1** |
+
+## 2. Evaluación de los conceptos
+*0 = No satisface | 1 = Aceptable | 2 = Suficiente | 3 = Bien | 4 = Excelente*
+
+| Criterio | C.S1 Concepto A | C.S2 Concepto B | C.S3 Concepto C |
+| :--- | :--- | :--- | :--- |
+| Precisión en detección de grietas | 4 | 3 | 3 |
+| Caracterización de la grieta | 4 | 2 | 3 |
+| Portabilidad | 4 | 3 | 3 |
+| Facilidad de integración | 4 | 3 | 3 |
+| Consumo energético | 3 | 3 | 2 |
+| Autonomía | 3 | 3 | 4 |
+| Facilidad de uso | 4 | 3 | 3 |
+| Registro y almacenamiento de datos | 4 | 3 | 2 |
+| Costo de implementación | 3 | 2 | 3 |
+| Disponibilidad de componentes | 3 | 3 | 3 |
+| **Suma total** | **36** | **28** | **29** |
+
+**RESULTADO:**
+* CONCEPTO A = 36 PUNTOS
+* CONCEPTO C = 29 PUNTOS
+* CONCEPTO B = 28 PUNTOS
+
+## 3. Comparación respecto al Concepto A
+
+| Criterio | Base (A) | B vs A | C vs A |
+| :--- | :--- | :--- | :--- |
+| Precisión en detección de grietas | 0 | -1 | -1 |
+| Capacidad de caracterización | 0 | -2 | -1 |
+| Portabilidad | 0 | -1 | -1 |
+| Facilidad de integración | 0 | -1 | -1 |
+| Consumo energético | 0 | 0 | -1 |
+| Autonomía | 0 | 0 | +1 |
+| Facilidad de uso | 0 | -1 | -1 |
+| Registro y almacenamiento de datos | 0 | -1 | -2 |
+| Costo de implementación | 0 | -1 | 0 |
+| Disponibilidad de componentes | 0 | 0 | 0 |
+| **Suma** | **0** | **-8** | **-7** |
+
+* B - A = 28 - 36 = -8
+* C - A = 29 - 36 = -7
+
+## 4. Evaluación ponderada
+
+| Criterio | Peso | Puntaje A | Puntaje B |
+| :--- | :--- | :--- | :--- |
+| Precisión en detección | 0.20 | 4 | 5 |
+| Caracterización | 0.15 | 4 | 5 |
+| Portabilidad | 0.10 | 5 | 4 |
+| Facilidad de integración | 0.10 | 5 | 3 |
+| Consumo energético | 0.10 | 4 | 3 |
+| Autonomía | 0.10 | 4 | 3 |
+| Facilidad de uso | 0.10 | 5 | 4 |
+| Registro y almacenamiento | 0.05 | 5 | 4 |
+| Costo de implementación | 0.05 | 4 | 3 |
+| Disponibilidad de componentes | 0.05 | 5 | 3 |
+| **TOTAL** | **1.00** | **4.40** | **3.95** |
+
+## 5. Evaluación ponderada: Concepto C
+
+| Criterio | Peso Concepto A (Base) | Peso x Concepto B | Peso x Concepto C |
+| :--- | :--- | :--- | :--- |
+| Precisión en detección | 0.80 | 1.00 | 0.60 |
+| Caracterización | 0.60 | 0.75 | 0.45 |
+| Portabilidad | 0.50 | 0.40 | 0.50 |
+| Facilidad de integración | 0.50 | 0.30 | 0.40 |
+| Consumo energético | 0.40 | 0.30 | 0.50 |
+| Autonomía | 0.40 | 0.30 | 0.50 |
+| Facilidad de uso | 0.50 | 0.40 | 0.40 |
+| Registro y almacenamiento | 0.25 | 0.20 | 0.15 |
+| Costo de implementación | 0.20 | 0.15 | 0.25 |
+| Disponibilidad de componentes | 0.25 | 0.15 | 0.25 |
+| **TOTAL PONDERADO** | **4.40** | **3.95** | **4.00** |
+
+## 6. Selección del concepto
+
+| Posición | Concepto | Puntuación ponderada | Resultado |
+| :--- | :--- | :--- | :--- |
+| 1 | Concepto A (Base) | 4.40 | Seleccionado |
+| 2 | Concepto C | 4.00 | Alternativa secundaria |
+| 3 | Concepto B | 3.95 | Alternativa secundaria |
+
+Por lo tanto, se selecciona el Concepto A al obtener la mayor puntuación (36 puntos) como alternativa base para el desarrollo del prototipo, debido a que presenta el mejor equilibrio entre precisión en la detección, caracterización de la grieta, portabilidad, facilidad de integración, consumo energético, autonomía, facilidad de uso, registro de información, costo y disponibilidad de componentes.
