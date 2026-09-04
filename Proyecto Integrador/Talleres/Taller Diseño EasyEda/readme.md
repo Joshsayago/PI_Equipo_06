@@ -23,6 +23,7 @@ El repositorio contiene los archivos correspondientes a:
 
 - Esquemáticos desarrollados durante el taller.
 - Archivos necesarios para la fabricación, cuando corresponda.
+- Descripcion de lo hecho en el PCB.
 
 ## 🎯 Resultado
 
