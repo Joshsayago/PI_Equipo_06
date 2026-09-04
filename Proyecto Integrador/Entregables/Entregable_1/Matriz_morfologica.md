@@ -5,7 +5,8 @@
 | FUNCIONES PARCIALES | PORTADOR 1 | PORTADOR 2 | PORTADOR 3 |
 | :--- | :--- | :--- | :--- |
 | Capturar imagen de la grieta | XIAO ESP32S3 Sense <img width="173" height="164" alt="image" src="https://github.com/user-attachments/assets/b2fe909d-4382-4b09-9336-dc839b01ca40" />
- | Maix Bit / Sipeed Maix | Raspberry Pi Pico 2 W |
+ | Maix Bit / Sipeed Maix <img width="194" height="163" alt="image" src="https://github.com/user-attachments/assets/fc813d96-1c04-4ec1-a341-9616c90d6f30" />
+| Raspberry Pi Pico 2 W |
 | Obtener geolocalización | GPS NEO-6M | GPS NEO-M8N | GPS del celular |
 | Iluminar superficie | GPS NEO-6M | Flash LED | Aro LED |
 | Conectividad | Wi-Fi | Bluetooth | USB |
