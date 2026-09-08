@@ -1,28 +1,59 @@
-# 📋 Entregable 1 — Lista de Exigencias, Plan de Trabajo, Caja Negra, Esquema de Funciones, Diseño 3D y Matriz Morfológica
+## 🧩 Matriz Morfológica
 
-Este directorio contiene el **Entregable 1** del proyecto **CrackScan**, desarrollado por el **Equipo 06** para el curso **Proyecto Integrador 2026-2** de la **Universidad Peruana Cayetano Heredia**.
+La **matriz morfológica** presenta las diferentes alternativas de solución consideradas para cada función parcial del sistema portátil de detección de grietas en concreto.
 
-## 📌 Contenido del entregable
+### 🔌 Dominio electrónico
 
-Este entregable reúne los documentos y modelos iniciales utilizados para definir los requerimientos, funciones y alternativas de solución para el desarrollo del sistema:
+<p align="center">
+  <img width="695" height="710" alt="Matriz morfológica - Dominio electrónico" src="https://github.com/user-attachments/assets/f3ea47bd-406d-4914-8b9c-c8a208962ce8" />
+</p>
 
-- **Lista de exigencias:** presenta las principales exigencias y deseos que deberá cumplir el sistema CrackScan.
+### 🛠️ Dominio mecánico
 
-- **Caja negra:** representa el sistema de manera general, identificando las principales entradas y salidas de información, energía y materia.
+<p align="center">
+  <img width="701" height="518" alt="Matriz morfológica - Dominio mecánico" src="https://github.com/user-attachments/assets/a96f839b-ad8b-4eaf-bdfd-ffd8904f462a" />
+</p>
 
-- **Esquema de funciones:** descompone el funcionamiento general del sistema en funciones y subfunciones necesarias para cumplir con los objetivos del proyecto.
+### 🔋 Dominio de energía
 
-- **Diseño 3D:** presenta el modelado inicial de la estructura física y carcasa del dispositivo portátil, considerando la distribución y protección de sus componentes.
+<p align="center">
+  <img width="690" height="512" alt="Matriz morfológica - Dominio de energía" src="https://github.com/user-attachments/assets/bf04f2dc-c7e0-4b36-9210-bf67bdad8745" />
+</p>
 
-- **Matriz morfológica:** presenta diferentes alternativas o portadores de solución para cada una de las funciones parciales del sistema, organizadas en los dominios electrónico, mecánico, energía, control, actuación y software.
+### 🎛️ Dominio de control
 
-- **Plan de trabajo:** establece el cronograma de actividades previsto para el desarrollo del proyecto durante el curso.
+<p align="center">
+  <img width="697" height="957" alt="Matriz morfológica - Dominio de control" src="https://github.com/user-attachments/assets/e6965d53-7b8c-46da-ae1c-a46ae9ff7f83" />
+</p>
 
-## 🏠 CrackScan
+### 🚨 Dominio de actuación
 
-**CrackScan** es un sistema inteligente portátil orientado a la **detección y registro de grietas en estructuras de concreto**, con el propósito de apoyar inspecciones preliminares y facilitar la identificación de estructuras que requieran una evaluación técnica más detallada.
+<p align="center">
+  <img width="676" height="682" alt="Matriz morfológica - Dominio de actuación" src="https://github.com/user-attachments/assets/cedae156-b678-4ceb-8c10-e45bd7b78d97" />
+</p>
+
+### 💻 Dominio de software
+
+<p align="center">
+  <img width="696" height="968" alt="Matriz morfológica - Dominio de software" src="https://github.com/user-attachments/assets/8a8fadc9-cfb2-49c7-b8b2-c36bba7d7894" />
+</p>
+
+### 🎨 Leyenda de alternativas
+
+- 🟨 **Primera opción**
+- 🟩 **Segunda opción**
+- 🟪 **Tercera opción**
 
 ---
 
-**Equipo 06 | Proyecto Integrador 2026-2**  
-**Universidad Peruana Cayetano Heredia**
+## 📊 Evaluación de conceptos
+
+Se evaluaron las tres alternativas generadas a partir de la matriz morfológica considerando criterios relacionados con el desempeño, integración y viabilidad del sistema.
+
+| Concepto | Puntaje general | Puntaje ponderado | Resultado |
+|---|---:|---:|---|
+| **Concepto A** | **32** | **3.65** | ✅ Seleccionado |
+| Concepto B | 26 | 2.94 | Alternativa secundaria |
+| Concepto C | 26 | 2.94 | Alternativa secundaria |
+
+El **Concepto A** fue seleccionado como alternativa base para el desarrollo del prototipo, al obtener la mayor puntuación en la evaluación general y ponderada.
