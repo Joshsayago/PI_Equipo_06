@@ -145,14 +145,14 @@ La **matriz morfológica** permite plantear diferentes alternativas de solución
 ## 🚨 5. Dominio de actuación
 
 <p align="center">
-  <img width="676" height="682" alt="Matriz morfológica - Dominio de actuación" src="https://github.com/user-attachments/assets/cedae156-b678-4ceb-8c10-e45bd7b78d97" />
+  <img width="782" height="752" alt="image" src="https://github.com/user-attachments/assets/520b086e-7fca-4d0c-9b1d-4b308d1b21a8" />
 </p>
 
 | Función parcial | Concepto A | Concepto B | Concepto C |
 |---|---|---|---|
 | Confirmar captura | LED indicador | Buzzer | Vibración |
 | Alertar al usuario | LED tipo semáforo | Buzzer | Notificación digital |
-| Mostrar estado del equipo | LED | Indicadores LED | LED RGB |
+| Mostrar estado del equipo | LCD | Indicadores LED | LED RGB |
 
 ---
 
