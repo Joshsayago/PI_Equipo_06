@@ -69,13 +69,11 @@ Convertir **CrackScan** en una herramienta tecnológica **confiable, accesible y
 | <img src="Recursos/Imágenes/4.png" width="80"/> | **Sayago Morán, Josue Enmanuel** | Encargado/a de documentación | Comunicación científica, redacción técnica |
 | <img src="Recursos/Imágenes/5.png" width="90"/> | **Murga Saavedra, Diego Alessandre** | Programador/a - Modelador/a | Programación, análisis de datos, simulación |
 
+---
+## Antecedentes
 
 ---
 ## 📌 Resumen Final
-
-<p align="center">
-  🏗️ ────────────────────────── 🏠
-</p>
 
 Este README presenta quiénes somos como **Equipo 06**, la problemática que buscamos abordar y la propuesta que desarrollaremos durante el curso **Proyecto Integrador 2026-2**.
  
@@ -113,4 +111,11 @@ De esta manera, buscamos transformar imágenes y datos recopilados en **informac
 
 <p align="center">
   <i>Equipo 06 | Proyecto Integrador 2026-2</i>
+</p>
+
+---
+## Referencias
+
+<p align="center">
+  🏗️ ────────────────────────── 🏠
 </p>
