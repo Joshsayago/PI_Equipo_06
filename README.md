@@ -75,6 +75,7 @@ La revisión de patentes internacionales se realizó como parte de la estrategia
 
 En la evaluación de seguridad estructural, los métodos tradicionales presentan limitaciones para medir simultáneamente el ancho y largo de las fisuras, generando bases de datos insuficientes. Para solucionar esto, existen antecedentes de sistemas de inspección que utilizan cámaras fotográficas alineadas frente a las fallas con marcadores de escala, logrando capturar ambas dimensiones en una sola imagen. La integración de una cámara en el sistema se justifica porque permite automatizar las mediciones periódicas, simplifica la recolección in situ y garantiza la obtención de registros geométricos más completos, lo cual es indispensable para un análisis de deformación preciso [1].
 
+<p align="center">
 <img width="742" height="551" alt="image" src="https://github.com/user-attachments/assets/6c5e9b23-5182-4dd0-84ff-9cc82f74b6cc" />
 
 [1] Lu L, Wu J, Qiao G, Qiu Z, Qiu L, Sun J, inventores. Instituto de Investigación de Diseño de Ingeniería de Metales No Ferrosos de Guangdong, solicitante. Detector automático de grietas con cámara. China patente CN 111536881A. 2020 Ago 14.
