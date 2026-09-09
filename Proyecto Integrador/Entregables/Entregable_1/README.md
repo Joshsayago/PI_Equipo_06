@@ -11,7 +11,7 @@
 La **caja negra** representa de manera general las entradas y salidas del sistema CrackScan, considerando los flujos de energía e información necesarios para el funcionamiento del dispositivo.
 
 <p align="center">
-  <img width="1340" height="747" alt="Caja negra del sistema CrackScan" src="https://github.com/user-attachments/assets/31bc3b52-f782-48df-b097-f0e19362dc5a" />
+  <img width="970" height="542" alt="image" src="https://github.com/user-attachments/assets/e63ed7e8-55d7-4205-8a1f-adaf37d32043" />
 </p>
 
 ### Entradas
