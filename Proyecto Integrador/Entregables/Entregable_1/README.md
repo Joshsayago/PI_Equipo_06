@@ -35,8 +35,7 @@ La **caja negra** representa de manera general las entradas y salidas del sistem
 El **esquema de funciones** representa la interacción entre los diferentes subsistemas del dispositivo y el flujo de información desde la adquisición de datos hasta la generación de resultados.
 
 <p align="center">
-  <img width="1331" height="745" alt="Esquema de funciones de CrackScan" src="https://github.com/user-attachments/assets/69b03088-78f6-4313-b950-361636a221c5" />
-</p>
+ <img width="966" height="531" alt="Captura de pantalla 2026-09-08 190254" src="https://github.com/user-attachments/assets/1fc8f993-1883-4d1a-ae79-31926fb63a5b" />
 
 El funcionamiento del sistema se organiza principalmente en cuatro bloques.
 
