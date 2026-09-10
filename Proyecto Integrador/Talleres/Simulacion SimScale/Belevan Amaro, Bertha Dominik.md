@@ -82,7 +82,15 @@ Para el análisis se utilizó una **malla estándar con nivel de finura 4**. Est
 <p align="center">
   <i>Figura 1. Distribución del esfuerzo de Von Mises en la carcasa de PLA.</i>
 </p>
+<div align="center">
 
+### 🔗 Acceso a la simulación
+
+<a href="https://www.simscale.com/workbench/?pid=7146214850117818288&mi=spec:72e2d9ef-0303-4a14-8f8f-3f46c65aeeb1%2Cservice:SIMULATION%2Cstrategy:1">
+  <b>🌐 Ver simulación completa en SimScale</b>
+</a>
+
+</div>
 ### 🔍 Interpretación de los resultados
 
 La simulación mostró un esfuerzo máximo de Von Mises de aproximadamente **17,28 kPa**, equivalente a **0,01728 MPa**.
