@@ -10,7 +10,9 @@
 <h3 align="center">PROYECTOS PARA INGENIERIA – GRUPO 6</h3>
 
 ## 🏠 CrackScan
-Dispositivo portátil para detección y registro de grietas en estructuras de concreto en zonas de alto riesgo
+
+Dispositivo portátil para detección y registro de grietas en estructuras de concreto en **Lima Metropolitana**.
+
 ---
 
 ## ⚠️ Problemática
@@ -19,13 +21,15 @@ Las grietas pueden indicar procesos de deterioro en las estructuras de concreto,
 
 Ante esta problemática, **CrackScan** propone facilitar la inspección preliminar mediante un dispositivo portátil capaz de capturar imágenes estables y registrar información sobre la ubicación y las características de las grietas. La herramienta busca apoyar la recopilación de datos en campo, sin reemplazar la evaluación realizada por un especialista.
 
+---
+
 ## 🌍 Descripción del Equipo
 
 Somos el **Equipo 06** del curso **Proyecto Integrador 2026-2**, conformado por estudiantes de **Ingeniería Ambiental e Ingeniería Informática**.
 
 **CrackScan** es un **dispositivo portátil e inteligente** capaz de detectar y **registrar grietas en estructuras de concreto** mediante el análisis automatizado de imágenes, identificando su ubicación, orientación, longitud y ancho aproximado para facilitar la priorización de inspecciones técnicas.
 
-El sistema está orientado principalmente a **zonas de alto riesgo**, permitiendo realizar inspecciones preliminares de manera autónoma y sin depender de conexión a Internet, con el objetivo de facilitar la identificación y registro de estructuras que requieran una evaluación técnica más detallada.
+El sistema está orientado principalmente a la **evaluación preliminar de estructuras de concreto en zonas metropolitanas**, permitiendo realizar inspecciones de manera autónoma y sin depender de conexión a Internet, con el objetivo de facilitar la identificación y registro de estructuras que requieran una evaluación técnica más detallada.
 
 ---
 
@@ -38,18 +42,19 @@ El sistema está orientado principalmente a **zonas de alto riesgo**, permitiend
 
 ---
 
-## 📸 Fotografía del Equipo  
+## 📸 Fotografía del Equipo
+
 <p align="center">
-<img width="1408" height="768" alt="foto_equipo_06" src="Recursos/Imágenes/IMAGEN.png" />
+  <img width="1408" height="768" alt="foto_equipo_06" src="Recursos/Imágenes/IMAGEN.png" />
+  <br>
   <em>Figura 1. Fotografía del equipo 06</em>
 </p>
-
 
 ---
 
 ## 🎯 Misión
 
-Desarrollar una **herramienta portátil, accesible e inteligente** que facilite la detección y registro de grietas en estructuras de concreto mediante **visión computacional y Machine Learning**, contribuyendo a realizar inspecciones preliminares en zonas de alto riesgo con acceso limitado a tecnología especializada.
+Desarrollar una **herramienta portátil, accesible e inteligente** que facilite la detección y registro de grietas en estructuras de concreto mediante **visión computacional y Machine Learning**, contribuyendo a realizar inspecciones preliminares en **zonas metropolitanas**.
 
 ---
 
@@ -57,9 +62,9 @@ Desarrollar una **herramienta portátil, accesible e inteligente** que facilite 
 
 Convertir **CrackScan** en una herramienta tecnológica **confiable, accesible y escalable** que contribuya al monitoreo preventivo de estructuras de concreto y facilite la identificación temprana de posibles daños.
 
-
 ---
-## 👥 Integrantes del Equipo  
+
+## 👥 Integrantes del Equipo
 
 | Foto | Nombre | Carrera | Rol | Intereses |
 |------|--------|---------|-----|-----------|
@@ -70,23 +75,26 @@ Convertir **CrackScan** en una herramienta tecnológica **confiable, accesible y
 | <img src="Recursos/Imágenes/5.png" width="90"/> | **Murga Saavedra, Diego Alessandre** | Ingeniería Informática | Programador y modelador | Programación, análisis de datos, simulación |
 
 ---
+
 ## Antecedentes
+
 La revisión de patentes internacionales se realizó como parte de la estrategia de vigilancia tecnológica para identificar antecedentes de diseño, métodos de inspección y soluciones de hardware ya patentadas en el control de seguridad estructural.
 
 En la evaluación de seguridad estructural, los métodos tradicionales presentan limitaciones para medir simultáneamente el ancho y largo de las fisuras, generando bases de datos insuficientes. Para solucionar esto, existen antecedentes de sistemas de inspección que utilizan cámaras fotográficas alineadas frente a las fallas con marcadores de escala, logrando capturar ambas dimensiones en una sola imagen. La integración de una cámara en el sistema se justifica porque permite automatizar las mediciones periódicas, simplifica la recolección in situ y garantiza la obtención de registros geométricos más completos, lo cual es indispensable para un análisis de deformación preciso (3).
 
 <p align="center">
-<img width="742" height="551" alt="image" src="https://github.com/user-attachments/assets/6c5e9b23-5182-4dd0-84ff-9cc82f74b6cc" />
-
+  <img width="742" height="551" alt="image" src="https://github.com/user-attachments/assets/6c5e9b23-5182-4dd0-84ff-9cc82f74b6cc" />
+</p>
 
 ---
+
 ## 📌 Resumen Final
 
 Este README presenta quiénes somos como **Equipo 06**, la problemática que buscamos abordar y la propuesta que desarrollaremos durante el curso **Proyecto Integrador 2026-2**.
- 
+
 Nuestro proyecto propone **CrackScan**, un **dispositivo portátil e inteligente para la detección y registro de grietas en estructuras de concreto**, integrando tecnologías como **visión computacional, Machine Learning y georreferenciación**.
 
-El sistema está orientado principalmente a **zonas de alto riesgo**, donde el acceso a herramientas tecnológicas especializadas y la conectividad pueden ser limitados. Por ello, CrackScan estará diseñado para realizar **inspecciones preliminares de manera autónoma y sin depender de conexión a Internet**.
+El sistema está orientado principalmente a **estructuras ubicadas en Lima Metropolitana**. Por ello, CrackScan estará diseñado para realizar **inspecciones preliminares de manera autónoma y sin depender de conexión a Internet**, facilitando la recopilación y almacenamiento de información durante las evaluaciones en campo.
 
 El sistema permitirá obtener y almacenar información relevante como:
 
@@ -99,7 +107,9 @@ El sistema permitirá obtener y almacenar información relevante como:
 
 De esta manera, buscamos transformar imágenes y datos recopilados en **información útil para apoyar inspecciones preliminares**, facilitando la identificación y registro de estructuras de concreto que requieran una evaluación técnica más detallada.
 
-> 🏗️ **Nuestro propósito:** Acercar herramientas inteligentes de inspección mediante una solución portátil, accesible y autónoma.
+> 🏗️ **Nuestro propósito:** Acercar herramientas inteligentes de inspección mediante una solución portátil, accesible y autónoma para el monitoreo de estructuras de concreto en entornos metropolitanos.
+
+---
 
 ## 🌍 ODS relacionados
 
@@ -114,13 +124,11 @@ De esta manera, buscamos transformar imágenes y datos recopilados en **informac
 <p align="center">
   💡 <b>Tecnología + Prevención + Infraestructura Resiliente</b> 🏗️
 </p>
-</p>
 
 <p align="center">
   <i>Equipo 06 | Proyecto Integrador 2026-2</i>
 </p>
 
----
 ---
 
 ## 📚 Referencias
