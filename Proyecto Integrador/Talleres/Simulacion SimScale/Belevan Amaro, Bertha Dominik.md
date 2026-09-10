@@ -91,6 +91,7 @@ Para el análisis se utilizó una **malla estándar con nivel de finura 4**. Est
 </a>
 
 </div>
+
 ### 🔍 Interpretación de los resultados
 
 La simulación mostró un esfuerzo máximo de Von Mises de aproximadamente **17,28 kPa**, equivalente a **0,01728 MPa**.
