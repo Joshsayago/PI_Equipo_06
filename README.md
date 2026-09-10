@@ -15,7 +15,7 @@ Dispositivo portátil para detección y registro de grietas en estructuras de co
 
 ## ⚠️ Problemática
 
-Las grietas pueden indicar procesos de deterioro en las estructuras de concreto, por lo que su evaluación requiere registrar características como su ubicación y dimensiones (2). Sin embargo, la inspección visual convencional suele depender de la experiencia del inspector, demanda tiempo y puede producir resultados subjetivos o poco uniformes, dificultando el registro sistemático de la información (3).
+Las grietas pueden indicar procesos de deterioro en las estructuras de concreto, por lo que su evaluación requiere registrar características como su ubicación y dimensiones (1). Sin embargo, la inspección visual convencional suele depender de la experiencia del inspector, demanda tiempo y puede producir resultados subjetivos o poco uniformes, dificultando el registro sistemático de la información (2).
 
 Ante esta problemática, **CrackScan** propone facilitar la inspección preliminar mediante un dispositivo portátil capaz de capturar imágenes estables y registrar información sobre la ubicación y las características de las grietas. La herramienta busca apoyar la recopilación de datos en campo, sin reemplazar la evaluación realizada por un especialista.
 
@@ -73,7 +73,7 @@ Convertir **CrackScan** en una herramienta tecnológica **confiable, accesible y
 ## Antecedentes
 La revisión de patentes internacionales se realizó como parte de la estrategia de vigilancia tecnológica para identificar antecedentes de diseño, métodos de inspección y soluciones de hardware ya patentadas en el control de seguridad estructural.
 
-En la evaluación de seguridad estructural, los métodos tradicionales presentan limitaciones para medir simultáneamente el ancho y largo de las fisuras, generando bases de datos insuficientes. Para solucionar esto, existen antecedentes de sistemas de inspección que utilizan cámaras fotográficas alineadas frente a las fallas con marcadores de escala, logrando capturar ambas dimensiones en una sola imagen. La integración de una cámara en el sistema se justifica porque permite automatizar las mediciones periódicas, simplifica la recolección in situ y garantiza la obtención de registros geométricos más completos, lo cual es indispensable para un análisis de deformación preciso (4).
+En la evaluación de seguridad estructural, los métodos tradicionales presentan limitaciones para medir simultáneamente el ancho y largo de las fisuras, generando bases de datos insuficientes. Para solucionar esto, existen antecedentes de sistemas de inspección que utilizan cámaras fotográficas alineadas frente a las fallas con marcadores de escala, logrando capturar ambas dimensiones en una sola imagen. La integración de una cámara en el sistema se justifica porque permite automatizar las mediciones periódicas, simplifica la recolección in situ y garantiza la obtención de registros geométricos más completos, lo cual es indispensable para un análisis de deformación preciso (3).
 
 <p align="center">
 <img width="742" height="551" alt="image" src="https://github.com/user-attachments/assets/6c5e9b23-5182-4dd0-84ff-9cc82f74b6cc" />
@@ -129,10 +129,9 @@ De esta manera, buscamos transformar imágenes y datos recopilados en **informac
 
 | N.° | Referencia en formato IEEE |
 |:---:|---|
-| **[1]** | Federal Highway Administration, “Distresses for continuously reinforced concrete pavements,” in *Distress Identification Manual for the Long-Term Pavement Performance Program*, 5th ed., Washington, DC, USA, May 2014, Rep. FHWA-HRT-13-092. [🔗 Consultar fuente](https://www.fhwa.dot.gov/publications/research/infrastructure/pavements/ltpp/13092/003.cfm) |
-| **[2]** | ACI Committee 224, *Causes, Evaluation, and Repair of Cracks in Concrete Structures*, ACI 224.1R-07. Farmington Hills, MI, USA: American Concrete Institute, 2007. [🔗 Consultar fuente](https://www.concrete.org/publications/internationalconcreteabstractsportal.aspx?id=18555&m=details) |
-| **[3]** | L. Ali, F. Alnajjar, H. Al Jassmi, M. Gocho, W. Khan and M. A. Serhani, “Performance evaluation of deep CNN-based crack detection and localization techniques for concrete structures,” *Sensors*, vol. 21, no. 5, Art. no. 1688, Mar. 2021, doi: 10.3390/s21051688. [🔗 Consultar artículo](https://doi.org/10.3390/s21051688) |
-| **[4]** | L. Lu, J. Wu, G. Qiao, Z. Qiu, L. Qiu and J. Sun, “Automatic crack detector with camera,” China Patent CN 111536881A, Aug. 14, 2020. [🔗 Consultar patente](https://patents.google.com/patent/CN111536881A/en) |
+| **[1]** | Federal Highway Administration, “Distresses for continuously reinforced concrete pavements,” in *Distress Identification Manual for the Long-Term Pavement Performance Program*, 5th ed., Washington, DC, USA, May 2014, Rep. FHWA-HRT-13-092. [🔗 Consultar fuente](https://www.concrete.org/publications/internationalconcreteabstractsportal.aspx?id=18555&m=details) |
+| **[2]** | L. Ali, F. Alnajjar, H. Al Jassmi, M. Gocho, W. Khan and M. A. Serhani, “Performance evaluation of deep CNN-based crack detection and localization techniques for concrete structures,” *Sensors*, vol. 21, no. 5, Art. no. 1688, Mar. 2021, doi: 10.3390/s21051688. [🔗 Consultar artículo](https://doi.org/10.3390/s21051688) |
+| **[3]** | L. Lu, J. Wu, G. Qiao, Z. Qiu, L. Qiu and J. Sun, “Automatic crack detector with camera,” China Patent CN 111536881A, Aug. 14, 2020. [🔗 Consultar patente](https://patents.google.com/patent/CN111536881A/en) |
 
 ---
 
