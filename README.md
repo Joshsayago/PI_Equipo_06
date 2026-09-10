@@ -46,11 +46,7 @@
     src="Recursos/Imágenes/crackscan_demo.gif"
     alt="Demostración del funcionamiento de CrackScan"
     width="500"
-  />
-  <br>
-  <em>Figura 1. Demostración visual del concepto de CrackScan.</em>
-</p>
-
+  
 **CrackScan** es una propuesta tecnológica orientada a apoyar la inspección preliminar de estructuras de concreto mediante la detección, caracterización y registro de grietas.
 
 El sistema combina **captura de imágenes, procesamiento digital, visión computacional, Machine Learning, georreferenciación y almacenamiento local**, facilitando la identificación y registro de estructuras que requieran una evaluación técnica más detallada.
