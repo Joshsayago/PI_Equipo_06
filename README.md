@@ -1,3 +1,10 @@
+<p align="center">
+  <img 
+    src="https://capsule-render.vercel.app/api?type=waving&color=0:0066CC,50:00B4D8,100:00C853&height=180&section=header&text=CrackScan&fontSize=55&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Detección%20•%20Registro%20•%20Georreferenciación&descAlignY=58&descSize=18"
+    width="100%"
+  />
+</p>
+
 <table>
   <tr>
     <td>
@@ -9,13 +16,54 @@
   </tr>
 </table>
 
-<h3 align="center">PROYECTOS PARA INGENIERÍA – GRUPO 6</h3>
-
-<h1 align="center">🏠 CrackScan</h1>
+<h3 align="center">
+  PROYECTOS PARA INGENIERÍA – GRUPO 6
+</h3>
 
 <p align="center">
-  <b>Dispositivo portátil para la detección y registro de grietas en estructuras de concreto en Lima Metropolitana</b>
+  <img 
+    src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=00A8E8&center=true&vCenter=true&width=800&lines=🏗️+Inspección+inteligente+de+estructuras;🔎+Detección+automática+de+grietas;📍+Georreferenciación+de+inspecciones;💾+Registro+local+de+datos"
+    alt="Typing SVG"
+  />
 </p>
+
+<p align="center">
+
+<img src="https://img.shields.io/badge/ESP32-Microcontrolador-00979D?style=for-the-badge&logo=espressif&logoColor=white">
+
+<img src="https://img.shields.io/badge/Computer_Vision-Detección-0078D4?style=for-the-badge">
+
+<img src="https://img.shields.io/badge/Machine_Learning-IA-6A5ACD?style=for-the-badge">
+
+<img src="https://img.shields.io/badge/GPS-Georreferenciación-00A86B?style=for-the-badge">
+
+<img src="https://img.shields.io/badge/Offline-Storage-FF8C00?style=for-the-badge">
+
+</p>
+
+<p align="center">
+  <b>
+    Dispositivo portátil para la detección y registro de grietas en estructuras de concreto en Lima Metropolitana
+  </b>
+</p>
+
+---
+
+## 🏠 CrackScan
+
+**CrackScan** es una propuesta tecnológica orientada a apoyar la inspección preliminar de estructuras de concreto mediante la detección, caracterización y registro de grietas.
+
+El sistema combina **captura de imágenes, procesamiento digital, visión computacional, Machine Learning, georreferenciación y almacenamiento local**, facilitando la identificación y registro de estructuras que requieran una evaluación técnica más detallada.
+
+<div align="center">
+
+### ⚡ ¿Qué hace CrackScan?
+
+| 📷 Captura | 🔎 Detecta | 📐 Caracteriza | 📍 Georreferencia | 💾 Registra |
+|:---:|:---:|:---:|:---:|:---:|
+| Imagen del concreto | Identifica grietas | Ancho, longitud y orientación | Coordenadas GPS | Guarda cada inspección |
+
+</div>
 
 ---
 
@@ -52,6 +100,14 @@ El proyecto está orientado principalmente a la **evaluación preliminar de estr
 
 ## 🎯 Objetivos de Desarrollo Sostenible
 
+<p align="center">
+
+<img src="https://img.shields.io/badge/ODS_9-Industria,_Innovación_e_Infraestructura-F36D25?style=for-the-badge">
+
+<img src="https://img.shields.io/badge/ODS_11-Ciudades_y_Comunidades_Sostenibles-F99D26?style=for-the-badge">
+
+</p>
+
 | ODS | Meta | Impacto esperado |
 |---|---|---|
 | 🏗️ **ODS 9: Industria, innovación e infraestructura** | **Meta 9.1:** Desarrollar infraestructuras fiables, sostenibles, resilientes y de calidad. | 🔎 Contribuir al monitoreo preventivo de infraestructuras de concreto mediante una herramienta portátil para detección y registro de grietas. |
@@ -73,15 +129,25 @@ El proyecto está orientado principalmente a la **evaluación preliminar de estr
 
 ---
 
-## 🎯 Misión
+<table>
+<tr>
+<td width="50%" valign="top">
+
+### 🎯 Misión
 
 Desarrollar una **herramienta portátil, accesible e inteligente** que facilite la detección y registro de grietas en estructuras de concreto mediante **visión computacional y Machine Learning**, contribuyendo a realizar inspecciones preliminares en **Lima Metropolitana**.
 
----
+</td>
 
-## 👁️ Visión
+<td width="50%" valign="top">
+
+### 👁️ Visión
 
 Convertir **CrackScan** en una herramienta tecnológica **confiable, accesible y escalable** que contribuya al monitoreo preventivo de estructuras de concreto y facilite la identificación temprana de posibles daños.
+
+</td>
+</tr>
+</table>
 
 ---
 
@@ -121,13 +187,23 @@ La incorporación de una cámara en **CrackScan** permitirá automatizar la capt
 
 ## 📍 Georreferenciación
 
+<p align="center">
+
+<img src="https://img.shields.io/badge/SIGRID-CENEPRED-0077B6?style=for-the-badge">
+
+<img src="https://img.shields.io/badge/Ámbito-Lima_Metropolitana-00A86B?style=for-the-badge">
+
+<img src="https://img.shields.io/badge/Datos-Geoespaciales-6A5ACD?style=for-the-badge">
+
+</p>
+
 **CrackScan** incorporará georreferenciación mediante GPS para asociar cada inspección con su ubicación correspondiente.
 
 Como apoyo complementario, se utilizará la plataforma **SIGRID-CENEPRED** para visualizar información territorial relacionada con riesgo sísmico y microzonificación en Lima Metropolitana [4].
 
 <p align="center">
   <a href="https://sigrid.cenepred.gob.pe/sigridv3/mapa?xmin=-77.19921286&ymin=-12.51993161&xmax=-76.62082436&ymax=-11.5724356">
-    <b>🗺️ Consultar mapa SIGRID - CENEPRED</b>
+    <img src="https://img.shields.io/badge/🗺️_ABRIR_MAPA_SIGRID-0077B6?style=for-the-badge">
   </a>
 </p>
 
@@ -141,19 +217,31 @@ Como apoyo complementario, se utilizará la plataforma **SIGRID-CENEPRED** para 
   <em>Figura 3. Visualización de niveles de riesgo y microzonificación sísmica en Lima Metropolitana.</em>
 </p>
 
-Para la visualización se consideran principalmente las capas:
+### ⚙️ Capas principales
 
 - ✅ **Sismo y tsunami**
 - ✅ **Niveles de riesgo**
 - ✅ **Microzonificación Sísmica - CISMID**
 
-Esta información servirá únicamente como **referencia territorial complementaria** para contextualizar la ubicación de las inspecciones realizadas con CrackScan.
+> 💡 **SIGRID será utilizado como referencia territorial complementaria para contextualizar las ubicaciones registradas por CrackScan.**
 
 ---
 
 ## ⚙️ Funcionamiento general de CrackScan
 
-El funcionamiento general del sistema se plantea mediante una secuencia de adquisición, procesamiento y almacenamiento de información.
+<p align="center">
+
+<img src="https://img.shields.io/badge/01-CAPTURA-0077B6?style=for-the-badge">
+➜
+<img src="https://img.shields.io/badge/02-DETECCIÓN-0096C7?style=for-the-badge">
+➜
+<img src="https://img.shields.io/badge/03-ANÁLISIS-00B4D8?style=for-the-badge">
+➜
+<img src="https://img.shields.io/badge/04-GPS-00B894?style=for-the-badge">
+➜
+<img src="https://img.shields.io/badge/05-REGISTRO-F4A261?style=for-the-badge">
+
+</p>
 
 ### 1. 📷 Captura de imagen
 
@@ -208,22 +296,24 @@ De esta manera, buscamos transformar imágenes y datos recopilados en **informac
 
 ---
 
-## 🌍 ODS relacionados
+## 🌎 Impacto y ODS
 
 <p align="center">
-  🏗️ <b>ODS 9: Industria, innovación e infraestructura</b>
+
+<img src="https://img.shields.io/badge/ODS_9-Industria,_Innovación_e_Infraestructura-F36D25?style=for-the-badge">
+
+<img src="https://img.shields.io/badge/ODS_11-Ciudades_y_Comunidades_Sostenibles-F99D26?style=for-the-badge">
+
+</p>
+
+<p align="center">
+  🏗️ <b>Tecnología</b>
   &nbsp; • &nbsp;
-  🏘️ <b>ODS 11: Ciudades y comunidades sostenibles</b>
-</p>
-
----
-
-<p align="center">
-  💡 <b>Tecnología + Prevención + Infraestructura Resiliente</b> 🏗️
-</p>
-
-<p align="center">
-  <i>Equipo 06 | Proyecto Integrador 2026-2</i>
+  🔎 <b>Prevención</b>
+  &nbsp; • &nbsp;
+  📍 <b>Georreferenciación</b>
+  &nbsp; • &nbsp;
+  🌆 <b>Infraestructura resiliente</b>
 </p>
 
 ---
@@ -240,6 +330,21 @@ De esta manera, buscamos transformar imágenes y datos recopilados en **informac
 | **[4]** | Centro Nacional de Estimación, Prevención y Reducción del Riesgo de Desastres, **SIGRID – Sistema de Información para la Gestión del Riesgo de Desastres**, Lima, Perú. [🔗 Consultar plataforma](https://sigrid.cenepred.gob.pe/sigridv3/mapa?xmin=-77.19921286&ymin=-12.51993161&xmax=-76.62082436&ymax=-11.5724356) |
 
 ---
+
+<p align="center">
+  <b>💡 Tecnología + Prevención + Infraestructura Resiliente 🏗️</b>
+</p>
+
+<p align="center">
+  <i>Equipo 06 | Proyecto Integrador 2026-2</i>
+</p>
+
+<p align="center">
+  <img 
+    src="https://capsule-render.vercel.app/api?type=waving&color=0:00C853,50:00B4D8,100:0066CC&height=120&section=footer"
+    width="100%"
+  />
+</p>
 
 <p align="center">
   <i>Referencias empleadas para sustentar la detección, registro y georreferenciación de grietas en estructuras de concreto.</i>
