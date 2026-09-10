@@ -1,6 +1,6 @@
 <p align="center">
   <img 
-    src="https://capsule-render.vercel.app/api?type=waving&color=0:2F2F2F,40:4A403A,75:7A6656,100:A6907C&height=190&section=header&text=CrackScan&fontSize=56&fontColor=F5F5F5&animation=fadeIn&fontAlignY=35&desc=Detección%20•%20Caracterización%20•%20Georreferenciación&descAlignY=58&descSize=18"
+    src="https://capsule-render.vercel.app/api?type=waving&color=0:F7F4EE,35:EEE8DE,70:DDD6CC,100:C8C1B7&height=190&section=header&text=CrackScan&fontSize=56&fontColor=4A4A4A&animation=fadeIn&fontAlignY=35&desc=Detección%20•%20Caracterización%20•%20Georreferenciación&descAlignY=58&descSize=18"
     width="100%"
   />
 </p>
@@ -20,14 +20,14 @@
 <br>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/ESP32-Microcontrolador-4A403A?style=for-the-badge&logo=espressif&logoColor=white">
-  <img src="https://img.shields.io/badge/Visión_Computacional-Detección-5E5148?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Machine_Learning-IA-6B5B4F?style=for-the-badge">
+  <img src="https://img.shields.io/badge/ESP32-Microcontrolador-D8D2C8?style=for-the-badge&logo=espressif&logoColor=4A4A4A">
+  <img src="https://img.shields.io/badge/Visión_Computacional-Detección-E8E2D8?style=for-the-badge&logoColor=4A4A4A">
+  <img src="https://img.shields.io/badge/Machine_Learning-IA-F1ECE4?style=for-the-badge&logoColor=4A4A4A">
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/GPS-Georreferenciación-7A6656?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Offline-Almacenamiento-8B7765?style=for-the-badge">
+  <img src="https://img.shields.io/badge/GPS-Georreferenciación-E2DDD5?style=for-the-badge&logoColor=4A4A4A">
+  <img src="https://img.shields.io/badge/Offline-Almacenamiento-D3CCC2?style=for-the-badge&logoColor=4A4A4A">
 </p>
 
 <p align="center">
@@ -43,7 +43,7 @@
 <p align="center">
   <img 
     src="Recursos/Imágenes/crackscan_demo.gif"
-    alt="Demostración del funcionamiento de CrackScan"
+    alt="Demostración visual del funcionamiento de CrackScan"
     width="500"
   />
   <br>
@@ -175,8 +175,8 @@ La incorporación de una cámara en **CrackScan** permitirá automatizar la capt
 ## 📍 Georreferenciación
 
 <p align="center">
-  <img src="https://img.shields.io/badge/SIGRID-CENEPRED-4A403A?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Ámbito-Lima_Metropolitana-6B5B4F?style=for-the-badge">
+  <img src="https://img.shields.io/badge/SIGRID-CENEPRED-D8D2C8?style=for-the-badge&logoColor=4A4A4A">
+  <img src="https://img.shields.io/badge/Ámbito-Lima_Metropolitana-E8E2D8?style=for-the-badge&logoColor=4A4A4A">
 </p>
 
 **CrackScan** incorporará georreferenciación mediante GPS para asociar cada inspección con su ubicación correspondiente.
@@ -185,7 +185,7 @@ Como apoyo complementario, se utilizará la plataforma **SIGRID-CENEPRED** para 
 
 <p align="center">
   <a href="https://sigrid.cenepred.gob.pe/sigridv3/mapa?xmin=-77.19921286&ymin=-12.51993161&xmax=-76.62082436&ymax=-11.5724356">
-    <img src="https://img.shields.io/badge/ABRIR_MAPA_SIGRID-5E5148?style=for-the-badge">
+    <img src="https://img.shields.io/badge/ABRIR_MAPA_SIGRID-C8C1B7?style=for-the-badge&logoColor=4A4A4A">
   </a>
 </p>
 
@@ -205,22 +205,22 @@ Como apoyo complementario, se utilizará la plataforma **SIGRID-CENEPRED** para 
 - ✅ **Niveles de riesgo**
 - ✅ **Microzonificación Sísmica - CISMID**
 
-> **SIGRID será utilizado como referencia territorial complementaria para contextualizar las ubicaciones registradas por CrackScan.**
+> 💡 **SIGRID será utilizado como referencia territorial complementaria para contextualizar las ubicaciones registradas por CrackScan.**
 
 ---
 
 ## ⚙️ Funcionamiento general de CrackScan
 
 <p align="center">
-  <img src="https://img.shields.io/badge/01-CAPTURA-3A3A3A?style=for-the-badge">
+  <img src="https://img.shields.io/badge/01-CAPTURA-F4F0E9?style=for-the-badge&logoColor=4A4A4A">
   →
-  <img src="https://img.shields.io/badge/02-DETECCIÓN-4A403A?style=for-the-badge">
+  <img src="https://img.shields.io/badge/02-DETECCIÓN-ECE6DD?style=for-the-badge&logoColor=4A4A4A">
   →
-  <img src="https://img.shields.io/badge/03-ANÁLISIS-5E5148?style=for-the-badge">
+  <img src="https://img.shields.io/badge/03-ANÁLISIS-DED7CD?style=for-the-badge&logoColor=4A4A4A">
   →
-  <img src="https://img.shields.io/badge/04-GPS-6B5B4F?style=for-the-badge">
+  <img src="https://img.shields.io/badge/04-GPS-D3CCC2?style=for-the-badge&logoColor=4A4A4A">
   →
-  <img src="https://img.shields.io/badge/05-REGISTRO-7A6656?style=for-the-badge">
+  <img src="https://img.shields.io/badge/05-REGISTRO-C8C1B7?style=for-the-badge&logoColor=4A4A4A">
 </p>
 
 ### 1. 📷 Captura de imagen
@@ -304,7 +304,7 @@ De esta manera, buscamos transformar imágenes y datos recopilados en **informac
 ---
 
 <p align="center">
-  <img src="https://img.shields.io/badge/CRACKSCAN-Proyecto_Integrador_2026--2-4A403A?style=for-the-badge">
+  <img src="https://img.shields.io/badge/CRACKSCAN-Proyecto_Integrador_2026--2-D8D2C8?style=for-the-badge&logoColor=4A4A4A">
 </p>
 
 <p align="center">
@@ -317,7 +317,7 @@ De esta manera, buscamos transformar imágenes y datos recopilados en **informac
 
 <p align="center">
   <img 
-    src="https://capsule-render.vercel.app/api?type=waving&color=0:A6907C,35:7A6656,70:4A403A,100:2F2F2F&height=110&section=footer"
+    src="https://capsule-render.vercel.app/api?type=waving&color=0:C8C1B7,35:DDD6CC,70:EEE8DE,100:F7F4EE&height=110&section=footer"
     width="100%"
   />
 </p>
