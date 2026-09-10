@@ -34,7 +34,7 @@ El sistema está orientado principalmente a **zonas de alto riesgo**, permitiend
 | ODS | Meta | Impacto esperado |
 |---|---|---|
 | 🏗️ **ODS 9: Industria, innovación e infraestructura** | **Meta 9.1:** Desarrollar infraestructuras fiables, sostenibles, resilientes y de calidad. | 🔎 **Contribuir al monitoreo preventivo de infraestructuras de concreto**, facilitando la detección y registro de grietas mediante una herramienta portátil. |
-| 🏘️ **ODS 11: Ciudades y comunidades sostenibles** | **Meta 11.5:** Reducir las pérdidas y afectaciones ocasionadas por desastres. | 🛡️ **Apoyar la identificación temprana de estructuras que requieran inspección especializada**, especialmente en comunidades rurales con acceso limitado a herramientas tecnológicas. |
+| 🏘️ **ODS 11: Ciudades y comunidades sostenibles** | **Meta 11.5:** Reducir las pérdidas y afectaciones ocasionadas por desastres. | 🛡️ **Apoyar la identificación temprana de estructuras que requieran inspección especializada**. |
 
 ---
 
@@ -99,7 +99,7 @@ El sistema permitirá obtener y almacenar información relevante como:
 
 De esta manera, buscamos transformar imágenes y datos recopilados en **información útil para apoyar inspecciones preliminares**, facilitando la identificación y registro de estructuras de concreto que requieran una evaluación técnica más detallada.
 
-> 🏗️ **Nuestro propósito:** Acercar herramientas inteligentes de inspección a comunidades rurales mediante una solución portátil, accesible y autónoma.
+> 🏗️ **Nuestro propósito:** Acercar herramientas inteligentes de inspección mediante una solución portátil, accesible y autónoma.
 
 ## 🌍 ODS relacionados
 
