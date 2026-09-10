@@ -121,14 +121,21 @@ De esta manera, buscamos transformar imágenes y datos recopilados en **informac
 </p>
 
 ---
-## Referencias:
-[1] Federal Highway Administration (FHWA). Capítulo 3. Desgastes para pavimentos con superficies de hormigón reforzado continuamente. En: Manual de Identificación de Emergencias para el Programa de Rendimiento a Largo Plazo del Pavimento [Internet]. 5ª ed. rev. Washington, D.C.: FHWA; Mayo 2014 [citado 2026 Sep 8]. Reporte No.: FHWA-HRT-13-092. Disponible en: https://www.fhwa.dot.gov/publications/research/infrastructure/pavements/ltpp/13092/003.cfm
+---
 
-[2] ACI Committee 224, *Causes, Evaluation, and Repair of Cracks in Concrete Structures*, ACI 224.1R-07. Farmington Hills, MI, USA: American Concrete Institute, 2007. [En línea]. Disponible en: https://www.concrete.org/publications/internationalconcreteabstractsportal.aspx?id=18555&m=details
+## 📚 Referencias
 
-[3] L. Ali, F. Alnajjar, H. Al Jassmi, M. Gocho, W. Khan and M. A. Serhani, “Performance evaluation of deep CNN-based crack detection and localization techniques for concrete structures,” *Sensors*, vol. 21, no. 5, Art. no. 1688, Mar. 2021, doi: 10.3390/s21051688.
+> Fuentes técnicas y académicas utilizadas para la formulación y desarrollo de **CrackScan**.
 
-[4] Lu L, Wu J, Qiao G, Qiu Z, Qiu L, Sun J, inventores. Instituto de Investigación de Diseño de Ingeniería de Metales No Ferrosos de Guangdong, solicitante. Detector automático de grietas con cámara. China patente CN 111536881A. 2020 Ago 14.
+| N.° | Referencia en formato IEEE |
+|:---:|---|
+| **[1]** | Federal Highway Administration, “Distresses for continuously reinforced concrete pavements,” in *Distress Identification Manual for the Long-Term Pavement Performance Program*, 5th ed., Washington, DC, USA, May 2014, Rep. FHWA-HRT-13-092. [🔗 Consultar fuente](https://www.fhwa.dot.gov/publications/research/infrastructure/pavements/ltpp/13092/003.cfm) |
+| **[2]** | ACI Committee 224, *Causes, Evaluation, and Repair of Cracks in Concrete Structures*, ACI 224.1R-07. Farmington Hills, MI, USA: American Concrete Institute, 2007. [🔗 Consultar fuente](https://www.concrete.org/publications/internationalconcreteabstractsportal.aspx?id=18555&m=details) |
+| **[3]** | L. Ali, F. Alnajjar, H. Al Jassmi, M. Gocho, W. Khan and M. A. Serhani, “Performance evaluation of deep CNN-based crack detection and localization techniques for concrete structures,” *Sensors*, vol. 21, no. 5, Art. no. 1688, Mar. 2021, doi: 10.3390/s21051688. [🔗 Consultar artículo](https://doi.org/10.3390/s21051688) |
+| **[4]** | L. Lu, J. Wu, G. Qiao, Z. Qiu, L. Qiu and J. Sun, “Automatic crack detector with camera,” China Patent CN 111536881A, Aug. 14, 2020. [🔗 Consultar patente](https://patents.google.com/patent/CN111536881A/en) |
+
+---
+
 <p align="center">
-  🏗️ ────────────────────────── 🏠
+  <i>Referencias empleadas para sustentar la detección, evaluación y registro de grietas en estructuras de concreto.</i>
 </p>
