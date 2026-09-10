@@ -43,10 +43,12 @@
 
 <p align="center">
   <img 
-    src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExcTF4dTQ1dWg0aWlkM2h1YmI0aWc4NWQ4dTF0ZHN2M29pYm5hZWY2ZSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/3o7aD2saalBwwftBIY/giphy.gif"
-    width="420"
-    alt="Animación tecnológica"
+    src="Recursos/Imágenes/crackscan_demo.gif"
+    alt="Demostración del funcionamiento de CrackScan"
+    width="500"
   />
+  <br>
+  <em>Figura 1. Demostración visual del concepto de CrackScan.</em>
 </p>
 
 **CrackScan** es una propuesta tecnológica orientada a apoyar la inspección preliminar de estructuras de concreto mediante la detección, caracterización y registro de grietas.
@@ -119,7 +121,7 @@ El proyecto está orientado principalmente a la **evaluación preliminar de estr
     width="850"
   />
   <br>
-  <em>Figura 1. Fotografía del Equipo 06.</em>
+  <em>Figura 2. Fotografía del Equipo 06.</em>
 </p>
 
 ---
@@ -175,7 +177,7 @@ La incorporación de una cámara en **CrackScan** permitirá automatizar la capt
     src="https://github.com/user-attachments/assets/6c5e9b23-5182-4dd0-84ff-9cc82f74b6cc"
   />
   <br>
-  <em>Figura 2. Antecedente tecnológico de sistema automático para detección de grietas.</em>
+  <em>Figura 3. Antecedente tecnológico de sistema automático para detección de grietas.</em>
 </p>
 
 ---
@@ -205,7 +207,7 @@ Como apoyo complementario, se utilizará la plataforma **SIGRID-CENEPRED** para 
     src="https://github.com/user-attachments/assets/dc8d2959-d15b-4629-b124-dc073921e2cb"
   />
   <br>
-  <em>Figura 3. Visualización de niveles de riesgo y microzonificación sísmica en Lima Metropolitana.</em>
+  <em>Figura 4. Visualización de niveles de riesgo y microzonificación sísmica en Lima Metropolitana.</em>
 </p>
 
 ### ⚙️ Capas principales
@@ -287,24 +289,7 @@ De esta manera, buscamos transformar imágenes y datos recopilados en **informac
 
 ---
 
-## 🌎 Impacto y ODS
 
-<p align="center">
-  <img src="https://img.shields.io/badge/ODS_9-Industria,_Innovación_e_Infraestructura-F36D25?style=for-the-badge">
-  <img src="https://img.shields.io/badge/ODS_11-Ciudades_y_Comunidades_Sostenibles-F99D26?style=for-the-badge">
-</p>
-
-<p align="center">
-  🏗️ <b>Tecnología</b>
-  &nbsp; • &nbsp;
-  🔎 <b>Prevención</b>
-  &nbsp; • &nbsp;
-  📍 <b>Georreferenciación</b>
-  &nbsp; • &nbsp;
-  🌆 <b>Infraestructura resiliente</b>
-</p>
-
----
 
 ## 📚 Referencias
 
