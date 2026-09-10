@@ -10,7 +10,7 @@
 <h3 align="center">PROYECTOS PARA INGENIERIA – GRUPO 6</h3>
 
 ## 🏠 CrackScan
-Dispositivo portátil para detección y registro de grietas en estructuras de concreto en zonas rurales
+Dispositivo portátil para detección y registro de grietas en estructuras de concreto en zonas de alto riesgo
 ---
 
 ## ⚠️ Problemática
@@ -25,7 +25,7 @@ Somos el **Equipo 06** del curso **Proyecto Integrador 2026-2**, conformado por 
 
 **CrackScan** es un **dispositivo portátil e inteligente** capaz de detectar y **registrar grietas en estructuras de concreto** mediante el análisis automatizado de imágenes, identificando su ubicación, orientación, longitud y ancho aproximado para facilitar la priorización de inspecciones técnicas.
 
-El sistema está orientado principalmente a **zonas rurales**, permitiendo realizar inspecciones preliminares de manera autónoma y sin depender de conexión a Internet, con el objetivo de facilitar la identificación y registro de estructuras que requieran una evaluación técnica más detallada.
+El sistema está orientado principalmente a **zonas de alto riesgo**, permitiendo realizar inspecciones preliminares de manera autónoma y sin depender de conexión a Internet, con el objetivo de facilitar la identificación y registro de estructuras que requieran una evaluación técnica más detallada.
 
 ---
 
@@ -49,13 +49,13 @@ El sistema está orientado principalmente a **zonas rurales**, permitiendo reali
 
 ## 🎯 Misión
 
-Desarrollar una **herramienta portátil, accesible e inteligente** que facilite la detección y registro de grietas en estructuras de concreto mediante **visión computacional y Machine Learning**, contribuyendo a realizar inspecciones preliminares en zonas rurales con acceso limitado a tecnología especializada.
+Desarrollar una **herramienta portátil, accesible e inteligente** que facilite la detección y registro de grietas en estructuras de concreto mediante **visión computacional y Machine Learning**, contribuyendo a realizar inspecciones preliminares en zonas de alto riesgo con acceso limitado a tecnología especializada.
 
 ---
 
 ## 👁️ Visión
 
-Convertir **CrackScan** en una herramienta tecnológica **confiable, accesible y escalable** que contribuya al monitoreo preventivo de estructuras de concreto y facilite la identificación temprana de posibles daños en comunidades rurales.
+Convertir **CrackScan** en una herramienta tecnológica **confiable, accesible y escalable** que contribuya al monitoreo preventivo de estructuras de concreto y facilite la identificación temprana de posibles daños.
 
 
 ---
