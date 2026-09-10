@@ -3,5 +3,6 @@
 El esquema de funciones muestra la **descomposición funcional del sistema CrackScan**, identificando las funciones principales y parciales necesarias para realizar la detección, procesamiento y registro de grietas.
 
 
-<img width="966" height="531" alt="image" src="https://github.com/user-attachments/assets/da2cf59e-1ada-4951-95d8-06338c35114b" />
+<img width="1157" height="646" alt="image" src="https://github.com/user-attachments/assets/b532f45e-5aa7-4f98-992a-881204eb4785" />
+
 
