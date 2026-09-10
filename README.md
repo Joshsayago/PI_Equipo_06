@@ -1,18 +1,34 @@
 <p align="center">
   <img 
-    src="https://capsule-render.vercel.app/api?type=waving&color=0:F7F4EE,35:EEE8DE,70:DDD6CC,100:C8C1B7&height=190&section=header&text=CrackScan&fontSize=56&fontColor=4A4A4A&animation=fadeIn&fontAlignY=35&desc=Detección%20•%20Caracterización%20•%20Georreferenciación&descAlignY=58&descSize=18"
+    src="https://capsule-render.vercel.app/api?type=soft&color=0:F8F5EF,45:E8E2D8,100:D6D0C7&height=230&section=header&text=CRACKSCAN&fontSize=64&fontColor=3F3F3F&animation=fadeIn&fontAlignY=34&desc=Sistema%20portátil%20para%20detección%20y%20registro%20de%20grietas&descAlignY=58&descSize=19"
     width="100%"
   />
 </p>
 
+<p align="center">
+  <img src="https://img.shields.io/badge/🏗️_ESTRUCTURAS-DE_CONCRETO-EDE8DF?style=for-the-badge&labelColor=C9C2B8&color=EDE8DF">
+  <img src="https://img.shields.io/badge/🔎_DETECCIÓN-VISIÓN_COMPUTACIONAL-F3EFE8?style=for-the-badge&labelColor=D8D2C8&color=F3EFE8">
+  <img src="https://img.shields.io/badge/📍_UBICACIÓN-GPS-E8E2D8?style=for-the-badge&labelColor=CFC8BE&color=E8E2D8">
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/🤖_ANÁLISIS-MACHINE_LEARNING-F6F2EC?style=flat-square&labelColor=D8D2C8&color=F6F2EC">
+  &nbsp;
+  <img src="https://img.shields.io/badge/💾_REGISTRO-OFFLINE-F6F2EC?style=flat-square&labelColor=D8D2C8&color=F6F2EC">
+  &nbsp;
+  <img src="https://img.shields.io/badge/🌆_ÁMBITO-LIMA_METROPOLITANA-F6F2EC?style=flat-square&labelColor=D8D2C8&color=F6F2EC">
+</p>
+
+<br>
+
 <table align="center">
   <tr>
-    <td align="center">
-      <img src="Recursos/Imágenes/UPCH Logo.png" alt="Logo UPCH" width="95">
+    <td align="center" width="120">
+      <img src="Recursos/Imágenes/UPCH Logo.png" alt="Logo UPCH" width="85">
     </td>
-    <td align="center" valign="middle">
-      <h1>UNIVERSIDAD PERUANA CAYETANO HEREDIA</h1>
-      <h3>PROYECTOS PARA INGENIERÍA – GRUPO 6</h3>
+    <td valign="middle">
+      <h2>Universidad Peruana Cayetano Heredia</h2>
+      <b>Proyecto Integrador 2026-2 · Equipo 06</b>
     </td>
   </tr>
 </table>
@@ -20,22 +36,29 @@
 <br>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/ESP32-Microcontrolador-D8D2C8?style=for-the-badge&logo=espressif&logoColor=4A4A4A">
-  <img src="https://img.shields.io/badge/Visión_Computacional-Detección-E8E2D8?style=for-the-badge&logoColor=4A4A4A">
-  <img src="https://img.shields.io/badge/Machine_Learning-IA-F1ECE4?style=for-the-badge&logoColor=4A4A4A">
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/GPS-Georreferenciación-E2DDD5?style=for-the-badge&logoColor=4A4A4A">
-  <img src="https://img.shields.io/badge/Offline-Almacenamiento-D3CCC2?style=for-the-badge&logoColor=4A4A4A">
-</p>
-
-<p align="center">
   <b>
-    Dispositivo portátil para la detección y registro de grietas en estructuras de concreto en Lima Metropolitana
+    Dispositivo portátil para la detección, caracterización y georreferenciación
+    de grietas en estructuras de concreto.
   </b>
 </p>
 
+<br>
+
+<p align="center">
+  <code>CAPTURA</code>
+  &nbsp; → &nbsp;
+  <code>DETECCIÓN</code>
+  &nbsp; → &nbsp;
+  <code>CARACTERIZACIÓN</code>
+  &nbsp; → &nbsp;
+  <code>GPS</code>
+  &nbsp; → &nbsp;
+  <code>REGISTRO</code>
+</p>
+
+---
+
+## 🏠 CrackScan
 ---
 
 ## 🏠 CrackScan
