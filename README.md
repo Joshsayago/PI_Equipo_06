@@ -47,7 +47,6 @@
     width="500"
   />
   <br>
-
 </p>
 
 **CrackScan** es una propuesta tecnológica orientada a apoyar la inspección preliminar de estructuras de concreto mediante la detección, caracterización y registro de grietas.
