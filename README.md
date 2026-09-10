@@ -1,6 +1,6 @@
 <p align="center">
   <img 
-    src="https://capsule-render.vercel.app/api?type=waving&color=0:0D47A1,35:1976D2,70:00ACC1,100:00C853&height=200&section=header&text=CrackScan&fontSize=58&fontColor=FFFFFF&animation=fadeIn&fontAlignY=35&desc=Detección%20•%20Caracterización%20•%20Georreferenciación&descAlignY=58&descSize=18"
+    src="https://capsule-render.vercel.app/api?type=waving&color=0:2F2F2F,40:4A403A,75:7A6656,100:A6907C&height=190&section=header&text=CrackScan&fontSize=56&fontColor=F5F5F5&animation=fadeIn&fontAlignY=35&desc=Detección%20•%20Caracterización%20•%20Georreferenciación&descAlignY=58&descSize=18"
     width="100%"
   />
 </p>
@@ -8,7 +8,7 @@
 <table align="center">
   <tr>
     <td align="center">
-      <img src="Recursos/Imágenes/UPCH Logo.png" alt="Logo UPCH" width="100">
+      <img src="Recursos/Imágenes/UPCH Logo.png" alt="Logo UPCH" width="95">
     </td>
     <td align="center" valign="middle">
       <h1>UNIVERSIDAD PERUANA CAYETANO HEREDIA</h1>
@@ -20,15 +20,14 @@
 <br>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/ESP32-Microcontrolador-00979D?style=for-the-badge&logo=espressif&logoColor=white">
-  <img src="https://img.shields.io/badge/Visión_Computacional-Detección-1976D2?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Machine_Learning-IA-7E57C2?style=for-the-badge">
+  <img src="https://img.shields.io/badge/ESP32-Microcontrolador-4A403A?style=for-the-badge&logo=espressif&logoColor=white">
+  <img src="https://img.shields.io/badge/Visión_Computacional-Detección-5E5148?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Machine_Learning-IA-6B5B4F?style=for-the-badge">
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/GPS-Georreferenciación-00A86B?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Offline-Almacenamiento-F57C00?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Lima-Metropolitana-D81B60?style=for-the-badge">
+  <img src="https://img.shields.io/badge/GPS-Georreferenciación-7A6656?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Offline-Almacenamiento-8B7765?style=for-the-badge">
 </p>
 
 <p align="center">
@@ -46,20 +45,20 @@
     src="Recursos/Imágenes/crackscan_demo.gif"
     alt="Demostración del funcionamiento de CrackScan"
     width="500"
-  
+  />
+  <br>
+  <em>Figura 1. Demostración visual del concepto de CrackScan.</em>
+</p>
+
 **CrackScan** es una propuesta tecnológica orientada a apoyar la inspección preliminar de estructuras de concreto mediante la detección, caracterización y registro de grietas.
 
 El sistema combina **captura de imágenes, procesamiento digital, visión computacional, Machine Learning, georreferenciación y almacenamiento local**, facilitando la identificación y registro de estructuras que requieran una evaluación técnica más detallada.
-
-<div align="center">
 
 ### ⚡ ¿Qué hace CrackScan?
 
 | 📷 Captura | 🔎 Detecta | 📐 Caracteriza | 📍 Georreferencia | 💾 Registra |
 |:---:|:---:|:---:|:---:|:---:|
 | Imagen del concreto | Identifica grietas | Ancho, longitud y orientación | Coordenadas GPS | Guarda cada inspección |
-
-</div>
 
 ---
 
@@ -95,11 +94,6 @@ El proyecto está orientado principalmente a la **evaluación preliminar de estr
 ---
 
 ## 🎯 Objetivos de Desarrollo Sostenible
-
-<p align="center">
-  <img src="https://img.shields.io/badge/ODS_9-Industria,_Innovación_e_Infraestructura-F36D25?style=for-the-badge">
-  <img src="https://img.shields.io/badge/ODS_11-Ciudades_y_Comunidades_Sostenibles-F99D26?style=for-the-badge">
-</p>
 
 | ODS | Meta | Impacto esperado |
 |---|---|---|
@@ -181,9 +175,8 @@ La incorporación de una cámara en **CrackScan** permitirá automatizar la capt
 ## 📍 Georreferenciación
 
 <p align="center">
-  <img src="https://img.shields.io/badge/SIGRID-CENEPRED-1565C0?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Ámbito-Lima_Metropolitana-00A86B?style=for-the-badge">
-  <img src="https://img.shields.io/badge/Datos-Geoespaciales-7E57C2?style=for-the-badge">
+  <img src="https://img.shields.io/badge/SIGRID-CENEPRED-4A403A?style=for-the-badge">
+  <img src="https://img.shields.io/badge/Ámbito-Lima_Metropolitana-6B5B4F?style=for-the-badge">
 </p>
 
 **CrackScan** incorporará georreferenciación mediante GPS para asociar cada inspección con su ubicación correspondiente.
@@ -192,7 +185,7 @@ Como apoyo complementario, se utilizará la plataforma **SIGRID-CENEPRED** para 
 
 <p align="center">
   <a href="https://sigrid.cenepred.gob.pe/sigridv3/mapa?xmin=-77.19921286&ymin=-12.51993161&xmax=-76.62082436&ymax=-11.5724356">
-    <img src="https://img.shields.io/badge/🗺️_ABRIR_MAPA_SIGRID-1976D2?style=for-the-badge">
+    <img src="https://img.shields.io/badge/ABRIR_MAPA_SIGRID-5E5148?style=for-the-badge">
   </a>
 </p>
 
@@ -212,24 +205,22 @@ Como apoyo complementario, se utilizará la plataforma **SIGRID-CENEPRED** para 
 - ✅ **Niveles de riesgo**
 - ✅ **Microzonificación Sísmica - CISMID**
 
-> 💡 **SIGRID será utilizado como referencia territorial complementaria para contextualizar las ubicaciones registradas por CrackScan.**
+> **SIGRID será utilizado como referencia territorial complementaria para contextualizar las ubicaciones registradas por CrackScan.**
 
 ---
 
 ## ⚙️ Funcionamiento general de CrackScan
 
 <p align="center">
-
-<img src="https://img.shields.io/badge/01-CAPTURA-0D47A1?style=for-the-badge">
-➜
-<img src="https://img.shields.io/badge/02-DETECCIÓN-1976D2?style=for-the-badge">
-➜
-<img src="https://img.shields.io/badge/03-ANÁLISIS-00ACC1?style=for-the-badge">
-➜
-<img src="https://img.shields.io/badge/04-GPS-00A86B?style=for-the-badge">
-➜
-<img src="https://img.shields.io/badge/05-REGISTRO-F57C00?style=for-the-badge">
-
+  <img src="https://img.shields.io/badge/01-CAPTURA-3A3A3A?style=for-the-badge">
+  →
+  <img src="https://img.shields.io/badge/02-DETECCIÓN-4A403A?style=for-the-badge">
+  →
+  <img src="https://img.shields.io/badge/03-ANÁLISIS-5E5148?style=for-the-badge">
+  →
+  <img src="https://img.shields.io/badge/04-GPS-6B5B4F?style=for-the-badge">
+  →
+  <img src="https://img.shields.io/badge/05-REGISTRO-7A6656?style=for-the-badge">
 </p>
 
 ### 1. 📷 Captura de imagen
@@ -285,7 +276,19 @@ De esta manera, buscamos transformar imágenes y datos recopilados en **informac
 
 ---
 
+## 🌎 Impacto
 
+<p align="center">
+  🏗️ <b>Tecnología</b>
+  &nbsp; • &nbsp;
+  🔎 <b>Prevención</b>
+  &nbsp; • &nbsp;
+  📍 <b>Georreferenciación</b>
+  &nbsp; • &nbsp;
+  🌆 <b>Infraestructura resiliente</b>
+</p>
+
+---
 
 ## 📚 Referencias
 
@@ -301,11 +304,11 @@ De esta manera, buscamos transformar imágenes y datos recopilados en **informac
 ---
 
 <p align="center">
-  <img src="https://img.shields.io/badge/CRACKSCAN-Proyecto_Integrador_2026--2-0D47A1?style=for-the-badge">
+  <img src="https://img.shields.io/badge/CRACKSCAN-Proyecto_Integrador_2026--2-4A403A?style=for-the-badge">
 </p>
 
 <p align="center">
-  <b>💡 Tecnología + Prevención + Georreferenciación + Infraestructura Resiliente 🏗️</b>
+  <b>🏗️ Tecnología • Prevención • Georreferenciación • Infraestructura Resiliente</b>
 </p>
 
 <p align="center">
@@ -314,7 +317,7 @@ De esta manera, buscamos transformar imágenes y datos recopilados en **informac
 
 <p align="center">
   <img 
-    src="https://capsule-render.vercel.app/api?type=waving&color=0:00C853,35:00ACC1,70:1976D2,100:0D47A1&height=120&section=footer"
+    src="https://capsule-render.vercel.app/api?type=waving&color=0:A6907C,35:7A6656,70:4A403A,100:2F2F2F&height=110&section=footer"
     width="100%"
   />
 </p>
