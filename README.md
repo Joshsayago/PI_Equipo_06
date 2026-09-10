@@ -13,11 +13,11 @@
 Dispositivo portátil para detección y registro de grietas en estructuras de concreto en zonas rurales
 ---
 
-## ⚠️ Problematica
+## ⚠️ Problemática
 
-La inspección de **estructuras de concreto en zonas rurales** puede verse limitada por el **acceso reducido a herramientas tecnológicas especializadas, conectividad a Internet** y recursos para **realizar evaluaciones preliminares**. La identificación y registro de grietas suele requerir una inspección manual, dificultando la recopilación sistemática de información sobre su ubicación y características (1).
+Las grietas pueden indicar procesos de deterioro en las estructuras de concreto, por lo que su evaluación requiere registrar características como su ubicación y dimensiones (1). Sin embargo, la inspección visual convencional suele depender de la experiencia del inspector, demanda tiempo y puede producir resultados subjetivos o poco uniformes, dificultando el registro sistemático de la información (2).
 
-**CrackScan** busca **facilitar** esta primera etapa de inspección mediante una herramienta portátil capaz de analizar imágenes y registrar información relevante sobre las grietas encontradas.
+Ante esta problemática, **CrackScan** propone facilitar la inspección preliminar mediante un dispositivo portátil capaz de capturar imágenes estables y registrar información sobre la ubicación y las características de las grietas. La herramienta busca apoyar la recopilación de datos en campo, sin reemplazar la evaluación realizada por un especialista.
 
 ## 🌍 Descripción del Equipo
 
@@ -73,7 +73,7 @@ Convertir **CrackScan** en una herramienta tecnológica **confiable, accesible y
 ## Antecedentes
 La revisión de patentes internacionales se realizó como parte de la estrategia de vigilancia tecnológica para identificar antecedentes de diseño, métodos de inspección y soluciones de hardware ya patentadas en el control de seguridad estructural.
 
-En la evaluación de seguridad estructural, los métodos tradicionales presentan limitaciones para medir simultáneamente el ancho y largo de las fisuras, generando bases de datos insuficientes. Para solucionar esto, existen antecedentes de sistemas de inspección que utilizan cámaras fotográficas alineadas frente a las fallas con marcadores de escala, logrando capturar ambas dimensiones en una sola imagen. La integración de una cámara en el sistema se justifica porque permite automatizar las mediciones periódicas, simplifica la recolección in situ y garantiza la obtención de registros geométricos más completos, lo cual es indispensable para un análisis de deformación preciso (2).
+En la evaluación de seguridad estructural, los métodos tradicionales presentan limitaciones para medir simultáneamente el ancho y largo de las fisuras, generando bases de datos insuficientes. Para solucionar esto, existen antecedentes de sistemas de inspección que utilizan cámaras fotográficas alineadas frente a las fallas con marcadores de escala, logrando capturar ambas dimensiones en una sola imagen. La integración de una cámara en el sistema se justifica porque permite automatizar las mediciones periódicas, simplifica la recolección in situ y garantiza la obtención de registros geométricos más completos, lo cual es indispensable para un análisis de deformación preciso (4).
 
 <p align="center">
 <img width="742" height="551" alt="image" src="https://github.com/user-attachments/assets/6c5e9b23-5182-4dd0-84ff-9cc82f74b6cc" />
@@ -124,7 +124,8 @@ De esta manera, buscamos transformar imágenes y datos recopilados en **informac
 ## Referencias:
 (1) Federal Highway Administration (FHWA). Capítulo 3. Desgastes para pavimentos con superficies de hormigón reforzado continuamente. En: Manual de Identificación de Emergencias para el Programa de Rendimiento a Largo Plazo del Pavimento [Internet]. 5ª ed. rev. Washington, D.C.: FHWA; Mayo 2014 [citado 2026 Sep 8]. Reporte No.: FHWA-HRT-13-092. Disponible en: https://www.fhwa.dot.gov/publications/research/infrastructure/pavements/ltpp/13092/003.cfm
 
-(2) Lu L, Wu J, Qiao G, Qiu Z, Qiu L, Sun J, inventores. Instituto de Investigación de Diseño de Ingeniería de Metales No Ferrosos de Guangdong, solicitante. Detector automático de grietas con cámara. China patente CN 111536881A. 2020 Ago 14.
+
+(4) Lu L, Wu J, Qiao G, Qiu Z, Qiu L, Sun J, inventores. Instituto de Investigación de Diseño de Ingeniería de Metales No Ferrosos de Guangdong, solicitante. Detector automático de grietas con cámara. China patente CN 111536881A. 2020 Ago 14.
 <p align="center">
   🏗️ ────────────────────────── 🏠
 </p>
