@@ -19,7 +19,9 @@ Dispositivo portátil para detección y registro de grietas en estructuras de co
 
 Las grietas pueden indicar procesos de deterioro en las estructuras de concreto, por lo que su evaluación requiere registrar características como su ubicación y dimensiones (1). Sin embargo, la inspección visual convencional suele depender de la experiencia del inspector, demanda tiempo y puede producir resultados subjetivos o poco uniformes, dificultando el registro sistemático de la información (2).
 
-Ante esta problemática, **CrackScan** propone facilitar la inspección preliminar mediante un dispositivo portátil capaz de capturar imágenes estables y registrar información sobre la ubicación y las características de las grietas. La herramienta busca apoyar la recopilación de datos en campo, sin reemplazar la evaluación realizada por un especialista.
+Ante esta problemática, **CrackScan** propone facilitar la inspección preliminar mediante un dispositivo portátil capaz de capturar imágenes estables y registrar información sobre la ubicación y las características de las grietas.
+
+La herramienta busca apoyar la recopilación de datos en campo, sin reemplazar la evaluación realizada por un especialista.
 
 ---
 
@@ -29,7 +31,9 @@ Somos el **Equipo 06** del curso **Proyecto Integrador 2026-2**, conformado por 
 
 **CrackScan** es un **dispositivo portátil e inteligente** capaz de detectar y **registrar grietas en estructuras de concreto** mediante el análisis automatizado de imágenes, identificando su ubicación, orientación, longitud y ancho aproximado para facilitar la priorización de inspecciones técnicas.
 
-El sistema está orientado principalmente a la **evaluación preliminar de estructuras de concreto en zonas metropolitanas**, permitiendo realizar inspecciones de manera autónoma y sin depender de conexión a Internet, con el objetivo de facilitar la identificación y registro de estructuras que requieran una evaluación técnica más detallada.
+El sistema está orientado principalmente a la **evaluación preliminar de estructuras de concreto ubicadas en Lima Metropolitana**, permitiendo realizar inspecciones de manera autónoma y sin depender de conexión a Internet.
+
+El objetivo es facilitar la identificación y registro de estructuras que requieran una evaluación técnica más detallada.
 
 ---
 
@@ -60,7 +64,7 @@ Desarrollar una **herramienta portátil, accesible e inteligente** que facilite 
 
 ## 👁️ Visión
 
-Convertir **CrackScan** en una herramienta tecnológica **confiable, accesible y escalable** que contribuya al monitoreo preventivo de estructuras de concreto y facilite la identificación temprana de posibles daños.
+Convertir **CrackScan** en una herramienta tecnológica **confiable, accesible y escalable** que contribuya al monitoreo preventivo de estructuras de concreto y facilite la identificación temprana de posibles daños en entornos metropolitanos.
 
 ---
 
@@ -76,15 +80,109 @@ Convertir **CrackScan** en una herramienta tecnológica **confiable, accesible y
 
 ---
 
-## Antecedentes
+## 📚 Antecedentes
 
 La revisión de patentes internacionales se realizó como parte de la estrategia de vigilancia tecnológica para identificar antecedentes de diseño, métodos de inspección y soluciones de hardware ya patentadas en el control de seguridad estructural.
 
-En la evaluación de seguridad estructural, los métodos tradicionales presentan limitaciones para medir simultáneamente el ancho y largo de las fisuras, generando bases de datos insuficientes. Para solucionar esto, existen antecedentes de sistemas de inspección que utilizan cámaras fotográficas alineadas frente a las fallas con marcadores de escala, logrando capturar ambas dimensiones en una sola imagen. La integración de una cámara en el sistema se justifica porque permite automatizar las mediciones periódicas, simplifica la recolección in situ y garantiza la obtención de registros geométricos más completos, lo cual es indispensable para un análisis de deformación preciso (3).
+En la evaluación de seguridad estructural, los métodos tradicionales presentan limitaciones para medir simultáneamente el ancho y largo de las fisuras, generando bases de datos insuficientes.
+
+Para solucionar esto, existen antecedentes de sistemas de inspección que utilizan cámaras fotográficas alineadas frente a las fallas con marcadores de escala, logrando capturar ambas dimensiones en una sola imagen.
+
+La integración de una cámara en el sistema se justifica porque permite automatizar las mediciones periódicas, simplifica la recolección in situ y garantiza la obtención de registros geométricos más completos, lo cual es indispensable para un análisis de deformación preciso (3).
 
 <p align="center">
-  <img width="742" height="551" alt="image" src="https://github.com/user-attachments/assets/6c5e9b23-5182-4dd0-84ff-9cc82f74b6cc" />
+  <img width="742" height="551" alt="Antecedente detector automático de grietas" src="https://github.com/user-attachments/assets/6c5e9b23-5182-4dd0-84ff-9cc82f74b6cc" />
+  <br>
+  <em>Figura 2. Antecedente tecnológico de sistema automático para detección de grietas.</em>
 </p>
+
+---
+
+## 📍 Georreferenciación y análisis territorial
+
+Una de las funciones complementarias de **CrackScan** será la **georreferenciación de las inspecciones realizadas**, permitiendo asociar cada grieta registrada con las coordenadas geográficas del punto donde fue identificada.
+
+Para complementar esta información espacial se utilizará como referencia la plataforma **SIGRID de CENEPRED**, un sistema de información geográfica que permite consultar cartografía relacionada con peligros, vulnerabilidad, exposición y riesgo.
+
+🔗 **SIGRID - CENEPRED:**  
+[Consultar mapa de referencia](https://sigrid.cenepred.gob.pe/sigridv3/mapa?xmin=-77.19921286&ymin=-12.51993161&xmax=-76.62082436&ymax=-11.5724356)
+
+La consulta de esta plataforma permitirá relacionar la ubicación de las estructuras inspeccionadas con información territorial disponible para **Lima Metropolitana**.
+
+---
+
+### ⚙️ Configuración recomendada en SIGRID
+
+Para visualizar información relacionada con el riesgo sísmico, se recomienda activar dentro de la plataforma las siguientes capas:
+
+- ✅ **Cartografía de Peligros**
+- ✅ **Sismo y tsunami**
+- ✅ **Niveles de riesgo**
+- ✅ **Zonificación Sísmica**
+- ✅ **Microzonificación Sísmica - CISMID**
+
+<p align="center">
+  <img src="Recursos/Imágenes/Leyenda_SIGRID.png" width="420"/>
+  <br>
+  <em>Figura 3. Configuración de capas recomendada en SIGRID-CENEPRED.</em>
+</p>
+
+---
+
+### 🚦 Interpretación de los niveles de riesgo
+
+De acuerdo con la leyenda mostrada en la plataforma, los niveles de daño pueden visualizarse mediante la siguiente clasificación:
+
+| Nivel | Clasificación |
+|:---:|---|
+| 🟩 **I** | Sin daño superficial |
+| 🟢 **II** | Daño leve |
+| 🟨 **III** | Daño moderado |
+| 🟧 **IV** | Daño severo |
+| 🟥 **V** | Colapso |
+
+Esta información permitirá complementar el registro de campo y brindar un contexto territorial a cada inspección.
+
+---
+
+### 🛰️ Información asociada a cada inspección
+
+La georreferenciación permitirá registrar y relacionar información como:
+
+- 📍 **Coordenadas GPS** del punto inspeccionado.
+- 🏢 **Ubicación de la estructura** evaluada.
+- 🗺️ **Zona sísmica o microzonificación** correspondiente.
+- ⚠️ **Nivel de riesgo territorial de referencia**.
+- 🖼️ **Imagen de la grieta detectada**.
+- 📐 **Longitud y ancho aproximado de la grieta**.
+- ↕️ **Orientación de la grieta**.
+- 🕒 **Fecha y hora de inspección**.
+
+De esta manera, **CrackScan** no solo almacenará información visual de las grietas, sino también datos espaciales que permitan relacionar cada inspección con las características territoriales del lugar donde se encuentra la estructura.
+
+---
+
+## 🔎 Funcionamiento general de CrackScan
+
+El funcionamiento del dispositivo se plantea mediante una secuencia de adquisición, procesamiento y almacenamiento de información.
+
+1. 📷 **Captura de imagen:**  
+   La cámara obtiene una imagen de la superficie de concreto inspeccionada.
+
+2. 🔎 **Detección de la grieta:**  
+   El sistema procesa la imagen para identificar la presencia de posibles grietas.
+
+3. 📐 **Caracterización:**  
+   Se estiman características como ubicación dentro de la imagen, orientación, longitud y ancho aproximado.
+
+4. 📍 **Georreferenciación:**  
+   El GPS registra las coordenadas correspondientes al lugar donde se realiza la inspección.
+
+5. 💾 **Almacenamiento:**  
+   Los datos y las imágenes se almacenan localmente para permitir el funcionamiento sin conexión a Internet.
+
+6. 🗺️ **Consulta territorial:**  
+   Posteriormente, las coordenadas registradas pueden contrastarse con información disponible en plataformas geográficas como **SIGRID-CENEPRED**.
 
 ---
 
@@ -94,20 +192,24 @@ Este README presenta quiénes somos como **Equipo 06**, la problemática que bus
 
 Nuestro proyecto propone **CrackScan**, un **dispositivo portátil e inteligente para la detección y registro de grietas en estructuras de concreto**, integrando tecnologías como **visión computacional, Machine Learning y georreferenciación**.
 
-El sistema está orientado principalmente a **estructuras ubicadas en Lima Metropolitana**. Por ello, CrackScan estará diseñado para realizar **inspecciones preliminares de manera autónoma y sin depender de conexión a Internet**, facilitando la recopilación y almacenamiento de información durante las evaluaciones en campo.
+El sistema está orientado principalmente a **estructuras ubicadas en Lima Metropolitana**.
+
+CrackScan estará diseñado para realizar **inspecciones preliminares de manera autónoma y sin depender de conexión a Internet**, facilitando la recopilación y almacenamiento de información durante las evaluaciones en campo.
 
 El sistema permitirá obtener y almacenar información relevante como:
 
 - 🔎 **Detección de grietas:** identificación automática mediante visión computacional.
 - 🖼️ **Localización de grietas:** reconocimiento de la zona afectada dentro de la imagen.
 - 📐 **Orientación de la grieta:** vertical, horizontal o diagonal.
+- 📏 **Dimensiones:** estimación de longitud y ancho de la grieta.
 - 📍 **Georreferenciación:** registro de la ubicación de cada inspección mediante GPS.
+- 🗺️ **Contexto territorial:** comparación de la ubicación con información disponible en SIGRID-CENEPRED.
 - 💾 **Registro offline:** almacenamiento local de imágenes y resultados sin necesidad de Internet.
 - 📋 **Historial de inspecciones:** organización de los registros para facilitar su posterior revisión.
 
 De esta manera, buscamos transformar imágenes y datos recopilados en **información útil para apoyar inspecciones preliminares**, facilitando la identificación y registro de estructuras de concreto que requieran una evaluación técnica más detallada.
 
-> 🏗️ **Nuestro propósito:** Acercar herramientas inteligentes de inspección mediante una solución portátil, accesible y autónoma para el monitoreo de estructuras de concreto en entornos metropolitanos.
+> 🏗️ **Nuestro propósito:** Acercar herramientas inteligentes de inspección mediante una solución portátil, accesible y autónoma para el monitoreo de estructuras de concreto en Lima Metropolitana.
 
 ---
 
@@ -144,5 +246,7 @@ De esta manera, buscamos transformar imágenes y datos recopilados en **informac
 ---
 
 <p align="center">
+  <i>Referencias empleadas para sustentar la detección, evaluación y registro de grietas en estructuras de concreto.</i>
+</p>
   <i>Referencias empleadas para sustentar la detección, evaluación y registro de grietas en estructuras de concreto.</i>
 </p>
