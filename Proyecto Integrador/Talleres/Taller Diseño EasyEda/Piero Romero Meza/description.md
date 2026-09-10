@@ -2,8 +2,9 @@
 
 
 - *Esquemático:* Las siguientes imágenes muestran la documentación técnica del proyecto en formato PDF, la cual incluye el título del diseño, el logotipo institucional de la universidad y los datos de identificación de los autores y revisores. Asimismo, se detalla el diagrama de conexiones eléctricas y la correspondencia de pines entre el microcontrolador XIAO ESP32S3 Sense y el módulo GPS NEO-6M.
-<img width="1115" height="360" alt="Captura de pantalla 2026-09-03 193008" src="https://github.com/user-attachments/assets/a0f6146a-0c95-4868-bea8-780d747fd214" />
+<img width="1175" height="420" alt="image" src="https://github.com/user-attachments/assets/32f6281d-8073-400d-a51c-116971bd2ced" />
 <img width="1115" height="360" alt="Captura de pantalla 2026-09-03 192619" src="https://github.com/user-attachments/assets/1d34b3f4-2f34-4eea-8d35-1a43bfc5db48" />
+
 
 
 
