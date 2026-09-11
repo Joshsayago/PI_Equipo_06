@@ -1,4 +1,19 @@
-# **1\. Lista de Exigencias** 
+<p align="center">
+  <img 
+    src="https://capsule-render.vercel.app/api?type=soft&color=0:F7F4EE,45:EAE5DC,100:D8D2C8&height=150&section=header&text=Lista%20de%20Exigencias&fontSize=42&fontColor=4A4A4A&animation=fadeIn&fontAlignY=45&desc=Proyecto%20Integrador%202026-2%20•%20Equipo%2006&descAlignY=70&descSize=16"
+    width="100%"
+  />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/EDICIÓN-Rev._2-E8E3DA?style=for-the-badge&labelColor=CFC9BF&color=E8E3DA">
+  <img src="https://img.shields.io/badge/FECHA-23%2F08%2F2026-F3F0EA?style=for-the-badge&labelColor=D8D2C8&color=F3F0EA">
+  <img src="https://img.shields.io/badge/CLIENTE-UPCH-E8E3DA?style=for-the-badge&labelColor=CFC9BF&color=E8E3DA">
+</p>
+
+<br>
+
+# **1. Lista de Exigencias**
 
 **Tabla 1: Lista de Exigencias**
 
@@ -9,7 +24,7 @@
 |  |  |  | **Revisado:** |
 | **CLIENTE:**  |  | **UNIVERSIDAD PERUANA CAYETANO HEREDIA** | **Elaborado: D.M, P.M, B.B, M.H, J.S** |
 | Fecha (cambios) | Deseo o Exigencia | **Descripción** | **Responsable** |
-| **21/08/26** | E | **Función Principal:**  Detectar y registrar grietas en estructuras de concreto mediante análisis de imágenes  , incorporando información de ubicación geográfica  para generar una evaluación preliminar y facilitar la priorización de inspecciones técnicas **\[1\]**.  | D.M ,  J.S |
+| **21/08/26** | E | **Función Principal:**  Detectar y registrar grietas en estructuras de concreto mediante análisis de imágenes  , incorporando información de ubicación geográfica  para generar una evaluación preliminar y facilitar la priorización de inspecciones técnicas **[1]**.  | D.M ,  J.S |
 | **23/08/26** | E | **Geometría:** El dispositivo deberá contar con dimensiones reducidas que permitan su transporte y utilización durante inspecciones de viviendas. La estructura deberá permitir incorporar sensores, cámara, sistema de procesamiento y elementos de visualización sin dificultar su manipulación.  | M.H |
 | **23/08/26** | E | **Cinemática:** El sistema deberá permitir el posicionamiento y desplazamiento de la cámara sobre diferentes zonas de la superficie de concreto. Durante la captura de imágenes se deberá mantener una posición estable para evitar movimientos que generen imágenes borrosas o alteren los resultados del análisis.  | J.S |
 | **23/08/26** | E | **Fuerzas**: El dispositivo no deberá ejercer fuerzas significativas sobre la superficie inspeccionada que puedan modificar o ampliar las grietas. Los elementos de contacto deberán utilizarse únicamente para posicionamiento o referencia de medición.   | J.S |
@@ -20,9 +35,9 @@
 | **23/08/26** | E | **Electrónico (hardware):** Se utilizará un controlador adecuado para la adquisición y procesamiento de información. El sistema integrará una cámara para registrar y analizar las grietas, un módulo GPS para obtener la ubicación de la inspección y los sensores o elementos de medición necesarios para obtener características físicas complementarias de la grieta, de acuerdo con la solución técnica seleccionada.  | D.M, P.M |
 | **23/08/26** | E | **Software:** El software deberá permitir el procesamiento y análisis de las imágenes de las grietas, la integración de las coordenadas geográficas, la consulta de información geográfica proveniente de fuentes oficiales sobre las características del suelo y/o condiciones de peligro o susceptibilidad del entorno, y la generación de una evaluación preliminar. También, deberá permitir la visualización de los resultados mediante una interfaz adecuada y admitir futuras modificaciones o ampliaciones.  | D.M, P.M |
 | **23/08/26** | E | **Comunicaciones:** La unidad de procesamiento deberá comunicarse con la cámara y los demás componentes mediante conexión inalámbrica. Asimismo, deberá permitir transmitir los resultados hacia la plataforma de almacenamiento o visualización.       | D.M, p.M |
-| **23/08/26** | E | **Seguridad:** El sistema deberá garantizar una operación segura para el usuario y proteger sus componentes eléctricos y electrónicos. Durante el diseño se tomará como referencia la ISO 12100 para identificar peligros, estimar y evaluar los riesgos, y establecer medidas para eliminarlos o reducirlos **\[2\]**. Asimismo, se considerará la IEC 60529 para seleccionar la protección de la carcasa frente al ingreso de polvo y agua **\[3\]** y la Ley N.° 29783 de Seguridad y Salud en el Trabajo **\[4\]**. | B.B |
-| **23/08/26** | E | **Ergonomía**: El dispositivo deberá ser portátil, ligero y sencillo de manipular. Los elementos de captura y control deberán ubicarse de manera que permitan realizar una inspección sin adoptar posiciones incómodas durante períodos prolongados que comprometan la salud y en conformidad con la norma ISO 7250 (Basic human body measurements for technological design)**\[5\].**   | M.H |
-| **23/08/26** | E | **Fabricación:** El sistema deberá fabricarse con materiales disponibles en el mercado nacional, permitiendo el fácil reemplazo de componentes electrónicos. Se considerarán componentes nacionales o importados con tiempos de adquisición de 5 a 15 días. La carcasa y soporte deberán ser resistentes y proteger los componentes frente al polvo y humedad, tomando como referencia la IEC 60529\. Asimismo, las piezas deberán presentar un acabado superficial adecuado según la  ISO 21920-1 **\[6\].**  | B.B |
+| **23/08/26** | E | **Seguridad:** El sistema deberá garantizar una operación segura para el usuario y proteger sus componentes eléctricos y electrónicos. Durante el diseño se tomará como referencia la ISO 12100 para identificar peligros, estimar y evaluar los riesgos, y establecer medidas para eliminarlos o reducirlos **[2]**. Asimismo, se considerará la IEC 60529 para seleccionar la protección de la carcasa frente al ingreso de polvo y agua **[3]** y la Ley N.° 29783 de Seguridad y Salud en el Trabajo **[4]**. | B.B |
+| **23/08/26** | E | **Ergonomía**: El dispositivo deberá ser portátil, ligero y sencillo de manipular. Los elementos de captura y control deberán ubicarse de manera que permitan realizar una inspección sin adoptar posiciones incómodas durante períodos prolongados que comprometan la salud y en conformidad con la norma ISO 7250 (Basic human body measurements for technological design)**[5].**   | M.H |
+| **23/08/26** | E | **Fabricación:** El sistema deberá fabricarse con materiales disponibles en el mercado nacional, permitiendo el fácil reemplazo de componentes electrónicos. Se considerarán componentes nacionales o importados con tiempos de adquisición de 5 a 15 días. La carcasa y soporte deberán ser resistentes y proteger los componentes frente al polvo y humedad, tomando como referencia la IEC 60529. Asimismo, las piezas deberán presentar un acabado superficial adecuado según la  ISO 21920-1 **[6].**  | B.B |
 | **23/08/26** | E | **Control de calidad:** El diseño y fabricación del sistema deberá cumplir con las exigencias establecidas, considerando dimensiones, materiales, seguridad y funcionamiento. La detección y medición de grietas se validará mediante comparación con mediciones de referencia, evaluando la precisión, error y repetibilidad del sistema.  | J.S |
 | **23/08/26** | E | **Montaje:** El sistema tendrá un diseño portátil y de fácil montaje, permitiendo posicionar temporalmente frente a la superficie de concreto. Sus componentes deberán mantenerse firmes durante la inspección y permitir un rápido ensamblaje y desmontaje para facilitar su transporte y mantenimiento.  | M.H |
 | **23/08/26** | D | **Transporte:** El sistema deberá ser portátil y permitir su traslado manual. Como meta de diseño, el equipo completo deberá mantenerse por debajo de aproximadamente 3 kg y sus componentes deberán permanecer protegidos mediante una carcasa durante su transporte.  | P.M |
@@ -30,6 +45,18 @@
 | **23/08/26** | E | **Mantenimiento: Componentes mecánicos:** Deberán permitir un fácil acceso para su inspección, limpieza, ajuste, reparación o reemplazo. **Componentes electrónicos:** La cámara, controlador y demás componentes deberán permitir su calibración, inspección y reemplazo individual en caso de falla.  | J.S |
 | **23/08/26** | D | **Costos:** Se priorizará el uso de materiales y componentes de bajo costo y fácil adquisición. Se estima que el costo de materiales del prototipo no deberá superar los S/ 400, considerando la cámara, controlador, sistema de alimentación, carcasa, soporte y componentes electrónicos necesarios.  | B.B |
 | **23/08/26** | E | **Plazos:**  El proyecto empezará el martes 18 de agosto y espera su finalización el martes 1 de diciembre.  | D.M, P.M  |
+
+---
+
+<p align="center">
+  <img src="https://img.shields.io/badge/E-EXIGENCIA-E4DFD6?style=flat-square&labelColor=CBC5BB">
+  &nbsp;&nbsp;
+  <img src="https://img.shields.io/badge/D-DESEO-F2EEE7?style=flat-square&labelColor=D8D2C8">
+</p>
+
+<br>
+
+## 📅 Cronograma
 
 | N°Sem. | Unidad | Contenido/Actividad | FECHAS (mar / jue) | SEMANAS 2026-I |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | HORAS SEM. |
 | :---: | :---: | :---: | :---: | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | ----- | :---: |
@@ -54,16 +81,30 @@
 | 17 | U4 | Cierre de curso — publicación de notas finales | hasta 11 dic. |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | X | 0 |
 | TOTAL DE HORAS PROGRAMADAS (asistencia G2, sesiones sincrónicas) |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  |  | 128 |
 
-**BIBLIOGRAFÍA**
+---
 
-**\[1\]  M. A.-M. Khan, S.-H. Kee, A.-S. K. Pathan, and A.-A. Nahid, “Image processing techniques for concrete crack detection: A scientometrics literature review,” *Remote Sensing*, vol. 15, no. 9, p. 2400, 2023\. \[En línea\]. Disponible en: [https://doi.org/10.3390/rs15092400](https://doi.org/10.3390/rs15092400)**
+## 📚 BIBLIOGRAFÍA
 
-**\[2\] International Organization for Standardization, “ISO 12100:2010. Safety of machinery — General principles for design — Risk assessment and risk reduction,” ISO, 2010\. \[En línea\]. Disponible en: [https://www.normsplash.com/Samples/ISO/186791471/ISO-12100-2010-en.pdf](https://www.normsplash.com/Samples/ISO/186791471/ISO-12100-2010-en.pdf)**
+**[1]** M. A.-M. Khan, S.-H. Kee, A.-S. K. Pathan, and A.-A. Nahid, “Image processing techniques for concrete crack detection: A scientometrics literature review,” *Remote Sensing*, vol. 15, no. 9, p. 2400, 2023. [En línea]. Disponible en:  
+https://doi.org/10.3390/rs15092400
 
-**\[3\] International Electrotechnical Commission, “IEC 60529:1989. Degrees of protection provided by enclosures (IP Code),” IEC, 1989\. \[En línea\]. Disponible en: [https://cdn.standards.iteh.ai/samples/3993/1c9316a803404d25ae2abe512833463b/IEC-60529-1989.pdf](https://cdn.standards.iteh.ai/samples/3993/1c9316a803404d25ae2abe512833463b/IEC-60529-1989.pdf)**
+**[2]** International Organization for Standardization, “ISO 12100:2010. Safety of machinery — General principles for design — Risk assessment and risk reduction,” ISO, 2010. [En línea]. Disponible en:  
+https://www.normsplash.com/Samples/ISO/186791471/ISO-12100-2010-en.pdf
 
-**\[4\] Congreso de la República del Perú, “Ley N.° 29783, Ley de Seguridad y Salud en el Trabajo,” 2011\. \[En línea\]. Disponible en: [https://cdn.www.gob.pe/uploads/document/file/571762/Ley\_N\_\_29783.pdf](https://cdn.www.gob.pe/uploads/document/file/571762/Ley_N__29783.pdf)**
+**[3]** International Electrotechnical Commission, “IEC 60529:1989. Degrees of protection provided by enclosures (IP Code),” IEC, 1989. [En línea]. Disponible en:  
+https://cdn.standards.iteh.ai/samples/3993/1c9316a803404d25ae2abe512833463b/IEC-60529-1989.pdf
 
-**\[5\] International Organization for Standardization, “ISO 7250-1:2017. Basic human body measurements for technological design — Part 1: Body measurement definitions and landmarks,” ISO, 2017\. \[En línea\]. Disponible en: [ISO 7250-1:2017 — ISO](https://www.iso.org/standard/65246.html?utm_source=chatgpt.com)**
+**[4]** Congreso de la República del Perú, “Ley N.° 29783, Ley de Seguridad y Salud en el Trabajo,” 2011. [En línea]. Disponible en:  
+https://cdn.www.gob.pe/uploads/document/file/571762/Ley_N__29783.pdf
 
-**\[6\] International Organization for Standardization, “ISO 21920-1:2021. Geometrical product specifications (GPS) — Surface texture: Profile — Part 1: Indication of surface texture,” ISO, 2021\. \[En línea\]. Disponible en: [ISO 21920-1:2021 — ISO](https://www.iso.org/standard/72196.html?utm_source=chatgpt.com)**
+**[5]** International Organization for Standardization, “ISO 7250-1:2017. Basic human body measurements for technological design — Part 1: Body measurement definitions and landmarks,” ISO, 2017. [En línea]. Disponible en:  
+https://www.iso.org/standard/65246.html
+
+---
+
+<p align="center">
+  <img 
+    src="https://capsule-render.vercel.app/api?type=waving&color=0:D8D2C8,45:EAE5DC,100:F7F4EE&height=90&section=footer"
+    width="100%"
+  />
+</p>ce texture: Profile — Part 1: Indication of surface texture,” ISO, 2021\. \[En línea\]. Disponible en: [ISO 21920-1:2021 — ISO](https://www.iso.org/standard/72196.html?utm_source=chatgpt.com)**
