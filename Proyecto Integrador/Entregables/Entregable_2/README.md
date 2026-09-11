@@ -131,13 +131,13 @@ La **matriz morfológica** permite plantear diferentes alternativas de solución
 ## 🔋 3. Dominio de energía
 
 <p align="center">
-<img width="802" height="585" alt="image" src="https://github.com/user-attachments/assets/e9d46c9f-d4c4-45b7-a9b4-d961193fe843" />
+<img width="802" height="607" alt="image" src="https://github.com/user-attachments/assets/a50167c9-6345-4c08-a4f6-0334b855bc4e" />
 </p>
 
 | Función parcial | Concepto A | Concepto B | Concepto C |
 |---|---|---|---|
 | Alimentar el sistema | Batería recargable Li-ion 18650 | Batería recargable Li-Po | Power bank |
-| Recargar dispositivo | BMS S3 | TP4056 | Cargador externo |
+| Recargar dispositivo | BMS 3S | TP4056 | Cargador externo |
 
 ---
 
@@ -357,7 +357,7 @@ A partir de la matriz morfológica y de la evaluación realizada, el concepto se
 | Protección | Carcasa impresa en 3D |
 | Acceso interno | Tapa desmontable |
 | Alimentación | Batería recargable Li-ion 18650 |
-| Recarga | BMS S3 |
+| Recarga | BMS 3S |
 | Control del sistema | XIAO ESP32S3 Sense |
 | Inicio de captura | Botón físico |
 | Iluminación | Potenciometro |
