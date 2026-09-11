@@ -2,7 +2,6 @@
 
 Para evaluar la resistencia estructural de los puntos de montaje de la placa, se realizó una simulación aplicando una fuerza de 5 N directamente sobre las caras internas de los orificios cilíndricos. Para brindar mayor precisión a las condiciones de frontera, la carga se definió direccionalmente a lo largo del eje Z negativo (fz = -5 N), representando la carga de compresión o tensión axial que experimentan las uniones (como el apriete de pernos) durante su operación.
 
-![Configuración de Fuerza](image_5daa30.png)
 
 Asimismo, se configuró de manera precisa la acción de la gravedad para considerar el efecto del peso propio del material en la distribución de las cargas. Se estableció una magnitud de 9.8 m/s² con un vector de dirección hacia abajo (ez = -1). Para este análisis, se restringió el movimiento del componente mediante un soporte fijo (*fixed support*) sobre el cuerpo principal de la estructura, lo que permite evaluar cómo se distribuye la tensión en los anclajes.
 
