@@ -1,4 +1,3 @@
----
 
 ## 🧩 Simulación estructural en SimScale
 
