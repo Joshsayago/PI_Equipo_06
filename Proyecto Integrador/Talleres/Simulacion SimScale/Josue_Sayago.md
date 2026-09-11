@@ -2,6 +2,9 @@
 
 Para evaluar la resistencia estructural de los puntos de montaje de la placa, se realizó una simulación aplicando una fuerza de 5 N directamente sobre las caras internas de los cuatro orificios cilíndricos. Para brindar mayor precisión a las condiciones de frontera, la carga se definió direccionalmente a lo largo del eje transversal de la pieza (vectorizada en la dirección del eje X), representando el empuje lateral o la carga de corte que experimentan las uniones (como pernos o pasadores) durante su operación. Asimismo, se configuró de manera precisa la acción de la gravedad, estableciendo una aceleración estándar de -9.81 m/s² en el eje vertical (dirección -Z) para considerar el efecto del peso propio del material en la distribución de las cargas.
 
+ <img width="683" height="524" alt="image" src="https://github.com/user-attachments/assets/d4f0284b-a9fb-4fd3-beba-5502308f25bc" />
+<img width="683" height="524" alt="image" src="https://github.com/user-attachments/assets/16a66db5-e0fb-4814-b80a-ca318f61e812" />  
+
 Para este análisis, se restringió el movimiento del componente mediante un soporte fijo (*fixed support*) sobre el cuerpo principal de la estructura, lo que permite evaluar cómo se distribuye la tensión al resistir la tracción combinada en los anclajes.
 
 <img width="1872" height="876" alt="Captura de pantalla 2026-08-27 194944" src="https://github.com/user-attachments/assets/f2ef3d05-96d8-4b70-9cc0-232a3abd1c00" />
@@ -16,8 +19,7 @@ Calculando el Factor de Seguridad (FS) de la pieza:
 
 Debido a que el esfuerzo máximo obtenido (40.96 kPa) es minúsculo frente a la capacidad del material y el FS es holgadamente superior a 1, la justificación matemática corrobora que, bajo una carga estática transversal de 5 N, la zona de las fijaciones operará completamente dentro de su zona elástica, sin presentar ningún nivel de riesgo estructural.
 
- <img width="1183" height="824" alt="image" src="https://github.com/user-attachments/assets/d4f0284b-a9fb-4fd3-beba-5502308f25bc" />
-<img width="1218" height="811" alt="image" src="https://github.com/user-attachments/assets/16a66db5-e0fb-4814-b80a-ca318f61e812" />
+
 
 ## Conclusión
 
