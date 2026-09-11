@@ -107,4 +107,4 @@ https://www.iso.org/standard/65246.html
     src="https://capsule-render.vercel.app/api?type=waving&color=0:D8D2C8,45:EAE5DC,100:F7F4EE&height=90&section=footer"
     width="100%"
   />
-</p>ce texture: Profile — Part 1: Indication of surface texture,” ISO, 2021\. \[En línea\]. Disponible en: [ISO 21920-1:2021 — ISO](https://www.iso.org/standard/72196.html?utm_source=chatgpt.com)**
+
