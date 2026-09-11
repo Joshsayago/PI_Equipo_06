@@ -19,13 +19,13 @@ Para evaluar preliminarmente el comportamiento mecánico de la carcasa del dispo
 | **Carga de referencia** | 5 N |
 | **Dirección principal** | Eje Z negativo |
 
-El material seleccionado para la carcasa fue **PLA (ácido poliláctico)**, debido a que es un material comúnmente utilizado en piezas fabricadas mediante impresión 3D.
+El material seleccionado para la carcasa fue **PLA (ácido poliláctico)**, debido a que es un material comúnmente utilizado en la fabricación de piezas mediante impresión 3D.
 
-También se definieron **condiciones de soporte o enlace** para representar la sujeción de la carcasa y evitar el movimiento libre del modelo durante la simulación.
+También se definieron **condiciones de soporte o enlace** para representar la sujeción de la carcasa durante el análisis.
 
 ---
 
-### 🌎 Gravedad aplicada
+### 🌎 Configuración de la gravedad
 
 La gravedad se configuró con una magnitud de:
 
@@ -39,16 +39,16 @@ $$
 e_x = 0,\qquad e_y = 0,\qquad e_z = -1
 $$
 
-Esto representa la acción de la gravedad en dirección vertical hacia abajo.
+Esto representa la acción de la gravedad en dirección vertical hacia abajo sobre el modelo.
 
 <p align="center">
   <img
-    src="Recursos/Imágenes/SimScale_Gravedad.png"
-    width="760"
+    src="https://github.com/user-attachments/assets/1f9d815d-a40e-4bc8-9fe6-cc08c922c40f"
+    width="820"
     alt="Configuración de gravedad en SimScale"
   />
   <br>
-  <em>Figura X. Configuración de la gravedad utilizada en el modelo.</em>
+  <em>Figura X. Configuración de la gravedad del modelo en SimScale.</em>
 </p>
 
 ---
@@ -81,7 +81,7 @@ Por lo tanto, se consideró una **fuerza aproximada de 5 N en dirección vertica
 
 ---
 
-### ⬇️ Fuerza aplicada en SimScale
+### ⬇️ Aplicación de la fuerza
 
 La fuerza principal se configuró con los siguientes componentes:
 
@@ -101,19 +101,19 @@ El signo negativo indica que la fuerza actúa en dirección descendente sobre el
 
 <p align="center">
   <img
-    src="Recursos/Imágenes/SimScale_Fuerza_5N.png"
-    width="760"
+    src="https://github.com/user-attachments/assets/ca10ce8e-51a1-4a6e-96f0-894562d1273d"
+    width="820"
     alt="Fuerza vertical de 5 N aplicada en SimScale"
   />
   <br>
-  <em>Figura X. Configuración de la fuerza vertical de 5 N sobre la carcasa.</em>
+  <em>Figura X. Aplicación de una fuerza vertical de 5 N sobre la carcasa.</em>
 </p>
 
 ---
 
 ### ✋ Fuerzas de agarre
 
-Además del peso de la cámara, se aplicaron **tres fuerzas de compresión de referencia de 5 N** en las partes:
+Además de la carga asociada al peso de la cámara, se aplicaron **tres fuerzas de compresión de referencia de 5 N** en las partes:
 
 - superior,
 - inferior,
@@ -127,9 +127,9 @@ Debido a que no se contó con un valor experimental específico de fuerza de aga
 
 ### 🔩 Condiciones de soporte
 
-Se establecieron condiciones de enlace o soporte en zonas específicas del modelo para representar la sujeción de la carcasa durante el análisis.
+Se establecieron condiciones de enlace o soporte en zonas específicas del modelo para representar la sujeción de la carcasa durante la simulación.
 
-Estas restricciones permiten evaluar la distribución de esfuerzos y deformaciones generadas por las cargas aplicadas.
+Estas restricciones permiten evaluar la distribución de esfuerzos y deformaciones producidas por las cargas aplicadas.
 
 ---
 
@@ -143,20 +143,7 @@ La simulación estructural se realizó con el propósito de:
 - simular de manera aproximada las fuerzas de agarre;
 - identificar posibles zonas críticas antes de fabricar el prototipo.
 
----
-
-### 🖥️ Resultado de la simulación
-
-<p align="center">
-  <img
-    src="https://github.com/user-attachments/assets/7b723053-41df-443c-b288-24d381e5daf1"
-    width="900"
-    alt="Resultado de la simulación estructural en SimScale"
-  />
-  <br>
-  <em>Figura X. Resultado del análisis estructural realizado en SimScale.</em>
-</p>
-
 > 🧱 **La simulación permite evaluar preliminarmente el comportamiento de la carcasa antes de su fabricación y verificar su respuesta frente al peso de la cámara y las fuerzas externas consideradas.**
 
----ibución de la tensión de Von Mises, la cual permite identificar las zonas donde se concentran los mayores esfuerzos mecánicos. De acuerdo con los resultados obtenidos, la mayor parte del case presenta tonalidades azules, lo que indica una menor concentración de esfuerzos, mientras que las zonas con colores de mayor intensidad representan regiones donde el esfuerzo es relativamente más elevado. Este análisis permite identificar posibles puntos críticos del diseño y evaluar si la carcasa de PLA presenta un comportamiento estructural adecuado frente a las cargas aplicadas.
+---
+
