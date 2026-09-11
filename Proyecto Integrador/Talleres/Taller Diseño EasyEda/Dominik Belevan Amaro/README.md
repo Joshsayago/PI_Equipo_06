@@ -1,18 +1,3 @@
-<p align="center">
-  <img 
-    src="https://capsule-render.vercel.app/api?type=soft&color=0:F7F4EE,45:EAE5DC,100:D8D2C8&height=150&section=header&text=Diseño%20electrónico%20del%20sistema&fontSize=38&fontColor=4A4A4A&animation=fadeIn&fontAlignY=45&desc=Esquemático%20•%20PCB%20•%20Modelo%203D&descAlignY=70&descSize=16"
-    width="100%"
-  />
-</p>
-
-<p align="center">
-  <img src="https://img.shields.io/badge/COMPONENTE_PRINCIPAL-XIAO_ESP32S3_Sense-E8E3DA?style=for-the-badge&labelColor=CFC9BF&color=E8E3DA">
-  <img src="https://img.shields.io/badge/DISEÑO-PCB-F3F0EA?style=for-the-badge&labelColor=D8D2C8&color=F3F0EA">
-  <img src="https://img.shields.io/badge/VALIDACIÓN-MODELO_3D-E8E3DA?style=for-the-badge&labelColor=CFC9BF&color=E8E3DA">
-</p>
-
-<br>
-
 # 🔌 Diseño electrónico del sistema
 
 Para el desarrollo del sistema portátil de detección y registro de grietas se realizó el diseño electrónico considerando como componente principal la **XIAO ESP32S3 Sense**. El proceso comprende la elaboración del esquemático, el diseño de la placa de circuito impreso (PCB) y su posterior visualización mediante un modelo 3D.
