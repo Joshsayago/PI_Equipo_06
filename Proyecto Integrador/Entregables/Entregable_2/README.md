@@ -1,3 +1,18 @@
+<p align="center">
+  <img 
+    src="https://capsule-render.vercel.app/api?type=soft&color=0:F7F4EE,45:EAE5DC,100:D8D2C8&height=150&section=header&text=CrackScan&fontSize=44&fontColor=4A4A4A&animation=fadeIn&fontAlignY=45&desc=Sistema%20portátil%20para%20la%20evaluación%20preliminar%20de%20grietas%20en%20concreto&descAlignY=70&descSize=16"
+    width="100%"
+  />
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/DETECCIÓN-Grietas-E8E3DA?style=for-the-badge&labelColor=CFC9BF&color=E8E3DA">
+  <img src="https://img.shields.io/badge/GEOLOCALIZACIÓN-GPS-F3F0EA?style=for-the-badge&labelColor=D8D2C8&color=F3F0EA">
+  <img src="https://img.shields.io/badge/ANÁLISIS-Evaluación_preliminar-E8E3DA?style=for-the-badge&labelColor=CFC9BF&color=E8E3DA">
+</p>
+
+<br>
+
 # 🔎 CrackScan
 
 ## Sistema portátil para la evaluación preliminar de grietas en concreto
@@ -303,6 +318,10 @@ Redondeando los resultados:
 
 # 🏆 6. Selección del concepto
 
+<p align="center">
+  <img src="https://img.shields.io/badge/CONCEPTO_A-SELECCIONADO-E8E3DA?style=for-the-badge&labelColor=CFC9BF&color=E8E3DA">
+</p>
+
 | Posición | Concepto | Puntuación ponderada | Resultado |
 |---:|---|---:|---|
 | **1** | **Concepto A (Base)** | **3.65** | ✅ **Seleccionado** |
@@ -354,3 +373,18 @@ A partir de la matriz morfológica y de la evaluación realizada, el concepto se
 | Visualización | Dashboard web |
 
 ---
+
+<p align="center">
+  <img src="https://img.shields.io/badge/PROYECTO_INTEGRADOR-2026--2-D8D2C8?style=for-the-badge&labelColor=C7C0B6&color=E8E3DA">
+</p>
+
+<p align="center">
+  <b>Diseño • Evaluación • Integración • Selección</b>
+</p>
+
+<p align="center">
+  <img 
+    src="https://capsule-render.vercel.app/api?type=waving&color=0:D8D2C8,45:EAE5DC,100:F7F4EE&height=90&section=footer"
+    width="100%"
+  />
+</p>
