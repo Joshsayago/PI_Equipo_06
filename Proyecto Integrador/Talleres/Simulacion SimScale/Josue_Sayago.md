@@ -2,8 +2,8 @@
 
 Para evaluar la resistencia estructural de los puntos de montaje de la placa, se realizó una simulación aplicando una fuerza de 5 N directamente sobre las caras internas de los cuatro orificios cilíndricos. Para brindar mayor precisión a las condiciones de frontera, la carga se definió direccionalmente a lo largo del eje transversal de la pieza (vectorizada en la dirección del eje X), representando el empuje lateral o la carga de corte que experimentan las uniones (como pernos o pasadores) durante su operación. Asimismo, se configuró de manera precisa la acción de la gravedad, estableciendo una aceleración estándar de -9.81 m/s² en el eje vertical (dirección -Z) para considerar el efecto del peso propio del material en la distribución de las cargas.
 
- <img width="483" height="324" alt="image" src="https://github.com/user-attachments/assets/d4f0284b-a9fb-4fd3-beba-5502308f25bc" />
-<img width="483" height="324" alt="image" src="https://github.com/user-attachments/assets/16a66db5-e0fb-4814-b80a-ca318f61e812" />  
+ <img width="383" height="124" alt="image" src="https://github.com/user-attachments/assets/d4f0284b-a9fb-4fd3-beba-5502308f25bc" />
+<img width="383" height="124" alt="image" src="https://github.com/user-attachments/assets/16a66db5-e0fb-4814-b80a-ca318f61e812" />  
 
 Para este análisis, se restringió el movimiento del componente mediante un soporte fijo (*fixed support*) sobre el cuerpo principal de la estructura, lo que permite evaluar cómo se distribuye la tensión al resistir la tracción combinada en los anclajes.
 
