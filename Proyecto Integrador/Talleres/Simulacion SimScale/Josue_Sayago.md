@@ -5,7 +5,6 @@ Para evaluar la resistencia estructural de los puntos de montaje de la placa, se
 
 Asimismo, se configuró de manera precisa la acción de la gravedad para considerar el efecto del peso propio del material en la distribución de las cargas. Se estableció una magnitud de 9.8 m/s² con un vector de dirección hacia abajo (ez = -1). Para este análisis, se restringió el movimiento del componente mediante un soporte fijo (*fixed support*) sobre el cuerpo principal de la estructura, lo que permite evaluar cómo se distribuye la tensión en los anclajes.
 
-![Configuración de Gravedad](image_5daa11.png)
 
 <img width="1872" height="876" alt="Captura de pantalla 2026-08-27 194944" src="https://github.com/user-attachments/assets/f2ef3d05-96d8-4b70-9cc0-232a3abd1c00" />
 
