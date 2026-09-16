@@ -55,71 +55,7 @@ El conjunto de datos utilizado contiene **5000 observaciones** y no presenta val
 | Entrada | `Humedad` | Humedad registrada |
 | Salida | `Consumo_Energia` | Consumo de energía que se desea predecir |
 
-### Resumen del conjunto de datos
 
-| Característica | Resultado |
-|:---|:---:|
-| Número de registros | **5000** |
-| Variables de entrada | **4** |
-| Variable de salida | **1** |
-| Valores nulos | **0** |
-| Datos de entrenamiento | **3500 — 70 %** |
-| Datos de evaluación | **1500 — 30 %** |
-
----
-
-## ⚙️ Metodología aplicada
-
-Para desarrollar el análisis se siguieron las siguientes etapas:
-
-1. Importación del conjunto de datos.
-2. Exploración y revisión de la información.
-3. Comprobación de valores nulos y tipos de datos.
-4. Análisis estadístico descriptivo.
-5. Elaboración de la matriz de correlación.
-6. Selección de las variables independientes y dependiente.
-7. División de los datos en entrenamiento y evaluación.
-8. Entrenamiento del modelo de regresión lineal.
-9. Generación de predicciones.
-10. Comparación entre valores reales y predichos.
-11. Análisis complementario de la importancia de las características.
-12. Interpretación de los resultados obtenidos.
-
----
-
-## 🧮 Modelo de regresión lineal
-
-La ecuación general de una regresión lineal múltiple es:
-
-<div align="center">
-
-**ŷ = β₀ + β₁X₁ + β₂X₂ + β₃X₃ + β₄X₄**
-
-</div>
-
-A partir del entrenamiento se obtuvo la siguiente ecuación:
-
-<div align="center">
-
-### Consumo de energía estimado
-
-**ŷ = 2.7411 + 0.1371(Temperatura) + 1.6688(Horas de operación) + 0.0963(Carga) + 0.0268(Humedad)**
-
-</div>
-
-### Coeficientes obtenidos
-
-| Variable | Coeficiente | Interpretación |
-|:---|---:|:---|
-| Intercepto | **2.7411** | Valor inicial estimado por el modelo |
-| Temperatura | **0.1371** | Su aumento produce un incremento pequeño en el consumo |
-| Horas de operación | **1.6688** | Es la variable con mayor incremento estimado |
-| Carga | **0.0963** | Presenta una influencia positiva sobre el consumo |
-| Humedad | **0.0268** | Presenta una influencia positiva, pero reducida |
-
-> La interpretación de cada coeficiente se realiza manteniendo constantes las demás variables del modelo.
-
----
 
 # 📊 Resultados gráficos
 
