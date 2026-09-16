@@ -6,9 +6,9 @@ E análisis exploratorio y predictivo de un sistema basado en 5,000 registros, e
 ## 1. Mapa de Calor de Correlaciones (Heatmap)
 
 Este gráfico nos permite identificar matemáticamente qué variable (Temperatura, Humedad, Carga u Horas de Operación) tiene la relación más fuerte con el Consumo de Energía. Los colores más intensos indicarán una mayor dependencia.
-
+<div align="center">
 <img width="750" height="484" alt="image" src="https://github.com/user-attachments/assets/ea75d247-e082-4dba-b547-8e172e79897b" />
-
+<div>
 ---
 
 ## 2. Relación Operativa vs Consumo de Energía
