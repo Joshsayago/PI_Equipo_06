@@ -66,6 +66,8 @@ Se analizó la distribución de la variable `Consumo_Energia` mediante un histog
 <div align="center">
 
 <img width="695" height="351" alt="image" src="https://github.com/user-attachments/assets/0be905b1-cb68-4e22-89a1-c7b7100e40ab" />
+<img width="576" height="413" alt="image" src="https://github.com/user-attachments/assets/0369e533-0642-4e5e-ac41-75e43df9b2f0" />
+
 
 
 </div>
@@ -228,7 +230,7 @@ El código completo utilizado para el desarrollo del taller se encuentra disponi
 
 <div align="center">
 
-Abrir proyecto en Google Colab
+[Abrir proyecto en Google Colab](https://colab.research.google.com/drive/1LAjpfEdVM_ZxRvdusQJ1LAQmscdhbhcp?authuser=1#scrollTo=KNK-rJK2qpEn)
 
 </div>
 
