@@ -1,4 +1,4 @@
-# 📈 Taller de Regresión Lineal – Semana 5 
+# 📈 Taller de Regresión Lineal
 En este taller se trabajó con **Regresión Lineal** para analizar y predecir el **consumo de energía** a partir de diferentes variables. 
 ## 📊 Análisis de datos 
 Se analizaron variables como: 
