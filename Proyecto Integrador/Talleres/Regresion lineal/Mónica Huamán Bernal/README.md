@@ -230,7 +230,7 @@ El código completo utilizado para el desarrollo del taller se encuentra disponi
 
 <div align="center">
 
-[Abrir proyecto en Google Colab](https://colab.research.google.com/drive/1LAjpfEdVM_ZxRvdusQJ1LAQmscdhbhcp?authuser=1#scrollTo=KNK-rJK2qpEn)
+[Abrir proyecto en Google Colab][(https://colab.research.google.com/drive/1LAjpfEdVM_ZxRvdusQJ1LAQmscdhbhcp?authuser=1#scrollTo=KNK-rJK2qpEn)](https://colab.research.google.com/drive/11AuGiA9RQU85YKpOPQVKpLI2hEEK1x2M)
 
 </div>
 
