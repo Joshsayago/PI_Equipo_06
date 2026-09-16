@@ -9,6 +9,7 @@ Este gráfico nos permite identificar matemáticamente qué variable (Temperatur
 <div align="center">
 <img width="750" height="484" alt="image" src="https://github.com/user-attachments/assets/ea75d247-e082-4dba-b547-8e172e79897b" />
 <div>
+  
 ---
 
 ## 2. Relación Operativa vs Consumo de Energía
