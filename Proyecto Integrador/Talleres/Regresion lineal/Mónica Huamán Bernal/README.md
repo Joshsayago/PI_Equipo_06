@@ -12,8 +12,7 @@
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge\&logo=python\&logoColor=white)
 ![Google Colab](https://img.shields.io/badge/Google_Colab-F9AB00?style=for-the-badge\&logo=googlecolab\&logoColor=white)
-![Machine Learning](https://img.shields.io/badge/Machine_Learning-6C63FF?style=for-the-badge)
-
+ 
 </div>
 
 ---
@@ -66,8 +65,8 @@ Se analizó la distribución de la variable `Consumo_Energia` mediante un histog
 
 <div align="center">
 
-<!--<img width="695" height="351" alt="image" src="https://github.com/user-attachments/assets/0be905b1-cb68-4e22-89a1-c7b7100e40ab" />
- -->
+<img width="695" height="351" alt="image" src="https://github.com/user-attachments/assets/0be905b1-cb68-4e22-89a1-c7b7100e40ab" />
+
 
 </div>
 
@@ -114,8 +113,7 @@ Para analizar estos errores se utilizó un gráfico de residuos frente a los val
 
 <div align="center">
 
-<!--<img width="854" height="687" alt="image" src="https://github.com/user-attachments/assets/8dc5aa35-f5a5-42f3-91d0-8b4def57f4a6" />
- -->
+<img width="854" height="687" alt="image" src="https://github.com/user-attachments/assets/8dc5aa35-f5a5-42f3-91d0-8b4def57f4a6" />
 
 </div>
 
@@ -161,8 +159,8 @@ tree_model.feature_importances_
 
 <div align="center">
 
-<!-- <img width="907" height="609" alt="image" src="https://github.com/user-attachments/assets/c1fb309e-83ce-47df-922b-9f52d0e4fbc1" />
- -->
+<img width="907" height="609" alt="image" src="https://github.com/user-attachments/assets/c1fb309e-83ce-47df-922b-9f52d0e4fbc1" />
+
 
 </div>
 
