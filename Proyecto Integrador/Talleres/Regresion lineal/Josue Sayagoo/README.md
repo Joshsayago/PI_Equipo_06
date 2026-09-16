@@ -1,5 +1,5 @@
 # Análisis de Consumo Energético y Variables Ambientales
-E análisis exploratorio y predictivo de un sistema basado en 5,000 registros, evaluando cómo las condiciones del entorno y la exigencia operativa impactan el gasto eléctrico.
+Un análisis exploratorio y predictivo de un sistema basado en 5,000 registros, evaluando cómo las condiciones del entorno y la exigencia operativa impactan el gasto eléctrico.
 
 ---
 
