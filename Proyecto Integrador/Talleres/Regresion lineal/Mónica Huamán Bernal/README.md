@@ -192,7 +192,7 @@ La comparación permitió reconocer diferentes estrategias para abordar problema
 
 ---
 
-# 9. Análisis estadístico adicional
+# 8. Análisis estadístico adicional
 
 Finalmente, se utilizó `statsmodels` para ajustar un modelo mediante **OLS (Ordinary Least Squares)**.
 
@@ -202,7 +202,7 @@ Este procedimiento permitió relacionar el enfoque de aprendizaje automático co
 
 ---
 
-# 10. Principales aprendizajes
+# 9. Principales aprendizajes
 
 * Importancia del **análisis exploratorio** antes de construir un modelo.
 * Uso de gráficos para comprender el comportamiento de los datos.
@@ -215,7 +215,7 @@ Este procedimiento permitió relacionar el enfoque de aprendizaje automático co
 
 ---
 
-# 11. Conclusiones
+# 10. Conclusiones
 
 El desarrollo del taller permitió aplicar un flujo básico de análisis y modelamiento predictivo, comenzando por la exploración de los datos y continuando con la construcción y evaluación de modelos.
 
@@ -224,7 +224,7 @@ La **Regresión Lineal** permitió trabajar directamente con el conjunto de dato
 El análisis de los residuos y de la importancia de las variables permitió complementar las predicciones con información sobre el comportamiento y la interpretación de los modelos.
 
 En conjunto, el taller permitió comprender de manera práctica cómo las herramientas de análisis estadístico y aprendizaje automático pueden utilizarse para estudiar datos y construir modelos predictivos.
-# 12. Código
+# 11. Código
 
 El código completo utilizado para el desarrollo del taller se encuentra disponible en Google Colab.
 
