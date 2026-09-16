@@ -1,4 +1,4 @@
-# 📊 Análisis de Consumo Energético y Variables Ambientales
+# Análisis de Consumo Energético y Variables Ambientales
 E análisis exploratorio y predictivo de un sistema basado en 5,000 registros, evaluando cómo las condiciones del entorno y la exigencia operativa impactan el gasto eléctrico.
 
 ---
@@ -14,27 +14,27 @@ Este gráfico nos permite identificar matemáticamente qué variable (Temperatur
 ## 2. Relación Operativa vs Consumo de Energía
 
 Al aislar la variable mecánica principal, este gráfico de dispersión ilustra la proporción directa entre el esfuerzo del sistema y el incremento en la demanda eléctrica. Nos ayuda a confirmar si la tendencia es estrictamente lineal.
-
+<div align="center">
 <img width="1783" height="983" alt="image" src="https://github.com/user-attachments/assets/e54c6d5f-ef85-4c6e-bc23-ac1a082715a8" />
-
+<div>
 
 ---
 
 ## 3. Distribución de los residuos (Histograma)
 
 Para entender el comportamiento general del sistema, este histograma muestra la frecuencia de los distintos niveles de residuos. Un sesgo hacia la derecha o picos anómalos podrían indicar momentos de estrés o sobrecarga que requieren optimización.
-
+<div align="center">
 <img width="925" height="425" alt="image" src="https://github.com/user-attachments/assets/fe934353-7d63-4fbc-b639-579eb9966161" />
-
+<div>
 
 ---
 
 ## 4. Rendimiento del Modelo: Real vs. Predicción
 
 Una vez entrenado el modelo de regresión, este gráfico evalúa su precisión comparando los valores reales registrados frente a las estimaciones calculadas. Mientras más se acerquen los puntos a la línea diagonal perfecta, mayor será la fiabilidad predictiva de nuestro algoritmo.
-
+<div align="center">
 <img width="747" height="427" alt="image" src="https://github.com/user-attachments/assets/1c2353ea-d58f-4b06-ae1c-1f8beabd4b40" />
-
+<div>
 ---
 
 ## 5. Recomendaciones de Implementación
