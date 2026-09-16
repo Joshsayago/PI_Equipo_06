@@ -6,13 +6,19 @@
 
 **Estudiante:** Bertha Dominik Belevan Amaro  
 **Equipo:** Equipo 06  
-**Curso:** Proyecto Integrador
+**Curso:** Proyecto Integrador  
 
 <br>
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
 ![Google Colab](https://img.shields.io/badge/Google_Colab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=white)
-![Machine Learning](https://img.shields.io/badge/Machine-Learning-6C63FF?style=for-the-badge)
+![Machine Learning](https://img.shields.io/badge/Machine_Learning-6C63FF?style=for-the-badge)
+
+<br>
+
+<a href="https://colab.research.google.com/drive/1N3gLh6GmySgBYrM4U-EsZVXT7k-K6eYn#scrollTo=dKlxlU3CZszk">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Abrir en Google Colab">
+</a>
 
 </div>
 
@@ -20,24 +26,102 @@
 
 ## 📌 Descripción del trabajo
 
-En este taller se aplicaron herramientas de **regresión lineal y análisis predictivo** para estudiar el consumo de energía a partir de diferentes variables.
+En este taller se aplicó un modelo de **regresión lineal múltiple** para analizar y predecir el consumo de energía a partir de diferentes variables operativas y ambientales.
 
-El análisis permitió identificar la relación existente entre los datos, comparar los valores reales con los valores predichos y determinar cuáles características tienen mayor influencia en los resultados del modelo.
-
----
-
-## 📊 Trabajo realizado
-
-Durante el desarrollo del taller se trabajaron los siguientes puntos:
-
-- **Análisis de correlación:** permitió identificar la relación entre las variables y determinar cuáles están más asociadas con el consumo de energía.
-- **Valores reales vs. predichos:** permitió comparar las predicciones generadas por el modelo con los datos reales.
-- **Importancia de las características:** permitió reconocer las variables que aportan mayor información al modelo predictivo.
-- **Interpretación de resultados:** permitió evaluar visualmente el comportamiento y la utilidad de los modelos desarrollados.
+El análisis permitió identificar la relación entre las variables, construir un modelo predictivo, comparar los valores reales con los valores estimados y reconocer cuáles características presentan una mayor influencia en los resultados.
 
 ---
 
-# 📉 Resultados gráficos
+## 🎯 Objetivo
+
+Construir un modelo de regresión lineal capaz de estimar el **consumo de energía** mediante las siguientes variables:
+
+- Temperatura.
+- Horas de operación.
+- Carga.
+- Humedad.
+
+---
+
+## 📂 Descripción de los datos
+
+El conjunto de datos utilizado contiene **5000 observaciones** y no presenta valores nulos.
+
+| Tipo | Variable | Descripción |
+|:---:|:---|:---|
+| Entrada | `Temperatura` | Temperatura registrada durante la operación |
+| Entrada | `Horas_Operacion` | Cantidad de horas de funcionamiento |
+| Entrada | `Carga` | Nivel de carga del sistema |
+| Entrada | `Humedad` | Humedad registrada |
+| Salida | `Consumo_Energia` | Consumo de energía que se desea predecir |
+
+### Resumen del conjunto de datos
+
+| Característica | Resultado |
+|:---|:---:|
+| Número de registros | **5000** |
+| Variables de entrada | **4** |
+| Variable de salida | **1** |
+| Valores nulos | **0** |
+| Datos de entrenamiento | **3500 — 70 %** |
+| Datos de evaluación | **1500 — 30 %** |
+
+---
+
+## ⚙️ Metodología aplicada
+
+Para desarrollar el análisis se siguieron las siguientes etapas:
+
+1. Importación del conjunto de datos.
+2. Exploración y revisión de la información.
+3. Comprobación de valores nulos y tipos de datos.
+4. Análisis estadístico descriptivo.
+5. Elaboración de la matriz de correlación.
+6. Selección de las variables independientes y dependiente.
+7. División de los datos en entrenamiento y evaluación.
+8. Entrenamiento del modelo de regresión lineal.
+9. Generación de predicciones.
+10. Comparación entre valores reales y predichos.
+11. Análisis complementario de la importancia de las características.
+12. Interpretación de los resultados obtenidos.
+
+---
+
+## 🧮 Modelo de regresión lineal
+
+La ecuación general de una regresión lineal múltiple es:
+
+<div align="center">
+
+**ŷ = β₀ + β₁X₁ + β₂X₂ + β₃X₃ + β₄X₄**
+
+</div>
+
+A partir del entrenamiento se obtuvo la siguiente ecuación:
+
+<div align="center">
+
+### Consumo de energía estimado
+
+**ŷ = 2.7411 + 0.1371(Temperatura) + 1.6688(Horas de operación) + 0.0963(Carga) + 0.0268(Humedad)**
+
+</div>
+
+### Coeficientes obtenidos
+
+| Variable | Coeficiente | Interpretación |
+|:---|---:|:---|
+| Intercepto | **2.7411** | Valor inicial estimado por el modelo |
+| Temperatura | **0.1371** | Su aumento produce un incremento pequeño en el consumo |
+| Horas de operación | **1.6688** | Es la variable con mayor incremento estimado |
+| Carga | **0.0963** | Presenta una influencia positiva sobre el consumo |
+| Humedad | **0.0268** | Presenta una influencia positiva, pero reducida |
+
+> La interpretación de cada coeficiente se realiza manteniendo constantes las demás variables del modelo.
+
+---
+
+# 📊 Resultados gráficos
 
 ## 1. Consumo de energía real vs. predicción
 
@@ -51,24 +135,23 @@ Durante el desarrollo del taller se trabajaron los siguientes puntos:
 
 La gráfica compara los valores reales del consumo de energía con los valores calculados por el modelo de regresión lineal.
 
-Cada punto representa una observación:
-
 - El eje horizontal muestra el **consumo de energía real**.
 - El eje vertical muestra el **consumo de energía predicho**.
+- Cada punto corresponde a una observación del conjunto de evaluación.
 
 ### 💡 ¿Por qué elegí esta imagen?
 
-Elegí esta imagen porque permite observar directamente qué tan cercanas son las predicciones del modelo a los valores reales. Además, muestra de forma clara el funcionamiento principal de la regresión lineal.
+Elegí esta imagen porque permite observar directamente qué tan cercanas son las predicciones del modelo a los valores reales. También representa visualmente el objetivo principal del modelo de regresión lineal.
 
 ### ⭐ ¿Por qué es importante?
 
-Es importante porque permite evaluar visualmente la capacidad predictiva del modelo. Los puntos presentan una tendencia diagonal ascendente, lo cual indica que existe una buena relación entre los valores reales y los valores predichos.
+Es importante porque permite evaluar visualmente la capacidad predictiva del modelo. Los puntos presentan una tendencia diagonal ascendente, lo cual indica una relación positiva entre los valores reales y los predichos.
 
 ### 🛠️ ¿Para qué sirve?
 
-Sirve para comprobar si el modelo realiza predicciones adecuadas. Cuanto más cerca se encuentren los puntos de una línea diagonal imaginaria, mayor será la precisión del modelo.
+Sirve para comprobar si el modelo realiza predicciones razonables. Cuanto más cerca se encuentren los puntos de una línea diagonal imaginaria, mejor será el ajuste del modelo.
 
-> **Interpretación:** la concentración de los puntos alrededor de una tendencia diagonal indica que el modelo logra representar de manera adecuada el comportamiento general del consumo de energía.
+> **Interpretación:** la concentración de los puntos alrededor de una tendencia diagonal indica que el modelo logra representar adecuadamente el comportamiento general del consumo de energía, aunque existen pequeñas diferencias entre algunos valores reales y predichos.
 
 ---
 
@@ -82,28 +165,32 @@ Sirve para comprobar si el modelo realiza predicciones adecuadas. Cuanto más ce
 
 ### 🔎 ¿Qué representa?
 
-La gráfica muestra la importancia relativa de las características `X1`, `X2`, `X3`, `X4`, `X5` y `X6` dentro del modelo predictivo complementario.
+La gráfica muestra la importancia relativa de las características `X1`, `X2`, `X3`, `X4`, `X5` y `X6` en el modelo predictivo complementario de árbol de decisión.
 
-Las barras más largas representan las variables con mayor influencia en las predicciones.
+Las barras de mayor longitud corresponden a las variables que aportan más información al modelo.
 
 ### 💡 ¿Por qué elegí esta imagen?
 
-Elegí esta imagen porque permite comparar de forma rápida, visual y ordenada cuánto aporta cada característica al modelo.
+Elegí esta imagen porque presenta de manera clara, visual y ordenada cuánto aporta cada característica al resultado de la predicción.
 
 ### ⭐ ¿Por qué es importante?
 
-Es importante porque demuestra que no todas las variables influyen de la misma manera. En este caso:
+Es importante porque demuestra que no todas las variables tienen la misma influencia.
 
-- `X2` es la característica con mayor importancia.
-- `X1` ocupa el segundo lugar.
-- `X3` presenta una influencia menor, pero todavía relevante.
-- `X4`, `X5` y `X6` tienen una participación reducida.
+| Característica | Importancia aproximada | Nivel de influencia |
+|:---:|:---:|:---|
+| X2 | **53.7 %** | Muy alta |
+| X1 | **26.9 %** | Alta |
+| X3 | **11.1 %** | Moderada |
+| X4 | **3.8 %** | Baja |
+| X6 | **3.3 %** | Baja |
+| X5 | **1.2 %** | Muy baja |
 
 ### 🛠️ ¿Para qué sirve?
 
-Sirve para seleccionar las variables más relevantes, reducir información innecesaria y comprender en qué características se apoya principalmente el modelo para realizar sus predicciones.
+Sirve para identificar las variables más relevantes, reducir información innecesaria y comprender en cuáles características se apoya principalmente el modelo para realizar predicciones.
 
-> **Nota:** esta gráfica corresponde al modelo complementario de **árbol de decisión** desarrollado durante el taller. No representa directamente los coeficientes de la regresión lineal.
+> **Nota metodológica:** esta gráfica corresponde a un modelo complementario de **árbol de decisión** aplicado a datos generados durante el taller. No representa directamente los coeficientes de la regresión lineal del consumo de energía.
 
 ---
 
@@ -117,67 +204,105 @@ Sirve para seleccionar las variables más relevantes, reducir información innec
 
 ### 🔎 ¿Qué representa?
 
-La matriz muestra la relación existente entre las siguientes variables:
+La matriz muestra la relación existente entre la temperatura, las horas de operación, la carga, la humedad y el consumo de energía.
 
-- Temperatura.
-- Horas de operación.
-- Carga.
-- Humedad.
-- Consumo de energía.
-
-Los valores cercanos a `1` indican una relación positiva fuerte, mientras que los valores cercanos a `0` representan una relación débil.
+Los valores cercanos a `1` indican una relación positiva fuerte, mientras que los valores cercanos a `0` indican una relación débil.
 
 ### 💡 ¿Por qué elegí esta imagen?
 
-Elegí esta imagen porque reúne todas las relaciones entre las variables en una sola representación y utiliza colores para facilitar su interpretación.
+Elegí esta imagen porque reúne todas las relaciones entre las variables en una sola representación. Además, la escala de colores facilita la comparación e identificación de las relaciones más importantes.
 
 ### ⭐ ¿Por qué es importante?
 
-Es importante porque permite identificar cuáles variables están más asociadas con el consumo energético.
+Es importante porque permite reconocer cuáles variables están más asociadas con el consumo energético.
 
 | Variable | Correlación con el consumo | Interpretación |
 |:---|:---:|:---|
-| Horas de operación | **0.84** | Relación positiva fuerte |
-| Carga | **0.34** | Relación positiva moderada |
-| Temperatura | **0.098** | Relación positiva débil |
-| Humedad | **0.063** | Relación positiva débil |
+| Horas de operación | **0.8434** | Relación positiva fuerte |
+| Carga | **0.3366** | Relación positiva moderada |
+| Temperatura | **0.0978** | Relación positiva débil |
+| Humedad | **0.0627** | Relación positiva débil |
 
 ### 🛠️ ¿Para qué sirve?
 
-Sirve para seleccionar las variables que pueden aportar más información al modelo de regresión lineal y para comprender mejor el comportamiento de los datos.
+Sirve para seleccionar las variables que pueden aportar más información al modelo y comprender mejor el comportamiento del conjunto de datos.
 
-> **Interpretación:** las horas de operación son la variable más relacionada con el consumo de energía. Esto indica que, generalmente, cuando aumentan las horas de funcionamiento, también aumenta el consumo energético.
+> **Interpretación:** las horas de operación constituyen la variable más relacionada con el consumo de energía. Esto indica que, generalmente, cuando aumentan las horas de funcionamiento, también aumenta el consumo energético.
+
+> **Importante:** una correlación elevada indica asociación entre variables, pero no demuestra por sí sola una relación de causa y efecto.
 
 ---
 
-## 🧠 Comparación de las gráficas
+## 🧠 Comparación de los resultados
 
 | Gráfica | Información principal | Utilidad |
 |:---|:---|:---|
-| Real vs. predicho | Compara las predicciones con los datos reales | Evaluar el ajuste del modelo |
-| Importancia de características | Muestra cuánto influye cada variable | Seleccionar las variables más relevantes |
-| Matriz de correlación | Presenta la relación entre las variables | Identificar asociaciones con el consumo |
+| Real vs. predicho | Compara las predicciones con los datos reales | Evaluar visualmente el ajuste |
+| Importancia de características | Muestra cuánto aporta cada característica | Identificar las variables relevantes |
+| Matriz de correlación | Presenta la relación entre las variables | Reconocer asociaciones con el consumo |
+
+---
+
+## 🔍 Principales hallazgos
+
+- Las **horas de operación** presentan la correlación más alta con el consumo de energía: **0.8434**.
+- El coeficiente de las horas de operación también es el mayor del modelo: **1.6688**.
+- La **carga** presenta una relación positiva moderada con el consumo.
+- La temperatura y la humedad tienen una relación positiva, pero considerablemente menor.
+- La gráfica de valores reales y predichos presenta una tendencia diagonal definida.
+- No todas las variables aportan la misma cantidad de información a un modelo predictivo.
+
+---
+
+## ⚠️ Limitaciones
+
+Aunque el modelo presenta una tendencia adecuada, las predicciones no son completamente exactas. El consumo de energía puede depender de otras variables que no fueron incluidas en el conjunto de datos.
+
+Además, la correlación entre dos variables no significa necesariamente que una sea la causa directa de la otra.
+
+Como mejoras futuras se podría:
+
+- Incorporar nuevas variables relacionadas con el consumo.
+- Comparar los resultados con otros modelos predictivos.
+- Analizar con mayor detalle los errores o residuos.
+- Aplicar validación cruzada.
+- Evaluar el modelo con métricas como MAE, RMSE y R².
 
 ---
 
 ## ✅ Conclusión
 
-Las tres gráficas seleccionadas permiten analizar el problema desde diferentes perspectivas.
+El análisis permitió construir un modelo de regresión lineal múltiple para estimar el consumo de energía a partir de la temperatura, las horas de operación, la carga y la humedad.
 
-La comparación entre los valores reales y predichos muestra que el modelo logra representar adecuadamente la tendencia del consumo de energía. El análisis de importancia permite reconocer las características que más aportan a un modelo predictivo complementario. Finalmente, la matriz de correlación demuestra que las **horas de operación**, con un valor de **0.84**, son la variable con mayor relación con el consumo energético.
+La matriz de correlación y los coeficientes del modelo indican que las **horas de operación** son la variable con mayor relación e influencia estimada sobre el consumo energético. La comparación entre los valores reales y predichos presenta una tendencia diagonal, lo que demuestra que el modelo logra representar el comportamiento general de los datos.
 
-En conjunto, estos resultados permiten comprender el comportamiento de los datos, evaluar el modelo y reconocer las variables más relevantes para realizar predicciones.
+El análisis complementario de importancia de características también permitió comprobar que las variables no aportan información en la misma proporción. En conjunto, las herramientas aplicadas facilitaron la interpretación de los datos y la comprensión del funcionamiento de los modelos predictivos.
+
+---
+
+## 🔗 Acceso al trabajo completo
+
+El procedimiento, el código y los resultados pueden revisarse en el siguiente cuaderno:
+
+<div align="center">
+
+### 📓 [Abrir el proyecto en Google Colab](https://colab.research.google.com/drive/1N3gLh6GmySgBYrM4U-EsZVXT7k-K6eYn#scrollTo=dKlxlU3CZszk)
+
+</div>
 
 ---
 
 <div align="center">
 
-### 🛠️ Herramientas utilizadas
+## 🛠️ Herramientas utilizadas
 
-`Python` • `Google Colab` • `Pandas` • `NumPy` • `Matplotlib` • `Seaborn` • `Scikit-learn`
+`Python` • `Google Colab` • `Pandas` • `NumPy`  
+`Matplotlib` • `Seaborn` • `Scikit-learn` • `Statsmodels`
 
 <br>
 
-**Proyecto Integrador — Equipo 06**
+### Proyecto Integrador — Equipo 06
+
+**Bertha Dominik Belevan Amaro**
 
 </div>
