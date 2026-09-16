@@ -1,36 +1,35 @@
-# Análisis de Datos: Predicción de Consumo de Energía
+# 📊 Análisis de Datos y Modelamiento: Generación de Residuos
 
-## 1. Resumen Estadístico de la Data
-El conjunto de datos consta de 5000 registros sin valores nulos, lo que representa una base sólida y limpia para el modelamiento predictivo. 
-
-| Variable | Conteo | Rango Mínimo | Rango Máximo | Observación |
-| :--- | :--- | :--- | :--- | :--- |
-| **Temperatura** | 5000 | 18.0 | 35.0 | Variable ambiental clave. |
-| **Humedad** | 5000 | 40.0 | 90.0 | Condicionante de estrés térmico. |
-| **Carga** | 5000 | 30.0 | 100.0 | Exigencia mecánica directa. |
-| **Horas_Operacion** | 5000 | 2.0 | 12.0 | Tiempo de uso continuo. |
-| **Consumo_Energia** | 5000 | 9.1 | 42.6 | **Variable Objetivo (Dependiente)** |
+Este documento presenta el análisis exploratorio de datos para la predicción de la variable de **Residuos** (`y`), evaluando la influencia de los factores explicativos (`X1` a `X6`) registrados en el conjunto de datos.
 
 ---
 
-## 2. Análisis Visual: Los 4 Gráficos Clave
+## 1. Mapa de Calor de Correlaciones (Heatmap)
 
-### Gráfico 1: Matriz de Dispersión General (Pairplot)
-Este gráfico es el punto de partida crítico. Nos permite observar a simple vista las relaciones bivariadas entre todas las características ambientales/operativas y nuestra variable objetivo. Las diagonales confirman que las variables no presentan sesgos extremos.
+Este gráfico evalúa la relación matemática entre todas las variables independientes (`X1` - `X6`) y la variable objetivo `y` (Residuos). Permite identificar de manera directa cuáles factores presentan la mayor correlación positiva o negativa con la generación o comportamiento de los residuos.
 
-![Matriz de Dispersión](pairplot.png)
+> 🖼️ **[BORRA ESTA LÍNEA Y ARRASTRA AQUÍ LA IMAGEN heatmap.png]**
 
-### Gráfico 2: Mapa de Calor de Correlaciones (Heatmap)
-El mapa de calor cuantifica lo observado en la dispersión. Al observar los coeficientes de correlación de Pearson, podemos identificar matemáticamente qué parámetro (por ejemplo, la Carga o la Temperatura) impacta con mayor fuerza el consumo energético antes de entrenar el modelo.
+---
 
-![Mapa de Calor de Correlaciones](heatmap.png)
+## 2. Distribución de la Variable Residuos (Histograma)
 
-### Gráfico 3: Distribución del Consumo de Energía
-Es vital entender cómo se distribuye el esfuerzo energético. Este histograma nos confirma si el consumo tiene un comportamiento simétrico o si presenta picos anómalos que deban ser tratados.
+El histograma de la variable `y` muestra el comportamiento de la distribución de los residuos. Nos permite identificar la simetría de los datos, la presencia de sesgos o valores atípicos que puedan influir en el ajuste del modelo de regresión.
 
-![Distribución de Consumo](distribucion_consumo.png)
+> 🖼️ **[BORRA ESTA LÍNEA Y ARRASTRA AQUÍ LA IMAGEN distribucion_residuos.png]**
 
-### Gráfico 4: Regresión Operativa (Carga vs. Consumo)
-Aislando la variable operativa de mayor impacto, este gráfico de dispersión con línea de tendencia nos muestra visualmente la proporción directa entre el esfuerzo exigido al sistema y el salto en el gasto eléctrico.
+---
 
-![Carga vs Consumo](carga_vs_consumo.png)
+## 3. Relación Operativa: Factor Principal (X1) vs. Residuos (y)
+
+Gráfico de dispersión con línea de tendencia que analiza la influencia directa del predictor principal (`X1`) sobre la variable de respuesta `y`. Permite visualizar si existe una tendencia lineal clara o dispersión en la estimación.
+
+> 🖼️ **[BORRA ESTA LÍNEA Y ARRASTRA AQUÍ LA IMAGEN x1_vs_residuos.png]**
+
+---
+
+## 4. Matriz de Dispersión General (Pairplot)
+
+Vista general multivariable que muestra simultáneamente las relaciones bivariadas de todas las columnas (`X1` a `X6` y `y`), facilitando la detección visual de patrones complejos o colinealidad entre los predictores.
+
+> 🖼️ **[BORRA ESTA LÍNEA Y ARRASTRA AQUÍ LA IMAGEN pairplot.png]**
