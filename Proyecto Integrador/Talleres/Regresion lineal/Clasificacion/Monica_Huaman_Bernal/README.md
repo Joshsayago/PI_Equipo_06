@@ -1,7 +1,26 @@
-# Análisis de la concentración de monóxido de carbono (CO)
+<div align="center">
+
+# Taller de Regresión Lineal y Modelos Predictivos
+
+### Análisis de la concentración de monóxido de carbono (CO)
+
+**Estudiante:** Mónica Huamán Bernal  
+**Equipo:** Equipo 06  
+**Curso:** Proyecto Integrador
+
+<br>
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Google Colab](https://img.shields.io/badge/Google%20Colab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=white)
+![Scikit-learn](https://img.shields.io/badge/Scikit--learn-F7931E?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![Pandas](https://img.shields.io/badge/Pandas-150458?style=for-the-badge&logo=pandas&logoColor=white)
+![Statsmodels](https://img.shields.io/badge/Statsmodels-3B4F7D?style=for-the-badge&logo=python&logoColor=white)
+
+</div>
+
+---
 
 ## 1. Introducción
-
 El **monóxido de carbono (CO)** es un contaminante atmosférico asociado principalmente a procesos de combustión. Su presencia en el aire puede representar un riesgo para la salud humana, por lo que el monitoreo de sus concentraciones permite caracterizar la calidad del aire y analizar su comportamiento en diferentes lugares y periodos.
 
 En el presente trabajo se realizó un análisis estadístico de datos de calidad del aire correspondientes al **monóxido de carbono (CO)** en el área metropolitana de **Birmingham-Hoover, Alabama, Estados Unidos**, durante el periodo comprendido entre el **1 de enero de 2022 y el 31 de diciembre de 2023**. El conjunto de datos contiene **1876 observaciones**, provenientes de los sitios de monitoreo *North Birmingham*, *Fairfield* y *Arkadelphia/Near Road*. Los datos fueron obtenidos de la plataforma **AirData de la U.S. Environmental Protection Agency (EPA)** [1].
@@ -149,23 +168,13 @@ El modelo fue implementado mediante `LinearRegression()` de **scikit-learn**:
 
 La forma general del modelo de regresión utilizado fue:
 
-$$
-\widehat{CO}
-=
-\beta_0
-+
-\beta_1(\text{Daily Obs Count})
-+
-\beta_2(\text{Site Latitude})
-+
-\beta_3(\text{Elevation})
-$$
+**CO estimado = β₀ + β₁(Daily Obs Count) + β₂(Site Latitude) + β₃(Elevation)**
 
 donde:
 
-- $\widehat{CO}$ representa la concentración máxima diaria de CO estimada.
-- $\beta_0$ representa el intercepto.
-- $\beta_1$, $\beta_2$ y $\beta_3$ representan los coeficientes asociados a cada variable predictora.
+- **CO estimado** representa la concentración máxima diaria de CO estimada por el modelo.
+- **β₀** representa el intercepto.
+- **β₁**, **β₂** y **β₃** representan los coeficientes asociados a cada variable predictora.
 
 A partir del ajuste se obtuvieron los coeficientes del modelo. También se calcularon los errores estándar y los estadísticos *t* de los coeficientes como parte del análisis estadístico.
 
@@ -196,8 +205,7 @@ $$
 e_i = y_i-\widehat{y}_i
 $$
 
-donde $y_i$ representa el valor observado y $\widehat{y}_i$ el valor predicho por el modelo.
-
+donde **yᵢ** representa el valor observado y **ŷᵢ** representa el valor predicho por el modelo.
 Para analizar los residuos se utilizaron:
 
 - Histograma de residuos.
@@ -253,6 +261,7 @@ Estos resultados fueron utilizados posteriormente para evaluar la significancia 
 
 <div align="center">
 
+<img width="567" height="413" alt="image" src="https://github.com/user-attachments/assets/88364e22-6eee-421a-a97d-a9d0d9760190" />
 
 
 
@@ -260,11 +269,12 @@ Estos resultados fueron utilizados posteriormente para evaluar la significancia 
 
 #### Relaciones entre las variables
 
-**Figura 3. Matriz de relaciones entre las variables del conjunto de datos.**
+**Figura 3. Pairplot de la variable dependiente y las variables predictoras seleccionadas.**
 
 <div align="center">
 
-<img width="854" height="687" alt="Figura 3. Pairplot del conjunto de datos" src="PEGAR_AQUÍ_LA_IMAGEN" />
+<img width="985" height="986" alt="image" src="https://github.com/user-attachments/assets/82adaa17-41eb-45fa-8770-b07e9c2492b5" />
+
 
 </div>
 
@@ -272,7 +282,7 @@ Estos resultados fueron utilizados posteriormente para evaluar la significancia 
 
 <div align="center">
 
-<img width="854" height="687" alt="Figura 4. Matriz de correlación" src="PEGAR_AQUÍ_LA_IMAGEN" />
+<img width="820" height="539" alt="image" src="https://github.com/user-attachments/assets/4f5b5c58-bb02-455f-88d6-dd5a5c1cafc0" />
 
 </div>
 
@@ -282,7 +292,8 @@ Estos resultados fueron utilizados posteriormente para evaluar la significancia 
 
 <div align="center">
 
-<img width="854" height="687" alt="Figura 5. Número de observaciones vs. concentración de CO" src="PEGAR_AQUÍ_LA_IMAGEN" />
+<img width="562" height="543" alt="image" src="https://github.com/user-attachments/assets/ee978289-3513-48a0-96f3-25bd31bdc024" />
+
 
 </div>
 
@@ -290,7 +301,8 @@ Estos resultados fueron utilizados posteriormente para evaluar la significancia 
 
 <div align="center">
 
-<img width="854" height="687" alt="Figura 6. Latitud vs. concentración de CO" src="PEGAR_AQUÍ_LA_IMAGEN" />
+<img width="565" height="537" alt="image" src="https://github.com/user-attachments/assets/c38f0913-ad05-469e-ac7a-100ca2aea69a" />
+
 
 </div>
 
@@ -298,7 +310,8 @@ Estos resultados fueron utilizados posteriormente para evaluar la significancia 
 
 <div align="center">
 
-<img width="854" height="687" alt="Figura 7. Elevación vs. concentración de CO" src="PEGAR_AQUÍ_LA_IMAGEN" />
+<img width="550" height="537" alt="image" src="https://github.com/user-attachments/assets/58e5444d-2125-4d5b-9240-73b65a89cb52" />
+
 
 </div>
 
@@ -308,7 +321,8 @@ Estos resultados fueron utilizados posteriormente para evaluar la significancia 
 
 <div align="center">
 
-<img width="854" height="687" alt="Figura 8. Coeficientes del modelo" src="PEGAR_AQUÍ_LA_IMAGEN" />
+<img width="586" height="157" alt="image" src="https://github.com/user-attachments/assets/5ec861fe-3cba-4cef-a729-61b1fec90708" />
+
 
 </div>
 
@@ -327,7 +341,8 @@ Los valores obtenidos para las métricas de evaluación del modelo fueron:
 
 <div align="center">
 
-<img width="854" height="687" alt="Figura 9. Valores reales vs. valores predichos" src="PEGAR_AQUÍ_LA_IMAGEN" />
+<img width="707" height="409" alt="image" src="https://github.com/user-attachments/assets/747fdbda-052e-4e34-ab9b-e362841affe8" />
+
 
 </div>
 
@@ -337,7 +352,7 @@ Los valores obtenidos para las métricas de evaluación del modelo fueron:
 
 <div align="center">
 
-<img width="854" height="687" alt="Figura 10. Histograma de residuos" src="PEGAR_AQUÍ_LA_IMAGEN" />
+<img width="684" height="407" alt="image" src="https://github.com/user-attachments/assets/25164b3e-efbe-4c7b-9444-2665b762e343" />
 
 </div>
 
@@ -345,7 +360,8 @@ Los valores obtenidos para las métricas de evaluación del modelo fueron:
 
 <div align="center">
 
-<img width="854" height="687" alt="Figura 11. Residuos vs. valores predichos" src="PEGAR_AQUÍ_LA_IMAGEN" />
+<img width="863" height="640" alt="image" src="https://github.com/user-attachments/assets/ef132c5b-64c6-451d-be0f-4bf1b1b6ddee" />
+
 
 </div>
 
@@ -353,7 +369,7 @@ Los valores obtenidos para las métricas de evaluación del modelo fueron:
 
 <div align="center">
 
-<img width="854" height="687" alt="Figura 12. Residuos vs. número de observaciones" src="PEGAR_AQUÍ_LA_IMAGEN" />
+<img width="708" height="407" alt="image" src="https://github.com/user-attachments/assets/c9543e49-112d-492b-b60a-883a062cc8b2" />
 
 </div>
 
@@ -361,7 +377,8 @@ Los valores obtenidos para las métricas de evaluación del modelo fueron:
 
 <div align="center">
 
-<img width="854" height="687" alt="Figura 13. Residuos vs. latitud" src="PEGAR_AQUÍ_LA_IMAGEN" />
+<img width="708" height="407" alt="image" src="https://github.com/user-attachments/assets/fddf98e1-8f56-449d-b0d5-7e2b583d4c77" />
+
 
 </div>
 
@@ -369,7 +386,8 @@ Los valores obtenidos para las métricas de evaluación del modelo fueron:
 
 <div align="center">
 
-<img width="854" height="687" alt="Figura 14. Residuos vs. elevación" src="PEGAR_AQUÍ_LA_IMAGEN" />
+<img width="716" height="408" alt="image" src="https://github.com/user-attachments/assets/b3190fd1-04a0-49d3-9c05-b7de2854d53e" />
+
 
 </div>
 
@@ -390,16 +408,48 @@ El modelo presentó un **R² de 0.141** y un **R² ajustado de 0.139**. El estad
 
 ## 4. Discusión
 
-Los resultados obtenidos serán interpretados considerando el comportamiento de las variables predictoras, la capacidad explicativa del modelo, las métricas de predicción y los resultados del análisis de residuos.
+Los resultados muestran que las variables seleccionadas presentan una relación estadísticamente significativa con la concentración máxima diaria de CO dentro del modelo OLS. Sin embargo, el valor de R² obtenido (0.141) indica que una proporción limitada de la variabilidad de la concentración de CO es explicada por las variables incluidas.
 
+Asimismo, el análisis de residuos evidenció desviaciones respecto a la normalidad y una posible autocorrelación, por lo que los resultados deben interpretarse considerando las características temporales y espaciales de los datos. La exclusión de Daily AQI Value también fue relevante para evitar que una variable altamente relacionada con la concentración de CO dominara el modelo.
 ---
 
 ## 5. Conclusiones
 
-A partir del análisis realizado se establecerán las principales conclusiones respecto a la relación entre las variables seleccionadas y la concentración máxima diaria de CO.
+1. Se analizó un conjunto de datos de calidad del aire correspondiente al **monóxido de carbono (CO)** en el área metropolitana de **Birmingham-Hoover, Alabama, Estados Unidos**, durante los años **2022 y 2023**, con un total de **1876 observaciones**.
 
+2. A partir del análisis exploratorio y de correlación se seleccionaron como variables predictoras **Daily Obs Count**, **Site Latitude** y **Elevation (m)**, utilizando **Daily Max CO Concentration** como variable dependiente.
+
+3. El análisis de correlación permitió identificar relaciones muy elevadas entre algunas variables. Por ello, **Daily AQI Value**, **Percent Complete** y **Site Longitude** no fueron incorporadas al modelo final debido a su elevada relación con otras variables del conjunto de datos.
+
+4. El modelo de regresión lineal múltiple obtuvo un **R² de 0.141** mediante el análisis OLS sobre el conjunto completo de datos. En el conjunto de prueba se obtuvo un **R² de 0.2146**, junto con un **RMSE de 0.1717**.
+
+5. En el modelo OLS, las variables **Daily Obs Count**, **Site Latitude** y **Elevation (m)** presentaron valores p inferiores a 0.05, indicando una asociación estadísticamente significativa con la concentración máxima diaria de CO dentro del modelo.
+
+6. El análisis de residuos mostró desviaciones respecto al supuesto de normalidad y un valor de Durbin-Watson de **1.010**, lo que sugiere la posible presencia de autocorrelación positiva.
+
+7. En conjunto, el análisis permitió identificar relaciones estadísticas entre las características de los sitios de monitoreo y la concentración máxima diaria de CO, aunque las variables seleccionadas explican solo una parte de la variabilidad observada.
 ---
 
 ## 6. Referencias
 
 [1] U.S. Environmental Protection Agency, “AirData,” U.S. EPA. [Online]. Available: https://www.epa.gov/outdoor-air-quality-data/airdata. [Accessed: Sep. 17, 2026].
+
+---
+
+## 7. Código
+
+El código completo utilizado para el procesamiento de los datos, análisis exploratorio, construcción del modelo de regresión lineal y evaluación estadística se encuentra disponible en Google Colab.
+
+<div align="center">
+
+### 💻 Proyecto en Google Colab
+
+<a href= https://colab.research.google.com/drive/11AuGiA9RQU85YKpOPQVKpLI2hEEK1x2M#scrollTo=OO6UUJ6pPwLU>
+  <img src="https://img.shields.io/badge/Abrir%20en-Google%20Colab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=white" alt="Abrir en Google Colab">
+</a>
+
+<br><br>
+
+**Proyecto Integrador — Equipo 06**
+
+</div>
