@@ -444,7 +444,7 @@ El código completo utilizado para el procesamiento de los datos, análisis expl
 
 ### 💻 Proyecto en Google Colab
 
-<a href= https://colab.research.google.com/drive/11AuGiA9RQU85YKpOPQVKpLI2hEEK1x2M#scrollTo=OO6UUJ6pPwLU>
+< https://colab.research.google.com/drive/11AuGiA9RQU85YKpOPQVKpLI2hEEK1x2M#scrollTo=OO6UUJ6pPwLU>
   <img src="https://img.shields.io/badge/Abrir%20en-Google%20Colab-F9AB00?style=for-the-badge&logo=googlecolab&logoColor=white" alt="Abrir en Google Colab">
 </a>
 
