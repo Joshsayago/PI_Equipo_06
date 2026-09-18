@@ -244,8 +244,8 @@ Estos resultados fueron utilizados posteriormente para evaluar la significancia 
 
 <div align="center">
 
-<<img width="695" height="351" alt="image" src="https://github.com/user-attachments/assets/8b7ece28-a395-4c0a-b65f-fa4d227e01f6" />
- />
+<img width="695" height="351" alt="image" src="https://github.com/user-attachments/assets/8b7ece28-a395-4c0a-b65f-fa4d227e01f6" />
+
 
 </div>
 
@@ -253,7 +253,8 @@ Estos resultados fueron utilizados posteriormente para evaluar la significancia 
 
 <div align="center">
 
-<img width="854" height="687" alt="Figura 2. Densidad de la concentración máxima diaria de CO" src="PEGAR_AQUÍ_LA_IMAGEN" />
+
+
 
 </div>
 
