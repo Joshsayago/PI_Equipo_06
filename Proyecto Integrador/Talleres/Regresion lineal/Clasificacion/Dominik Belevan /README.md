@@ -20,7 +20,7 @@
 
 ## Resumen
 
-Se analizaron 1774 registros de concentración máxima diaria de dióxido de azufre (SO₂) correspondientes a cinco estaciones de monitoreo durante 2023. Se realizó un análisis exploratorio y se ajustó un modelo de regresión lineal múltiple utilizando como predictores el número de observaciones diarias, la latitud y la elevación. El modelo obtuvo un MAE de 3.0310 ppb, un RMSE de 6.9383 ppb y un $R^2$ de prueba de 0.1182. Los resultados evidenciaron diferencias entre estaciones y una capacidad predictiva limitada para representar concentraciones extremas. El estudio permite reconocer el valor y las limitaciones de la regresión lineal en el análisis exploratorio de contaminantes atmosféricos.
+Se analizaron 1774 registros de concentración máxima diaria de dióxido de azufre (SO₂) obtenidos de AirData y correspondientes a cinco estaciones de monitoreo durante 2023 [2], [3]. Se realizó un análisis exploratorio y se ajustó un modelo de regresión lineal múltiple con `LinearRegression` [4], utilizando como predictores el número de observaciones diarias, la latitud y la elevación. El modelo obtuvo un MAE de 3.0310 ppb, un RMSE de 6.9383 ppb y un $R^2$ de prueba de 0.1182, métricas definidas según la documentación de evaluación para regresión de `scikit-learn` [5]. Los resultados evidenciaron diferencias entre estaciones y una capacidad predictiva limitada para representar concentraciones extremas. El estudio permite reconocer el valor y las limitaciones de la regresión lineal en el análisis exploratorio de contaminantes atmosféricos.
 
 **Palabras clave:** dióxido de azufre, calidad del aire, regresión lineal múltiple, contaminación atmosférica, Python.
 
@@ -68,6 +68,8 @@ Se empleó un archivo CSV descargado de AirData de la EPA [2]. El conjunto utili
 | División de datos | 70 % entrenamiento y 30 % prueba |
 | Semilla de reproducción | `random_state=123` |
 
+**Fuente:** elaboración propia a partir de los datos de AirData y AQS [2], [3].
+
 ### Revisión de calidad de los datos
 
 Las funciones `info()` y `describe()` se utilizaron para revisar los tipos de datos, la completitud y las estadísticas básicas. En lugar de reproducir las 28 columnas completas, se resumen los hallazgos relevantes para el modelo:
@@ -83,7 +85,7 @@ Las funciones `info()` y `describe()` se utilizaron para revisar los tipos de da
 | Unidades identificadas | Parts per billion |
 | Estaciones identificadas | 5 |
 
-Algunas columnas no utilizadas presentaron valores faltantes, como `CBSA Name`, `Dominant Source`, `Monitor Type`, `Networks` y `QA Primary Monitor?`. Debido a que las cuatro variables empleadas en el modelo estaban completas, no fue necesario aplicar imputación estadística.
+Algunas columnas no utilizadas presentaron valores faltantes, como `CBSA Name`, `Dominant Source`, `Monitor Type`, `Networks` y `QA Primary Monitor?`. Debido a que las cuatro variables empleadas en el modelo estaban completas, no fue necesario aplicar imputación estadística. Estos resultados corresponden a la revisión propia del conjunto descargado de AirData [2].
 
 ### Herramientas
 
@@ -99,9 +101,9 @@ El procedimiento fue el siguiente:
 4. Las variables del modelo se transformaron a formato numérico.
 5. Se verificó la ausencia de valores faltantes en las variables seleccionadas.
 6. Se realizaron gráficos exploratorios y una matriz de correlación.
-7. Los datos se dividieron en entrenamiento y prueba.
-8. Se ajustó el modelo y se evaluaron sus predicciones.
-9. Se analizaron los residuos y se realizó un ajuste OLS.
+7. Los datos se dividieron en entrenamiento y prueba mediante las herramientas de selección de modelos de `scikit-learn` [4].
+8. Se ajustó el modelo y se evaluaron sus predicciones mediante métricas de regresión [5].
+9. Se analizaron los residuos siguiendo el enfoque de diagnóstico recomendado por NIST [7] y se realizó un ajuste OLS con `statsmodels` [6].
 
 ### Variables del modelo
 
@@ -117,13 +119,13 @@ Las variables independientes fueron:
 - $x_2$: latitud de la estación (`Site Latitude`).
 - $x_3$: elevación de la estación en metros (`Elevation (m)`).
 
-No se incluyó `Daily AQI Value` porque presentó una correlación de **0.998** con la concentración de SO₂ y se deriva de la medición del contaminante. Su uso habría generado una capacidad explicativa artificialmente elevada.
+No se incluyó `Daily AQI Value` porque presentó una correlación de **0.998** con la concentración de SO₂ y el AQI se obtiene a partir de las concentraciones de contaminantes registradas por los sistemas de calidad del aire [3]. Su incorporación como predictor de la propia concentración habría introducido información redundante y una capacidad explicativa artificialmente elevada.
 
 Tampoco se incluyó `Percent Complete`, porque su correlación con `Daily Obs Count` fue prácticamente perfecta. `Site Longitude` fue descartada para reducir la redundancia espacial con `Site Latitude`.
 
 ### Modelo de regresión lineal múltiple
 
-La forma general del modelo fue:
+La forma general de la regresión lineal múltiple utilizada por `LinearRegression` y OLS se representó de la siguiente manera [4], [6]:
 
 $$
 \widehat{SO}_2 =
@@ -146,11 +148,11 @@ Los 1774 registros se dividieron aleatoriamente en:
 | Entrenamiento | 1241 | 70 % |
 | Prueba | 533 | 30 % |
 
-Se utilizó `random_state=123` para que la división de los datos pueda reproducirse.
+Se utilizó `random_state=123` para que la división de los datos pueda reproducirse mediante el mismo procedimiento de separación de `scikit-learn` [4].
 
 ### Hipótesis estadística
 
-Para evaluar la significancia global del modelo OLS se consideraron las siguientes hipótesis:
+Para evaluar la significancia global del modelo OLS implementado con `statsmodels` se consideraron las siguientes hipótesis [6]:
 
 $$
 H_0: \beta_1=\beta_2=\beta_3=0
@@ -160,11 +162,11 @@ $$
 H_1: \text{al menos uno de los coeficientes es diferente de cero}
 $$
 
-Se utilizó un nivel de significancia de $\alpha=0.05$. Si el valor $p$ del estadístico $F$ es menor que 0.05, se rechaza la hipótesis nula y se concluye que el modelo presenta significancia estadística global.
+Se utilizó un nivel de significancia de $\alpha=0.05$. Si el valor $p$ del estadístico $F$ es menor que 0.05, se rechaza la hipótesis nula y se concluye que el modelo presenta significancia estadística global [6].
 
 ### Métricas de evaluación
 
-El error absoluto medio se calculó mediante:
+El error absoluto medio se calculó de acuerdo con la definición de las métricas de regresión de `scikit-learn` [5]:
 
 $$
 MAE =
@@ -173,7 +175,7 @@ MAE =
 \left|y_i-\widehat{y}_i\right|
 $$
 
-El error cuadrático medio se calculó mediante:
+El error cuadrático medio se calculó mediante [5]:
 
 $$
 MSE =
@@ -182,7 +184,7 @@ MSE =
 \left(y_i-\widehat{y}_i\right)^2
 $$
 
-La raíz del error cuadrático medio fue:
+La raíz del error cuadrático medio fue [5]:
 
 $$
 RMSE =
@@ -193,7 +195,7 @@ RMSE =
 }
 $$
 
-El coeficiente de determinación se calculó mediante:
+El coeficiente de determinación se calculó mediante [5]:
 
 $$
 R^2 =
@@ -242,7 +244,8 @@ La matriz de relaciones permitió observar la distribución de las variables y l
 
 <img width="750" alt="Relaciones entre las variables seleccionadas" src="https://github.com/user-attachments/assets/618d87fc-1841-4ff1-9e79-4250a660f5c8" />
 
-**Figura 1. Relaciones entre las variables seleccionadas.**
+**Figura 1. Relaciones entre las variables seleccionadas.**  
+*Fuente: elaboración propia a partir de los datos de AirData [2].*
 
 </div>
 
@@ -252,7 +255,8 @@ La matriz de relaciones permitió observar la distribución de las variables y l
 
 <img width="950" alt="Histograma y densidad de la concentración máxima diaria de SO2" src="https://github.com/user-attachments/assets/73c4d9df-a1d0-4f8f-bbe7-1b7d99267b86" />
 
-**Figura 2. Histograma y densidad de la concentración máxima diaria de SO₂.**
+**Figura 2. Histograma y densidad de la concentración máxima diaria de SO₂.**  
+*Fuente: elaboración propia a partir de los datos de AirData [2].*
 
 </div>
 
@@ -268,13 +272,16 @@ La distribución presentó una marcada asimetría positiva. La mayoría de las o
 
 La diferencia entre la media y la mediana confirma la influencia de los valores altos sobre el promedio.
 
+**Fuente de la tabla:** elaboración propia a partir de los datos de AirData [2].
+
 ### Comparación entre estaciones
 
 <div align="center">
 
 <img width="850" alt="Concentración promedio de SO2 por estación" src="https://github.com/user-attachments/assets/1d72377a-32b9-426f-8f77-f8952dd5c78b" />
 
-**Figura 3. Concentración máxima diaria promedio de SO₂ por estación durante 2023.**
+**Figura 3. Concentración máxima diaria promedio de SO₂ por estación durante 2023.**  
+*Fuente: elaboración propia a partir de los datos de AirData [2].*
 
 </div>
 
@@ -288,13 +295,16 @@ La diferencia entre la media y la mediana confirma la influencia de los valores 
 
 La estación **Lhoist, Montevallo Plant** presentó el mayor promedio y el máximo más elevado. Esta diferencia sugiere una importante variación espacial entre los puntos de monitoreo.
 
+**Fuente de la tabla:** elaboración propia a partir de los datos de AirData [2].
+
 ### Matriz de correlación
 
 <div align="center">
 
 <img width="850" alt="Matriz de correlación" src="https://github.com/user-attachments/assets/88ae069f-bece-4f1f-bea8-bbd88c7db2b8" />
 
-**Figura 4. Matriz de correlación de las variables numéricas.**
+**Figura 4. Matriz de correlación de las variables numéricas.**  
+*Fuente: elaboración propia a partir de los datos de AirData [2].*
 
 </div>
 
@@ -315,7 +325,8 @@ La concentración mostró relaciones lineales débiles con las variables finalme
 
 <img width="1000" alt="Variables predictoras frente a la concentración de SO2" src="https://github.com/user-attachments/assets/47598515-4f74-4774-aaeb-bd3c105cf550" />
 
-**Figura 5. Relación entre las variables predictoras y la concentración máxima diaria de SO₂.**
+**Figura 5. Relación entre las variables predictoras y la concentración máxima diaria de SO₂.**  
+*Fuente: elaboración propia a partir de los datos de AirData [2].*
 
 </div>
 
@@ -342,6 +353,8 @@ $$
 
 Manteniendo constantes las demás variables, el coeficiente de elevación indica una disminución estimada de aproximadamente **0.0341 ppb** por cada metro adicional. Sin embargo, los coeficientes representan asociaciones estadísticas y no demuestran causalidad.
 
+**Fuente de los coeficientes:** elaboración propia mediante `LinearRegression` [4] y los datos de AirData [2].
+
 ### Evaluación predictiva
 
 | Métrica | Resultado |
@@ -351,15 +364,18 @@ Manteniendo constantes las demás variables, el coeficiente de elevación indica
 | RMSE | 6.9383 ppb |
 | $R^2$ de prueba | 0.1182 |
 
-El MAE indica que las predicciones se alejaron de los valores observados en aproximadamente **3.03 ppb**, en promedio. El RMSE fue mayor debido a que penaliza más los errores grandes.
+El MAE indica que las predicciones se alejaron de los valores observados en aproximadamente **3.03 ppb**, en promedio. El RMSE fue mayor porque, por su formulación cuadrática, otorga mayor peso a los errores grandes [5].
 
 El valor de $R^2=0.1182$ indica que el modelo explicó aproximadamente el **11.82 %** de la variabilidad del conjunto de prueba. Por ello, su capacidad predictiva fue limitada.
+
+**Fuente de la tabla:** elaboración propia mediante las métricas de regresión de `scikit-learn` [5] y los datos de AirData [2].
 
 <div align="center">
 
 <img width="650" alt="Concentración observada frente a concentración predicha" src="https://github.com/user-attachments/assets/28353e80-71dc-4860-a944-8549a79069d7" />
 
-**Figura 6. Comparación entre las concentraciones observadas y predichas.**
+**Figura 6. Comparación entre las concentraciones observadas y predichas.**  
+*Fuente: elaboración propia mediante `LinearRegression` [4] y los datos de AirData [2].*
 
 </div>
 
@@ -377,7 +393,8 @@ $$
 
 <img width="950" alt="Distribución de residuos y residuos frente a valores predichos" src="https://github.com/user-attachments/assets/4bdb630a-23b4-409a-8b1f-091451d585bb" />
 
-**Figura 7. Distribución de los residuos y residuos frente a los valores predichos.**
+**Figura 7. Distribución de los residuos y residuos frente a los valores predichos.**  
+*Fuente: elaboración propia a partir del diagnóstico del modelo [7] y los datos de AirData [2].*
 
 </div>
 
@@ -405,15 +422,17 @@ El modelo OLS obtuvo:
 
 En este ajuste, la latitud y la elevación presentaron valores $p$ menores que 0.05. El número de observaciones diarias no fue estadísticamente significativo al nivel de 5 %.
 
+**Fuente de las tablas OLS:** elaboración propia mediante `statsmodels` [6] y los datos de AirData [2].
+
 ---
 
 ## Discusión
 
-Los resultados muestran que la concentración máxima diaria de SO₂ varió considerablemente entre las estaciones. La estación Lhoist, Montevallo Plant presentó tanto el promedio como el máximo más elevados. Esto indica que la ubicación de la estación constituye un factor relevante para interpretar las mediciones.
+Los resultados propios muestran que la concentración máxima diaria de SO₂ varió considerablemente entre las estaciones incluidas en AirData [2]. La estación Lhoist, Montevallo Plant presentó tanto el promedio como el máximo más elevados. Esto indica que la ubicación de la estación constituye un factor relevante para interpretar las mediciones.
 
 Aunque el modelo general fue estadísticamente significativo, su capacidad explicativa fue baja. El $R^2$ de prueba mostró que las tres variables incluidas no representan la mayor parte de la variación diaria del contaminante.
 
-La concentración atmosférica de SO₂ puede depender de factores que no están incluidos en el dataset utilizado, tales como:
+La concentración atmosférica de SO₂ puede estar condicionada por las fuentes de emisión y por procesos ambientales que no están representados en las variables empleadas en este modelo [1], [3], tales como:
 
 - Intensidad y ubicación de fuentes de emisión.
 - Velocidad y dirección del viento.
@@ -422,7 +441,7 @@ La concentración atmosférica de SO₂ puede depender de factores que no están
 - Hora de ocurrencia de los máximos.
 - Cambios operativos de instalaciones industriales.
 
-Asimismo, los residuos elevados muestran que una regresión lineal múltiple no reproduce adecuadamente los episodios extremos. Las variables de latitud y elevación también permanecen constantes para cada estación, por lo que parte del modelo refleja diferencias espaciales entre sitios y no necesariamente variaciones diarias.
+Asimismo, los residuos elevados muestran que la regresión lineal múltiple ajustada no reproduce adecuadamente los episodios extremos. De acuerdo con los criterios de diagnóstico de residuos, la asimetría y la dispersión no uniforme indican posibles deficiencias del modelo [7]. Las variables de latitud y elevación permanecen constantes para cada estación, por lo que parte del modelo refleja diferencias espaciales entre sitios y no necesariamente variaciones diarias.
 
 Por estas razones, el modelo es útil como ejercicio exploratorio y comparativo, pero no debe emplearse por sí solo para pronosticar episodios elevados ni para determinar el cumplimiento de una norma ambiental. Esta precaución también es coherente con la finalidad de AQS como repositorio para evaluaciones, modelamiento y elaboración de reportes de calidad del aire [3].
 
@@ -498,5 +517,7 @@ El conjunto utilizado corresponde a los datos diarios de SO₂ descargados desde
 <div align="center">
 
 **Análisis elaborado en Python y Google Colab**
+
+</div>
 
 </div>
