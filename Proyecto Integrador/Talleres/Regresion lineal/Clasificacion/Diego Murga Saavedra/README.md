@@ -151,8 +151,13 @@ Mientras que el valor máximo observado fue:
 ```math
 44.3\ \mu g/m^3
 ```
-
 La distribución presenta algunos valores elevados con menor frecuencia.
+
+<p align = center>
+  <img width="704" height="393" alt="image" src="https://github.com/user-attachments/assets/5e41febe-d491-4e90-a0c6-2b2ad6b7f6d3" />
+  <br>
+  <em>Figura 1. Distribución de la concentración media diaria de PM2.5.</em>
+</p>
 
 ### 3.2. Correlación entre variables
 
@@ -172,6 +177,18 @@ Por otro lado, las variables relacionadas con la localización geográfica prese
 
 Por lo tanto, el AQI es la variable que presenta la asociación lineal más fuerte con PM2.5.
 
+<p align = center>
+  <img width="985" height="818" alt="image" src="https://github.com/user-attachments/assets/03c9a288-bc5c-4a4c-a453-eceb8162d496" />
+  <br>
+  <em>Figura 2. Matriz de correlación entre las variables analizadas.</em>
+</p>
+
+<p align = center>
+  <img width="1790" height="990" alt="image" src="https://github.com/user-attachments/assets/049bc2f5-d547-4091-8023-f5b86457da68" />
+  <br>
+  <em>Figura 3. Relación entre las variables predictoras y la concentración de PM2.5.</em>
+</p>
+
 ### 3.3. Valores reales frente a valores predichos
 
 Luego del entrenamiento del modelo se realizaron predicciones utilizando los **1142 registros de prueba**.
@@ -179,6 +196,12 @@ Luego del entrenamiento del modelo se realizaron predicciones utilizando los **1
 Al comparar gráficamente los valores reales de PM2.5 con los valores predichos se observa que una gran cantidad de puntos se encuentra próxima a una tendencia diagonal.
 
 Esto indica que las predicciones generadas por el modelo se encuentran generalmente próximas a los valores reales.
+
+<p align = center>
+  <img width="760" height="573" alt="image" src="https://github.com/user-attachments/assets/967a0622-6fa3-4abd-b62c-c17c50928c76" />
+  <br>
+  <em>Figura 4. Comparación entre los valores reales y predichos de PM2.5.</em>
+</p>
 
 ### 3.4. Error cuadrático medio
 
@@ -237,6 +260,18 @@ Mediante el histograma de residuos se puede observar que gran parte de los error
 También se realizó un gráfico de residuos frente a valores predichos para comprobar visualmente si existe algún patrón en los errores.
 
 Aunque la mayoría se encuentra alrededor de cero, aparecen algunos valores más alejados, principalmente asociados a observaciones con concentraciones mayores de PM2.5.
+
+<p align = center>
+  <img width="768" height="575" alt="image" src="https://github.com/user-attachments/assets/43291b75-83d0-48eb-b6b8-65bcf986426f" />
+  <br>
+  <em>Figura 5. Distribución de los residuos del modelo.</em>
+</p>
+
+<p align = center>
+  <img width="768" height="576" alt="image" src="https://github.com/user-attachments/assets/f4cbb0af-23f8-4a3c-bb43-31c5fe10971b" />
+  <br>
+  <em>Figura 6. Residuos frente a los valores predichos por el modelo.</em>
+</p>
 
 ---
 
