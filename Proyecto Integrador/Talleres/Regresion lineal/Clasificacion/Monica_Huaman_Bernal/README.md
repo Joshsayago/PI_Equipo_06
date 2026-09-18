@@ -4,11 +4,29 @@
 
 El **monóxido de carbono (CO)** es un contaminante atmosférico asociado principalmente a procesos de combustión. Su presencia en el aire puede representar un riesgo para la salud humana, por lo que el monitoreo de sus concentraciones permite caracterizar la calidad del aire y analizar su comportamiento en diferentes lugares y periodos.
 
-En el presente trabajo se realizó un análisis estadístico de datos de calidad del aire correspondientes al **monóxido de carbono (CO)** en el área metropolitana de **Birmingham-Hoover, Alabama, Estados Unidos**, durante el periodo comprendido entre el **1 de enero de 2022 y el 31 de diciembre de 2023**. El conjunto de datos contiene **1876 observaciones**, provenientes de los sitios de monitoreo *North Birmingham*, *Fairfield* y *Arkadelphia/Near Road*.
+En el presente trabajo se realizó un análisis estadístico de datos de calidad del aire correspondientes al **monóxido de carbono (CO)** en el área metropolitana de **Birmingham-Hoover, Alabama, Estados Unidos**, durante el periodo comprendido entre el **1 de enero de 2022 y el 31 de diciembre de 2023**. El conjunto de datos contiene **1876 observaciones**, provenientes de los sitios de monitoreo *North Birmingham*, *Fairfield* y *Arkadelphia/Near Road*. Los datos fueron obtenidos de la plataforma **AirData de la U.S. Environmental Protection Agency (EPA)** [1].
 
 El objetivo principal fue analizar la relación entre la **concentración máxima diaria de CO**, utilizada como variable dependiente, y diferentes características disponibles en el conjunto de datos. Para ello, se realizó una exploración inicial de las variables, un análisis de correlación y posteriormente se construyó un **modelo de regresión lineal múltiple**.
 
 La finalidad del análisis fue determinar qué variables podían utilizarse como predictores de la concentración máxima diaria de CO y evaluar el comportamiento estadístico y la capacidad explicativa del modelo obtenido.
+
+### 1.1. Características del estudio
+
+| Elemento | Descripción |
+|---|---|
+| **Contaminante** | Monóxido de carbono (CO) |
+| **País** | Estados Unidos |
+| **Estado** | Alabama |
+| **Área metropolitana** | Birmingham-Hoover, Alabama |
+| **Periodo de estudio** | 2022–2023 |
+| **Número de observaciones** | 1876 |
+| **Número de variables originales** | 28 |
+| **Sitios de monitoreo** | North Birmingham, Fairfield y Arkadelphia/Near Road |
+| **Variable dependiente** | `Daily Max CO Concentration` |
+| **Variables independientes seleccionadas** | `Daily Obs Count`, `Site Latitude` y `Elevation (m)` |
+| **Método estadístico** | Regresión lineal múltiple |
+| **División de los datos** | 70 % entrenamiento y 30 % prueba |
+| **Fuente de datos** | U.S. Environmental Protection Agency (EPA), AirData [1] |
 
 ---
 
@@ -224,41 +242,74 @@ Estos resultados fueron utilizados posteriormente para evaluar la significancia 
 
 **Figura 1. Histograma de la concentración máxima diaria de CO.**
 
-![Figura 1. Histograma de la concentración máxima diaria de CO](ruta/de/la/imagen_histograma.png)
+<div align="center">
+
+<<img width="695" height="351" alt="image" src="https://github.com/user-attachments/assets/8b7ece28-a395-4c0a-b65f-fa4d227e01f6" />
+ />
+
+</div>
 
 **Figura 2. Distribución de densidad de la concentración máxima diaria de CO.**
 
-![Figura 2. Densidad de la concentración máxima diaria de CO](ruta/de/la/imagen_densidad.png)
+<div align="center">
+
+<img width="854" height="687" alt="Figura 2. Densidad de la concentración máxima diaria de CO" src="PEGAR_AQUÍ_LA_IMAGEN" />
+
+</div>
 
 #### Relaciones entre las variables
 
 **Figura 3. Matriz de relaciones entre las variables del conjunto de datos.**
 
-![Figura 3. Pairplot del conjunto de datos](ruta/de/la/imagen_pairplot.png)
+<div align="center">
+
+<img width="854" height="687" alt="Figura 3. Pairplot del conjunto de datos" src="PEGAR_AQUÍ_LA_IMAGEN" />
+
+</div>
 
 **Figura 4. Matriz de correlación de las variables numéricas.**
 
-![Figura 4. Matriz de correlación](ruta/de/la/imagen_correlacion.png)
+<div align="center">
+
+<img width="854" height="687" alt="Figura 4. Matriz de correlación" src="PEGAR_AQUÍ_LA_IMAGEN" />
+
+</div>
 
 ### 3.2. Relación entre las variables predictoras y la concentración de CO
 
 **Figura 5. Relación entre el número de observaciones y la concentración máxima diaria de CO.**
 
-![Figura 5. Número de observaciones vs. concentración de CO](ruta/de/la/imagen_obs_count.png)
+<div align="center">
+
+<img width="854" height="687" alt="Figura 5. Número de observaciones vs. concentración de CO" src="PEGAR_AQUÍ_LA_IMAGEN" />
+
+</div>
 
 **Figura 6. Relación entre la latitud y la concentración máxima diaria de CO.**
 
-![Figura 6. Latitud vs. concentración de CO](ruta/de/la/imagen_latitud.png)
+<div align="center">
+
+<img width="854" height="687" alt="Figura 6. Latitud vs. concentración de CO" src="PEGAR_AQUÍ_LA_IMAGEN" />
+
+</div>
 
 **Figura 7. Relación entre la elevación y la concentración máxima diaria de CO.**
 
-![Figura 7. Elevación vs. concentración de CO](ruta/de/la/imagen_elevacion.png)
+<div align="center">
+
+<img width="854" height="687" alt="Figura 7. Elevación vs. concentración de CO" src="PEGAR_AQUÍ_LA_IMAGEN" />
+
+</div>
 
 ### 3.3. Coeficientes del modelo
 
 **Figura 8. Coeficientes obtenidos para las variables independientes del modelo de regresión lineal.**
 
-![Figura 8. Coeficientes del modelo](ruta/de/la/imagen_coeficientes.png)
+<div align="center">
+
+<img width="854" height="687" alt="Figura 8. Coeficientes del modelo" src="PEGAR_AQUÍ_LA_IMAGEN" />
+
+</div>
 
 ### 3.4. Evaluación predictiva
 
@@ -273,29 +324,53 @@ Los valores obtenidos para las métricas de evaluación del modelo fueron:
 
 **Figura 9. Comparación entre los valores reales y los valores predichos de la concentración de CO.**
 
-![Figura 9. Valores reales vs. valores predichos](ruta/de/la/imagen_real_predicho.png)
+<div align="center">
+
+<img width="854" height="687" alt="Figura 9. Valores reales vs. valores predichos" src="PEGAR_AQUÍ_LA_IMAGEN" />
+
+</div>
 
 ### 3.5. Diagnóstico de residuos
 
 **Figura 10. Histograma de los residuos del modelo.**
 
-![Figura 10. Histograma de residuos](ruta/de/la/imagen_histograma_residuos.png)
+<div align="center">
+
+<img width="854" height="687" alt="Figura 10. Histograma de residuos" src="PEGAR_AQUÍ_LA_IMAGEN" />
+
+</div>
 
 **Figura 11. Residuos frente a los valores predichos.**
 
-![Figura 11. Residuos vs. valores predichos](ruta/de/la/imagen_residuos_predichos.png)
+<div align="center">
+
+<img width="854" height="687" alt="Figura 11. Residuos vs. valores predichos" src="PEGAR_AQUÍ_LA_IMAGEN" />
+
+</div>
 
 **Figura 12. Residuos frente al número de observaciones.**
 
-![Figura 12. Residuos vs. número de observaciones](ruta/de/la/imagen_residuos_obs.png)
+<div align="center">
+
+<img width="854" height="687" alt="Figura 12. Residuos vs. número de observaciones" src="PEGAR_AQUÍ_LA_IMAGEN" />
+
+</div>
 
 **Figura 13. Residuos frente a la latitud.**
 
-![Figura 13. Residuos vs. latitud](ruta/de/la/imagen_residuos_latitud.png)
+<div align="center">
+
+<img width="854" height="687" alt="Figura 13. Residuos vs. latitud" src="PEGAR_AQUÍ_LA_IMAGEN" />
+
+</div>
 
 **Figura 14. Residuos frente a la elevación.**
 
-![Figura 14. Residuos vs. elevación](ruta/de/la/imagen_residuos_elevacion.png)
+<div align="center">
+
+<img width="854" height="687" alt="Figura 14. Residuos vs. elevación" src="PEGAR_AQUÍ_LA_IMAGEN" />
+
+</div>
 
 ### 3.6. Resultados estadísticos del modelo OLS
 
@@ -326,12 +401,4 @@ A partir del análisis realizado se establecerán las principales conclusiones r
 
 ## 6. Referencias
 
-[1] Referencia del conjunto de datos.
-
-[2] Referencia sobre el monóxido de carbono y calidad del aire.
-
-[3] Referencia de la biblioteca Pandas.
-
-[4] Referencia de la biblioteca Scikit-learn.
-
-[5] Referencia de la biblioteca Statsmodels.
+[1] U.S. Environmental Protection Agency, “AirData,” U.S. EPA. [Online]. Available: https://www.epa.gov/outdoor-air-quality-data/airdata. [Accessed: Sep. 17, 2026].
