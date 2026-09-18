@@ -1,16 +1,16 @@
 <div align="center">
 
-# Análisis y regresión lineal de la concentración de SO₂ durante 2023
+# Análisis de la concentración máxima diaria de SO₂ durante 2023
 
-### Análisis de la concentración máxima diaria registrada por estaciones de monitoreo
+### Aplicación de un modelo de regresión lineal múltiple
 
 **Autora:** Bertha Dominik Belevan Amaro  
-**Curso:** Proyecto Integrador  
-**Año de análisis:** 2023  
+**Periodo analizado:** 1 de enero al 31 de diciembre de 2023  
+**Fuente de datos:** AirData, U.S. Environmental Protection Agency (EPA)
 
 <br>
 
-<a href="https://colab.research.google.com/drive/1WSb4f0r2F-1EuT-o_7wPmXYGSETjca-I#scrollTo=_AYrzcN9PRBN">
+<a href="https://colab.research.google.com/drive/1F7S03kBMQJXqDwyC29e1_V9tsNu30VTL#scrollTo=gIpXJySHvm7w">
   <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Abrir análisis en Google Colab">
 </a>
 
@@ -21,140 +21,132 @@
 ## Índice
 
 1. [Introducción](#introducción)
-2. [Objetivos](#objetivos)
-3. [Metodología](#metodología)
-4. [Resultados](#resultados)
-5. [Discusión](#discusión)
-6. [Conclusiones](#conclusiones)
-7. [Limitaciones](#limitaciones)
-8. [Código empleado](#código-empleado)
-9. [Referencias](#referencias)
+2. [Metodología](#metodología)
+3. [Resultados](#resultados)
+4. [Discusión](#discusión)
+5. [Conclusiones](#conclusiones)
+6. [Referencias](#referencias)
 
 ---
 
 ## Introducción
 
-El dióxido de azufre (SO₂) es un contaminante atmosférico gaseoso producido principalmente por la combustión de materiales que contienen azufre y por determinados procesos industriales. Su presencia en el aire puede afectar la salud respiratoria de la población y contribuir a distintos problemas ambientales.
+El dióxido de azufre (SO₂) es un contaminante atmosférico gaseoso generado principalmente por la combustión de materiales que contienen azufre y por determinados procesos industriales. Su monitoreo permite estudiar la calidad del aire e identificar variaciones entre diferentes estaciones de medición.
 
-En este trabajo se analizaron los registros de concentración máxima diaria de SO₂ correspondientes exclusivamente al año **2023**. Los datos proceden del sistema **Air Quality System (AQS)** de la Agencia de Protección Ambiental de los Estados Unidos (EPA).
+En este trabajo se analizaron los registros de concentración máxima diaria de SO₂ correspondientes exclusivamente al año **2023**. Los datos fueron obtenidos de la plataforma AirData de la Agencia de Protección Ambiental de los Estados Unidos (EPA) y contienen información procedente de cinco estaciones de monitoreo.
 
-El análisis comprende la revisión y limpieza de los datos, la comparación entre estaciones, la evaluación de la variación mensual y diaria, y la aplicación de un modelo de regresión lineal. El propósito del modelo es determinar si existe una tendencia temporal general en las concentraciones registradas durante 2023.
-
----
-
-## Objetivos
+El propósito del estudio fue describir la distribución de las concentraciones, comparar los resultados entre estaciones y construir un modelo de **regresión lineal múltiple** para evaluar la relación entre la concentración máxima diaria de SO₂ y tres variables disponibles en el conjunto de datos: número de observaciones diarias, latitud y elevación de la estación.
 
 ### Objetivo general
 
-Analizar el comportamiento temporal de la concentración máxima diaria de dióxido de azufre registrada durante el año 2023 mediante técnicas estadísticas, gráficas y un modelo de regresión lineal.
+Analizar la concentración máxima diaria de dióxido de azufre registrada durante 2023 mediante técnicas estadísticas y un modelo de regresión lineal múltiple.
 
 ### Objetivos específicos
 
-- Preparar y filtrar los registros correspondientes exclusivamente al año 2023.
-- Identificar las estaciones con mayores concentraciones promedio de SO₂.
-- Analizar la variación diaria y mensual de las concentraciones.
-- Ajustar un modelo de regresión lineal para estimar la tendencia temporal.
-- Evaluar el desempeño del modelo mediante las métricas MAE, RMSE y $R^2$.
-- Interpretar los resultados y reconocer las principales limitaciones del modelo.
+- Examinar la estructura y distribución de los registros de SO₂.
+- Comparar la concentración promedio entre las estaciones de monitoreo.
+- Evaluar las correlaciones entre las variables numéricas.
+- Construir un modelo de regresión lineal múltiple.
+- Evaluar el modelo mediante MAE, MSE, RMSE y $R^2$.
+- Analizar gráficamente los residuos y reconocer las limitaciones del modelo.
 
 ---
 
 ## Metodología
 
-### Fuente de los datos
+### Fuente y características de los datos
 
-Se utilizó un archivo en formato CSV descargado de la plataforma AirData de la EPA. El conjunto de datos contiene mediciones diarias de SO₂ registradas por distintas estaciones de monitoreo.
+Se empleó un archivo CSV descargado de AirData de la EPA. El conjunto utilizado contiene únicamente registros del año 2023.
 
-Para este análisis se trabajó solamente con los registros comprendidos entre el **1 de enero y el 31 de diciembre de 2023**.
-
-### Resumen del conjunto de datos
-
-| Característica | Resultado |
-|---|---:|
-| Periodo analizado | 01/01/2023 – 31/12/2023 |
-| Número de registros | 1774 |
-| Número de columnas | 28 |
-| Estaciones identificadas | 5 |
-| Unidad de concentración | ppb |
-| Variable principal | Concentración máxima diaria de SO₂ |
-
-> **Nota:** ppb significa partes por mil millones.
+| Característica | Descripción |
+|---|---|
+| Contaminante | Dióxido de azufre (SO₂) |
+| Periodo | 01/01/2023–31/12/2023 |
+| Registros utilizados | 1774 |
+| Variables originales | 28 |
+| Estaciones de monitoreo | 5 |
+| Unidad | Partes por mil millones (ppb) |
+| Variable dependiente | `Daily Max SO2 Concentration` |
+| Variables independientes | `Daily Obs Count`, `Site Latitude` y `Elevation (m)` |
+| División de datos | 70 % entrenamiento y 30 % prueba |
+| Semilla de reproducción | `random_state=123` |
 
 ### Herramientas utilizadas
 
-El procesamiento y análisis se realizó en Google Colab mediante Python y las siguientes bibliotecas:
+El procesamiento se realizó en Google Colab mediante Python y las siguientes bibliotecas:
 
-- `pandas`: lectura, organización y transformación de datos.
+- `pandas`: organización y procesamiento de los datos.
 - `numpy`: operaciones numéricas.
 - `matplotlib`: elaboración de gráficos.
-- `seaborn`: diseño y presentación visual.
-- `scikit-learn`: división de los datos, regresión lineal y métricas de evaluación.
+- `seaborn`: visualización estadística.
+- `scikit-learn`: construcción y evaluación de la regresión.
+- `statsmodels`: análisis mediante mínimos cuadrados ordinarios.
 
 ### Preparación de los datos
 
-El procedimiento de preparación incluyó:
+El procedimiento aplicado fue el siguiente:
 
-1. Carga del archivo CSV.
-2. Conversión de la columna de fecha al formato `datetime`.
-3. Filtrado de los registros correspondientes únicamente a 2023.
-4. Conversión de la concentración de SO₂ a formato numérico.
-5. Eliminación de registros sin fecha, estación o concentración.
-6. Agrupación de las observaciones por fecha, estación y mes.
-7. Creación de una variable temporal numérica para la regresión.
+1. Se incorporó el archivo CSV al cuaderno de Google Colab.
+2. La variable `Date` se convirtió al formato de fecha.
+3. Se seleccionaron exclusivamente los registros de 2023.
+4. Las variables del modelo se transformaron a formato numérico.
+5. Se verificó la ausencia de valores faltantes en las variables seleccionadas.
+6. Se realizaron gráficos exploratorios y una matriz de correlación.
+7. Los datos se dividieron en entrenamiento y prueba.
+8. Se ajustó el modelo de regresión lineal múltiple.
+9. Se calcularon las métricas de evaluación.
+10. Se analizaron los residuos y se realizó un ajuste OLS.
 
-### Variable analizada
+### Variables del modelo
 
-La variable principal fue:
-
-`Daily Max SO2 Concentration`
-
-Esta variable representa la concentración máxima diaria de dióxido de azufre registrada por cada estación y se expresa en **ppb**.
-
-### Promedio diario entre estaciones
-
-Debido a que podían existir mediciones de diferentes estaciones para una misma fecha, se calculó la concentración máxima diaria promedio entre las estaciones disponibles:
+La variable dependiente fue la concentración máxima diaria de SO₂:
 
 $$
-\overline{SO}_{2,t} =
-\frac{1}{n_t}
-\sum_{i=1}^{n_t} SO_{2,i,t}
+y = \text{Daily Max SO2 Concentration}
+$$
+
+Las variables independientes fueron:
+
+- $x_1$: número de observaciones diarias (`Daily Obs Count`).
+- $x_2$: latitud de la estación (`Site Latitude`).
+- $x_3$: elevación de la estación en metros (`Elevation (m)`).
+
+No se incluyó `Daily AQI Value` porque presentó una correlación de **0.998** con la concentración de SO₂ y se deriva de la medición del contaminante. Su uso podría producir una capacidad explicativa artificialmente elevada.
+
+Tampoco se incluyó `Percent Complete`, porque su correlación con `Daily Obs Count` fue prácticamente perfecta. `Site Longitude` fue descartada para reducir la redundancia espacial con `Site Latitude`.
+
+### Modelo de regresión lineal múltiple
+
+La forma general del modelo empleado fue:
+
+$$
+\widehat{SO}_2 =
+\beta_0 +
+\beta_1(\text{Daily Obs Count}) +
+\beta_2(\text{Site Latitude}) +
+\beta_3(\text{Elevation})
 $$
 
 donde:
 
-- $SO_{2,i,t}$ es la concentración máxima diaria registrada en la estación $i$ durante el día $t$.
-- $n_t$ es el número de estaciones disponibles durante el día $t$.
-- $\overline{SO}_{2,t}$ es la concentración máxima diaria promedio entre estaciones.
+- $\widehat{SO}_2$ es la concentración máxima diaria estimada.
+- $\beta_0$ es el intercepto.
+- $\beta_1$, $\beta_2$ y $\beta_3$ son los coeficientes de las variables predictoras.
 
-Este promedio facilita el análisis general, pero **no constituye por sí solo una métrica regulatoria de cumplimiento**.
+Los 1774 registros se dividieron aleatoriamente en:
 
-### Regresión lineal
+| Conjunto | Registros | Proporción |
+|---|---:|---:|
+| Entrenamiento | 1241 | 70 % |
+| Prueba | 533 | 30 % |
 
-Para evaluar la tendencia temporal se empleó el siguiente modelo:
-
-$$
-\widehat{SO}_2 = \beta_0 + \beta_1t
-$$
-
-donde:
-
-- $\widehat{SO}_2$ es la concentración estimada de dióxido de azufre.
-- $\beta_0$ es el intercepto del modelo.
-- $\beta_1$ representa el cambio promedio estimado por día.
-- $t$ es el número de días transcurridos desde el 1 de enero de 2023.
-
-Para evaluar la capacidad predictiva, los datos se dividieron en:
-
-- **80 % para entrenamiento.**
-- **20 % para prueba.**
-
-Se utilizó `random_state=42` para obtener resultados reproducibles.
+Se empleó `random_state=123` para obtener resultados reproducibles.
 
 ### Métricas de evaluación
 
 #### Error absoluto medio
 
-El MAE representa el error promedio absoluto entre los valores observados y estimados:
+El MAE representa el promedio de los errores absolutos:
 
 $$
 MAE =
@@ -163,9 +155,20 @@ MAE =
 \left|y_i-\widehat{y}_i\right|
 $$
 
+#### Error cuadrático medio
+
+El MSE representa el promedio de los errores elevados al cuadrado:
+
+$$
+MSE =
+\frac{1}{n}
+\sum_{i=1}^{n}
+\left(y_i-\widehat{y}_i\right)^2
+$$
+
 #### Raíz del error cuadrático medio
 
-El RMSE penaliza con mayor intensidad los errores grandes:
+El RMSE expresa el error en las mismas unidades que la concentración:
 
 $$
 RMSE =
@@ -178,7 +181,7 @@ $$
 
 #### Coeficiente de determinación
 
-El coeficiente de determinación indica qué proporción de la variabilidad de los datos es explicada por el modelo:
+El coeficiente de determinación representa la proporción de la variabilidad explicada por el modelo:
 
 $$
 R^2 =
@@ -192,539 +195,230 @@ R^2 =
 }
 $$
 
-Un valor de $R^2$ cercano a 1 indica que el modelo explica gran parte de la variabilidad. Un valor cercano a 0 indica una capacidad explicativa limitada.
-
 ---
 
 ## Resultados
 
-### Estadísticas generales
+### Análisis exploratorio
+
+La matriz de relaciones permitió observar la distribución de las variables y la concentración de los datos en determinados valores de latitud y elevación. Esto se debe a que los registros proceden de cinco estaciones fijas.
+
+<div align="center">
+
+<img width="750" alt="Relaciones entre las variables seleccionadas" src="https://github.com/user-attachments/assets/618d87fc-1841-4ff1-9e79-4250a660f5c8" />
+
+**Figura 1. Relaciones entre las variables seleccionadas.**
+
+</div>
+
+### Distribución de la concentración
+
+<div align="center">
+
+<img width="950" alt="Histograma y densidad de la concentración máxima diaria de SO2" src="https://github.com/user-attachments/assets/73c4d9df-a1d0-4f8f-bbe7-1b7d99267b86" />
+
+**Figura 2. Histograma y densidad de la concentración máxima diaria de SO₂.**
+
+</div>
+
+La distribución presentó una marcada asimetría positiva. La mayoría de las observaciones se concentró en valores bajos, pero se identificaron algunos registros elevados que extendieron la cola derecha de la distribución.
+
+| Estadístico | Resultado |
+|---|---:|
+| Media | 2.894 ppb |
+| Mediana | 1.400 ppb |
+| Desviación estándar | 6.216 ppb |
+| Mínimo registrado | −0.500 ppb |
+| Máximo registrado | 72.700 ppb |
+
+La diferencia entre la media y la mediana confirma la influencia de los valores altos sobre el promedio.
+
+### Comparación entre estaciones
+
+<div align="center">
+
+<img width="850" alt="Concentración promedio de SO2 por estación" src="https://github.com/user-attachments/assets/1d72377a-32b9-426f-8f77-f8952dd5c78b" />
+
+**Figura 3. Concentración máxima diaria promedio de SO₂ por estación durante 2023.**
+
+</div>
+
+| Posición | Estación | Registros | Promedio | Máximo |
+|---:|---|---:|---:|---:|
+| 1 | Lhoist, Montevallo Plant | 363 | 7.413 ppb | 72.700 ppb |
+| 2 | North Birmingham | 362 | 2.392 ppb | 17.500 ppb |
+| 3 | CHICKASAW | 330 | 1.939 ppb | 25.100 ppb |
+| 4 | Ward, Sumter Co. | 356 | 1.630 ppb | 6.400 ppb |
+| 5 | Fairfield | 363 | 0.984 ppb | 12.600 ppb |
+
+La estación **Lhoist, Montevallo Plant** presentó el mayor promedio y el máximo más elevado. Esta diferencia evidencia una importante variación espacial entre los puntos de monitoreo.
+
+### Matriz de correlación
+
+<div align="center">
+
+<img width="850" alt="Matriz de correlación" src="https://github.com/user-attachments/assets/88ae069f-bece-4f1f-bea8-bbd88c7db2b8" />
+
+**Figura 4. Matriz de correlación de las variables numéricas.**
+
+</div>
+
+Los principales resultados fueron:
+
+- Concentración de SO₂ y AQI: **0.998**.
+- Número de observaciones y porcentaje de completitud: aproximadamente **1.000**.
+- Latitud y longitud: **0.805**.
+- Concentración de SO₂ y elevación: **−0.217**.
+- Concentración de SO₂ y latitud: **0.063**.
+- Concentración de SO₂ y número de observaciones: **−0.011**.
+
+La concentración mostró relaciones lineales débiles con las variables finalmente utilizadas. La relación más visible fue una correlación negativa débil con la elevación.
+
+### Relación entre predictores y concentración
+
+<div align="center">
+
+<img width="1000" alt="Variables predictoras frente a la concentración de SO2" src="https://github.com/user-attachments/assets/47598515-4f74-4774-aaeb-bd3c105cf550" />
+
+**Figura 5. Relación entre las variables predictoras y la concentración máxima diaria de SO₂.**
+
+</div>
+
+Los gráficos muestran agrupamientos correspondientes a las características fijas de las estaciones. También muestran valores extremos, especialmente en una de las combinaciones de latitud y elevación.
+
+### Coeficientes del modelo entrenado
+
+El modelo obtenido con el conjunto de entrenamiento fue:
+
+$$
+\widehat{SO}_2 =
+-65.1690
++0.0798(\text{Daily Obs Count})
++2.1130(\text{Site Latitude})
+-0.0341(\text{Elevation})
+$$
+
+| Parámetro | Coeficiente |
+|---|---:|
+| Intercepto | −65.1690 |
+| Daily Obs Count | 0.0798 |
+| Site Latitude | 2.1130 |
+| Elevation (m) | −0.0341 |
+
+Manteniendo constantes las demás variables, el coeficiente de elevación indica una disminución estimada de aproximadamente **0.0341 ppb** por cada metro adicional. Sin embargo, estos coeficientes representan asociaciones estadísticas y no demuestran causalidad.
+
+### Evaluación predictiva
+
+| Métrica | Resultado |
+|---|---:|
+| MAE | 3.0310 ppb |
+| MSE | 48.1395 ppb² |
+| RMSE | 6.9383 ppb |
+| $R^2$ de prueba | 0.1182 |
+
+El MAE indica que las predicciones se alejaron de los valores observados en aproximadamente **3.03 ppb**, en promedio. El RMSE fue mayor debido a que penaliza con mayor intensidad los errores grandes.
+
+El valor de $R^2=0.1182$ indica que el modelo explicó aproximadamente el **11.82 %** de la variabilidad del conjunto de prueba. Por lo tanto, su capacidad predictiva fue limitada.
+
+<div align="center">
+
+<img width="650" alt="Concentración observada frente a concentración predicha" src="https://github.com/user-attachments/assets/28353e80-71dc-4860-a944-8549a79069d7" />
+
+**Figura 6. Comparación entre las concentraciones observadas y predichas.**
+
+</div>
+
+La línea roja representa una predicción perfecta. Los valores estimados se concentraron aproximadamente entre 1 y 7 ppb, mientras que algunos valores observados alcanzaron cerca de 70 ppb. Por lo tanto, el modelo subestimó los episodios de mayor concentración.
+
+### Diagnóstico de residuos
+
+El residuo de cada observación se definió como:
+
+$$
+e_i = y_i-\widehat{y}_i
+$$
+
+<div align="center">
+
+<img width="950" alt="Distribución de residuos y residuos frente a valores predichos" src="https://github.com/user-attachments/assets/4bdb630a-23b4-409a-8b1f-091451d585bb" />
+
+**Figura 7. Distribución de los residuos y residuos frente a los valores predichos.**
+
+</div>
+
+La distribución de los residuos presentó asimetría positiva y varios errores elevados. Además, la dispersión de los residuos no fue uniforme. Esto indica que los supuestos de normalidad y varianza constante no se cumplen completamente.
+
+### Resultados del modelo OLS
+
+El ajuste OLS realizado con los 1774 registros produjo los siguientes resultados:
+
+| Variable | Coeficiente | Error estándar | Estadístico $t$ | Valor $p$ |
+|---|---:|---:|---:|---:|
+| Constante | −71.4491 | 6.1117 | −11.690 | < 0.001 |
+| Daily Obs Count | 0.1179 | 0.0810 | 1.456 | 0.146 |
+| Site Latitude | 2.2922 | 0.1832 | 12.515 | < 0.001 |
+| Elevation (m) | −0.0375 | 0.0024 | −15.675 | < 0.001 |
+
+El modelo OLS obtuvo:
 
 | Indicador | Resultado |
 |---|---:|
-| Promedio diario general | 2.863 ppb |
-| Máximo promedio diario | 17.160 ppb |
-| Intercepto del modelo | 1.9161 ppb |
-| Pendiente temporal | 0.005204 ppb/día |
-| $R^2$ descriptivo | 0.0389 |
-| MAE de prueba | 1.8704 ppb |
-| RMSE de prueba | 2.5619 ppb |
-| $R^2$ de prueba | 0.0784 |
+| $R^2$ | 0.1258 |
+| $R^2$ ajustado | 0.1243 |
+| Estadístico $F$ | 84.87 |
+| Valor $p$ del modelo | < 0.001 |
 
-### Concentración promedio por estación
-
-La estación **Lhoist, Montevallo Plant** presentó el promedio más elevado, con aproximadamente **7.413 ppb**. Las demás estaciones mostraron concentraciones promedio considerablemente menores.
-
-| Posición | Estación | Promedio de SO₂ |
-|---:|---|---:|
-| 1 | Lhoist, Montevallo Plant | 7.413 ppb |
-| 2 | North Birmingham | 2.392 ppb |
-| 3 | CHICKASAW | 1.939 ppb |
-| 4 | Ward, Sumter Co. | 1.630 ppb |
-| 5 | Fairfield | 0.984 ppb |
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/b47a3349-8465-41a0-a53b-bbb160c86974" width="850" alt="Concentración promedio de SO2 por estación">
-</p>
-
-**Interpretación:** la diferencia observada entre estaciones demuestra que la ubicación del punto de monitoreo influye considerablemente en los niveles registrados. Estas diferencias podrían estar relacionadas con la cercanía a fuentes de emisión, condiciones meteorológicas, actividad industrial o características locales.
-
-### Evolución diaria de la concentración
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/b556f8eb-a135-4a5d-8a1f-45346aed03d6" width="950" alt="Evolución diaria de la concentración promedio de SO2">
-</p>
-
-La serie temporal presenta una concentración generalmente baja, pero con diferentes picos durante el año. El máximo promedio diario fue aproximadamente **17.160 ppb**.
-
-Los picos demuestran que la concentración no aumentó de forma constante. En su lugar, se produjeron incrementos puntuales que podrían estar relacionados con emisiones locales o variaciones en las condiciones atmosféricas.
-
-### Concentración promedio mensual
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/33cf1170-7eb6-4cd8-a638-b7d23385aa12" width="850" alt="Concentración mensual promedio de SO2">
-</p>
-
-El mes con mayor concentración promedio fue **septiembre**, con aproximadamente **4.873 ppb**, seguido de **noviembre**, con aproximadamente **4.071 ppb**.
-
-| Mes destacado | Promedio aproximado |
-|---|---:|
-| Septiembre | 4.873 ppb |
-| Noviembre | 4.071 ppb |
-
-Este comportamiento muestra que existió variabilidad mensual durante 2023. Sin embargo, con la información disponible no es posible atribuir directamente estos aumentos a una causa específica.
-
-### Tendencia mediante regresión lineal
-
-El modelo ajustado con todos los promedios diarios fue:
-
-$$
-\widehat{SO}_2 = 1.9161 + 0.005204t
-$$
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/985f590e-a91b-4ffb-b2bc-cd61b4f504dd" width="950" alt="Regresión lineal de la concentración diaria promedio de SO2">
-</p>
-
-La pendiente positiva de **0.005204 ppb por día** indica una ligera tendencia ascendente durante 2023. Sin embargo, el coeficiente de determinación descriptivo fue:
-
-$$
-R^2 = 0.0389
-$$
-
-Por lo tanto, la variable temporal explica únicamente alrededor del **3.89 %** de la variabilidad observada. Esto indica que, aunque la recta presenta una pendiente positiva, la tendencia es débil.
-
-> Una pendiente positiva no significa necesariamente que exista un incremento ambiental constante o estadísticamente significativo.
-
-### Valores observados y estimados
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/228d215a-9a50-489b-a781-fd07c7a98d40" width="650" alt="Comparación entre valores observados y estimados">
-</p>
-
-La línea roja representa la situación ideal en la que el valor estimado es exactamente igual al observado.
-
-Los puntos alejados de esta línea indican errores de estimación. El modelo concentra la mayoría de sus predicciones en valores intermedios y no reproduce correctamente varios de los picos de concentración.
-
-### Evaluación del modelo
-
-| Métrica | Resultado | Interpretación |
-|---|---:|---|
-| MAE | 1.8704 ppb | Error absoluto promedio del modelo |
-| RMSE | 2.5619 ppb | Evidencia errores mayores en algunos registros |
-| $R^2$ de prueba | 0.0784 | Capacidad explicativa limitada |
-
-El RMSE fue mayor que el MAE debido a que esta métrica penaliza más los errores grandes. Esto concuerda con la presencia de días con concentraciones elevadas que no fueron reproducidas adecuadamente por la regresión.
+En este ajuste, la latitud y la elevación presentaron valores $p$ menores que 0.05. El número de observaciones diarias no fue estadísticamente significativo al nivel de 5 %.
 
 ---
 
 ## Discusión
 
-Los resultados indican que las concentraciones máximas diarias de SO₂ presentaron una alta variabilidad durante 2023. Además, se identificaron diferencias notables entre estaciones, especialmente en **Lhoist, Montevallo Plant**, cuyo promedio fue superior al de los demás puntos de monitoreo.
+Los resultados muestran que la concentración máxima diaria de SO₂ varió considerablemente entre las estaciones. La estación Lhoist, Montevallo Plant presentó tanto el promedio como el máximo más elevados. Esto indica que la ubicación de la estación constituye un factor relevante para interpretar las mediciones.
 
-La regresión lineal presentó una pendiente positiva, pero su bajo coeficiente de determinación indica que el paso del tiempo no explica adecuadamente las variaciones observadas. Esto ocurre porque las concentraciones atmosféricas pueden depender de numerosos factores adicionales, como:
+Aunque el modelo general fue estadísticamente significativo, su capacidad explicativa fue baja. El $R^2$ de prueba mostró que las tres variables incluidas no representan la mayor parte de la variación diaria del contaminante.
 
+La concentración atmosférica de SO₂ puede depender de factores que no están incluidos en el conjunto de datos utilizado, tales como:
+
+- Intensidad y ubicación de las fuentes de emisión.
 - Velocidad y dirección del viento.
-- Temperatura ambiental.
+- Temperatura y estabilidad atmosférica.
 - Precipitación.
-- Estabilidad atmosférica.
-- Ubicación de las estaciones.
-- Distancia respecto de fuentes industriales.
-- Cambios en la intensidad de las emisiones.
-- Disponibilidad diaria de datos por estación.
+- Hora de ocurrencia de las concentraciones máximas.
+- Cambios operativos de las instalaciones industriales.
 
-Asimismo, el gráfico de valores observados y estimados muestra que el modelo tiene dificultades para representar los episodios de concentración elevada. Una regresión lineal simple permite resumir la tendencia general, pero no describe completamente el comportamiento irregular de la contaminación atmosférica.
+Asimismo, los residuos elevados muestran que la regresión lineal múltiple no reproduce adecuadamente los episodios extremos. Las variables de latitud y elevación permanecen constantes para cada estación, por lo que parte del modelo refleja diferencias espaciales entre sitios y no necesariamente variaciones diarias.
 
-Los resultados deben interpretarse como un análisis exploratorio de los registros disponibles y no como una evaluación directa del cumplimiento de una norma de calidad del aire.
+Por estas razones, el modelo es útil como ejercicio exploratorio y comparativo, pero no debe emplearse por sí solo para pronosticar episodios elevados ni para determinar el cumplimiento de una norma ambiental.
 
 ---
 
 ## Conclusiones
 
-1. El conjunto analizado contiene **1774 registros**, **28 columnas** y datos de **5 estaciones** correspondientes exclusivamente a 2023.
+1. Se analizaron **1774 registros** procedentes de cinco estaciones y correspondientes exclusivamente al año 2023.
 
-2. La concentración máxima diaria promedio general fue aproximadamente **2.863 ppb**, mientras que el máximo promedio diario fue **17.160 ppb**.
+2. La concentración promedio general fue **2.894 ppb**, mientras que el máximo registrado fue **72.700 ppb**.
 
-3. La estación **Lhoist, Montevallo Plant** presentó el mayor promedio, con aproximadamente **7.413 ppb**.
+3. Lhoist, Montevallo Plant presentó el mayor promedio, con **7.413 ppb**, y el máximo más elevado del conjunto.
 
-4. **Septiembre** fue el mes con mayor concentración promedio, seguido por noviembre.
+4. La distribución de la concentración presentó una fuerte asimetría positiva debido a la presencia de valores extremos.
 
-5. La regresión lineal mostró una pendiente positiva de **0.005204 ppb por día**, lo que representa una ligera tendencia ascendente.
+5. El modelo de regresión lineal múltiple obtuvo un MAE de **3.0310 ppb**, un RMSE de **6.9383 ppb** y un $R^2$ de prueba de **0.1182**.
 
-6. El valor descriptivo de $R^2=0.0389$ demuestra que el tiempo explica solo una pequeña proporción de la variabilidad observada.
+6. El modelo explicó solamente una parte reducida de la variabilidad y subestimó las concentraciones más elevadas.
 
-7. En el conjunto de prueba se obtuvo un MAE de **1.8704 ppb**, un RMSE de **2.5619 ppb** y un $R^2$ de **0.0784**.
+7. En el ajuste OLS, la latitud y la elevación fueron estadísticamente significativas, mientras que el número de observaciones diarias no presentó significancia al nivel de 5 %.
 
-8. La regresión lineal simple es útil para visualizar una tendencia general, pero no es suficiente para explicar los cambios diarios ni los picos de concentración de SO₂.
+8. Se requieren variables meteorológicas y datos sobre las fuentes de emisión para construir un modelo con mayor capacidad explicativa.
 
----
+### Limitaciones
 
-## Limitaciones
-
-- El análisis considera únicamente información del año 2023.
-- Se utilizó una sola variable predictora: el tiempo.
-- No se incorporaron variables meteorológicas ni datos directos sobre fuentes de emisión.
-- La cantidad de mediciones disponibles puede variar entre estaciones y fechas.
-- Los promedios diarios entre estaciones pueden ocultar diferencias espaciales importantes.
-- Los valores elevados pueden influir considerablemente en el ajuste del modelo.
-- El análisis no demuestra causalidad entre el tiempo y las concentraciones de SO₂.
-
-Como continuación del estudio, podrían incorporarse variables meteorológicas, modelos no lineales y métodos específicos para series temporales.
-
----
-
-## Código empleado
-
-El análisis completo también se encuentra disponible en Google Colab:
-
-<a href="https://colab.research.google.com/drive/1WSb4f0r2F-1EuT-o_7wPmXYGSETjca-I#scrollTo=_AYrzcN9PRBN">
-  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Abrir análisis en Google Colab">
-</a>
-
-<details>
-<summary><b>Ver código completo en Python</b></summary>
-
-```python
-# ============================================================
-# ANÁLISIS Y REGRESIÓN LINEAL DE SO2 — AÑO 2023
-# ============================================================
-
-# 1. Importación de bibliotecas
-
-import pandas as pd
-import numpy as np
-import matplotlib.pyplot as plt
-import seaborn as sns
-
-from google.colab import files
-from sklearn.linear_model import LinearRegression
-from sklearn.model_selection import train_test_split
-from sklearn.metrics import mean_absolute_error
-from sklearn.metrics import mean_squared_error
-from sklearn.metrics import r2_score
-
-sns.set_theme(style="whitegrid")
-
-
-# 2. Subir el archivo CSV
-
-uploaded = files.upload()
-
-nombre_archivo = next(iter(uploaded))
-
-df = pd.read_csv(nombre_archivo)
-
-print("Archivo cargado:", nombre_archivo)
-print("Dimensiones originales:", df.shape)
-
-display(df.head())
-
-
-# 3. Revisión de las columnas
-
-print("Columnas disponibles:")
-
-for columna in df.columns:
-    print("-", columna)
-
-
-# 4. Preparación de los datos
-
-df["Date"] = pd.to_datetime(
-    df["Date"],
-    errors="coerce"
-)
-
-df["Daily Max SO2 Concentration"] = pd.to_numeric(
-    df["Daily Max SO2 Concentration"],
-    errors="coerce"
-)
-
-df_2023 = df[
-    (df["Date"].dt.year == 2023)
-].copy()
-
-df_2023 = df_2023.dropna(
-    subset=[
-        "Date",
-        "Site Name",
-        "Daily Max SO2 Concentration"
-    ]
-)
-
-print("Número de registros de 2023:", len(df_2023))
-print("Número de columnas:", len(df_2023.columns))
-print("Número de estaciones:", df_2023["Site Name"].nunique())
-print("Fecha inicial:", df_2023["Date"].min())
-print("Fecha final:", df_2023["Date"].max())
-print("Unidades:", df_2023["Units"].dropna().unique())
-
-
-# 5. Estadísticas descriptivas
-
-estadisticas = df_2023[
-    "Daily Max SO2 Concentration"
-].describe()
-
-display(estadisticas)
-
-
-# 6. Concentración promedio por estación
-
-promedio_estacion = (
-    df_2023
-    .groupby("Site Name")["Daily Max SO2 Concentration"]
-    .mean()
-    .sort_values(ascending=False)
-)
-
-display(promedio_estacion)
-
-plt.figure(figsize=(11, 5))
-
-sns.barplot(
-    x=promedio_estacion.values,
-    y=promedio_estacion.index,
-    color="#4C78A8"
-)
-
-plt.title(
-    "Concentración máxima diaria media de SO₂ por estación, 2023"
-)
-
-plt.xlabel("SO₂ (ppb)")
-plt.ylabel("Estación")
-plt.tight_layout()
-plt.show()
-
-
-# 7. Promedio diario entre estaciones
-
-promedio_diario = (
-    df_2023
-    .groupby("Date", as_index=False)[
-        "Daily Max SO2 Concentration"
-    ]
-    .mean()
-)
-
-promedio_diario = promedio_diario.sort_values("Date")
-
-promedio_diario = promedio_diario.rename(
-    columns={
-        "Daily Max SO2 Concentration": "SO2_promedio"
-    }
-)
-
-print(
-    "Promedio diario general:",
-    promedio_diario["SO2_promedio"].mean()
-)
-
-print(
-    "Máximo promedio diario:",
-    promedio_diario["SO2_promedio"].max()
-)
-
-
-# 8. Serie temporal diaria
-
-plt.figure(figsize=(12, 5))
-
-plt.plot(
-    promedio_diario["Date"],
-    promedio_diario["SO2_promedio"],
-    color="#3B73B9",
-    linewidth=1.3
-)
-
-plt.title(
-    "Evolución de la concentración máxima diaria promedio de SO₂, 2023"
-)
-
-plt.xlabel("Fecha")
-plt.ylabel("SO₂ promedio entre estaciones (ppb)")
-plt.tight_layout()
-plt.show()
-
-
-# 9. Promedio mensual
-
-promedio_diario["Mes"] = (
-    promedio_diario["Date"]
-    .dt.month
-)
-
-promedio_mensual = (
-    promedio_diario
-    .groupby("Mes", as_index=False)["SO2_promedio"]
-    .mean()
-)
-
-promedio_mensual["Mes"] = (
-    promedio_mensual["Mes"]
-    .astype(str)
-    .str.zfill(2)
-)
-
-display(promedio_mensual)
-
-plt.figure(figsize=(11, 5))
-
-sns.barplot(
-    data=promedio_mensual,
-    x="Mes",
-    y="SO2_promedio",
-    color="#67B7B2"
-)
-
-plt.title(
-    "Concentración máxima diaria promedio de SO₂ por mes, 2023"
-)
-
-plt.xlabel("Mes")
-plt.ylabel("SO₂ (ppb)")
-plt.tight_layout()
-plt.show()
-
-
-# 10. Variable temporal
-
-fecha_inicial = pd.Timestamp("2023-01-01")
-
-promedio_diario["Dias"] = (
-    promedio_diario["Date"] - fecha_inicial
-).dt.days
-
-
-# 11. Regresión lineal descriptiva con todos los datos
-
-X_total = promedio_diario[["Dias"]]
-y_total = promedio_diario["SO2_promedio"]
-
-modelo_total = LinearRegression()
-modelo_total.fit(X_total, y_total)
-
-promedio_diario["SO2_estimado"] = (
-    modelo_total.predict(X_total)
-)
-
-intercepto = modelo_total.intercept_
-pendiente = modelo_total.coef_[0]
-r2_total = modelo_total.score(X_total, y_total)
-
-print(f"Intercepto: {intercepto:.4f}")
-print(f"Pendiente: {pendiente:.6f} ppb/día")
-print(f"R² descriptivo: {r2_total:.4f}")
-
-print(
-    f"Modelo: SO₂ estimado = "
-    f"{intercepto:.4f} + "
-    f"{pendiente:.6f}t"
-)
-
-
-# 12. Gráfico de regresión temporal
-
-plt.figure(figsize=(12, 5))
-
-plt.scatter(
-    promedio_diario["Date"],
-    promedio_diario["SO2_promedio"],
-    alpha=0.55,
-    s=20,
-    label="Promedio diario observado"
-)
-
-plt.plot(
-    promedio_diario["Date"],
-    promedio_diario["SO2_estimado"],
-    color="#EF4E4E",
-    linewidth=2.5,
-    label="Regresión lineal"
-)
-
-plt.title(
-    "Regresión lineal de la concentración diaria promedio de SO₂, 2023"
-)
-
-plt.xlabel("Fecha")
-plt.ylabel("SO₂ promedio entre estaciones (ppb)")
-plt.legend()
-plt.tight_layout()
-plt.show()
-
-
-# 13. División en entrenamiento y prueba
-
-X = promedio_diario[["Dias"]]
-y = promedio_diario["SO2_promedio"]
-
-X_train, X_test, y_train, y_test = train_test_split(
-    X,
-    y,
-    test_size=0.20,
-    random_state=42
-)
-
-
-# 14. Entrenamiento del modelo
-
-modelo = LinearRegression()
-
-modelo.fit(
-    X_train,
-    y_train
-)
-
-y_pred = modelo.predict(X_test)
-
-
-# 15. Evaluación del modelo
-
-mae = mean_absolute_error(
-    y_test,
-    y_pred
-)
-
-rmse = np.sqrt(
-    mean_squared_error(
-        y_test,
-        y_pred
-    )
-)
-
-r2 = r2_score(
-    y_test,
-    y_pred
-)
-
-print(f"MAE: {mae:.4f} ppb")
-print(f"RMSE: {rmse:.4f} ppb")
-print(f"R² de prueba: {r2:.4f}")
-
-
-# 16. Valores observados y estimados
-
-plt.figure(figsize=(7, 6))
-
-plt.scatter(
-    y_test,
-    y_pred,
-    color="#58A65C",
-    alpha=0.70
-)
-
-limite_minimo = min(
-    y_test.min(),
-    y_pred.min()
-)
-
-limite_maximo = max(
-    y_test.max(),
-    y_pred.max()
-)
-
-plt.plot(
-    [limite_minimo, limite_maximo],
-    [limite_minimo, limite_maximo],
-    color="#FF4E50",
-    linestyle="--",
-    label="Predicción ideal"
-)
-
-plt.title(
-    "Valores observados y estimados en el conjunto de prueba"
-)
-
-plt.xlabel("SO₂ observado (ppb)")
-plt.ylabel("SO₂ estimado (ppb)")
-plt.legend()
-plt.tight_layout()
-plt.show()
-```
-
-</details>
+- El estudio comprende solamente el año 2023.
+- Se analizaron cinco estaciones de monitoreo.
+- El modelo utiliza únicamente tres variables predictoras.
+- No se incluyeron variables meteorológicas ni información directa sobre emisiones.
+- La regresión lineal no representa correctamente los episodios extremos.
+- Las asociaciones obtenidas no demuestran relaciones causales.
 
 ---
 
@@ -736,19 +430,18 @@ plt.show()
 
 [3] U.S. Environmental Protection Agency, “Air Quality System,” *EPA*. [En línea]. Disponible en: https://www.epa.gov/aqs. [Accedido: 18-sep-2026].
 
-[4] The pandas development team, “pandas documentation,” *pandas*. [En línea]. Disponible en: https://pandas.pydata.org/docs/. [Accedido: 18-sep-2026].
+[4] Scikit-learn developers, “LinearRegression,” *Scikit-learn Documentation*. [En línea]. Disponible en: https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html. [Accedido: 18-sep-2026].
 
-[5] Scikit-learn developers, “LinearRegression,” *scikit-learn documentation*. [En línea]. Disponible en: https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html. [Accedido: 18-sep-2026].
+[5] Scikit-learn developers, “Regression metrics,” *Scikit-learn Documentation*. [En línea]. Disponible en: https://scikit-learn.org/stable/modules/model_evaluation.html#regression-metrics. [Accedido: 18-sep-2026].
 
-[6] Scikit-learn developers, “Regression metrics,” *scikit-learn documentation*. [En línea]. Disponible en: https://scikit-learn.org/stable/modules/model_evaluation.html#regression-metrics. [Accedido: 18-sep-2026].
+[6] Statsmodels developers, “Ordinary Least Squares,” *Statsmodels Documentation*. [En línea]. Disponible en: https://www.statsmodels.org/stable/generated/statsmodels.regression.linear_model.OLS.html. [Accedido: 18-sep-2026].
 
 ---
 
 <div align="center">
 
-**Análisis elaborado con Python y Google Colab**
+**Análisis elaborado en Python y Google Colab**
 
-**Datos analizados: año 2023**
+[**Abrir cuaderno completo en Google Colab**](https://colab.research.google.com/drive/1F7S03kBMQJXqDwyC29e1_V9tsNu30VTL#scrollTo=gIpXJySHvm7w)
 
-</div>
 </div>
