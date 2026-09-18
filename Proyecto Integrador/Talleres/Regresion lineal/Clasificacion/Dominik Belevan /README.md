@@ -18,22 +18,19 @@
 
 ---
 
-## Índice
+## Resumen
 
-1. [Introducción](#introducción)
-2. [Metodología](#metodología)
-3. [Resultados](#resultados)
-4. [Discusión](#discusión)
-5. [Conclusiones](#conclusiones)
-6. [Referencias](#referencias)
+Se analizaron 1774 registros de concentración máxima diaria de dióxido de azufre (SO₂) correspondientes a cinco estaciones de monitoreo durante 2023. Se realizó un análisis exploratorio y se ajustó un modelo de regresión lineal múltiple utilizando como predictores el número de observaciones diarias, la latitud y la elevación. El modelo obtuvo un MAE de 3.0310 ppb, un RMSE de 6.9383 ppb y un $R^2$ de prueba de 0.1182. Los resultados evidenciaron diferencias entre estaciones y una capacidad predictiva limitada para representar concentraciones extremas. El estudio permite reconocer el valor y las limitaciones de la regresión lineal en el análisis exploratorio de contaminantes atmosféricos.
+
+**Palabras clave:** dióxido de azufre, calidad del aire, regresión lineal múltiple, contaminación atmosférica, Python.
 
 ---
 
 ## Introducción
 
-El dióxido de azufre (SO₂) es un contaminante atmosférico gaseoso generado principalmente por la combustión de materiales que contienen azufre y por determinados procesos industriales. Su monitoreo permite estudiar la calidad del aire e identificar variaciones entre diferentes estaciones de medición.
+El dióxido de azufre (SO₂) es un contaminante atmosférico gaseoso. Sus principales fuentes incluyen la combustión de combustibles fósiles en centrales eléctricas e instalaciones industriales, además de determinados procesos industriales y fuentes naturales [1]. La exposición de corta duración puede afectar el sistema respiratorio y dificultar la respiración, especialmente en personas con asma [1]. Asimismo, los óxidos de azufre pueden contribuir a la formación de partículas finas y lluvia ácida [1].
 
-En este trabajo se analizaron los registros de concentración máxima diaria de SO₂ correspondientes exclusivamente al año **2023**. Los datos fueron obtenidos de la plataforma AirData de la Agencia de Protección Ambiental de los Estados Unidos (EPA) y contienen información procedente de cinco estaciones de monitoreo.
+En este trabajo se analizaron los registros de concentración máxima diaria de SO₂ correspondientes exclusivamente al año **2023**. Los datos fueron obtenidos de AirData, plataforma de la Agencia de Protección Ambiental de los Estados Unidos (EPA) que permite acceder a datos recientes e históricos de calidad del aire [2]. Estos registros forman parte del Air Quality System (AQS), repositorio que reúne mediciones ambientales, información geográfica de las estaciones y elementos de control de calidad [3].
 
 El propósito del estudio fue describir la distribución de las concentraciones, comparar los resultados entre estaciones y construir un modelo de **regresión lineal múltiple** para evaluar la relación entre la concentración máxima diaria de SO₂ y tres variables disponibles en el conjunto de datos: número de observaciones diarias, latitud y elevación de la estación.
 
@@ -56,7 +53,7 @@ Analizar la concentración máxima diaria de dióxido de azufre registrada duran
 
 ### Fuente y características de los datos
 
-Se empleó un archivo CSV descargado de AirData de la EPA. El conjunto utilizado contiene únicamente registros del año 2023.
+Se empleó un archivo CSV descargado de AirData de la EPA [2]. El conjunto utilizado contiene únicamente registros del año 2023 y conserva variables procedentes del sistema AQS [3].
 
 | Característica | Descripción |
 |---|---|
@@ -71,20 +68,30 @@ Se empleó un archivo CSV descargado de AirData de la EPA. El conjunto utilizado
 | División de datos | 70 % entrenamiento y 30 % prueba |
 | Semilla de reproducción | `random_state=123` |
 
-### Herramientas utilizadas
+### Revisión de calidad de los datos
 
-El procesamiento se realizó en Google Colab mediante Python y las siguientes bibliotecas:
+Las funciones `info()` y `describe()` se utilizaron para revisar los tipos de datos, la completitud y las estadísticas básicas. En lugar de reproducir las 28 columnas completas, se resumen los hallazgos relevantes para el modelo:
 
-- `pandas`: organización y procesamiento de los datos.
-- `numpy`: operaciones numéricas.
-- `matplotlib`: elaboración de gráficos.
-- `seaborn`: visualización estadística.
-- `scikit-learn`: construcción y evaluación de la regresión.
-- `statsmodels`: análisis mediante mínimos cuadrados ordinarios.
+| Verificación | Resultado |
+|---|---:|
+| Registros totales | 1774 |
+| Fechas distintas | 365 |
+| Valores faltantes en la concentración de SO₂ | 0 |
+| Valores faltantes en `Daily Obs Count` | 0 |
+| Valores faltantes en `Site Latitude` | 0 |
+| Valores faltantes en `Elevation (m)` | 0 |
+| Unidades identificadas | Parts per billion |
+| Estaciones identificadas | 5 |
+
+Algunas columnas no utilizadas presentaron valores faltantes, como `CBSA Name`, `Dominant Source`, `Monitor Type`, `Networks` y `QA Primary Monitor?`. Debido a que las cuatro variables empleadas en el modelo estaban completas, no fue necesario aplicar imputación estadística.
+
+### Herramientas
+
+El procesamiento se realizó en Google Colab con Python y las bibliotecas `pandas`, `numpy`, `matplotlib`, `seaborn`, `scikit-learn` y `statsmodels`. La regresión se implementó mediante `LinearRegression` de `scikit-learn` [4], las métricas se calcularon siguiendo las funciones de evaluación para regresión de la misma biblioteca [5] y el análisis inferencial se complementó con mínimos cuadrados ordinarios de `statsmodels` [6].
 
 ### Preparación de los datos
 
-El procedimiento aplicado fue el siguiente:
+El procedimiento fue el siguiente:
 
 1. Se incorporó el archivo CSV al cuaderno de Google Colab.
 2. La variable `Date` se convirtió al formato de fecha.
@@ -93,9 +100,8 @@ El procedimiento aplicado fue el siguiente:
 5. Se verificó la ausencia de valores faltantes en las variables seleccionadas.
 6. Se realizaron gráficos exploratorios y una matriz de correlación.
 7. Los datos se dividieron en entrenamiento y prueba.
-8. Se ajustó el modelo de regresión lineal múltiple.
-9. Se calcularon las métricas de evaluación.
-10. Se analizaron los residuos y se realizó un ajuste OLS.
+8. Se ajustó el modelo y se evaluaron sus predicciones.
+9. Se analizaron los residuos y se realizó un ajuste OLS.
 
 ### Variables del modelo
 
@@ -111,13 +117,13 @@ Las variables independientes fueron:
 - $x_2$: latitud de la estación (`Site Latitude`).
 - $x_3$: elevación de la estación en metros (`Elevation (m)`).
 
-No se incluyó `Daily AQI Value` porque presentó una correlación de **0.998** con la concentración de SO₂ y se deriva de la medición del contaminante. Su uso podría producir una capacidad explicativa artificialmente elevada.
+No se incluyó `Daily AQI Value` porque presentó una correlación de **0.998** con la concentración de SO₂ y se deriva de la medición del contaminante. Su uso habría generado una capacidad explicativa artificialmente elevada.
 
 Tampoco se incluyó `Percent Complete`, porque su correlación con `Daily Obs Count` fue prácticamente perfecta. `Site Longitude` fue descartada para reducir la redundancia espacial con `Site Latitude`.
 
 ### Modelo de regresión lineal múltiple
 
-La forma general del modelo empleado fue:
+La forma general del modelo fue:
 
 $$
 \widehat{SO}_2 =
@@ -140,13 +146,25 @@ Los 1774 registros se dividieron aleatoriamente en:
 | Entrenamiento | 1241 | 70 % |
 | Prueba | 533 | 30 % |
 
-Se empleó `random_state=123` para obtener resultados reproducibles.
+Se utilizó `random_state=123` para que la división de los datos pueda reproducirse.
+
+### Hipótesis estadística
+
+Para evaluar la significancia global del modelo OLS se consideraron las siguientes hipótesis:
+
+$$
+H_0: \beta_1=\beta_2=\beta_3=0
+$$
+
+$$
+H_1: \text{al menos uno de los coeficientes es diferente de cero}
+$$
+
+Se utilizó un nivel de significancia de $\alpha=0.05$. Si el valor $p$ del estadístico $F$ es menor que 0.05, se rechaza la hipótesis nula y se concluye que el modelo presenta significancia estadística global.
 
 ### Métricas de evaluación
 
-#### Error absoluto medio
-
-El MAE representa el promedio de los errores absolutos:
+El error absoluto medio se calculó mediante:
 
 $$
 MAE =
@@ -155,9 +173,7 @@ MAE =
 \left|y_i-\widehat{y}_i\right|
 $$
 
-#### Error cuadrático medio
-
-El MSE representa el promedio de los errores elevados al cuadrado:
+El error cuadrático medio se calculó mediante:
 
 $$
 MSE =
@@ -166,9 +182,7 @@ MSE =
 \left(y_i-\widehat{y}_i\right)^2
 $$
 
-#### Raíz del error cuadrático medio
-
-El RMSE expresa el error en las mismas unidades que la concentración:
+La raíz del error cuadrático medio fue:
 
 $$
 RMSE =
@@ -179,9 +193,7 @@ RMSE =
 }
 $$
 
-#### Coeficiente de determinación
-
-El coeficiente de determinación representa la proporción de la variabilidad explicada por el modelo:
+El coeficiente de determinación se calculó mediante:
 
 $$
 R^2 =
@@ -194,6 +206,29 @@ R^2 =
 \left(y_i-\overline{y}\right)^2
 }
 $$
+
+### Evaluación de los supuestos
+
+El ajuste lineal supone una relación aproximadamente lineal entre las variables, independencia de los errores, varianza relativamente constante y residuos aproximadamente normales. La evaluación gráfica de los residuos permite identificar patrones, valores atípicos y desviaciones importantes de estos supuestos [7].
+
+En este estudio se revisaron:
+
+- La distribución de los residuos mediante un histograma y una curva de densidad.
+- Los residuos frente a los valores predichos.
+- Los residuos frente a cada variable independiente.
+- La concentración observada frente a la concentración predicha.
+
+### Reproducibilidad
+
+El análisis completo se encuentra disponible en Google Colab. El cuaderno contiene la preparación de los datos, la exploración estadística, la construcción del modelo, las métricas, las gráficas y el resumen OLS. La semilla `random_state=123` permite reproducir la misma división de entrenamiento y prueba.
+
+<div align="center">
+
+<a href="https://colab.research.google.com/drive/1F7S03kBMQJXqDwyC29e1_V9tsNu30VTL#scrollTo=gIpXJySHvm7w">
+  <img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Abrir análisis reproducible en Google Colab">
+</a>
+
+</div>
 
 ---
 
@@ -251,7 +286,7 @@ La diferencia entre la media y la mediana confirma la influencia de los valores 
 | 4 | Ward, Sumter Co. | 356 | 1.630 ppb | 6.400 ppb |
 | 5 | Fairfield | 363 | 0.984 ppb | 12.600 ppb |
 
-La estación **Lhoist, Montevallo Plant** presentó el mayor promedio y el máximo más elevado. Esta diferencia evidencia una importante variación espacial entre los puntos de monitoreo.
+La estación **Lhoist, Montevallo Plant** presentó el mayor promedio y el máximo más elevado. Esta diferencia sugiere una importante variación espacial entre los puntos de monitoreo.
 
 ### Matriz de correlación
 
@@ -305,7 +340,7 @@ $$
 | Site Latitude | 2.1130 |
 | Elevation (m) | −0.0341 |
 
-Manteniendo constantes las demás variables, el coeficiente de elevación indica una disminución estimada de aproximadamente **0.0341 ppb** por cada metro adicional. Sin embargo, estos coeficientes representan asociaciones estadísticas y no demuestran causalidad.
+Manteniendo constantes las demás variables, el coeficiente de elevación indica una disminución estimada de aproximadamente **0.0341 ppb** por cada metro adicional. Sin embargo, los coeficientes representan asociaciones estadísticas y no demuestran causalidad.
 
 ### Evaluación predictiva
 
@@ -316,9 +351,9 @@ Manteniendo constantes las demás variables, el coeficiente de elevación indica
 | RMSE | 6.9383 ppb |
 | $R^2$ de prueba | 0.1182 |
 
-El MAE indica que las predicciones se alejaron de los valores observados en aproximadamente **3.03 ppb**, en promedio. El RMSE fue mayor debido a que penaliza con mayor intensidad los errores grandes.
+El MAE indica que las predicciones se alejaron de los valores observados en aproximadamente **3.03 ppb**, en promedio. El RMSE fue mayor debido a que penaliza más los errores grandes.
 
-El valor de $R^2=0.1182$ indica que el modelo explicó aproximadamente el **11.82 %** de la variabilidad del conjunto de prueba. Por lo tanto, su capacidad predictiva fue limitada.
+El valor de $R^2=0.1182$ indica que el modelo explicó aproximadamente el **11.82 %** de la variabilidad del conjunto de prueba. Por ello, su capacidad predictiva fue limitada.
 
 <div align="center">
 
@@ -332,7 +367,7 @@ La línea roja representa una predicción perfecta. Los valores estimados se con
 
 ### Diagnóstico de residuos
 
-El residuo de cada observación se definió como:
+El residuo se definió como:
 
 $$
 e_i = y_i-\widehat{y}_i
@@ -346,7 +381,7 @@ $$
 
 </div>
 
-La distribución de los residuos presentó asimetría positiva y varios errores elevados. Además, la dispersión de los residuos no fue uniforme. Esto indica que los supuestos de normalidad y varianza constante no se cumplen completamente.
+La distribución de los residuos presentó asimetría positiva y varios errores elevados. Además, la dispersión de los residuos no fue uniforme. Según el enfoque de diagnóstico mediante residuos, la presencia de patrones o cambios en la dispersión puede señalar deficiencias del modelo [7]. En este caso, los resultados indican que los supuestos de normalidad y varianza constante no se cumplen completamente.
 
 ### Resultados del modelo OLS
 
@@ -378,24 +413,34 @@ Los resultados muestran que la concentración máxima diaria de SO₂ varió con
 
 Aunque el modelo general fue estadísticamente significativo, su capacidad explicativa fue baja. El $R^2$ de prueba mostró que las tres variables incluidas no representan la mayor parte de la variación diaria del contaminante.
 
-La concentración atmosférica de SO₂ puede depender de factores que no están incluidos en el conjunto de datos utilizado, tales como:
+La concentración atmosférica de SO₂ puede depender de factores que no están incluidos en el dataset utilizado, tales como:
 
-- Intensidad y ubicación de las fuentes de emisión.
+- Intensidad y ubicación de fuentes de emisión.
 - Velocidad y dirección del viento.
 - Temperatura y estabilidad atmosférica.
 - Precipitación.
-- Hora de ocurrencia de las concentraciones máximas.
-- Cambios operativos de las instalaciones industriales.
+- Hora de ocurrencia de los máximos.
+- Cambios operativos de instalaciones industriales.
 
-Asimismo, los residuos elevados muestran que la regresión lineal múltiple no reproduce adecuadamente los episodios extremos. Las variables de latitud y elevación permanecen constantes para cada estación, por lo que parte del modelo refleja diferencias espaciales entre sitios y no necesariamente variaciones diarias.
+Asimismo, los residuos elevados muestran que una regresión lineal múltiple no reproduce adecuadamente los episodios extremos. Las variables de latitud y elevación también permanecen constantes para cada estación, por lo que parte del modelo refleja diferencias espaciales entre sitios y no necesariamente variaciones diarias.
 
-Por estas razones, el modelo es útil como ejercicio exploratorio y comparativo, pero no debe emplearse por sí solo para pronosticar episodios elevados ni para determinar el cumplimiento de una norma ambiental.
+Por estas razones, el modelo es útil como ejercicio exploratorio y comparativo, pero no debe emplearse por sí solo para pronosticar episodios elevados ni para determinar el cumplimiento de una norma ambiental. Esta precaución también es coherente con la finalidad de AQS como repositorio para evaluaciones, modelamiento y elaboración de reportes de calidad del aire [3].
+
+### Recomendaciones para futuros análisis
+
+- Incorporar velocidad y dirección del viento, temperatura, humedad y precipitación.
+- Añadir información sobre la distancia y actividad de las fuentes de emisión.
+- Evaluar una transformación logarítmica de la concentración para reducir la influencia de la asimetría.
+- Comparar la regresión lineal con modelos robustos y no lineales.
+- Aplicar una validación que respete el orden temporal de los datos.
+- Analizar cada estación por separado para distinguir el efecto espacial del comportamiento diario.
+- Evaluar los valores extremos antes de decidir si deben conservarse, transformarse o analizarse por separado.
 
 ---
 
 ## Conclusiones
 
-1. Se analizaron **1774 registros** procedentes de cinco estaciones y correspondientes exclusivamente al año 2023.
+1. Se analizaron **1774 registros** de cinco estaciones, correspondientes únicamente al año 2023.
 
 2. La concentración promedio general fue **2.894 ppb**, mientras que el máximo registrado fue **72.700 ppb**.
 
@@ -409,7 +454,7 @@ Por estas razones, el modelo es útil como ejercicio exploratorio y comparativo,
 
 7. En el ajuste OLS, la latitud y la elevación fueron estadísticamente significativas, mientras que el número de observaciones diarias no presentó significancia al nivel de 5 %.
 
-8. Se requieren variables meteorológicas y datos sobre las fuentes de emisión para construir un modelo con mayor capacidad explicativa.
+8. Se requieren variables meteorológicas y datos sobre fuentes de emisión para construir un modelo con mayor capacidad explicativa.
 
 ### Limitaciones
 
@@ -419,6 +464,16 @@ Por estas razones, el modelo es útil como ejercicio exploratorio y comparativo,
 - No se incluyeron variables meteorológicas ni información directa sobre emisiones.
 - La regresión lineal no representa correctamente los episodios extremos.
 - Las asociaciones obtenidas no demuestran relaciones causales.
+
+---
+
+## Disponibilidad de datos y código
+
+El procedimiento, el código y las salidas gráficas pueden consultarse en el siguiente cuaderno:
+
+**Google Colab:** https://colab.research.google.com/drive/1F7S03kBMQJXqDwyC29e1_V9tsNu30VTL#scrollTo=gIpXJySHvm7w
+
+El conjunto utilizado corresponde a los datos diarios de SO₂ descargados desde AirData [2]. Para garantizar la reproducibilidad, el cuaderno conserva el filtro exclusivo para 2023 y la semilla utilizada en la división de los datos.
 
 ---
 
@@ -436,12 +491,12 @@ Por estas razones, el modelo es útil como ejercicio exploratorio y comparativo,
 
 [6] Statsmodels developers, “Ordinary Least Squares,” *Statsmodels Documentation*. [En línea]. Disponible en: https://www.statsmodels.org/stable/generated/statsmodels.regression.linear_model.OLS.html. [Accedido: 18-sep-2026].
 
+[7] National Institute of Standards and Technology, “How can I tell if a model fits my data?,” *NIST/SEMATECH e-Handbook of Statistical Methods*. [En línea]. Disponible en: https://www.itl.nist.gov/div898/handbook/pmd/section4/pmd44.htm. [Accedido: 18-sep-2026].
+
 ---
 
 <div align="center">
 
 **Análisis elaborado en Python y Google Colab**
-
-[**Abrir cuaderno completo en Google Colab**](https://colab.research.google.com/drive/1F7S03kBMQJXqDwyC29e1_V9tsNu30VTL#scrollTo=gIpXJySHvm7w)
 
 </div>
