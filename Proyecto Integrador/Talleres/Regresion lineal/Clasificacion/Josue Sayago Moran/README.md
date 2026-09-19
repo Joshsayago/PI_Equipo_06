@@ -1,23 +1,100 @@
-## Introducción
-El dióxido de nitrógeno (NO₂) es un gas altamente reactivo y uno de los principales contaminantes atmosféricos, vinculado principalmente a emisiones vehiculares e industriales. Para comunicar eficazmente el riesgo que este gas representa para la salud pública, la Agencia de Protección Ambiental (EPA) utiliza el Índice de Calidad del Aire (AQI). El presente informe tiene como objetivo analizar y cuantificar la relación estadística entre la concentración máxima diaria de NO₂ y el valor diario del AQI. Mediante un modelo de regresión lineal aplicado a registros de los años 2022 y 2023, este estudio busca demostrar la proporción en la que las variaciones de este contaminante impactan directamente en las métricas de calidad del aire.
+# Análisis de Regresión Múltiple: Dióxido de Nitrógeno (NO2) en Birmingham-Hoover, ALABAMA — (2022-2023)
 
-## Metodología
-El desarrollo de este análisis se estructuró en las siguientes fases técnicas y de procesamiento:
+## 1. Introducción
 
-*   **Origen de los Datos:** Se utilizó un conjunto de datos históricos públicos extraídos del portal *AirData* de la Agencia de Protección Ambiental de Estados Unidos (US EPA). El archivo fuente compila las mediciones diarias de concentración del contaminante y sus índices asociados de monitoreo.
-*   **Herramientas y Entorno:** El análisis computacional se ejecutó en el entorno de Google Colab. Se empleó Python como lenguaje principal, utilizando la librería `pandas` para la manipulación y estructuración de datos, `scikit-learn` para la construcción del modelo de regresión, y el conjunto de `matplotlib` y `seaborn` para la visualización de métricas de desempeño y diagnóstico estadístico de residuos.
-*   **Procesamiento y Filtrado:** El conjunto de datos original fue filtrado para aislar de manera exclusiva los registros comprendidos entre el 1 de enero de 2022 y el 31 de diciembre de 2023. Posteriormente, se realizó una limpieza de datos eliminando aquellas filas con valores nulos o incompletos en las variables de interés, garantizando así la solidez matemática del análisis.
-*   **Desarrollo y Evaluación del Modelo:** Se implementó un algoritmo de Regresión Lineal Simple en el cual la Concentración Máxima Diaria de NO₂ se definió como la variable independiente (X) y el Valor Diario del AQI como la variable dependiente (Y). Para validar la capacidad de predicción del modelo de manera rigurosa, el conjunto de datos se dividió aleatoriamente, destinando el 70% de las observaciones para el entrenamiento del algoritmo y reservando el 30% restante para las pruebas de validación de los datos no vistos.
+La contaminación del aire puede analizarse mediante diferentes contaminantes presentes en la atmósfera. Uno de los más críticos es el Dióxido de Nitrógeno (NO₂), un gas altamente reactivo vinculado principalmente a emisiones vehiculares e industriales. La exposición a niveles altos de NO₂ puede irritar las vías respiratorias y agravar enfermedades respiratorias.
+
+Otro indicador estandarizado utilizado para comunicar los riesgos a la salud pública es el Air Quality Index (AQI) o Índice de Calidad del Aire. Este índice representa mediante un valor numérico el nivel de contaminación presente, donde valores mayores indican una calidad del aire más perjudicial.
+
+En este trabajo se utilizó el archivo "NO2_daily_aqs_data_downloaded_2026-09-18 16_44_06_2.csv", el cual contiene información de monitoreo de la calidad del aire correspondiente a los años 2022 y 2023 para el área estadística metropolitana de Birmingham-Hoover, Alabama. 
+
+El objetivo de este trabajo fue aplicar un modelo de regresión lineal múltiple para analizar la relación entre diferentes variables geográficas y de calidad del aire disponibles en el conjunto de datos, para predecir la concentración máxima diaria de NO₂.
+
+Las variables utilizadas como predictoras fueron:
+* Daily AQI Value
+* Site ID
+* Site Latitude
+* Site Longitude
+
+La variable que se desea predecir (dependiente) fue:
+* Daily Max NO2 Concentration
+
+## 2. Metodología
+
+### Exploración de los datos
+
+Inicialmente, se cargó el conjunto de datos mediante la biblioteca Pandas en Python y se revisaron las dimensiones, columnas, valores nulos y estadísticas descriptivas tras filtrar los años 2022 y 2023.
+
+El dataset analizado contiene:
+* 1,317 registros
+* 28 columnas
+* 2 estaciones de monitoreo
+* 0 valores nulos (en las variables de interés)
+* 0 filas duplicadas
+
+Las estaciones de monitoreo presentes fueron:
+* North Birmingham
+* Arkadelphia/Near Road
+
+La variable objetivo, Daily Max NO2 Concentration, presentó los siguientes valores (en partes por billón - ppb):
+
+| Estadístico | PM2.5 (NO₂) |
+| :--- | :--- |
+| Registros | 1317 |
+| Media | 19.92 |
+| Desviación estándar | 8.99 |
+| Mínimo | 1.90 |
+| Primer cuartil | 12.80 |
+| Mediana | 18.90 |
+| Tercer cuartil | 26.30 |
+| Máximo | 50.30 |
+
+Por otro lado, la variable predictora Daily AQI Value presentó una media de 18.34, con un valor mínimo de 1 y un valor máximo de 47.
+
+### Variables 
+
+* **Daily Max NO2 Concentration (Dependiente):** Concentración máxima diaria reportada de dióxido de nitrógeno.
+* **Daily AQI Value (Independiente):** Índice diario de calidad del aire.
+* **Site ID (Independiente):** Identificador numérico único de la estación de monitoreo.
+* **Site Latitude (Independiente):** Ubicación geográfica (latitud) de la estación.
+* **Site Longitude (Independiente):** Ubicación geográfica (longitud) de la estación.
+
+
+### Análisis Exploratorio
+Como paso metodológico previo al modelado, se calculó una matriz de correlación de Pearson y se generó una matriz de dispersión múltiple (Pairplot) utilizando la librería Seaborn. Este procedimiento tuvo como fin identificar gráficamente la relación matemática entre las variables seleccionadas y comprobar sus distribuciones.
+Para construir y validar el modelo predictivo, los datos fueron divididos aleatoriamente mediante la función train_test_split(. Se utilizó la siguiente proporción:
+* 70 % de los datos para entrenamiento (921 registros).
+* 30 % de los datos para prueba (396 registros).
+* random_state = 123.
+Esta separación es una práctica estándar que permite entrenar al algoritmo con un fragmento histórico y evaluar objetivamente su capacidad de predicción frente a datos desconocidos.
+
+Asimismo,se utilizó la clase LinearRegression() proveniente de la biblioteca Scikit-learn. Tras concluir la fase de entrenamiento con los 921 registros, se obtuvieron los siguientes coeficientes para la ecuación de regresión múltiple:
+
+| Variable Predictora | Coeficiente |
+| :--- | :--- |
+| Daily AQI Value | 1.055002 |
+| Site ID | -0.000010 |
+| Site Latitude | 0.000000 |
+| Site Longitude | 0.000000 |
+
+El intercepto obtenido de la regresión fue aproximadamente: **104.6756**
+
+El coeficiente principal correspondiente a Daily AQI Value es fuertemente positivo (1.055). Esto indica que, manteniendo constantes los factores geográficos, un incremento de una unidad en el Índice de Calidad del Aire se relaciona matemáticamente con un incremento aproximado de 1.055 ppb en la concentración máxima de NO₂ estimada. Los coeficientes de latitud y longitud tienden a cero debido a la cercanía geográfica de las únicas dos estaciones analizadas en la región.
 ## Resultados
 
 El análisis de los datos extraídos arrojó resultados estadísticos contundentes que validan la relación directa entre las mediciones del contaminante y el índice reportado. A continuación, se detalla la interpretación de los gráficos y métricas generadas:
 
-**1. Análisis de Correlación Exploratorio**
+**1. Análisis de Correlación**
 <p align = center>
 <img width="956" height="874" alt="image" src="https://github.com/user-attachments/assets/21c8b11e-b0d8-4402-8caf-1024a299c8ac" />
+  <p align = center>
+  <img width="1231" height="1231" alt="image" src="https://github.com/user-attachments/assets/eede9071-900d-4b06-943d-cd181454dfa4" />
 </p>
 
-El mapa de calor de correlación permitió filtrar el ruido del conjunto de datos y enfocarse en las variables cuantitativas más relevantes. Se observa una correlación positiva casi perfecta entre la `Daily Max NO2 Concentration` y el `Daily AQI Value`. Otras variables, como el conteo de observaciones (`Daily Obs Count`) o la elevación del sitio (`Elevation (m)`), mostraron coeficientes de correlación cercanos a cero frente al AQI, confirmando que no influyen en el cálculo de este índice.
+El mapa de calor de correlación permitió filtrar el ruido del conjunto de datos y enfocarse en las variables cuantitativas más relevantes. Se observa una correlación positiva casi perfecta entre la Daily Max NO2 Concentration y el Daily AQI Value. Otras variables, como el conteo de observaciones (Daily Obs Count) o la elevación del sitio (Elevation (m)), mostraron coeficientes de correlación cercanos a cero frente al AQI, confirmando que no influyen en el cálculo de este índice. 
+Por otro lado, en la matriz de dispersión (Pairplot), los histogramas revelaron la naturaleza discreta de las variables espaciales (Site ID, Latitud, Longitud), confirmando visualmente la existencia de solo dos estaciones fijas. Los diagramas de dispersión del AQI versus el NO₂ mostraron una línea recta ascendente perfecta, evidenciando una dependencia total.
+
+
 
 **2. Relación de Variables Múltiples contra el AQI**
 <p align = center>
@@ -60,9 +137,8 @@ Además, las pruebas de diagnóstico de residuos (normalidad y homocedasticidad)
 
 ---
 
-## Referencias
+## 5. Referencias
 
-[1] U.S. Environmental Protection Agency, "AirData," EPA, Washington, D.C., 2026. [Online]. Available: https://www.epa.gov/outdoor-air-quality-data.
-[2] F. Pedregosa *et al.*, "Scikit-learn: Machine Learning in Python," *J. Mach. Learn. Res.*, vol. 12, pp. 2825–2830, 2011.
-[3] J. D. Hunter, "Matplotlib: A 2D graphics environment," *Comput. Sci. Eng.*, vol. 9, no. 3, pp. 90-95, 2007.
-[4] M. L. Waskom, "Seaborn: statistical data visualization," *J. Open Source Softw.*, vol. 6, no. 60, p. 3021, 2021.
+[1] U.S. Environmental Protection Agency, "Air Quality System (AQS) Data Dictionary," EPA, Washington, D.C., 2023. [Online]. Available: https://www.epa.gov/aqs
+[2] U.S. Environmental Protection Agency, "AirData," EPA, Washington, D.C., 2026. [Online]. Available: https://www.epa.gov/outdoor-air-quality-data
+[3] F. Pedregosa *et al.*, "Scikit-learn: Machine Learning in Python," *J. Mach. Learn. Res.*, vol. 12, pp. 2825–2830, 2011.
