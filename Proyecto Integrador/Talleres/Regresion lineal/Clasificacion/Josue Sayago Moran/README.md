@@ -13,10 +13,12 @@ El desarrollo de este análisis se estructuró en las siguientes fases técnicas
 El análisis de los datos extraídos arrojó resultados estadísticos contundentes que validan la relación directa entre las mediciones del contaminante y el índice reportado. A continuación, se detalla la interpretación de los gráficos y métricas generadas:
 
 **1. Análisis de Correlación Exploratorio**
+<p align = center>
 <img width="956" height="874" alt="image" src="https://github.com/user-attachments/assets/21c8b11e-b0d8-4402-8caf-1024a299c8ac" />
 El mapa de calor de correlación permitió filtrar el ruido del conjunto de datos y enfocarse en las variables cuantitativas más relevantes. Se observa una correlación positiva casi perfecta entre la `Daily Max NO2 Concentration` y el `Daily AQI Value`. Otras variables, como el conteo de observaciones (`Daily Obs Count`) o la elevación del sitio (`Elevation (m)`), mostraron coeficientes de correlación cercanos a cero frente al AQI, confirmando que no influyen en el cálculo de este índice.
 
 **2. Relación de Variables Múltiples contra el AQI**
+<p align = center>
 <img width="1788" height="990" alt="image" src="https://github.com/user-attachments/assets/9aceb607-b301-4c2f-9785-a6a1295a7e05" />
 
 
@@ -27,7 +29,7 @@ Al entrenar el modelo de Regresión Lineal Simple con el 70% de los datos y vali
 * **Coeficiente de determinación (R²):** 0.9979
 * **Coeficiente (Pendiente):** 0.9437
 * **Intercepción:** -0.4592
-
+<p align = center>
 <img width="790" height="590" alt="image" src="https://github.com/user-attachments/assets/495db06d-bb69-4821-ae88-27f29dd31b96" />
 
 
@@ -35,12 +37,12 @@ El valor de R² indica que el modelo logra explicar el 99.79% de la varianza en 
 
 **4. Diagnóstico y Validación Estadística de los Errores (Residuos)**
 Para garantizar que el modelo matemático sea robusto y no producto de la casualidad, se analizaron sus residuos (la diferencia entre el valor real y la predicción) a través de dos pruebas visuales:
-
+<p align = center>
 <img width="790" height="490" alt="image" src="https://github.com/user-attachments/assets/94ddd0ea-bbe9-451f-975c-def2f94ef114" />
 
 
 **Normalidad de los errores:** El histograma de densidad de kernel muestra una distribución normal perfecta (forma de campana de Gauss) centrada exactamente en el valor 0. Esto significa que la inmensa mayoría de las predicciones del modelo fueron exactas o tuvieron errores minúsculos, validando matemáticamente la confiabilidad de la regresión.
-
+<p align = center>
 <img width="874" height="594" alt="image" src="https://github.com/user-attachments/assets/a5ae43d3-f90f-4bde-bb64-a5a71959c6c8" />
 
 
