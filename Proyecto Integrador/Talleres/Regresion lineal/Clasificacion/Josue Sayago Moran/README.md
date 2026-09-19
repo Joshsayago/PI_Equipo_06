@@ -15,12 +15,14 @@ El análisis de los datos extraídos arrojó resultados estadísticos contundent
 **1. Análisis de Correlación Exploratorio**
 <p align = center>
 <img width="956" height="874" alt="image" src="https://github.com/user-attachments/assets/21c8b11e-b0d8-4402-8caf-1024a299c8ac" />
+</p>
+
 El mapa de calor de correlación permitió filtrar el ruido del conjunto de datos y enfocarse en las variables cuantitativas más relevantes. Se observa una correlación positiva casi perfecta entre la `Daily Max NO2 Concentration` y el `Daily AQI Value`. Otras variables, como el conteo de observaciones (`Daily Obs Count`) o la elevación del sitio (`Elevation (m)`), mostraron coeficientes de correlación cercanos a cero frente al AQI, confirmando que no influyen en el cálculo de este índice.
 
 **2. Relación de Variables Múltiples contra el AQI**
 <p align = center>
 <img width="1788" height="990" alt="image" src="https://github.com/user-attachments/assets/9aceb607-b301-4c2f-9785-a6a1295a7e05" />
-
+</p>
 
 Para corroborar visualmente los hallazgos del mapa de calor, se graficaron cuatro variables independientes contra el AQI real. Como se evidencia en la primera subtrama, los puntos de la concentración de NO₂ forman una línea recta ascendente muy clara. Por el contrario, las otras tres variables (observaciones, porcentaje completo y elevación) muestran nubes de puntos horizontales y dispersas, lo que reafirma la decisión de construir el modelo predictivo exclusivamente basándonos en la concentración de NO₂.
 
@@ -31,7 +33,7 @@ Al entrenar el modelo de Regresión Lineal Simple con el 70% de los datos y vali
 * **Intercepción:** -0.4592
 <p align = center>
 <img width="790" height="590" alt="image" src="https://github.com/user-attachments/assets/495db06d-bb69-4821-ae88-27f29dd31b96" />
-
+</p>
 
 El valor de R² indica que el modelo logra explicar el 99.79% de la varianza en los datos. Visualmente, esto se confirma en el gráfico de valores reales versus predichos, donde las predicciones del modelo (puntos morados) se alinean de manera casi milimétrica sobre la "Meta ideal" (línea roja de 45°). Esto demuestra que el margen de error de predicción es mínimo en todas las escalas evaluadas.
 
@@ -39,12 +41,12 @@ El valor de R² indica que el modelo logra explicar el 99.79% de la varianza en 
 Para garantizar que el modelo matemático sea robusto y no producto de la casualidad, se analizaron sus residuos (la diferencia entre el valor real y la predicción) a través de dos pruebas visuales:
 <p align = center>
 <img width="790" height="490" alt="image" src="https://github.com/user-attachments/assets/94ddd0ea-bbe9-451f-975c-def2f94ef114" />
-
+</p>
 
 **Normalidad de los errores:** El histograma de densidad de kernel muestra una distribución normal perfecta (forma de campana de Gauss) centrada exactamente en el valor 0. Esto significa que la inmensa mayoría de las predicciones del modelo fueron exactas o tuvieron errores minúsculos, validando matemáticamente la confiabilidad de la regresión.
 <p align = center>
 <img width="874" height="594" alt="image" src="https://github.com/user-attachments/assets/a5ae43d3-f90f-4bde-bb64-a5a71959c6c8" />
-
+</p>
 
 **Homocedasticidad:** El gráfico de dispersión de los residuos frente a los valores predichos exhibe una distribución completamente aleatoria alrededor de la línea horizontal de error cero (Y=0). Al no observarse patrones en forma de cono, embudo o curvas, se confirma que la varianza de los errores es constante en todo el espectro de datos, cumpliendo así con las asunciones teóricas de la regresión lineal.
 
