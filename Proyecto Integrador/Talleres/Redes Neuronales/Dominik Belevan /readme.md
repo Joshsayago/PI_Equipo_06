@@ -2,98 +2,97 @@
 
 ## Introducción
 
-En este taller estudié tres temas relacionados con las redes neuronales: las **redes neuronales convolucionales (CNN)**, **Keras** y el **perceptrón**. Cada uno me ayudó a comprender una parte diferente del aprendizaje automático. Las CNN permiten analizar imágenes, Keras facilita la construcción de modelos y el perceptrón explica los fundamentos de una neurona artificial.
+En este taller estudié las **redes neuronales convolucionales (CNN)**, **Keras** y el **perceptrón**. Primero clasifiqué imágenes de residuos; después, reseñas de películas; y finalmente trabajé con compuertas lógicas. Estas actividades me permitieron conocer distintas aplicaciones de las redes neuronales y relacionarlas con **CrackScan**, el proyecto de nuestro equipo.
 
-Durante el taller clasifiqué imágenes de residuos, trabajé con reseñas de películas y probé compuertas lógicas. Finalmente, relacioné estos conocimientos con **CrackScan**, el proyecto de nuestro equipo para apoyar la inspección preliminar de estructuras de concreto mediante imágenes y el registro de grietas.
+CrackScan busca apoyar la inspección preliminar de estructuras de concreto mediante la captura de imágenes, la detección de posibles grietas y el registro de cada inspección.
 
 ---
 
 ## 1. Redes neuronales convolucionales (CNN)
 
-Una **CNN** es una red neuronal especialmente útil para analizar imágenes. Utiliza filtros que recorren distintas zonas de la imagen para identificar características como bordes, formas y texturas. Luego combina esas características para realizar una clasificación [1].
+Una **CNN** es una red neuronal adecuada para analizar imágenes. Sus filtros identifican características visuales, como bordes, formas y texturas, que luego se utilizan para realizar una clasificación [1].
 
-Sus componentes principales son:
+En el taller trabajé con **PyTorch** y el conjunto de imágenes **TrashNet** para diferenciar residuos de **vidrio** y **plástico** [2, 3].
 
-- **Convolución:** aplica filtros para extraer características de la imagen.
-- **ReLU:** permite que la red aprenda relaciones más complejas.
-- **Pooling:** reduce el tamaño de los mapas de características y conserva información relevante.
-- **Capas densas:** utilizan las características extraídas para generar la clasificación final.
+![Ejemplos de imágenes de vidrio y plástico](https://github.com/user-attachments/assets/3ff90676-2c9d-4c97-a3d5-5a8da7d8b585)
 
-![Arquitectura de una CNN](https://github.com/user-attachments/assets/3ff90676-2c9d-4c97-a3d5-5a8da7d8b585)
+*Figura 1. Ejemplos de imágenes del conjunto utilizado. Se observan objetos etiquetados como vidrio (`glass`) y plástico (`plastic`), las dos clases que debe distinguir la CNN.*
 
-*Figura 1. Representación del procesamiento de una imagen mediante una CNN. Las primeras capas extraen características visuales y las últimas las utilizan para obtener una predicción.*
+### 1.1 CNN entrenada desde cero
 
-### 1.1 Clasificación de imágenes con TrashNet
+Primero se construyó una CNN con capas de convolución, activación ReLU, *pooling* y clasificación. Durante el entrenamiento, la pérdida fue disminuyendo, lo que indica que el modelo estaba ajustando sus parámetros.
 
-En el taller utilicé **PyTorch** y el conjunto de imágenes **TrashNet** para clasificar residuos de **vidrio y plástico** [2, 3]. Primero construí una CNN desde cero y evalué sus resultados mediante métricas como exactitud (*accuracy*) y ROC-AUC.
+![Pérdida de entrenamiento de la CNN](https://github.com/user-attachments/assets/64293380-5e23-43b0-98d8-80287ad1396a)
 
-El modelo alcanzó aproximadamente **63,27 % de exactitud** y un **ROC-AUC cercano a 0,68**. Esto muestra que logró reconocer algunas diferencias entre las imágenes, aunque todavía tenía margen de mejora.
+*Figura 2. La pérdida de entrenamiento de la CNN disminuye a lo largo de ocho épocas. Esto muestra que el modelo está aprendiendo con los datos de entrenamiento, aunque por sí solo no demuestra que clasifique bien imágenes nuevas.*
 
-![Resultados del entrenamiento de la CNN](https://github.com/user-attachments/assets/64293380-5e23-43b0-98d8-80287ad1396a)
+Al final del entrenamiento se obtuvo **63,27 % de exactitud en validación**. Sin embargo, al evaluar la CNN desde cero con el **conjunto de prueba**, su exactitud fue de **55,03 %** y su ROC-AUC fue de **0,6191**. Es importante distinguir estos resultados porque corresponden a conjuntos de datos diferentes.
 
-*Figura 2. Resultados utilizados para observar cómo evolucionó el entrenamiento de la CNN y evaluar su capacidad de clasificación.*
+![Matriz de confusión de la CNN](https://github.com/user-attachments/assets/7b2b3cbf-b4df-41b8-901a-8e7e5263ca22)
 
-### 1.2 Técnicas para mejorar y comprender el modelo
+*Figura 3. Matriz de confusión de la CNN desde cero en la prueba final. La diagonal muestra las clasificaciones correctas y las otras casillas muestran los errores. El modelo acertó 82 de 149 imágenes.*
 
-Después se aplicó **data augmentation**, que consiste en hacer pequeñas transformaciones a las imágenes de entrenamiento para aumentar su variedad.
+### 1.2 Data augmentation y transfer learning
 
-También se probó **transfer learning** con **ResNet18**. Esta técnica aprovecha características que un modelo ya aprendió con otras imágenes. Posteriormente se realizó *fine-tuning* para adaptar parte del modelo al problema de clasificación entre vidrio y plástico [4].
+Después se aplicó **data augmentation**, realizando pequeñas transformaciones a las imágenes para variar los ejemplos de entrenamiento. En la prueba final, esta versión alcanzó **56,38 % de exactitud**.
 
-Finalmente se trabajó con **Grad-CAM**, una técnica que permite visualizar qué zonas de una imagen influyeron en la predicción de una CNN [5].
+También se utilizó **transfer learning** con **ResNet18**. Esta técnica aprovecha características que una red ya aprendió con otras imágenes y las adapta a un problema nuevo [4]. En la prueba final, el modelo con transfer learning obtuvo **86,58 % de exactitud** y **0,9562 de ROC-AUC**. En este ejercicio, su desempeño fue superior al de la CNN entrenada desde cero.
 
-![Visualización del análisis de una imagen](https://github.com/user-attachments/assets/7b2b3cbf-b4df-41b8-901a-8e7e5263ca22)
+### 1.3 Grad-CAM
 
-*Figura 3. La visualización ayuda a revisar el análisis de una imagen y a comprender mejor en qué información puede apoyarse la predicción.*
+Por último, se utilizó **Grad-CAM** para visualizar las regiones de la imagen que influyeron en una predicción [5].
 
-**Lo que aprendí:** entrenar una CNN no consiste solamente en obtener un porcentaje de aciertos. También es necesario evaluar el modelo con imágenes distintas de las utilizadas para entrenarlo y revisar si toma decisiones basadas en características relevantes.
+![Imagen, mapa Grad-CAM y superposición](https://github.com/user-attachments/assets/52e4e47a-0600-4174-b420-bf86ceb09768)
+
+*Figura 4. A la izquierda aparece la imagen analizada; en el centro, el mapa Grad-CAM; y a la derecha, ambos superpuestos. Las zonas más destacadas indican regiones que influyeron más en la predicción.*
+
+**Lo que aprendí:** para valorar una CNN hay que revisar sus resultados con imágenes que no utilizó para entrenarse. También es útil examinar dónde concentra su atención.
 
 ---
 
 ## 2. Keras
 
-**Keras** facilita la construcción y el entrenamiento de redes neuronales [6]. En esta parte del taller trabajé con el conjunto **IMDB**, que contiene reseñas de películas clasificadas como positivas o negativas [7]. Por lo tanto, este ejercicio fue de **clasificación de texto**, no de imágenes.
+**Keras** facilita la construcción y el entrenamiento de redes neuronales [6]. En esta parte del taller trabajé con **IMDB**, un conjunto de reseñas de películas clasificadas como positivas o negativas [7]. A diferencia del ejercicio anterior, aquí se clasificó **texto**, no imágenes.
 
-Primero se transformaron las reseñas en una representación numérica que el modelo pudiera procesar. Después se construyó una red con **dos capas ocultas de 16 neuronas** y una capa de salida para la clasificación binaria.
+Las reseñas se transformaron en datos numéricos y se entrenó una red con **dos capas ocultas de 16 neuronas** y una salida para clasificación binaria. El modelo obtuvo aproximadamente **86,1 % de exactitud en el conjunto de prueba**.
 
-### 2.1 Resultados y sobreajuste
+### 2.1 Sobreajuste
 
-El modelo obtuvo aproximadamente **86,1 % de exactitud**. Sin embargo, las gráficas mostraron **sobreajuste** (*overfitting*): el modelo seguía mejorando con los datos de entrenamiento, pero dejaba de mejorar con los datos de validación.
+Las curvas mostraron **sobreajuste**: la pérdida de entrenamiento continuó disminuyendo, mientras que la pérdida de validación comenzó a aumentar. Esto indica que seguir entrenando no siempre mejora el resultado con datos nuevos.
 
-![Comparación del entrenamiento y la validación](https://github.com/user-attachments/assets/52e4e47a-0600-4174-b420-bf86ceb09768)
+![Pérdidas del modelo original en Keras](https://github.com/user-attachments/assets/f22d4608-6f8a-4e30-b097-409ce12e7973)
 
-*Figura 4. La comparación de las curvas de entrenamiento y validación permite identificar si el modelo está aprendiendo a trabajar con datos nuevos o si comienza a presentar sobreajuste.*
+*Figura 5. La pérdida de entrenamiento baja continuamente, pero la de validación empieza a subir después de las primeras épocas. Esa separación es una señal de sobreajuste.*
 
-### 2.2 Comparación de modelos
+### 2.2 Pruebas para reducir el sobreajuste
 
-Para estudiar el sobreajuste se probaron distintas configuraciones, entre ellas un modelo más pequeño, **regularización** y **dropout**.
+Primero se comparó el modelo original con **uno más pequeño**, que tiene menos neuronas. La idea fue observar si reducir su capacidad cambiaba el comportamiento de la pérdida de validación.
 
-![Primera gráfica de evaluación con Keras](https://github.com/user-attachments/assets/f22d4608-6f8a-4e30-b097-409ce12e7973)
+![Comparación del modelo pequeño con el original](https://github.com/user-attachments/assets/a65cd8a2-60fd-4d16-9b02-a8aefc45f53b)
 
-*Figura 5. Esta gráfica permite evaluar el comportamiento de una de las configuraciones entrenadas con Keras.*
+*Figura 6. Comparación de la pérdida de validación del modelo pequeño y el original. Permite observar cómo el tamaño de la red influye en su comportamiento con datos que no utilizó para entrenarse.*
 
-![Segunda gráfica de evaluación con Keras](https://github.com/user-attachments/assets/a65cd8a2-60fd-4d16-9b02-a8aefc45f53b)
+Luego se probó la **regularización**, una técnica que penaliza ciertos valores de los pesos para reducir el sobreajuste.
 
-*Figura 6. Comparar esta gráfica con la anterior ayuda a observar cómo los cambios en el modelo afectan su aprendizaje.*
+![Resultados con regularización](https://github.com/user-attachments/assets/815d1b6d-4977-4e4b-92e3-5a62cca4f002)
 
-La **regularización** busca reducir la dependencia del modelo respecto de ciertos pesos. **Dropout**, en cambio, desactiva aleatoriamente una parte de las neuronas mientras se entrena. En el taller se utilizó un dropout de **50 %**.
+*Figura 7. Se comparan las pérdidas de entrenamiento y validación del modelo con regularización, junto con la pérdida de validación del modelo original.*
 
-![Tercera gráfica de evaluación con Keras](https://github.com/user-attachments/assets/815d1b6d-4977-4e4b-92e3-5a62cca4f002)
+Por último, se probó **dropout de 50 %**, que desactiva aleatoriamente parte de las neuronas durante el entrenamiento.
 
-*Figura 7. Esta gráfica forma parte de la comparación de los resultados obtenidos al probar estrategias contra el sobreajuste.*
+![Resultados con dropout](https://github.com/user-attachments/assets/6898097c-d787-4b58-8dec-af18bab9f884)
 
-![Cuarta gráfica de evaluación con Keras](https://github.com/user-attachments/assets/6898097c-d787-4b58-8dec-af18bab9f884)
+*Figura 8. Comparación de la pérdida de validación del modelo con dropout y el original. Esta gráfica permite estudiar si dropout retrasa o reduce el sobreajuste.*
 
-*Figura 8. La revisión de las curvas permite valorar si una configuración mejora el comportamiento del modelo con datos de validación.*
+También se realizó una predicción de ejemplo: para una reseña, el modelo asignó aproximadamente **99,4 % de probabilidad** a la clase positiva. Ese porcentaje corresponde **solo a esa reseña**; no es la exactitud general del modelo.
 
-Finalmente se realizó una predicción de ejemplo. Para una reseña, el modelo obtuvo aproximadamente **99,4 % de probabilidad** de pertenecer a la clase positiva. **Este valor corresponde a esa reseña específica** y no significa que la exactitud general del modelo sea 99,4 %.
-
-**Lo que aprendí:** una buena exactitud no es suficiente para evaluar una red neuronal. También hay que observar el comportamiento de la validación y comprobar si el modelo puede trabajar con datos nuevos.
+**Lo que aprendí:** una red puede obtener buenos resultados y aun así presentar sobreajuste. Por eso, es necesario comparar entrenamiento y validación antes de elegir cómo utilizarla.
 
 ---
 
 ## 3. Perceptrón
 
-El **perceptrón** es uno de los modelos más sencillos de una red neuronal. Recibe entradas, las combina con pesos, añade un sesgo y aplica una función de activación para producir una salida [8]:
+El **perceptrón** es un modelo sencillo que permite comprender la base de una red neuronal. Combina entradas y pesos, añade un sesgo y aplica una función de activación [8]:
 
 $$
 y=f\left(\sum_{i=1}^{n}w_i x_i+b\right)
@@ -101,7 +100,7 @@ $$
 
 Donde $x_i$ representa las entradas, $w_i$ los pesos, $b$ el sesgo y $f$ la función de activación.
 
-En el taller se probaron funciones de activación como **escalón** y **tanh**, además de las compuertas lógicas **AND**, **OR** y **XOR**:
+En el taller se probaron las funciones de activación **escalón** y **tanh**, además de las compuertas **AND**, **OR** y **XOR**.
 
 | Compuerta | ¿Cuándo produce una salida de 1? |
 |---|---|
@@ -109,53 +108,41 @@ En el taller se probaron funciones de activación como **escalón** y **tanh**, 
 | OR | Cuando al menos una entrada es 1. |
 | XOR | Cuando las entradas son diferentes. |
 
-Un solo perceptrón puede representar **AND** y **OR** porque sus resultados se pueden separar mediante una recta. **XOR no puede resolverse con un solo perceptrón**, ya que sus resultados no son linealmente separables. Para representar relaciones más complejas se necesitan varias neuronas organizadas en capas.
+![Fronteras de decisión de AND y OR](https://github.com/user-attachments/assets/aa09b6d1-687a-495c-ac4c-8b3758c1a591)
 
-![Representación de las compuertas lógicas](https://github.com/user-attachments/assets/aa09b6d1-687a-495c-ac4c-8b3758c1a591)
+*Figura 9. Las rectas muestran que las salidas de AND y OR pueden separarse en dos grupos. Por eso, un perceptrón puede representar estas compuertas.*
 
-*Figura 9. La representación permite estudiar la separación de los resultados de las compuertas lógicas y comprender la limitación de un perceptrón frente a XOR.*
+![Representación de XOR](images/xor.png)
 
-**Lo que aprendí:** el perceptrón me ayudó a comprender conceptos básicos como entradas, pesos, sesgo y activación. El caso XOR muestra por qué las redes con varias capas pueden resolver problemas que una sola neurona no puede.
+*Figura 10. En XOR, los puntos de una misma clase quedan en posiciones opuestas. Una sola recta no puede separarlos correctamente; por ello, un único perceptrón no resuelve este problema.*
+
+**Lo que aprendí:** AND y OR son problemas linealmente separables. XOR muestra una limitación del perceptrón individual y ayuda a entender por qué algunas redes necesitan varias capas.
 
 ---
 
 ## 4. Aplicación de lo aprendido a CrackScan
 
-**CrackScan** es una propuesta tecnológica de nuestro equipo para apoyar la **inspección preliminar de estructuras de concreto**. El sistema busca capturar imágenes, detectar posibles grietas, registrar sus características aproximadas y asociar cada inspección con una ubicación geográfica.
+**CrackScan** es una propuesta para apoyar la **inspección preliminar de estructuras de concreto**. Su objetivo es capturar imágenes, detectar posibles grietas, registrar información sobre ellas y asociar cada inspección con una ubicación geográfica.
 
-De los temas estudiados, las **CNN** son las más relacionadas con el análisis visual de CrackScan. Una CNN podría aprender a distinguir imágenes de concreto **con grietas** y **sin grietas**. Más adelante, el análisis de imágenes también podría ayudar a ubicar la zona afectada dentro de la fotografía.
+De los temas estudiados, la **CNN** es la más relacionada con el análisis visual de CrackScan. Un posible primer objetivo sería clasificar fotografías de concreto en dos grupos: **con posibles grietas** y **sin grietas**. Para desarrollar esa función se necesitarían fotografías propias, etiquetas confiables y una evaluación con imágenes que el modelo no haya visto durante el entrenamiento.
 
-### 4.1 Posible proceso de análisis
+El **transfer learning** podría ser útil si al inicio se dispone de pocas imágenes etiquetadas. **Grad-CAM** podría ayudar a revisar si la red se fija en la grieta y no en sombras, manchas o juntas del concreto.
 
-1. **Captura:** la cámara obtiene una fotografía de la superficie de concreto.
-2. **Preparación:** la imagen se ajusta al tamaño y formato necesarios para el modelo.
-3. **Detección:** el modelo estima si en la imagen hay una posible grieta.
-4. **Localización:** se identifica la zona de la imagen donde aparece.
-5. **Registro:** se guardan la imagen, el resultado y las coordenadas de la inspección.
+Detectar una grieta y **medir su ancho o longitud real** son tareas distintas. Para estimar dimensiones a partir de fotografías haría falta una referencia de escala o una calibración adecuada de la cámara. Asimismo, las coordenadas GPS servirían para registrar dónde se realizó la inspección.
 
-Para desarrollar esta propuesta sería necesario reunir fotografías de concreto en distintas condiciones: superficies con y sin grietas, diferentes iluminaciones, texturas y distancias de captura. Los datos deberían etiquetarse y dividirse para entrenar y evaluar el modelo.
+Keras o PyTorch podrían utilizarse para construir el modelo de imágenes. El perceptrón aporta los conceptos básicos para comprender cómo aprende una red, aunque por sí solo no es suficiente para realizar todo el análisis visual planteado para CrackScan.
 
-El **transfer learning** podría ser útil si inicialmente no se dispone de muchas imágenes etiquetadas. **Grad-CAM** serviría como apoyo para revisar si una CNN se fija en la grieta y no en sombras, juntas, manchas u otros elementos que podrían confundirse con ella.
-
-La **detección de una grieta** y la **estimación de su ancho o longitud** son tareas diferentes. Para estimar dimensiones reales a partir de una fotografía harían falta una referencia de escala o una calibración adecuada de la cámara. Por eso, no sería correcto afirmar que una CNN por sí sola puede medir esas dimensiones con precisión.
-
-**Keras** podría utilizarse para construir y entrenar un modelo de imágenes, mientras que el ejercicio del **perceptrón** aporta los conceptos básicos para comprender cómo aprende una red neuronal.
-
-### 4.2 Alcance de la propuesta
-
-CrackScan busca **apoyar la inspección preliminar y organizar los registros de campo**. Una predicción automática puede señalar una zona que requiere atención, pero el estado de seguridad de una estructura debe ser evaluado por un especialista. Asimismo, los resultados obtenidos con TrashNet o IMDB **no demuestran todavía el desempeño de CrackScan**, porque corresponden a problemas y conjuntos de datos diferentes.
+**Los resultados de TrashNet e IMDB pertenecen a los ejercicios del taller:** todavía no indican qué exactitud obtendría CrackScan al analizar grietas reales. La propuesta busca apoyar el registro y la inspección preliminar; la evaluación técnica de una estructura corresponde a un especialista.
 
 ---
 
-## 5. Conclusiones
+## Conclusiones
 
-El taller me permitió comprender que los modelos y herramientas de redes neuronales se utilizan de acuerdo con el problema que se quiere resolver:
+El taller me permitió comprender que cada método cumple una función diferente. Las **CNN** aprenden características de imágenes; **Keras** facilita construir modelos y comparar sus resultados; y el **perceptrón** explica conceptos como pesos, sesgo, activación y separabilidad lineal.
 
-- Las **CNN** permiten aprender características visuales y son las más relacionadas con el análisis de fotografías propuesto para CrackScan.
-- **Keras** facilita la construcción de modelos y el ejercicio con IMDB permitió reconocer el sobreajuste.
-- El **perceptrón** explica cómo intervienen las entradas, los pesos, el sesgo y las funciones de activación en una red neuronal.
+La comparación entre la CNN desde cero y el modelo con **transfer learning** mostró la importancia de probar distintas estrategias y evaluar los resultados con datos de prueba. Las gráficas de **Keras** mostraron por qué también se debe vigilar el sobreajuste.
 
-La relación con **CrackScan** es una **aplicación propuesta**, no un resultado ya validado. El siguiente paso sería reunir fotografías propias de estructuras de concreto, definir cómo se etiquetarán las grietas y evaluar el desempeño del sistema con imágenes tomadas en condiciones reales. Así, el análisis automático podría convertirse en una herramienta útil para apoyar el registro de inspecciones preliminares.
+En **CrackScan**, lo aprendido podría servir como base para detectar posibles grietas en fotografías. Antes de afirmar que el sistema funciona, será necesario reunir imágenes de concreto, entrenar el modelo y comprobar su desempeño en condiciones reales.
 
 ## Referencias
 
