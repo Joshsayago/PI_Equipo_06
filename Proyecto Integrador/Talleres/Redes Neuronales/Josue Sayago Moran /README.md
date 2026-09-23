@@ -7,7 +7,37 @@ Es importante mencionar que, a comparación de los otros modelos (Keras y Percep
 <img width="302" height="246" alt="image" src="https://github.com/user-attachments/assets/98a787c4-1637-433b-a7ab-53518d2223a9" />
 
 En primer lugar, se importan las bibliotecas fundamentales. TensorFlow y Keras nos proporcionarán las funciones matemáticas para construir la Red Neuronal Convolucional (CNN), mientras que Matplotlib nos permitirá visualizar las imágenes de concreto y las gráficas de aprendizaje del modelo.
+
 <img width="765" height="212" alt="image" src="https://github.com/user-attachments/assets/4f876556-61bd-41c5-9a22-62ccb65f2e11" />
+
+Posteriormente, tras realizar la carga y el preprocesamiento del conjunto de imágenes de concreto, se procedió a construir y entrenar la arquitectura convolucional.Tras realizar la carga y el preprocesamiento del conjunto de imágenes de concreto, se procedió a construir y entrenar la arquitectura convolucional. Para evaluar la efectividad del aprendizaje durante la etapa de entrenamiento, se monitoreó el comportamiento de la función de pérdida (*loss*), la cual mide el margen de error del modelo en cada iteración:
+
+
+
+<img width="863" height="395" alt="image" src="https://github.com/user-attachments/assets/ff25e95a-e298-4e98-ad2f-9319e94bf0d1" />
+
+
+### Interpretación de la Gráfica de Pérdida y Sustentación del Modelo
+
+La gráfica muestra la curva de pérdida de entrenamiento de la CNN construida desde cero a lo largo de 8 épocas (registradas de la 0 a la 7). En el eje vertical (*Loss*), se aprecia un descenso constante e intermitente del error, partiendo desde un valor cercano a 0.694 en la primera época y reduciéndose progresivamente hasta alcanzar aproximadamente 0.672[cite: 4]. Esta tendencia decreciente confirma que el modelo está ajustando sus pesos de forma efectiva y reduciendo su incertidumbre al clasificar las superficies.
+
+El rendimiento mostrado en esta gráfica permite sustentar técnicamente por qué la elección de una Red Neuronal Convolucional (CNN) es superior a arquitecturas tradicionales como el Perceptrón Multicapa o los algoritmos basados en Métodos de Kernel:
+
+1. **Preservación de la información espacial (frente al Perceptrón):** Un Perceptrón clásico exige aplanar las imágenes en un vector unidimensional de datos, lo que destruye por completo las relaciones geométricas entre píxeles adyacentes. Las grietas en el concreto son patrones continuos y lineales que dependen de su entorno espacial; la CNN preserva esta estructura bidimensional mediante las capas de convolución (`Conv2D`), analizando el contexto de cada región de la imagen.
+2. **Extracción autónoma de características (frente a Métodos de Kernel):** Los métodos tradicionales basados en Kernel (como las Máquinas de Vectores de Soporte o SVM) dependen de una ingeniería de características manual, donde el usuario debe diseñar previamente qué filtros aplicar para resaltar bordes. En contraste, el descenso de la curva de pérdida demuestra cómo la CNN aprende y optimiza de forma totalmente autónoma sus propios núcleos o filtros internos para aislar fisuras y texturas del concreto.
+3. **Invarianza a la traslación:** Gracias a la inclusión de capas de reducción (`MaxPooling`), la red es capaz de reconocer una falla en el concreto sin importar la posición exacta en la que aparezca dentro de la fotografía (centro, esquina o bordes), capacidad de la que carecen las redes densas tradicionales.
+
+4. 
+
+### Interpretación de la Gráfica de Pérdida y Sustentación del Modelo
+
+La gráfica muestra la curva de pérdida de entrenamiento de la CNN construida desde cero a lo largo de 8 épocas (registradas de la 0 a la 7). En el eje vertical (*Loss*), se aprecia un descenso constante e intermitente del error, partiendo desde un valor cercano a 0.694 en la primera época y reduciéndose progresivamente hasta alcanzar aproximadamente 0.672[cite: 4]. Esta tendencia decreciente confirma que el modelo está ajustando sus pesos de forma efectiva y reduciendo su incertidumbre al clasificar las superficies.
+
+El rendimiento mostrado en esta gráfica permite sustentar técnicamente por qué la elección de una Red Neuronal Convolucional (CNN) es superior a arquitecturas tradicionales como el Perceptrón Multicapa o los algoritmos basados en Métodos de Kernel:
+
+1. **Preservación de la información espacial (frente al Perceptrón):** Un Perceptrón clásico exige aplanar las imágenes en un vector unidimensional de datos, lo que destruye por completo las relaciones geométricas entre píxeles adyacentes. Las grietas en el concreto son patrones continuos y lineales que dependen de su entorno espacial; la CNN preserva esta estructura bidimensional mediante las capas de convolución (`Conv2D`), analizando el contexto de cada región de la imagen.
+2. **Extracción autónoma de características (frente a Métodos de Kernel):** Los métodos tradicionales basados en Kernel (como las Máquinas de Vectores de Soporte o SVM) dependen de una ingeniería de características manual, donde el usuario debe diseñar previamente qué filtros aplicar para resaltar bordes. En contraste, el descenso de la curva de pérdida demuestra cómo la CNN aprende y optimiza de forma totalmente autónoma sus propios núcleos o filtros internos para aislar fisuras y texturas del concreto.
+3. **Invarianza a la traslación:** Gracias a la inclusión de capas de reducción (`MaxPooling`), la red es capaz de reconocer una falla en el concreto sin importar la posición exacta en la que aparezca dentro de la fotografía (centro, esquina o bordes), capacidad de la que carecen las redes densas tradicionales.
 
 <img width="990" height="356" alt="image" src="https://github.com/user-attachments/assets/a35269d4-1978-43ac-b3ad-6005d3712978" />
 
