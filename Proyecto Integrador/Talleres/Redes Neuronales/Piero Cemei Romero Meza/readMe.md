@@ -79,5 +79,5 @@ Para el proyecto, el principal aporte de esta sección de Keras es mostrar una f
 Por lo tanto, la parte de CNN es la que tiene una relación más directa con el análisis de las fotografías de grietas, mientras que Keras complementa el trabajo al mostrar otra metodología para desarrollar modelos de redes neuronales. Ambas partes permiten comprender diferentes componentes necesarios para posteriormente desarrollar un modelo adaptado al problema específico del proyecto.
 
 
-[Ir al README principal](./Proyecto%20Integrador/Talleres/Redes%20Neuronales/README.md)
+[Ir al README principal](./Redes%20Neuronales/README.md)
 
