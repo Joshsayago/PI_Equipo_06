@@ -49,20 +49,16 @@ Además de evaluar el rendimiento numérico mediante métricas globales y la mat
 
 El resultado de la técnica Grad-CAM se compone de tres visualizaciones clave:
 
-1. **Imagen Original (Imagen label=0):** Representa la fotografía de entrada que se ingresa a la red neuronal para su evaluación[cite: 7].
+1. **Imagen Original (Imagen label=0):** Representa la fotografía de entrada que se ingresa a la red neuronal para su evaluación.
 2. **Mapa de Activación (rad-CAM pred=0):** Genera una matriz de intensidad donde los colores cálidos (tonos amarillos y verdes) representan los píxeles que provocaron la mayor activación matemática en las últimas capas convolucionales.
 3. **Superposición:** Fusiona el mapa de calor sobre la fotografía original, permitiendo auditar la atención espacial del modelo de forma intuitiva[cite: 7].
 
 #### Utilidad en la Inspección Estructural
 Esta técnica aporta el máximo nivel de validación cualitativa al proyecto. En el diagnóstico de estructuras de concreto, garantiza que la Red Neuronal Convolucional esté detectando la geometría lineal y los bordes oscuros característicos de una grieta, y no patrones espurios del entorno como manchas de humedad, porosidades normales del cemento o sombras de la iluminación.
 
-## Conclusiones Generales
+## Conclusión
 
-El desarrollo y análisis de este modelo de Deep Learning permite extraer conclusiones altamente favorables sobre la viabilidad de automatizar la inspección de infraestructuras civiles:
-
-1. **Viabilidad de la Arquitectura CNN:** Las Redes Neuronales Convolucionales demuestran ser la herramienta óptima para el análisis de superficies de concreto. A diferencia de modelos tradicionales como el Perceptrón Multicapa o los algoritmos de Kernel (SVM), la CNN logró abstraer de manera autónoma la geometría bidimensional de las fisuras, resolviendo el problema sin necesidad de ingeniería de características manual.
-2. **Evolución del Aprendizaje:** Las gráficas de entrenamiento y validación confirman que el modelo superó el umbral de adivinanza aleatoria. El incremento sostenido del *Accuracy* y la estabilidad del *ROC-AUC* prueban que la red generalizó los patrones visuales del daño estructural, logrando clasificar imágenes nunca antes vistas con un margen de error decreciente.
-3. **Transparencia y Confiabilidad:** La integración de la técnica Grad-CAM permitió auditar el criterio de decisión del modelo. Se comprobó de manera cualitativa que la red centra su atención matemática en las fracturas físicas del concreto y no en ruidos visuales del entorno, lo cual es un requisito indispensable para la seguridad en aplicaciones de ingeniería.
+El desarrollo de este proyecto demuestra que las Redes Neuronales Convolucionales (CNN) son la herramienta óptima para el diagnóstico de superficies de concreto, superando a modelos tradicionales como el Perceptrón Multicapa o SVM al abstraer de manera autónoma la geometría bidimensional de las fisuras sin requerir ingeniería de características manual. Esta viabilidad arquitectónica se respalda con la evolución positiva del aprendizaje, donde el incremento sostenido del Accuracy y la estabilidad del ROC-AUC prueban que el modelo generalizó con éxito los patrones de daño estructural, reduciendo su margen de error ante imágenes nunca antes vistas. Finalmente, la integración de la técnica Grad-CAM dotó al sistema de la transparencia y confiabilidad indispensables en la ingeniería civil, comprobando cualitativamente que la red enfoca su análisis matemático en las fracturas físicas reales y no en ruidos visuales del entorno
 
 ### Sobre la aplicación directa en nuestro proyecto "CrackScan"
 - Los detalles se encuentran señalados en el readme.md de la capeta redes neuronales.
