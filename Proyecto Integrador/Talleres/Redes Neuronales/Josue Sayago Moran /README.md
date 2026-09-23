@@ -50,7 +50,7 @@ El resultado de la técnica Grad-CAM se compone de tres visualizaciones clave:
 
 1. **Imagen Original (Imagen label=0):** Representa la fotografía de entrada que se ingresa a la red neuronal para su evaluación.
 2. **Mapa de Activación (rad-CAM pred=0):** Genera una matriz de intensidad donde los colores cálidos (tonos amarillos y verdes) representan los píxeles que provocaron la mayor activación matemática en las últimas capas convolucionales.
-3. **Superposición:** Fusiona el mapa de calor sobre la fotografía original, permitiendo auditar la atención espacial del modelo de forma intuitiva[cite: 7].
+3. **Superposición:** Fusiona el mapa de calor sobre la fotografía original, permitiendo auditar la atención espacial del modelo de forma intuitiva.
 
 #### Utilidad en la Inspección Estructural
 Esta técnica aporta el máximo nivel de validación cualitativa al proyecto. En el diagnóstico de estructuras de concreto, garantiza que la Red Neuronal Convolucional esté detectando la geometría lineal y los bordes oscuros característicos de una grieta, y no patrones espurios del entorno como manchas de humedad, porosidades normales del cemento o sombras de la iluminación.
