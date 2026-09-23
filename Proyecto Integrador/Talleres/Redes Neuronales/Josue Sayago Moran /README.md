@@ -1,8 +1,13 @@
 # Análisis Práctico: Detección de Grietas en Estructuras de Concreto mediante CNNs
 
-Tras comprender los fundamentos teóricos de las Redes Neuronales Convolucionales (CNN) —incluyendo el uso de filtros para extraer características visuales (Conv2D), la introducción de no linealidad (ReLU) y la retención de información clave (Pooling)— es momento de llevar estos conceptos a la práctica. 
+Tras comprender los fundamentos teóricos de las Redes Neuronales Convolucionales (CNN) —incluyendo el uso de filtros para extraer características visuales (Conv2D) es factible sustentar este modelo de análisis como uno de utilidad para el proyecto que se planea trabajar. Entonces, este modelo computacional sería capaz de analizar fotografías de superficies de concreto para diagnosticar, de manera automática, la presencia de grietas o fallas estructurales. 
 
-El objetivo de la siguiente sección es demostrar cómo se estructuró un modelo computacional capaz de analizar fotografías de superficies de concreto para diagnosticar, de manera automática, la presencia de grietas o fallas estructurales. 
+Es importante mencionar que, a comparación de los otros modelos (Keras y Perceptrón), CNN es, para el procesamiento de imágenes, el método más óptimo ya que logra extraer patrones, texturas y formas (como los bordes oscuros de una fisura) de manera autónoma. Si bien para entrenar a las redes Neuronales Convolucionales (CNN) con muchas de imágenes se requiere una potencia de cálculo masiva ello es solucionable al ejecutar una GPU de forma que el modelo procesara en menor tiempo su entrenamiento.
+
+<img width="302" height="346" alt="image" src="https://github.com/user-attachments/assets/98a787c4-1637-433b-a7ab-53518d2223a9" />
+
+
+
 
 ¿Qué código lleva? Las herramientas que vas a usar. Generalmente TensorFlow o Keras (para la red neuronal), Matplotlib (para gráficos) y OpenCV o PIL (para leer las fotos).
 <img width="1765" height="412" alt="image" src="https://github.com/user-attachments/assets/4f876556-61bd-41c5-9a22-62ccb65f2e11" />
