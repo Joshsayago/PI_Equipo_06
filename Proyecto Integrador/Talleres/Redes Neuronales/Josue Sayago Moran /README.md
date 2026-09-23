@@ -4,13 +4,10 @@ Tras comprender los fundamentos teóricos de las Redes Neuronales Convolucionale
 
 Es importante mencionar que, a comparación de los otros modelos (Keras y Perceptrón), CNN es, para el procesamiento de imágenes, el método más óptimo ya que logra extraer patrones, texturas y formas (como los bordes oscuros de una fisura) de manera autónoma. Si bien para entrenar a las redes Neuronales Convolucionales (CNN) con muchas de imágenes se requiere una potencia de cálculo masiva ello es solucionable al ejecutar una GPU de forma que el modelo procesara en menor tiempo su entrenamiento.
 
-<img width="302" height="346" alt="image" src="https://github.com/user-attachments/assets/98a787c4-1637-433b-a7ab-53518d2223a9" />
+<img width="302" height="246" alt="image" src="https://github.com/user-attachments/assets/98a787c4-1637-433b-a7ab-53518d2223a9" />
 
-
-
-
-¿Qué código lleva? Las herramientas que vas a usar. Generalmente TensorFlow o Keras (para la red neuronal), Matplotlib (para gráficos) y OpenCV o PIL (para leer las fotos).
-<img width="1765" height="412" alt="image" src="https://github.com/user-attachments/assets/4f876556-61bd-41c5-9a22-62ccb65f2e11" />
+En primer lugar, se importan las bibliotecas fundamentales. TensorFlow y Keras nos proporcionarán las funciones matemáticas para construir la Red Neuronal Convolucional (CNN), mientras que Matplotlib nos permitirá visualizar las imágenes de concreto y las gráficas de aprendizaje del modelo.
+<img width="765" height="212" alt="image" src="https://github.com/user-attachments/assets/4f876556-61bd-41c5-9a22-62ccb65f2e11" />
 
 <img width="990" height="356" alt="image" src="https://github.com/user-attachments/assets/a35269d4-1978-43ac-b3ad-6005d3712978" />
 
