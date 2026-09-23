@@ -205,22 +205,6 @@ AND y OR son problemas linealmente separables, mientras que XOR muestra una limi
 
 ---
 
-## 4. Aplicación de lo aprendido a CrackScan
-
-**CrackScan** es una propuesta para apoyar la **inspección preliminar de estructuras de concreto**. Su objetivo es capturar imágenes, detectar posibles grietas, registrar información sobre ellas y asociar cada inspección con una ubicación geográfica.
-
-De los temas estudiados, la **CNN** es la que tiene una relación más directa con el análisis visual de CrackScan. Un posible primer objetivo sería clasificar fotografías de concreto en dos grupos: **con posibles grietas** y **sin grietas**. Para desarrollar esta función se necesitarían fotografías propias, etiquetas confiables y una evaluación con imágenes que el modelo no haya visto durante el entrenamiento.
-
-El **transfer learning** podría ser útil si al inicio se dispone de pocas imágenes etiquetadas. **Grad-CAM** también podría ayudar a revisar si la red se está fijando en la grieta y no en otros elementos, como sombras, manchas o juntas del concreto.
-
-Detectar una grieta y **medir su ancho o longitud real** son tareas diferentes. Para estimar dimensiones a partir de fotografías sería necesario contar con una referencia de escala o realizar una calibración adecuada de la cámara. Asimismo, las coordenadas GPS servirían para registrar dónde se realizó cada inspección.
-
-Keras o PyTorch podrían utilizarse para construir el modelo de imágenes. El perceptrón aporta los conceptos básicos para comprender cómo aprende una red, aunque por sí solo no sería suficiente para realizar todo el análisis visual planteado para CrackScan.
-
-**Los resultados de TrashNet e IMDB pertenecen a los ejercicios del taller:** todavía no indican qué exactitud tendría CrackScan al analizar grietas reales. La propuesta busca apoyar el registro y la inspección preliminar; la evaluación técnica de una estructura corresponde a un especialista.
-
----
-
 ## Conclusiones
 
 El taller me permitió comprender que cada método cumple una función diferente. Las **CNN** permiten trabajar con imágenes; **Keras** facilita la construcción y el entrenamiento de modelos; y el **perceptrón** ayuda a entender conceptos como pesos, sesgo, activación y separabilidad lineal.
@@ -229,17 +213,6 @@ La comparación entre la CNN desde cero y el modelo con **transfer learning** pe
 
 En **CrackScan**, lo aprendido podría servir como base para detectar posibles grietas en fotografías. Antes de afirmar que el sistema funciona correctamente, sería necesario reunir imágenes de concreto, entrenar el modelo y comprobar su desempeño en condiciones reales.
 
-## Referencias
-
-[1] I. Goodfellow, Y. Bengio y A. Courville, *Deep Learning*. MIT Press, 2016.
-
-[2] G. Thung y M. Yang, *TrashNet: Dataset of Images of Trash*, 2016.
-
-[3] PyTorch, *PyTorch Documentation*. https://pytorch.org/docs/stable/
-
-[4] K. He et al., “Deep Residual Learning for Image Recognition”, *CVPR*, 2016.
-
-[5] R. R. Selvaraju et al., “Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization”, *ICCV*, 2017.
 
 [6] Keras, *Keras Documentation*. https://keras.io/
 
