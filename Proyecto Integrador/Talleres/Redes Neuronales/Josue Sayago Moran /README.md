@@ -11,7 +11,7 @@ En primer lugar, se importan las bibliotecas fundamentales. TensorFlow y Keras n
 </p>
 Posteriormente, tras realizar la carga y el preprocesamiento del conjunto de imágenes de concreto, se procedió a construir y entrenar la arquitectura convolucional.Tras realizar la carga y el preprocesamiento del conjunto de imágenes de concreto, se procedió a construir y entrenar la arquitectura convolucional. Para evaluar la efectividad del aprendizaje durante la etapa de entrenamiento, se monitoreó el comportamiento de la función de pérdida (*loss*), la cual mide el margen de error del modelo en cada iteración:
 <p align="center">
-<img width="363" height="395" alt="image" src="https://github.com/user-attachments/assets/ff25e95a-e298-4e98-ad2f-9319e94bf0d1" />
+<img width="663" height="395" alt="image" src="https://github.com/user-attachments/assets/ff25e95a-e298-4e98-ad2f-9319e94bf0d1" />
 </p>
 
 ### Interpretación de la Gráfica de Pérdida y Sustentación del Modelo
