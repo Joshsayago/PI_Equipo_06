@@ -115,22 +115,6 @@ En el taller se probaron las funciones de activación **escalón** y **tanh**, a
 ![Representación de XOR](images/xor.png)
 
 *Figura 10. En XOR, los puntos de una misma clase quedan en posiciones opuestas. Una sola recta no puede separarlos correctamente; por ello, un único perceptrón no resuelve este problema.*
-### XOR
-
-La compuerta XOR (OR exclusiva) produce una salida de **1 cuando las entradas son diferentes** y una salida de **0 cuando las entradas son iguales**.
-
-| Entrada 1 | Entrada 2 | Salida XOR |
-|------------|------------|------------|
-| 0 | 0 | 0 |
-| 0 | 1 | 1 |
-| 1 | 0 | 1 |
-| 1 | 1 | 0 |
-
-![Representación de XOR](images/xor.png)
-
-*Figura 10. En XOR, los puntos de una misma clase quedan en posiciones opuestas. Una sola recta no puede separarlos correctamente; por ello, un único perceptrón no resuelve este problema.*
-
-Los puntos correspondientes a la salida **0** son **(0,0)** y **(1,1)**, mientras que los puntos con salida **1** son **(0,1)** y **(1,0)**. Debido a que los puntos de una misma clase se encuentran en esquinas opuestas del plano, no es posible separarlos utilizando una única recta.
 
 **Lo que aprendí:** XOR muestra una limitación del perceptrón individual. Mientras que las compuertas AND y OR son linealmente separables, XOR requiere múltiples capas o más de una frontera de decisión para poder clasificar correctamente las entradas.
 **Lo que aprendí:** AND y OR son problemas linealmente separables. XOR muestra una limitación del perceptrón individual y ayuda a entender por qué algunas redes necesitan varias capas.
