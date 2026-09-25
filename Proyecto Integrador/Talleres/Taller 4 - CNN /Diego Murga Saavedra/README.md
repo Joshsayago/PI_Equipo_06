@@ -1,4 +1,4 @@
-# CNN - Clasificación de Imágenes - Diego Murga
+# CNN - Diego Murga
 
 Este proyecto utiliza una Red Neuronal Convolucional (CNN) para clasificar imágenes de comida rápida.
 
