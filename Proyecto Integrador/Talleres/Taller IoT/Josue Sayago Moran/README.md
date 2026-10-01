@@ -1,4 +1,4 @@
-## 📡 Ejercicio: Mejora de Lectura Analógica (Promediado y Conversión a Voltaje)
+## Ejercicio 01: Mejora de Lectura Analógica (Promediado y Conversión a Voltaje)
 
 En este ejercicio se ha optimizado la lectura de un sensor analógico (como un potenciómetro) conectado a nuestro microcontrolador. En el contexto del Internet de las Cosas (IoT), es vital asegurar que los datos que enviamos a la nube o procesamos localmente sean precisos y estables. Para lograr esto, implementamos dos técnicas clave: **el promediado de datos** y la **conversión a voltaje real**.
 <p align="center">
@@ -22,8 +22,8 @@ Los microcontroladores no entienden de "voltios" en el mundo analógico; ellos v
 
 En este caso (trabajando con una placa de 3.3V y una resolución de 12 bits):
 * El ADC tiene una resolución de **12 bits**, lo que significa que puede dividir el voltaje de entrada en $2^{12}$ pasos, es decir, **4096 niveles** (que van del `0` al 4095).
-* `0` equivale a 0 Voltios (GND).
-* `4095` equivale al voltaje máximo de referencia, que es **3.3 Voltios**.
+* 0 equivale a 0 Voltios (GND).
+* 4095 equivale al voltaje máximo de referencia, que es **3.3 Voltios**.
 
 Para devolver el dato a un valor que los humanos y los sistemas externos entiendan (Voltios), aplicamos una regla de tres simple plasmada en la siguiente fórmula:
 float voltaje = (promedioDigital * 3.3) / 4095; Multiplicamos nuestra lectura promedio por el voltaje máximo del sistema y lo dividimos entre la resolución máxima del ADC.
@@ -75,11 +75,11 @@ void loop() {
 </p>
 
 
-## 🌐 Ejercicio: Control de LED vía Interfaz Web (ESP32)
+## Ejercicio 05: Control de LED vía Interfaz Web (ESP32)
 
 En este ejercicio, hemos dado un paso crucial en el mundo del IoT: la interacción remota. Configuramos el ESP32 no solo para conectarse a una red WiFi, sino para actuar como un **Servidor Web** capaz de alojar una página web y recibir comandos desde un navegador para encender o apagar un componente físico (un LED).
 
-### 🛠️ 1. ¿Qué se necesitó para llevarlo a cabo?
+###¿Qué se necesitó para llevarlo a cabo?
 
 Para replicar este ejercicio, se utilizaron los siguientes elementos:
 * **Hardware:**
@@ -93,7 +93,7 @@ Para replicar este ejercicio, se utilizaron los siguientes elementos:
   * Red WiFi local activa (con nombre de red y contraseña).
   * Un dispositivo (celular o computadora) conectado a la **misma red WiFi** para acceder a la plataforma.
 
-### 🔌 2. Explicación de las Conexiones
+### Explicación de las Conexiones
 
 El circuito físico diseñado es bastante directo:
 1. **Ánodo del LED (pata larga, positivo):** Se conecta a un extremo de la **resistencia**. El otro extremo de la resistencia va conectado al **Pin Digital 2** del ESP32.
@@ -101,13 +101,11 @@ El circuito físico diseñado es bastante directo:
 
 *Dinámica:* Cuando enviamos una señal de nivel alto (`HIGH`) desde el Pin 2, la corriente fluye a través de la resistencia hacia el LED, emitiendo luz y cerrando el circuito en GND. Al enviar un nivel bajo (`LOW`), la corriente se detiene y el LED se apaga.
 
-*(Puedes visualizar el circuito físico en la siguiente imagen)*
-<!-- Reemplaza el enlace de abajo con la ruta de la foto que tomaste de tu circuito -->
 <div align="center">
-  <img src="ruta/a/tu/foto_del_circuito.jpg" alt="Conexiones físicas del ESP32 y el LED" width="600">
+  <img width="720" height="1280" alt="image" src="https://github.com/user-attachments/assets/b0ee43ec-cc23-43c5-8ecd-c7998b8779f2" />
 </div>
 
-### 💻 3. ¿Cómo se trabajó el código?
+###¿Cómo se trabajó el código?
 
 El programa transforma al ESP32 en un pequeño dispositivo inteligente con su propia interfaz gráfica. La lógica se divide en tres fases principales:
 
@@ -120,7 +118,7 @@ El programa transforma al ESP32 en un pequeño dispositivo inteligente con su pr
    * Si presionas el botón verde de encendido, el navegador envía la petición `GET /ON` en la URL. El ESP32 detecta esta cadena de texto y ejecuta `digitalWrite(ledPin, HIGH)`.
    * Si presionas el botón rojo, el navegador envía `GET /OFF`, y el ESP32 procede a apagar el componente con `digitalWrite(ledPin, LOW)`.
 
-### 🚀 Código de Implementación
+### Código que se usó
 
 ```cpp
 #include <WiFi.h>
