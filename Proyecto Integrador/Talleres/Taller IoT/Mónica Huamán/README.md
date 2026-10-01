@@ -1,5 +1,57 @@
 ````markdown
-# Actividad 01 — Adquisición de datos con un potenciómetro
+<div align="center">
+
+# Taller de Internet de las Cosas (IoT)
+
+### Adquisición, transmisión y control de datos mediante ESP32
+
+**Estudiante:** Mónica Huamán Bernal  
+**Equipo:** Equipo 06  
+**Curso:** [Nombre del curso]
+
+<br>
+
+![ESP32](https://img.shields.io/badge/ESP32-E7352C?style=for-the-badge&logo=espressif&logoColor=white)
+![Arduino](https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white)
+![Arduino Cloud](https://img.shields.io/badge/Arduino_Cloud-00979D?style=for-the-badge&logo=arduino&logoColor=white)
+![ThingSpeak](https://img.shields.io/badge/ThingSpeak-2D8CFF?style=for-the-badge)
+![Ubidots](https://img.shields.io/badge/Ubidots-111827?style=for-the-badge)
+
+</div>
+
+---
+
+## Descripción
+
+En este taller se desarrollaron cinco ejercicios orientados al uso del **ESP32** en aplicaciones de Internet de las Cosas (IoT).
+
+Se trabajó con la adquisición y procesamiento de señales, conexión inalámbrica, transmisión de datos hacia plataformas en la nube y control remoto de un actuador.
+
+Los ejercicios desarrollados fueron:
+
+* **Ejercicio 01:** Adquisición de datos mediante un potenciómetro.
+* **Ejercicio 02:** Conexión del ESP32 a una red Wi-Fi.
+* **Ejercicio 03:** Envío de datos del potenciómetro a plataformas IoT.
+* **Ejercicio 04:** Envío de datos de un sensor del kit Keystudio a plataformas IoT.
+* **Ejercicio 05:** Control de un LED desde una plataforma IoT.
+
+---
+
+## Herramientas y plataformas utilizadas
+
+| Herramienta / plataforma | Uso |
+| :----------------------- | :--------------------------------------------- |
+| **ESP32 DevKit V1** | Adquisición, procesamiento y comunicación |
+| **Arduino IDE** | Programación y carga del código |
+| **Arduino Cloud** | Gestión y visualización de datos IoT |
+| **ThingSpeak** | Almacenamiento y visualización de datos |
+| **Ubidots** | Monitoreo y visualización de variables |
+| **Protoboard** | Montaje de los circuitos |
+| **Sensores Keystudio** | Generación de señales de entrada |
+
+---
+
+# Ejercicio 01 — Adquisición de datos con un potenciómetro
 
 ## Objetivo
 
@@ -7,100 +59,61 @@ Realizar la adquisición de una señal analógica mediante un potenciómetro con
 
 ## Conexión del circuito
 
-El potenciómetro fue conectado al ESP32 de la siguiente manera:
+El potenciómetro fue conectado utilizando el **GPIO 34** como entrada analógica.
 
 | Potenciómetro | ESP32 |
-|---|---|
+| :------------ | :---- |
 | Terminal lateral | 3.3 V |
 | Terminal lateral | GND |
 | Terminal central | GPIO 34 |
 
-El terminal central del potenciómetro proporciona un voltaje variable dependiendo de su posición. Esta señal es adquirida mediante el ADC del ESP32.
+El terminal central proporciona un voltaje variable según la posición del potenciómetro. Esta señal es adquirida mediante el ADC del ESP32.
+
+<div align="center">
+
+<<img width="1600" height="950" alt="image" src="https://github.com/user-attachments/assets/72ff407a-ed2c-4595-a1b0-f2d161c2d410" />
+>
+
+</div>
 
 ## Procesamiento de la señal
 
-El ESP32 utiliza un ADC de 12 bits, por lo que las lecturas pueden tomar valores entre 0 y 4095.
+El ESP32 utiliza un ADC de 12 bits, por lo que las lecturas obtenidas pueden tomar valores entre **0 y 4095**.
 
-Para obtener una medición más estable se realizaron varias lecturas consecutivas y se calculó su promedio.
+Para obtener una medición más estable se realizaron varias lecturas consecutivas y se calculó su promedio:
 
 ```cpp
 long suma = 0;
 
-for (int i = 0; i < 10; i++) {
+for (int i = 0; i < numLecturas; i++) {
   suma += analogRead(potPin);
   delay(10);
 }
 
-float promedioADC = suma / 10.0;
-````
+float promedioADC = suma / (float)numLecturas;
 
-Posteriormente, el valor ADC promedio se convirtió a voltaje utilizando:
+Posteriormente, el valor ADC promedio se convirtió a voltaje mediante:
 
-$$
+[
 V = \frac{ADC}{4095}\times 3.3
-$$
+]
 
-En el código:
-
-```cpp
 float voltaje = promedioADC * 3.3 / 4095.0;
-```
 
-## Resultados
+De esta manera, al modificar la posición del potenciómetro, también cambia el valor de voltaje calculado.
 
-Los resultados de las mediciones se observaron durante la ejecución del programa. Al variar la posición del potenciómetro, el valor obtenido por el ADC y el voltaje calculado también cambiaron.
+Resultados
 
-![Resultados de la actividad 01](<img width="1600" height="950" alt="image" src="https://github.com/user-attachments/assets/1cdbd964-9c94-479e-a5c3-3cb4209aecb2" />
-)
-)
+La ejecución del programa permitió observar la variación del voltaje de acuerdo con la posición del potenciómetro.
 
-La imagen muestra los valores de voltaje obtenidos durante la ejecución del programa y permite verificar la variación de la señal generada por el potenciómetro.
+<div align="center">
 
----
+<img src="URL_IMAGEN_RESULTADOS_01" width="700">
 
-# Actividad 02 — Conexión del ESP32 a una red Wi-Fi
+</div>
 
-## Objetivo
+Interpretación
 
-Establecer una conexión inalámbrica entre el ESP32 y una red Wi-Fi para permitir posteriormente la transmisión de datos hacia plataformas IoT.
-
-## Conexión Wi-Fi
-
-Para establecer la conexión se utilizó la biblioteca:
-
-```cpp
-#include <WiFi.h>
-```
-
-El ESP32 fue configurado con el nombre y contraseña de la red Wi-Fi.
-
-El programa verifica continuamente el estado de la conexión hasta que el dispositivo logra conectarse correctamente.
-
-```cpp
-WiFi.begin(ssid, password);
-
-while (WiFi.status() != WL_CONNECTED) {
-  delay(500);
-  Serial.print(".");
-}
-```
-
-Una vez establecida la conexión, se puede obtener la dirección IP asignada al ESP32 mediante:
-
-```cpp
-Serial.println(WiFi.localIP());
-```
-
-## Resultados
-
-La ejecución del programa permitió comprobar la conexión del ESP32 a la red Wi-Fi y obtener los datos generados durante la prueba.
-
-![Resultados de la actividad 02](<img width="1600" height="906" alt="image" src="https://github.com/user-attachments/assets/41f81562-e8b8-4449-9d54-b43c3ecdd38c" />
-)
-
-La captura muestra los resultados obtenidos durante la ejecución del programa y confirma el funcionamiento de la conexión utilizada para las actividades posteriores de envío de datos a plataformas IoT.
-
-```
-
+Los resultados obtenidos muestran que el ESP32 puede adquirir correctamente una señal analógica y convertirla a un valor de voltaje.
  
 
