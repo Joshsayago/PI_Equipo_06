@@ -498,9 +498,7 @@ El ESP32 fue alimentado y programado mediante USB, mientras que su conexión Wi-
 
 ### 📷 Montaje del circuito
 
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/7e5dab31-9904-4e30-b98a-350beddc4293" width="350">
-</p>
+<img width="1966" height="1017" alt="image" src="https://github.com/user-attachments/assets/df994350-ed88-403a-a9e2-2c3860b0621a" />
 
 ---
 
