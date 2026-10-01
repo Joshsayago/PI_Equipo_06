@@ -30,6 +30,9 @@ Para devolver el dato a un valor que los humanos y los sistemas externos entiend
 ```cpp
 float voltaje = (promedioDigital * 3.3) / 4095; Multiplicamos nuestra lectura promedio por el voltaje máximo del sistema y lo dividimos entre la resolución máxima del ADC
 ```
+
+**Código mejorado:**
+```cpp
 int potPin = 34;
 int contador = 0;
 float suma = 0;
@@ -69,7 +72,7 @@ void loop() {
     suma = 0;
     contador = 0;
   }
-}
+```
 <p align="center">
 <img width="800" height="458" alt="image" src="https://github.com/user-attachments/assets/4a4922ba-8a73-47f1-9a97-446730992be6" />
 </p>
