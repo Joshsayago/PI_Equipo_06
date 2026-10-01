@@ -1,16 +1,18 @@
 ## 📡 Ejercicio: Mejora de Lectura Analógica (Promediado y Conversión a Voltaje)
 
 En este ejercicio se ha optimizado la lectura de un sensor analógico (como un potenciómetro) conectado a nuestro microcontrolador. En el contexto del Internet de las Cosas (IoT), es vital asegurar que los datos que enviamos a la nube o procesamos localmente sean precisos y estables. Para lograr esto, implementamos dos técnicas clave: **el promediado de datos** y la **conversión a voltaje real**.
+<p align="center">
 <img width="600" height="450" alt="image" src="https://github.com/user-attachments/assets/ab7c88d0-cd43-4abc-bd76-9487f597e6ff" />
-
+<p>
+  
 ### 1. Promediado de Datos (Reducción de Ruido Eléctrico)
 
 En el mundo físico, los sensores están expuestos a interferencias electromagnéticas y pequeñas fluctuaciones de corriente conocidas como **"ruido eléctrico"**. Si nuestro código tomara una sola lectura instantánea, correríamos el riesgo de capturar un "pico" falso, enviando un dato erróneo.
 
 **¿Cómo lo solucionamos en el código?**
-En lugar de tomar un solo valor, el programa realiza un muestreo de **15 lecturas** consecutivas con un pequeño intervalo de tiempo (`delay(100)`). 
-* Acumulamos estos valores en la variable `suma`.
-* Una vez que llegamos a la lectura número 15, dividimos el total entre 15 (`suma / 15`) para obtener el `promedioDigital`.
+En lugar de tomar un solo valor, el programa realiza un muestreo de **15 lecturas** consecutivas con un pequeño intervalo de tiempo (delay(100)). 
+* Acumulamos estos valores en la variable suma.
+* Una vez que llegamos a la lectura número 15, dividimos el total entre 15 (suma / 15) para obtener el promedioDigital.
 
 **Beneficio:** Este método actúa como un filtro digital de paso bajo muy sencillo. Al promediar, los picos altos y bajos repentinos se cancelan entre sí, entregándonos una lectura mucho más estable, suave y confiable.
 
@@ -28,5 +30,6 @@ Para devolver el dato a un valor que los humanos y los sistemas externos entiend
 ```cpp
 float voltaje = (promedioDigital * 3.3) / 4095; Multiplicamos nuestra lectura promedio por el voltaje máximo del sistema y lo dividimos entre la resolución máxima del ADC
 ```
-<img width="600" height="458" alt="image" src="https://github.com/user-attachments/assets/4a4922ba-8a73-47f1-9a97-446730992be6" />
-<img width="600" height="600" alt="image" src="https://github.com/user-attachments/assets/ab7c88d0-cd43-4abc-bd76-9487f597e6ff" />
+<p align="center">
+<img width="800" height="458" alt="image" src="https://github.com/user-attachments/assets/4a4922ba-8a73-47f1-9a97-446730992be6" />
+</p>
