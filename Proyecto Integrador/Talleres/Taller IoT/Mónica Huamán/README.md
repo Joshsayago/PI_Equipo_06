@@ -1,4 +1,3 @@
-````markdown
 <div align="center">
 
 # Taller de Internet de las Cosas (IoT)
@@ -21,7 +20,7 @@
 
 ---
 
-## Descripción
+## 1. Descripción
 
 En este taller se desarrollaron cinco ejercicios orientados al uso del **ESP32** en aplicaciones de Internet de las Cosas (IoT).
 
@@ -29,15 +28,15 @@ Se trabajó con la adquisición y procesamiento de señales, conexión inalámbr
 
 Los ejercicios desarrollados fueron:
 
-* **Ejercicio 01:** Adquisición de datos mediante un potenciómetro.
-* **Ejercicio 02:** Conexión del ESP32 a una red Wi-Fi.
-* **Ejercicio 03:** Envío de datos del potenciómetro a plataformas IoT.
-* **Ejercicio 04:** Envío de datos de un sensor del kit Keystudio a plataformas IoT.
-* **Ejercicio 05:** Control de un LED desde una plataforma IoT.
+- **Ejercicio 01:** Adquisición de datos mediante un potenciómetro.
+- **Ejercicio 02:** Conexión del ESP32 a una red Wi-Fi.
+- **Ejercicio 03:** Envío de datos del potenciómetro a plataformas IoT.
+- **Ejercicio 04:** Envío de datos de un sensor del kit Keystudio a plataformas IoT.
+- **Ejercicio 05:** Control de un LED desde una plataforma IoT.
 
 ---
 
-## Herramientas y plataformas utilizadas
+## 2. Herramientas y plataformas utilizadas
 
 | Herramienta / plataforma | Uso |
 | :----------------------- | :--------------------------------------------- |
@@ -51,7 +50,7 @@ Los ejercicios desarrollados fueron:
 
 ---
 
-# Ejercicio 01 — Adquisición de datos con un potenciómetro
+# 3. Ejercicio 01 — Adquisición de datos con un potenciómetro
 
 ## Objetivo
 
@@ -71,7 +70,7 @@ El terminal central proporciona un voltaje variable según la posición del pote
 
 <div align="center">
 
-<<img width="1600" height="950" alt="image" src="https://github.com/user-attachments/assets/72ff407a-ed2c-4595-a1b0-f2d161c2d410" />
+<<img width="1600" height="950" alt="image" src="https://github.com/user-attachments/assets/a80585ae-aefb-4208-a457-8a7e844b39d9" />
 >
 
 </div>
@@ -91,29 +90,3 @@ for (int i = 0; i < numLecturas; i++) {
 }
 
 float promedioADC = suma / (float)numLecturas;
-
-Posteriormente, el valor ADC promedio se convirtió a voltaje mediante:
-
-[
-V = \frac{ADC}{4095}\times 3.3
-]
-
-float voltaje = promedioADC * 3.3 / 4095.0;
-
-De esta manera, al modificar la posición del potenciómetro, también cambia el valor de voltaje calculado.
-
-Resultados
-
-La ejecución del programa permitió observar la variación del voltaje de acuerdo con la posición del potenciómetro.
-
-<div align="center">
-
-<img src="URL_IMAGEN_RESULTADOS_01" width="700">
-
-</div>
-
-Interpretación
-
-Los resultados obtenidos muestran que el ESP32 puede adquirir correctamente una señal analógica y convertirla a un valor de voltaje.
- 
-
