@@ -30,6 +30,46 @@ Para devolver el dato a un valor que los humanos y los sistemas externos entiend
 ```cpp
 float voltaje = (promedioDigital * 3.3) / 4095; Multiplicamos nuestra lectura promedio por el voltaje máximo del sistema y lo dividimos entre la resolución máxima del ADC
 ```
+int potPin = 34;
+int contador = 0;
+float suma = 0;
+
+void setup() {
+  Serial.begin(115200);
+}
+
+void loop() {
+  if (contador < 15) {
+    // Leemos el valor crudo del ADC
+    int valorDigital = analogRead(potPin);
+
+    // Acumulamos las lecturas
+    suma += valorDigital;
+    contador++;
+
+    delay(100);
+  }
+  else if (contador == 15) {
+    // 1. Calculamos el promedio para eliminar el ruido
+    float promedioDigital = suma / 15;
+
+    // 2. Convertimos el valor digital promedio a Voltaje real (0 - 3.3V)
+    float voltaje = (promedioDigital * 3.3) / 4095;
+
+    // Imprimimos los resultados en el Monitor Serie
+    Serial.println("\n--- RESULTADOS ---");
+    Serial.print("Promedio Digital: ");
+    Serial.println(promedioDigital, 2);
+    Serial.print("Voltaje Equivalente: ");
+    Serial.print(voltaje, 3);
+    Serial.println(" V");
+    Serial.println("-------------------\n");
+
+    // Reiniciamos variables para el siguiente ciclo de muestreo
+    suma = 0;
+    contador = 0;
+  }
+}
 <p align="center">
 <img width="800" height="458" alt="image" src="https://github.com/user-attachments/assets/4a4922ba-8a73-47f1-9a97-446730992be6" />
 </p>
