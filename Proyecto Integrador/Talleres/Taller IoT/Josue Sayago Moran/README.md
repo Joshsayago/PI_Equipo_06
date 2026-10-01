@@ -1,6 +1,7 @@
 ## 📡 Ejercicio: Mejora de Lectura Analógica (Promediado y Conversión a Voltaje)
 
 En este ejercicio se ha optimizado la lectura de un sensor analógico (como un potenciómetro) conectado a nuestro microcontrolador. En el contexto del Internet de las Cosas (IoT), es vital asegurar que los datos que enviamos a la nube o procesamos localmente sean precisos y estables. Para lograr esto, implementamos dos técnicas clave: **el promediado de datos** y la **conversión a voltaje real**.
+<img width="600" height="450" alt="image" src="https://github.com/user-attachments/assets/ab7c88d0-cd43-4abc-bd76-9487f597e6ff" />
 
 ### 1. Promediado de Datos (Reducción de Ruido Eléctrico)
 
@@ -24,8 +25,8 @@ En este caso (trabajando con una placa de 3.3V y una resolución de 12 bits):
 
 Para devolver el dato a un valor que los humanos y los sistemas externos entiendan (Voltios), aplicamos una regla de tres simple plasmada en la siguiente fórmula:
 
-<p>
-
-float voltaje = (promedioDigital * 3.3) / 4095;
-<img width="800" height="458" alt="image" src="https://github.com/user-attachments/assets/4a4922ba-8a73-47f1-9a97-446730992be6" />
+```cpp
+float voltaje = (promedioDigital * 3.3) / 4095; Multiplicamos nuestra lectura promedio por el voltaje máximo del sistema y lo dividimos entre la resolución máxima del ADC
+```
+<img width="600" height="458" alt="image" src="https://github.com/user-attachments/assets/4a4922ba-8a73-47f1-9a97-446730992be6" />
 <img width="600" height="600" alt="image" src="https://github.com/user-attachments/assets/ab7c88d0-cd43-4abc-bd76-9487f597e6ff" />
