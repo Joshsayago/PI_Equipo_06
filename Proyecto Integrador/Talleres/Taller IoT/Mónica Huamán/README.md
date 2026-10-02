@@ -1,53 +1,54 @@
  
 
-# Taller de Internet de las Cosas (IoT)
+<div align="center">
 
-### Adquisición, transmisión y control de datos mediante ESP32
+# Taller de Internet de las Cosas
 
-**Estudiante:** Mónica Huamán Bernal  
-**Equipo:** Equipo 06  
-**Curso:** Proyecto Integrador
+### Adquisición, transmisión y control de datos con ESP32
+
+**Mónica Huamán Bernal** · **Equipo 06** · **Proyecto Integrador**
 
 <br>
 
-![ESP32](https://img.shields.io/badge/ESP32-E7352C?style=for-the-badge&logo=espressif&logoColor=white)
-![Arduino](https://img.shields.io/badge/Arduino-00979D?style=for-the-badge&logo=arduino&logoColor=white)
-![Arduino Cloud](https://img.shields.io/badge/Arduino_Cloud-00979D?style=for-the-badge&logo=arduino&logoColor=white)
-![ThingSpeak](https://img.shields.io/badge/ThingSpeak-2D8CFF?style=for-the-badge)
-![Ubidots](https://img.shields.io/badge/Ubidots-111827?style=for-the-badge)
+<sub>
+ESP32 · Arduino IDE · Arduino Cloud · ThingSpeak · Ubidots
+</sub>
 
 </div>
 
 ---
 
-## 1. Descripción
+## 01 · Descripción
 
-En este taller se desarrollaron cinco ejercicios orientados al uso del **ESP32** en aplicaciones de Internet de las Cosas (IoT).
+Este taller aborda el desarrollo de aplicaciones básicas de **Internet de las Cosas (IoT)** utilizando un ESP32 como dispositivo de adquisición, procesamiento y comunicación.
 
-Se trabajó con la adquisición y procesamiento de señales, conexión inalámbrica, transmisión de datos hacia plataformas en la nube y control remoto de un actuador.
+A lo largo de cinco ejercicios se trabajó progresivamente con la lectura de señales, conectividad inalámbrica, transmisión de información hacia plataformas en la nube y control remoto de un actuador.
 
-Los ejercicios desarrollados fueron:
+### Ejercicios desarrollados
 
-- **Ejercicio 01:** Adquisición de datos mediante un potenciómetro.
-- **Ejercicio 02:** Conexión del ESP32 a una red Wi-Fi.
-- **Ejercicio 03:** Envío de datos del potenciómetro a plataformas IoT.
-- **Ejercicio 04:** Envío de datos de un sensor del kit Keystudio a plataformas IoT.
-- **Ejercicio 05:** Control de un LED desde una plataforma IoT.
+| | Actividad |
+|:--:|:--|
+| **01** | Adquisición de una señal mediante potenciómetro |
+| **02** | Conexión del ESP32 a una red Wi-Fi |
+| **03** | Transmisión del potenciómetro hacia plataformas IoT |
+| **04** | Transmisión de datos de un sensor Keystudio |
+| **05** | Control remoto de un LED |
 
 ---
 
-## 2. Herramientas y plataformas utilizadas
+## 02 · Herramientas
 
-| Herramienta / plataforma | Uso |
-| :----------------------- | :--------------------------------------------- |
-| **ESP32 DevKit V1** | Adquisición, procesamiento y comunicación |
-| **Arduino IDE** | Programación y carga del código |
-| **Arduino Cloud** | Gestión y visualización de datos IoT |
-| **ThingSpeak** | Almacenamiento y visualización de datos |
-| **Ubidots** | Monitoreo y visualización de variables |
-| **Protoboard** | Montaje de los circuitos |
-| **Sensores Keystudio** | Generación de señales de entrada |
+| Tecnología | Aplicación |
+|:--|:--|
+| **ESP32 DevKit V1** | Adquisición y comunicación |
+| **Arduino IDE** | Desarrollo y carga del programa |
+| **Arduino Cloud** | Gestión de variables y visualización |
+| **ThingSpeak** | Registro y representación de datos |
+| **Ubidots** | Monitoreo mediante widgets |
+| **Protoboard** | Implementación de los circuitos |
+| **Kit Keystudio** | Sensores de entrada |
 
+---
 ---
 
 # 3. Ejercicio 01 — Adquisición de datos con un potenciómetro
@@ -376,35 +377,34 @@ Las imágenes muestran el estado **OFF** configurado desde la plataforma IoT y l
 Se logró controlar remotamente el estado de un LED conectado al ESP32 mediante una plataforma IoT, comprobando la comunicación entre la plataforma en la nube y el dispositivo físico.
 ------
 
-# 8. Conclusiones
+---
 
-El desarrollo de los cinco ejercicios permitió integrar diferentes etapas fundamentales de un sistema de Internet de las Cosas.
+## 08 · Conclusiones
 
-Primero se realizó la adquisición y procesamiento de señales mediante el ESP32. Luego se estableció la conexión Wi-Fi necesaria para la comunicación con servicios externos.
+El desarrollo del taller permitió integrar progresivamente los principales componentes de una aplicación IoT: **adquisición, procesamiento, conectividad, transmisión, visualización y actuación**.
 
-Posteriormente, se enviaron los datos del potenciómetro hacia **Arduino Cloud, ThingSpeak y Ubidots**, permitiendo trabajar con diferentes alternativas para la visualización de información en la nube.
+El ESP32 fue utilizado como elemento central para obtener información desde diferentes entradas, establecer comunicación mediante Wi-Fi y transferir los datos hacia plataformas de monitoreo en la nube.
 
-El cuarto ejercicio permitió repetir este proceso utilizando un sensor del kit Keystudio, demostrando que el sistema puede adaptarse a diferentes fuentes de datos.
+El trabajo con **Arduino Cloud, ThingSpeak y Ubidots** permitió comparar diferentes entornos de visualización y gestión de información provenientes del dispositivo.
 
-Finalmente, se implementó el control remoto de un LED desde una plataforma IoT, integrando comunicación y actuación sobre un dispositivo físico.
-
-En conjunto, los ejercicios permitieron trabajar las principales etapas de una aplicación IoT: **adquisición de datos, procesamiento, conectividad, transmisión, visualización y control remoto**.
+Finalmente, el control remoto del LED permitió completar el flujo de comunicación entre una plataforma IoT y un elemento físico, demostrando la interacción entre el entorno virtual y el dispositivo.
 
 ---
 
-# 9. Referencias
+## 09 · Referencias
 
 - [Arduino IoT Cloud — Documentación oficial](https://docs.arduino.cc/arduino-cloud/guides/overview/)
 - [Ubidots — Conexión de ESP32 mediante MQTT](https://help.ubidots.com/es/articles/748067-conectar-un-esp32-devkitc-a-ubidots-a-traves-de-mqtt)
 - [ThingSpeak — Envío de datos mediante ESP32](https://todomaker.com/blog/envio-de-datos-a-thingspeak-usando-esp32/)
 
----
+<br>
 
 <div align="center">
 
-### Taller de IoT — Equipo 06
+<sub><b>PROYECTO INTEGRADOR · EQUIPO 06</b></sub>
 
-*ESP32 · Arduino Cloud · ThingSpeak · Ubidots*
+<br>
+
+<sub><i>Internet de las Cosas · ESP32 · IoT</i></sub>
 
 </div>
-
