@@ -173,46 +173,6 @@ Enviar en tiempo real la variación del potenciómetro conectado al ESP32 hacia 
 
 Este ejercicio permitió integrar la adquisición de datos del ESP32 con servicios de almacenamiento y visualización en la nube.
 
-## Arduino Cloud
-
-Arduino IoT Cloud es una plataforma que permite conectar dispositivos IoT a Internet y gestionar sus datos desde una interfaz web.
-
-Para este ejercicio se configuró un **Thing**, se vinculó el ESP32 y se creó la variable:
-
-~~~text
-voltaje
-~~~
-
-El valor calculado a partir de la lectura del potenciómetro fue asignado a esta variable.
-
-### Fragmento de código
-
-~~~cpp
-voltaje = potValue * 3.3 / 4095.0;
-
-ArduinoCloud.update();
-~~~
-
-La variable `voltaje` representa el dato que se transmite a Arduino Cloud, mientras que `ArduinoCloud.update()` permite actualizar la comunicación con la plataforma.
-
-### Configuración
-
-<div align="center">
-
-<IMAGEN Q FALTA ">
-
-</div>
-
-### Visualización
-
-Se creó un widget asociado a la variable `voltaje` para observar los datos enviados por el ESP32.
-
-<div align="center">
-
-<img src="URL_IMAGEN_ARDUINO_CLOUD" width="700">
-
-</div>
-
 ## ThingSpeak
 
 ThingSpeak es una plataforma IoT orientada al almacenamiento y visualización de datos provenientes de dispositivos conectados.
@@ -375,13 +335,14 @@ Las imágenes muestran el estado **OFF** configurado desde la plataforma IoT y l
 
 ## Resultado
 
-Se logró controlar remotamente el estado de un LED conectado al ESP32 mediante una plataforma IoT, comprobando la comunicación entre la plataforma en la nube y el dispositivo físico.
+Se implementó con éxito el control remoto de un LED mediante una plataforma IoT, lo que validó la comunicación bidireccional entre la nube y el dispositivo físico (ESP32). Asimismo, se monitorearon y visualizaron en tiempo real las gráficas de temperatura, humedad y voltaje, empleando los sensores DHT11 y LM35, además de un potenciómetro.
+
 ------
 
 # 8. Conclusiones
 
 ....
----
+------
 
 # 9. Referencias
 
@@ -396,6 +357,8 @@ Se logró controlar remotamente el estado de un LED conectado al ESP32 mediante 
 ### Taller de IoT — Equipo 06
 
 *ESP32 · Arduino Cloud · ThingSpeak · Ubidots*
+
+[![Sistema IoT con ESP32, MQTT y Node-RED](https://shields.io)](PI_Equipo_06/Proyecto Integrador/Talleres/Taller IoT/README.md)
 
 </div>
 
