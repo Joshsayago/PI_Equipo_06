@@ -358,7 +358,7 @@ Se implementó con éxito el control remoto de un LED mediante una plataforma Io
 
 *ESP32 · Arduino Cloud · ThingSpeak · Ubidots*
 
-[![Sistema IoT con ESP32, MQTT y Node-RED](https://shields.io)](PI_Equipo_06/Proyecto Integrador/Talleres/Taller IoT/README.md)
+[![Sistema IoT con ESP32, MQTT y Node-RED](https://shields.io)](./Taller IoT/README.md)
 
 </div>
 
