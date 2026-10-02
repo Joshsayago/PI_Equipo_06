@@ -81,7 +81,7 @@ El ESP32 utiliza un ADC de 12 bits, por lo que las lecturas obtenidas pueden tom
 
 Para obtener una medición más estable se realizaron varias lecturas consecutivas y se calculó su promedio:
 
-```cpp
+ 
 long suma = 0;
 
 for (int i = 0; i < numLecturas; i++) {
