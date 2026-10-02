@@ -89,7 +89,8 @@ for (int i = 0; i < numLecturas; i++) {
   delay(10);
 }
 
-float promedioADC = suma / (float)numLecturas; Posteriormente, el valor ADC promedio se convirtió a voltaje mediante:
+float promedioADC = suma / (float)numLecturas;
+ Posteriormente, el valor ADC promedio se convirtió a voltaje mediante:
 
 ~~~text
 V = (ADC / 4095) × 3.3
@@ -97,7 +98,7 @@ V = (ADC / 4095) × 3.3
 
 ~~~cpp
 float voltaje = promedioADC * 3.3 / 4095.0;
-```cpp
+~~~cpp
 
 De esta manera, al modificar la posición del potenciómetro, también cambia el valor de voltaje calculado.
 
