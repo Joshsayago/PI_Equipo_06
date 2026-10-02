@@ -341,7 +341,7 @@ Se implementó con éxito el control remoto de un LED mediante una plataforma Io
 
 # 8. Conclusiones
 
-....
+- Este taller permitió comprender que un sistema IoT no consiste únicamente en conectar un sensor y obtener un dato, sino en lograr que la información pueda ser adquirida, procesada, transmitida y utilizada de manera útil. A través de los ejercicios realizados se aplicaron conceptos importantes como la lectura del ADC mediante analogRead(), el promedio de varias mediciones para obtener valores más estables, la conversión de la señal a voltaje, la conexión del ESP32 mediante WiFi.begin() y el envío de información hacia plataformas como Arduino Cloud, ThingSpeak y Ubidots. Finalmente, el control remoto del LED permitió observar el proceso inverso, donde una instrucción enviada desde la nube puede generar una acción física en el dispositivo. En conjunto, estas experiencias muestran cómo pequeños elementos como un potenciómetro, un sensor o un LED pueden formar parte de un sistema conectado, y permiten entender que el verdadero valor del IoT está en transformar datos del mundo real en información que pueda ser monitoreada y utilizada para tomar acciones.
 ------
 
 # 9. Referencias
