@@ -51,7 +51,23 @@ A lo largo de cinco ejercicios se trabajó progresivamente con la lectura de se�
 ---
 ---
 
-## 3 · Ejercicio 01 — Lectura de una señal analógica ### Objetivo Obtener una señal analógica a partir de un **potenciómetro conectado al ESP32**, procesar las lecturas obtenidas y expresar el resultado como un valor de voltaje. Para reducir las variaciones propias de una lectura individual, se utilizaron varias muestras y se calculó su promedio antes de realizar la conversión. ### Montaje El potenciómetro se conectó utilizando el **GPIO 34** como entrada analógica. | Potenciómetro | ESP32 | | :--- | :--- | | Terminal lateral | 3.3 V | | Terminal lateral | GND | | Terminal central | GPIO 34 | El terminal central entrega un voltaje variable de acuerdo con la posición del potenciómetro. Esta señal es posteriormente interpretada por el ADC del ESP32.
+# 3. Ejercicio 01 — Adquisición de datos con un potenciómetro
+
+## Objetivo
+
+Realizar la adquisición de una señal analógica mediante un potenciómetro conectado al ESP32. Además, se buscó mejorar la estabilidad de las mediciones mediante el promedio de varias lecturas y convertir el valor obtenido por el ADC a voltaje.
+
+## Conexión del circuito
+
+El potenciómetro fue conectado utilizando el **GPIO 34** como entrada analógica.
+
+| Potenciómetro | ESP32 |
+| :------------ | :---- |
+| Terminal lateral | 3.3 V |
+| Terminal lateral | GND |
+| Terminal central | GPIO 34 |
+
+El terminal central proporciona un voltaje variable según la posición del potenciómetro. Esta señal es adquirida mediante el ADC del ESP32.
 <div align="center">
 
 <<img width="1600" height="950" alt="image" src="https://github.com/user-attachments/assets/a80585ae-aefb-4208-a457-8a7e844b39d9" />
@@ -59,7 +75,43 @@ A lo largo de cinco ejercicios se trabajó progresivamente con la lectura de se�
 
 </div>
 
-### Procesamiento El ESP32 dispone de un **ADC de 12 bits**, por lo que la lectura digital puede encontrarse entre **0 y 4095**. Para obtener una lectura más representativa, se realizaron varias mediciones consecutivas y se calculó su promedio: ~~~cpp long suma = 0; for (int i = 0; i < numLecturas; i++) { suma += analogRead(potPin); delay(10); } float promedioADC = suma / (float)numLecturas; ~~~ A partir del valor promedio se realizó la conversión de la lectura ADC a voltaje: ~~~text V = (ADC / 4095) × 3.3 ~~~ La expresión anterior se implementó en el programa mediante: ~~~cpp float voltaje = promedioADC * 3.3 / 4095.0; ~~~ De esta manera, el desplazamiento del potenciómetro se refleja en una variación del voltaje calculado. ### Resultado Durante la prueba se observó que el valor de voltaje cambia conforme se modifica la posición del potenciómetro. **Interpretación.** La prueba permitió comprobar el proceso básico de adquisición de una señal analógica: **lectura → promedio → conversión a voltaje**. ---
+## Procesamiento de la señal
+
+El ESP32 utiliza un ADC de 12 bits, por lo que las lecturas obtenidas pueden tomar valores entre **0 y 4095**.
+
+Para obtener una medición más estable se realizaron varias lecturas consecutivas y se calculó su promedio:
+
+ 
+long suma = 0;
+
+for (int i = 0; i < numLecturas; i++) {
+  suma += analogRead(potPin);
+  delay(10);
+}
+
+float promedioADC = suma / (float)numLecturas;
+ Posteriormente, el valor ADC promedio se convirtió a voltaje mediante:
+
+~~~text
+V = (ADC / 4095) × 3.3
+~~~
+
+~~~cpp
+float voltaje = promedioADC * 3.3 / 4095.0;
+~~~
+
+De esta manera, al modificar la posición del potenciómetro, también cambia el valor de voltaje calculado.
+
+## Resultados
+
+La ejecución del programa permitió observar la variación del voltaje de acuerdo con la posición del potenciómetro.
+
+**Interpretación**
+
+Los resultados obtenidos muestran que el ESP32 puede adquirir correctamente una señal analógica y convertirla a un valor de voltaje.
+
+---
+
 # 4. Ejercicio 02 — Conexión del ESP32 a una red Wi-Fi
 
 ## Objetivo
