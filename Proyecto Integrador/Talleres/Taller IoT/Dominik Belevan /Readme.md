@@ -437,25 +437,54 @@ Sensor → ESP32 → Wi-Fi → Nube → Usuario
 
 ---
 
-# 4️⃣ ACTIVIDAD 4 — Envío de datos de un sensor a la nube
+# ☁️ ACTIVIDAD 4 — MONITOREO DE TEMPERATURA CON ARDUINO IoT CLOUD
 
-<div align="center">
-
-### 🚧 ACTIVIDAD EN DESARROLLO 🚧
-
-</div>
-
-Esta actividad será completada posteriormente con:
-
-- Sensor utilizado.
-- Materiales necesarios.
-- Explicación de las conexiones.
-- Funcionamiento del código.
-- Plataforma IoT utilizada.
-- Evidencias.
-- Resultados obtenidos.
+## 🎯 Objetivo
+Conectar el ESP32 a Arduino IoT Cloud para obtener una medición de
+temperatura y transmitirla mediante Internet.
 
 ---
+
+## 🧰 Materiales
+
+- ESP32
+- Sensor de temperatura utilizado en la práctica
+- Jumpers
+- Cable USB
+- Computadora
+- Arduino IDE / Arduino Cloud
+- Conexión Wi-Fi
+
+---
+
+## ☁️ Funcionamiento
+
+En este ejercicio se implementó un sistema IoT en el cual el ESP32
+realiza la lectura de temperatura y posteriormente se conecta mediante
+Wi-Fi a Arduino IoT Cloud.
+
+El funcionamiento general fue:
+
+Sensor de temperatura
+        ↓
+      ESP32
+        ↓
+      Wi-Fi
+        ↓
+ Arduino IoT Cloud
+        ↓
+Visualización de datos
+
+---
+
+## 1️⃣ Configuración de Arduino IoT Cloud
+
+Para establecer la comunicación con Arduino IoT Cloud se utilizaron
+las librerías:
+
+```cpp
+#include <ArduinoIoTCloud.h>
+#include <Arduino_ConnectionHandler.h>
 
 # 5️⃣ ACTIVIDAD 5 — Control de un LED mediante una interfaz web
 
