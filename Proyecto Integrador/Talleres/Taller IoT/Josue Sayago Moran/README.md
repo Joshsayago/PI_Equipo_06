@@ -73,7 +73,107 @@ void loop() {
 <p align="center">
 <img width="800" height="458" alt="image" src="https://github.com/user-attachments/assets/4a4922ba-8a73-47f1-9a97-446730992be6" />
 </p>
+## Ejercicio 02: Conexión a Red WiFi (Smartphone Hotspot)
 
+Para que un dispositivo sea considerado parte del "Internet de las Cosas", necesita, por definición, estar conectado a una red. En este ejercicio configuramos el ESP32 para que se conecte a un punto de acceso inalámbrico (en este caso, un Hotspot o zona WiFi compartida desde un Smartphone) y verifique su conexión obteniendo una **Dirección IP local**.
+
+### ¿Qué se necesitó para llevarlo a cabo?
+
+Para este ejercicio práctico los requerimientos fueron mínimos en cuanto a hardware, pero muy importantes en configuración:
+* **Hardware:**
+  * Placa de desarrollo ESP32.
+  * Cable USB para programación y alimentación.
+* **Software / Conectividad:**
+  * Entorno de desarrollo Arduino IDE.
+  * Un Smartphone con la función de **"Compartir Internet"**, "Hotspot" o "Zona Wi-Fi" activada.
+
+### Configuración del Hotspot
+
+Antes de subir el código, fue necesario preparar el teléfono móvil:
+1. Activar la opción de compartir internet en el Smartphone.
+2. Definir un **Nombre de Red (SSID)** reconocible (ej. *"iPhone de Diego"*).
+3. Establecer una **Contraseña** de seguridad (ej. *"diego1234567"*).
+*(Nota: Es vital que las credenciales en el código coincidan exactamente con las del teléfono, respetando mayúsculas, minúsculas y espacios).*
+
+### ¿Cómo se trabajó el código?
+
+El código utiliza la librería estándar `<WiFi.h>` del ESP32, la cual facilita enormemente la gestión de redes. La lógica se divide en las siguientes etapas clave:
+
+1. **Modo Estación (Station Mode):**
+   Usamos la instrucción `WiFi.mode(WIFI_STA);`. Esto le dice al ESP32 que actúe como un "cliente" o "estación" que se va a conectar a un router existente (el celular), en lugar de crear su propia red (Modo Access Point).
+2. **Proceso de Conexión:**
+   Con `WiFi.begin(ssid, password);` iniciamos el intento de conexión. Como este proceso no es instantáneo, utilizamos un bucle `while` que verifica constantemente el estado de la conexión (`WiFi.status()`). Mientras no esté conectado, el monitor serie imprime puntos `.` creando un efecto de "cargando".
+3. **Asignación de IP:**
+   Una vez que el teléfono acepta la conexión del ESP32, le asigna una dirección IP. Usamos `WiFi.localIP()` para leer esta dirección e imprimirla en el Monitor Serie, confirmando el éxito de la red.
+4. **Resiliencia (Reconexión automática):**
+   Una característica destacada de este código es que dentro del `loop()` se monitorea constantemente el estado del WiFi. Si el celular se apaga, se aleja o la señal cae, el ESP32 lo detecta e intenta reconectarse automáticamente de forma indefinida, garantizando que el dispositivo no se quede "congelado" sin red.
+
+*(A continuación se muestra una captura de los resultados en el Monitor Serie)*
+<!-- Reemplaza el enlace de abajo con una captura de pantalla de tu Monitor Serie mostrando la IP -->
+<div align="center">
+  <img src="ruta/a/tu/captura_monitor_serie.png" alt="Captura del Monitor Serie mostrando la IP" width="600">
+</div>
+
+###  Código de Implementación
+
+```cpp
+#include "WiFi.h"
+
+// Credenciales de la red (Hotspot del celular)
+const char* ssid = "iPhone de Diego";
+const char* password = "diego1234567";
+
+void setup() {
+  Serial.begin(115200);
+  delay(10);
+
+  Serial.println("\n--- Configurando Conexión Wi-Fi ---");
+  
+  // 1. Configuramos el ESP32 en modo "Estación" (Cliente)
+  WiFi.mode(WIFI_STA);
+  
+  // 2. Iniciamos la solicitud de conexión
+  WiFi.begin(ssid, password);
+  Serial.print("Conectando a la red: ");
+  Serial.println(ssid);
+
+  // 3. Esperamos a que la conexión se establezca
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  // 4. Conexión exitosa: Mostramos los datos de red
+  Serial.println("\n\n=================================");
+  Serial.println("¡CONEXIÓN EXITOSA!");
+  Serial.print("Conectado a: ");
+  Serial.println(ssid);
+  
+  Serial.print("Dirección IP asignada: ");
+  Serial.println(WiFi.localIP()); 
+  Serial.println("=================================\n");
+}
+
+void loop() {
+  // 5. Monitoreo constante: Si se pierde la red, intenta reconectar
+  if (WiFi.status() != WL_CONNECTED) {
+    Serial.println("Se perdió la conexión. Intentando reconectar...");
+    WiFi.begin(ssid, password);
+    
+    // Bucle de espera para la reconexión
+    while (WiFi.status() != WL_CONNECTED) {
+      delay(500);
+      Serial.print(".");
+    }
+    
+    Serial.println("\nReconectado. Nueva IP: ");
+    Serial.println(WiFi.localIP());
+  }
+  
+  // Esperamos 5 segundos antes de volver a comprobar el estado
+  delay(5000);
+}
+```
 
 ## Ejercicio 05: Control de LED vía Interfaz Web (ESP32)
 
