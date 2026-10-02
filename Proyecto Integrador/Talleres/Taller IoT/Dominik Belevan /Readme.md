@@ -1,627 +1,806 @@
-<div align="center">
+# 🌐 Taller de Internet of Things (IoT) con ESP32
 
-# 🌐 TALLER DE INTERNET DE LAS COSAS (IoT)
-
-### ESP32 • Sensores • Wi-Fi • IoT Cloud • Control Web
-
-**Proyectos de Ingeniería**
+<p align="center">
+  <b>Implementación de adquisición de datos, conectividad Wi-Fi, Arduino IoT Cloud y control remoto utilizando ESP32</b>
+</p>
 
 ---
 
-</div>
+## 📑 Índice
 
-## 📖 Descripción
-
-En el presente taller se desarrollaron diferentes actividades prácticas utilizando el **ESP32 Dev Kit**, con el propósito de comprender el funcionamiento de un sistema de Internet de las Cosas (IoT).
-
-Las actividades realizadas abarcaron desde la adquisición y procesamiento de una señal analógica hasta la conexión del ESP32 a una red Wi-Fi, el envío de información hacia una plataforma IoT y el control de un dispositivo mediante una interfaz web.
-
----
-
-## 🎯 Objetivos
-
-- Comprender de manera práctica el funcionamiento básico del Internet de las Cosas.
-- Configurar y programar el ESP32.
-- Adquirir y procesar señales provenientes de sensores y entradas analógicas.
-- Establecer una conexión Wi-Fi con el ESP32.
-- Enviar información hacia una plataforma IoT.
-- Visualizar información obtenida por el ESP32.
-- Implementar el control de un dispositivo mediante una interfaz web.
+1. [Introducción](#-introducción)
+2. [Objetivos](#-objetivos)
+3. [Materiales y herramientas](#-materiales-y-herramientas)
+4. [Ejercicio 1 – Lectura analógica con potenciómetro](#-ejercicio-1--lectura-analógica-con-potenciómetro)
+5. [Ejercicio 2 – Conexión de la ESP32 a Wi-Fi](#-ejercicio-2--conexión-de-la-esp32-a-wi-fi)
+6. [Ejercicio 3 – Arduino IoT Cloud](#-ejercicio-3--arduino-iot-cloud)
+7. [Ejercicio 4 – Medición de temperatura](#-ejercicio-4--medición-de-temperatura)
+8. [Ejercicio 5 – Control remoto de un LED](#-ejercicio-5--control-remoto-de-un-led)
+9. [Flujo general de funcionamiento](#-flujo-general-de-funcionamiento)
+10. [Conclusiones](#-conclusiones)
 
 ---
 
-## 🧰 Materiales y recursos utilizados
+# 📌 Introducción
 
-| Material / recurso | Utilización |
-|:---|:---|
-| ESP32 Dev Kit | Microcontrolador principal |
+En este taller se trabajó con la tarjeta **ESP32** para desarrollar diferentes aplicaciones relacionadas con el Internet de las Cosas (**IoT**).
+
+Las actividades se realizaron progresivamente. Primero se trabajó con la adquisición de señales analógicas mediante un potenciómetro; posteriormente se configuró la conexión de la ESP32 a una red Wi-Fi, se realizó la transmisión de información mediante una plataforma IoT, se trabajó con mediciones de temperatura y finalmente se implementó el control remoto de un LED mediante una interfaz web.
+
+De esta manera, se aplicaron conceptos fundamentales de un sistema IoT:
+
+```text
+Sensor / Entrada
+       ↓
+     ESP32
+       ↓
+Procesamiento
+       ↓
+Comunicación
+       ↓
+Internet / Plataforma
+       ↓
+Visualización o control
+```
+
+---
+
+# 🎯 Objetivos
+
+## Objetivo general
+
+Implementar diferentes aplicaciones IoT utilizando la ESP32, integrando adquisición de datos, procesamiento, comunicación mediante Wi-Fi, transmisión de información y control remoto.
+
+## Objetivos específicos
+
+- Realizar lecturas analógicas mediante el ADC de la ESP32.
+- Convertir valores digitales a valores de voltaje.
+- Conectar la ESP32 a una red Wi-Fi.
+- Utilizar Arduino IoT Cloud para transmitir información.
+- Obtener mediciones de temperatura mediante sensores.
+- Implementar el control remoto de un LED.
+- Comprender la relación entre hardware, software y comunicación dentro de un sistema IoT.
+
+---
+
+# 🧰 Materiales y herramientas
+
+Durante las diferentes actividades se utilizaron los siguientes elementos:
+
+| Componente / herramienta | Función |
+|---|---|
+| ESP32 | Microcontrolador principal del sistema |
 | Protoboard | Montaje de los circuitos |
 | Potenciómetro | Generación de una señal analógica variable |
-| LED | Actuador utilizado para el control web |
-| Resistencia | Limitación de corriente |
-| Cables jumper | Conexiones entre componentes |
-| Cable USB | Programación y alimentación |
-| Smartphone | Punto de acceso Wi-Fi |
-| Arduino IDE | Programación del ESP32 |
-| Arduino IoT Cloud | Monitoreo de información |
+| Sensor de temperatura | Medición de temperatura |
+| LED | Actuador visual |
+| Resistencia | Limitación de corriente del LED |
+| Cables jumper | Interconexión de componentes |
+| Cable USB | Alimentación y programación de la ESP32 |
+| Arduino IDE | Programación de la ESP32 |
+| Wi-Fi | Comunicación con servicios externos |
+| Arduino IoT Cloud | Visualización de variables mediante Internet |
 
 ---
 
-# 1️⃣ ACTIVIDAD 1 — Lectura de un potenciómetro con ESP32
+# 🔵 Ejercicio 1 – Lectura analógica con potenciómetro
 
 ## 🎯 Objetivo
 
-Realizar la lectura de un potenciómetro mediante el ESP32, mejorar la adquisición utilizando un promedio de varias mediciones y convertir el valor obtenido por el ADC a su voltaje equivalente.
+Realizar la lectura de una señal analógica utilizando el ADC de la ESP32 y convertir el valor digital obtenido a su voltaje equivalente.
 
 ---
 
-## 🧰 ¿Qué se necesitó?
+## 🧰 Materiales utilizados
 
-- ESP32 Dev Kit.
-- Potenciómetro.
-- Protoboard.
-- Cables jumper.
-- Cable USB.
-- Computadora.
-- Arduino IDE.
+- ESP32
+- Potenciómetro
+- Protoboard
+- Cables jumper
+- Cable USB
+- Computadora
+- Arduino IDE
 
 ---
 
 ## 🔌 Explicación de las conexiones
 
-El potenciómetro cuenta con tres terminales. Los terminales laterales permiten establecer su alimentación, mientras que el terminal central proporciona una señal de voltaje variable dependiendo de la posición del potenciómetro.
+El potenciómetro se utilizó como una entrada analógica variable.
 
-La señal variable del potenciómetro fue conectada al **GPIO 34 del ESP32**, utilizado como entrada analógica.
-
-De esta manera, al modificar la posición del potenciómetro cambia el voltaje entregado al ESP32 y, por lo tanto, también cambia el valor registrado por su convertidor analógico-digital (ADC).
-
-### 📷 Montaje realizado
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/24c2a6c7-9acc-4838-9fc2-4c4aff9f19da" width="350">
-</p>
-
----
-
-## 💻 ¿Cómo se trabajó el código?
-
-Primero se definió el pin encargado de recibir la señal analógica:
+La salida del potenciómetro se conectó a una entrada ADC de la ESP32. En el código utilizado se definió:
 
 ```cpp
 int potPin = 34;
 ```
 
-También se utilizaron variables para almacenar la suma de las mediciones y llevar un conteo de las lecturas realizadas.
+Por lo tanto, la adquisición de la señal se realizó mediante el **GPIO 34**.
 
-La comunicación serial se inició a:
-
-```cpp
-Serial.begin(115200);
-```
-
-Esto permitió visualizar los resultados directamente desde el **Monitor Serial**.
-
-### 📥 Lectura del ADC
-
-El ESP32 obtiene el valor del potenciómetro mediante:
-
-```cpp
-int valorDigital = analogRead(potPin);
-```
-
-En lugar de trabajar únicamente con una medición, el programa realiza **15 lecturas consecutivas**.
-
-Cada lectura obtenida se agrega a una suma acumulada.
-
-Después de completar las 15 mediciones, se calcula el promedio:
-
-```cpp
-float promedioDigital = suma / 15;
-```
-
-### ⚡ Conversión a voltaje
-
-Posteriormente, el promedio digital se convierte a voltaje utilizando:
-
-```cpp
-float voltaje = (promedioDigital * 3.3) / 4095;
-```
-
-En esta operación:
-
-- `promedioDigital` corresponde al promedio de las mediciones.
-- `3.3` corresponde al voltaje considerado como referencia.
-- `4095` corresponde al valor digital máximo utilizado en la conversión.
-
-Finalmente, el promedio digital y el voltaje calculado se muestran en el Monitor Serial.
-
-Después de mostrar los resultados, las variables utilizadas para acumular las mediciones se reinician para comenzar un nuevo conjunto de 15 lecturas.
-
----
-
-## 📊 Resultado obtenido
-
-El programa permitió realizar correctamente la lectura del potenciómetro y convertir el valor obtenido a voltaje.
-
-Durante las pruebas se observaron valores digitales promedio cercanos a:
+El funcionamiento general puede representarse de la siguiente manera:
 
 ```text
-1930 – 1957
+          POTENCIÓMETRO
+        ┌───────────────┐
+        │               │
+3.3 V ──┤               │
+        │               ├──── Señal analógica ──── GPIO 34
+GND  ───┤               │
+        └───────────────┘
+                              │
+                              ▼
+                            ESP32
 ```
 
-Estos correspondieron aproximadamente a:
-
-```text
-1.56 – 1.58 V
-```
-
-### 📷 Resultados en el Monitor Serial
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/14c6890b-0423-4d9d-9455-0617959c3217" width="650">
-</p>
-
-### ✅ ¿Qué se comprobó?
-
-Se comprobó que el ESP32 puede adquirir una señal analógica mediante su ADC, procesar varias mediciones y convertir el resultado digital a un valor de voltaje.
-
----
-
-# 2️⃣ ACTIVIDAD 2 — Conexión del ESP32 a una red Wi-Fi
-
-## 🎯 Objetivo
-
-Crear una red Wi-Fi utilizando un smartphone como **Hotspot**, conectar el ESP32 a dicha red y comprobar la conexión mediante la dirección IP asignada al dispositivo.
-
----
-
-## 🧰 ¿Qué se necesitó?
-
-- ESP32 Dev Kit.
-- Smartphone con función Hotspot.
-- Cable USB.
-- Computadora.
-- Arduino IDE.
-
-> En esta actividad no fue necesario utilizar sensores externos.
-
----
-
-## 📡 Configuración de la conexión
-
-Primero se configuró un smartphone como punto de acceso Wi-Fi.
-
-Posteriormente, el ESP32 fue programado para conectarse a dicha red utilizando su módulo Wi-Fi integrado.
-
-La conexión siguió el siguiente esquema:
-
-```text
-Smartphone
-    │
-    │ Hotspot Wi-Fi
-    ▼
-  ESP32
-    │
-    ▼
-Dirección IP
-```
+Al girar el potenciómetro se modifica el voltaje de salida. Este cambio es detectado por el convertidor analógico-digital de la ESP32.
 
 ---
 
 ## 💻 ¿Cómo se trabajó el código?
 
-Para utilizar la conectividad inalámbrica del ESP32 se incorporó la biblioteca:
+El programa comienza definiendo el pin utilizado para la lectura y las variables necesarias para calcular un promedio:
 
 ```cpp
-#include <WiFi.h>
+int potPin = 34;
+int contador = 0;
+float suma = 0;
 ```
 
-Luego se configuraron las credenciales correspondientes a la red:
+La ESP32 realiza múltiples lecturas analógicas.
 
-```cpp
-const char* ssid = "NOMBRE_DE_LA_RED";
-const char* password = "********";
-```
+Posteriormente, estas lecturas son acumuladas para obtener un valor promedio.
 
-> 🔐 **Nota:** las credenciales reales se mantienen ocultas para evitar publicar contraseñas en GitHub.
-
-El ESP32 se configuró para conectarse a la red y posteriormente se inició la conexión utilizando:
-
-```cpp
-WiFi.begin(ssid, password);
-```
-
-El programa comprueba el estado de la conexión mediante:
-
-```cpp
-WiFi.status()
-```
-
-Mientras el ESP32 no se encuentre conectado, el programa continúa esperando.
-
-Una vez establecida la conexión, se utiliza:
-
-```cpp
-WiFi.localIP();
-```
-
-para obtener la dirección IP asignada al dispositivo.
-
----
-
-## 📊 Resultado obtenido
-
-El ESP32 consiguió conectarse correctamente al hotspot creado mediante el smartphone.
-
-El Monitor Serial mostró un mensaje indicando que la conexión fue exitosa.
-
-Además, se obtuvo la dirección IP:
+El procesamiento realizado fue:
 
 ```text
-172.20.10.9
+Lectura analógica
+       ↓
+Valor ADC
+       ↓
+Acumulación de muestras
+       ↓
+Promedio digital
+       ↓
+Conversión
+       ↓
+Voltaje equivalente
 ```
 
-### 📷 Evidencia de la conexión
+Para un ADC de 12 bits, el intervalo digital utilizado es:
 
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/fc11bd45-8023-40c7-a4f5-4882e043a501" width="650">
-</p>
+```text
+0 ───────────────────── 4095
+│                         │
+0 V                      3.3 V
+```
 
-### ✅ ¿Qué se comprobó?
+La relación utilizada conceptualmente para obtener el voltaje es:
 
-La obtención de una dirección IP permitió confirmar que el ESP32 se encontraba correctamente conectado a la red Wi-Fi.
-
-Esta conexión sería posteriormente necesaria para realizar actividades relacionadas con el envío y recepción de información mediante Internet.
+```text
+Voltaje = (Lectura ADC / 4095) × 3.3 V
+```
 
 ---
 
-# 3️⃣ ACTIVIDAD 3 — Envío y monitoreo de datos en la nube
+## ⚙️ Procedimiento
+
+1. Se colocó el potenciómetro en la protoboard.
+2. Se conectó la salida del potenciómetro al GPIO 34.
+3. Se conectaron alimentación y tierra.
+4. Se conectó la ESP32 a la computadora mediante USB.
+5. Se abrió Arduino IDE.
+6. Se cargó el programa.
+7. Se realizaron varias lecturas analógicas.
+8. Se calculó el promedio digital.
+9. Se convirtió el valor promedio a voltaje.
+10. Los resultados fueron visualizados mediante el monitor serial.
+
+---
+
+## 📊 Resultados
+
+Durante las pruebas se obtuvieron valores como los siguientes:
+
+| Promedio digital | Voltaje equivalente |
+|---:|---:|
+| 1942.20 | 1.565 V |
+| 1949.73 | 1.571 V |
+| 1936.07 | 1.560 V |
+| 1931.40 | 1.556 V |
+| 1944.27 | 1.567 V |
+| 1956.73 | 1.577 V |
+
+Los valores presentan pequeñas variaciones entre mediciones. El promedio permite reducir el efecto de variaciones instantáneas y obtener una lectura más estable.
+
+---
+
+## 📸 Evidencias
+
+<p align="center">
+<img width="500" alt="Montaje del ejercicio 1" src="https://github.com/user-attachments/assets/f7692390-8595-47a7-a1e7-e07e893f9802" />
+</p>
+
+<p align="center">
+<b>Figura 1.</b> Montaje experimental del potenciómetro conectado a la ESP32.
+</p>
+
+<p align="center">
+<img width="900" alt="Resultados del ejercicio 1" src="https://github.com/user-attachments/assets/1c2c74c2-22b7-49b6-9bb0-faf53d14ec71" />
+</p>
+
+<p align="center">
+<b>Figura 2.</b> Lecturas obtenidas mediante el monitor serial.
+</p>
+
+---
+
+# 📡 Ejercicio 2 – Conexión de la ESP32 a Wi-Fi
 
 ## 🎯 Objetivo
 
-Adquirir la señal generada por un potenciómetro conectado al ESP32 y enviar la información mediante Wi-Fi para visualizarla utilizando una plataforma IoT.
+Configurar la ESP32 para conectarse correctamente a una red Wi-Fi y comprobar la conexión mediante la dirección IP asignada al dispositivo.
 
 ---
 
-## 🧰 ¿Qué se necesitó?
-
-### 🔧 Hardware
-
-- ESP32 Dev Kit.
-- Potenciómetro.
-- Protoboard.
-- Cables jumper.
-- Cable USB.
-
-### 💻 Software y servicios
-
-- Arduino IDE.
-- Conexión Wi-Fi.
-- Arduino IoT Cloud.
-- Navegador web.
-
----
-
-## 🔌 Explicación de las conexiones
-
-Para esta actividad se utilizó nuevamente el potenciómetro como dispositivo de entrada.
-
-El potenciómetro genera una señal analógica variable que es adquirida por el ESP32.
-
-El ESP32 procesa esta información y posteriormente utiliza su conexión Wi-Fi para transmitir el dato hacia la plataforma IoT.
-
-### 📷 ESP32 utilizado
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/181c4b81-4290-487f-bf2a-006bf6557a0f" width="350">
-</p>
-
----
-
-## ☁️ ¿Cómo se trabajó el código?
-
-Para establecer la comunicación con Arduino IoT Cloud se utilizaron las bibliotecas:
-
-```cpp
-#include <ArduinoIoTCloud.h>
-#include <Arduino_ConnectionHandler.h>
-```
-
-También fue necesario configurar la conexión Wi-Fi y los datos correspondientes al dispositivo registrado en Arduino IoT Cloud.
-
-Por seguridad, estos datos deben mantenerse ocultos en un repositorio público:
-
-```cpp
-const char SSID[] = "********";
-const char PASS[] = "********";
-
-const char DEVICE_LOGIN_NAME[] = "********";
-const char DEVICE_KEY[] = "********";
-```
-
-> ⚠️ **Importante:** las contraseñas, tokens y claves de acceso no deben publicarse directamente en GitHub.
-
----
-
-## 📡 Variable enviada
-
-Se utilizó una variable para almacenar el voltaje:
-
-```cpp
-float voltaje;
-```
-
-Esta variable contiene el valor procesado que posteriormente es enviado hacia la plataforma IoT.
-
-El proceso realizado puede representarse de la siguiente manera:
-
-```text
-Potenciómetro
-     │
-     ▼
-Lectura ADC
-     │
-     ▼
-Promedio de mediciones
-     │
-     ▼
-Conversión a voltaje
-     │
-     ▼
-   ESP32
-     │
-     ▼
-   Wi-Fi
-     │
-     ▼
-Arduino IoT Cloud
-     │
-     ▼
- Dashboard
-```
-
----
-
-## 🖥️ Comprobación mediante el Monitor Serial
-
-Antes de visualizar los datos en la nube, el Monitor Serial permitió comprobar que el ESP32 estaba realizando correctamente las mediciones y procesando los valores.
-
-### 📷 Lectura y envío de datos
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/89ffab0a-3316-4258-986a-717a43530288" width="650">
-</p>
-
----
-
-## 📊 Visualización mediante Dashboard
-
-Dentro de Arduino IoT Cloud se configuró un dashboard denominado:
-
-### `Monitoreo Potenciometro`
-
-Este dashboard permitió visualizar el valor enviado por el ESP32.
-
-Durante una de las pruebas se registró un valor de:
-
-```text
-0.674
-```
-
-### 📷 Dashboard de monitoreo
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/7c796511-e5a9-4108-8312-393f940dfc80" width="650">
-</p>
-
----
-
-## ✅ Resultado obtenido
-
-Se consiguió establecer comunicación entre el ESP32 y la plataforma IoT.
-
-El sistema permitió:
-
-1. Obtener la señal del potenciómetro.
-2. Procesar la lectura mediante el ESP32.
-3. Convertir la lectura a voltaje.
-4. Conectar el ESP32 a Internet mediante Wi-Fi.
-5. Enviar el dato hacia la plataforma IoT.
-6. Visualizar el resultado mediante un dashboard.
-
-De esta manera se integraron diferentes etapas fundamentales de un sistema IoT:
-
-```text
-Sensor → ESP32 → Wi-Fi → Nube → Usuario
-```
-
----
-
-# ☁️ ACTIVIDAD 4 — MONITOREO DE TEMPERATURA CON ARDUINO IoT CLOUD
-
-## 🎯 Objetivo
-Conectar el ESP32 a Arduino IoT Cloud para obtener una medición de
-temperatura y transmitirla mediante Internet.
-
----
-
-## 🧰 Materiales
+## 🧰 Materiales y recursos
 
 - ESP32
-- Sensor de temperatura utilizado en la práctica
-- Jumpers
 - Cable USB
 - Computadora
-- Arduino IDE / Arduino Cloud
-- Conexión Wi-Fi
+- Arduino IDE
+- Red Wi-Fi o punto de acceso móvil
+- Nombre de la red
+- Contraseña de la red
 
 ---
 
-## ☁️ Funcionamiento
+## 🔌 Conexión
 
-En este ejercicio se implementó un sistema IoT en el cual el ESP32
-realiza la lectura de temperatura y posteriormente se conecta mediante
-Wi-Fi a Arduino IoT Cloud.
+En este ejercicio no fue necesario utilizar un sensor externo.
 
-El funcionamiento general fue:
+La arquitectura utilizada fue:
 
-Sensor de temperatura
-        ↓
-      ESP32
-        ↓
-      Wi-Fi
-        ↓
- Arduino IoT Cloud
-        ↓
-Visualización de datos
-
----
-
-## 1️⃣ Configuración de Arduino IoT Cloud
-
-Para establecer la comunicación con Arduino IoT Cloud se utilizaron
-las librerías:
-
-```cpp
-#include <ArduinoIoTCloud.h>
-#include <Arduino_ConnectionHandler.h>
-
-# 5️⃣ ACTIVIDAD 5 — Control de un LED mediante una interfaz web
-
-## 🎯 Objetivo
-
-Conectar un LED a un pin digital del ESP32 y controlar su encendido y apagado mediante una interfaz web accesible desde un dispositivo conectado a la misma red.
-
----
-
-## 🧰 ¿Qué se necesitó?
-
-- ESP32 Dev Kit.
-- LED.
-- Resistencia limitadora de corriente.
-- Protoboard.
-- Cables jumper.
-- Cable USB.
-- Smartphone utilizado como Hotspot.
-- Computadora.
-- Arduino IDE.
-- Navegador web.
-
----
-
-## 🔌 Explicación de las conexiones
-
-El ESP32 se instaló sobre la protoboard junto con el circuito correspondiente al LED.
-
-En el programa se definió:
-
-```cpp
-const int ledPin = 2;
+```text
+┌──────────┐          USB          ┌──────────────┐
+│  ESP32   │◄────────────────────►│ Computadora  │
+└────┬─────┘                       └──────────────┘
+     │
+     │ Wi-Fi
+     ▼
+┌───────────────┐
+│ Router /      │
+│ Hotspot móvil │
+└───────────────┘
 ```
 
-Por lo tanto, se utilizó el **GPIO 2** como salida digital para controlar el estado del LED.
+La ESP32 posee conectividad Wi-Fi integrada, por lo que no fue necesario utilizar un módulo externo.
 
-También se utilizó una resistencia en el circuito para limitar la corriente que circula por el LED.
-
-El ESP32 fue alimentado y programado mediante USB, mientras que su conexión Wi-Fi permitió recibir las instrucciones enviadas desde el navegador.
-
-### 📷 Montaje del circuito
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/df994350-ed88-403a-a9e2-2c3860b0621a" width="550">
-</p>
 ---
 
 ## 💻 ¿Cómo se trabajó el código?
 
-El programa se dividió principalmente en cuatro etapas:
-
-### 1. 📡 Conexión Wi-Fi
-
-Primero se incorporó:
+Primero se utilizó la librería:
 
 ```cpp
 #include <WiFi.h>
 ```
 
-Las credenciales fueron definidas mediante:
+Esta librería permite acceder a las funciones Wi-Fi de la ESP32.
+
+Posteriormente se definieron las credenciales de la red.
+
+> 🔐 **Nota:** por seguridad, las credenciales reales no deben publicarse en un repositorio.
 
 ```cpp
-const char* ssid = "NOMBRE_DE_LA_RED";
-const char* password = "********";
+const char* ssid = "TU_RED_WIFI";
+const char* password = "TU_PASSWORD";
 ```
 
-Posteriormente, el ESP32 inicia la conexión:
+La ESP32 se configuró en modo estación:
+
+```cpp
+WiFi.mode(WIFI_STA);
+```
+
+Posteriormente se inició la conexión:
 
 ```cpp
 WiFi.begin(ssid, password);
 ```
 
----
-
-### 2. 💡 Configuración del LED
-
-El GPIO 2 se configuró como salida:
+Mientras la conexión no estuviera establecida, el programa comprobaba continuamente su estado:
 
 ```cpp
-pinMode(ledPin, OUTPUT);
+while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+}
 ```
 
-Al iniciar el programa, el LED permanece apagado:
-
-```cpp
-digitalWrite(ledPin, LOW);
-```
-
----
-
-### 3. 🌐 Creación del servidor web
-
-Se creó un servidor web utilizando el puerto 80:
-
-```cpp
-WiFiServer server(80);
-```
-
-Después de establecer la conexión Wi-Fi, el ESP32 muestra su dirección IP mediante:
+Cuando la conexión fue exitosa se obtuvo la dirección IP asignada:
 
 ```cpp
 Serial.println(WiFi.localIP());
 ```
 
-Esta dirección IP se introduce posteriormente en el navegador de un dispositivo conectado a la misma red.
+---
+
+## ⚙️ Procedimiento
+
+```text
+Encendido de ESP32
+        ↓
+Inicialización Wi-Fi
+        ↓
+Búsqueda de la red
+        ↓
+Ingreso de credenciales
+        ↓
+Autenticación
+        ↓
+Conexión exitosa
+        ↓
+Asignación de dirección IP
+```
+
+1. Se conectó la ESP32 a la computadora.
+2. Se abrió Arduino IDE.
+3. Se configuraron las credenciales Wi-Fi.
+4. Se compiló el programa.
+5. Se cargó el programa en la ESP32.
+6. La ESP32 buscó la red configurada.
+7. Se realizó la autenticación.
+8. Se estableció la conexión.
+9. Se obtuvo la dirección IP.
+10. El resultado fue observado en el monitor serial.
 
 ---
 
-### 4. 🖥️ Creación de la interfaz
+## 📊 Resultado
 
-Dentro del código se generó una página HTML sencilla.
+El monitor serial confirmó que la ESP32 logró conectarse correctamente a la red y recibió una dirección IP.
 
-La interfaz presenta dos botones:
+Esto permitió comprobar la capacidad de comunicación inalámbrica del dispositivo y preparó la ESP32 para las siguientes actividades IoT.
+
+---
+
+## 📸 Evidencia
+
+<p align="center">
+<img width="950" alt="Conexión WiFi ESP32" src="https://github.com/user-attachments/assets/e5cfa29f-886e-4ec5-9785-d19279bbc5f9" />
+</p>
+
+<p align="center">
+<b>Figura 3.</b> Conexión exitosa de la ESP32 a una red Wi-Fi.
+</p>
+
+---
+
+# ☁️ Ejercicio 3 – Arduino IoT Cloud
+
+## 🎯 Objetivo
+
+Integrar la ESP32 con una plataforma IoT para transmitir una variable obtenida físicamente y visualizarla mediante Internet.
+
+---
+
+## 🧰 Materiales y recursos
+
+- ESP32
+- Potenciómetro
+- Protoboard
+- Cables jumper
+- Cable USB
+- Arduino IDE
+- Conexión Wi-Fi
+- Arduino IoT Cloud
+
+---
+
+## 🔌 Conexiones
+
+Se utilizó nuevamente un potenciómetro como entrada analógica.
+
+La arquitectura general fue:
 
 ```text
-🟢 ENCENDER LED
-
-🔴 APAGAR LED
-```
-
-El botón para encender genera una solicitud:
-
-```text
-/ON
-```
-
-Mientras que el botón para apagar utiliza:
-
-```text
-/OFF
+┌────────────────┐
+│ Potenciómetro  │
+└───────┬────────┘
+        │
+        │ Señal analógica
+        ▼
+┌────────────────┐
+│     ESP32      │
+│      ADC       │
+└───────┬────────┘
+        │
+        │ Wi-Fi
+        ▼
+┌────────────────┐
+│    Internet    │
+└───────┬────────┘
+        │
+        ▼
+┌────────────────────┐
+│ Arduino IoT Cloud  │
+└────────────────────┘
 ```
 
 ---
 
-## ⚙️ Control del LED
+## 💻 ¿Cómo se trabajó el código?
 
-Cuando el ESP32 detecta la solicitud:
+Para establecer la comunicación con Arduino IoT Cloud se utilizaron las librerías:
+
+```cpp
+#include <ArduinoIoTCloud.h>
+#include <Arduino_ConnectionHandler.h>
+```
+
+También se definió una variable para almacenar el voltaje:
+
+```cpp
+float voltaje;
+```
+
+El funcionamiento del programa fue:
+
+```text
+Lectura del potenciómetro
+          ↓
+       Valor ADC
+          ↓
+ Cálculo del promedio
+          ↓
+Conversión a voltaje
+          ↓
+ Variable "voltaje"
+          ↓
+     Conexión Wi-Fi
+          ↓
+  Arduino IoT Cloud
+```
+
+De esta manera, un dato obtenido físicamente por la ESP32 pudo ser enviado a través de Internet.
+
+---
+
+## ⚙️ Procedimiento
+
+1. Se conectó el potenciómetro a la ESP32.
+2. Se configuró la conexión Wi-Fi.
+3. Se configuró el dispositivo en Arduino IoT Cloud.
+4. Se creó la variable correspondiente al voltaje.
+5. Se vinculó la variable con el programa.
+6. Se cargó el código en la ESP32.
+7. Se realizaron las lecturas analógicas.
+8. Se calculó el voltaje.
+9. La ESP32 transmitió el valor hacia la nube.
+10. Se verificaron los resultados.
+
+---
+
+## 📊 Resultado
+
+Durante la prueba se observaron registros como:
+
+```text
+Promedio Digital: 4095.00
+Voltaje en la Nube: 3.300 V
+```
+
+Cuando el ADC alcanzó su valor máximo, el voltaje calculado también alcanzó aproximadamente el máximo utilizado en la conversión.
+
+Esto permitió comprobar la comunicación:
+
+```text
+Mundo físico → ESP32 → Internet → Plataforma IoT
+```
+
+---
+
+## 📸 Evidencias
+
+<p align="center">
+<img width="430" alt="ESP32 ejercicio 3" src="https://github.com/user-attachments/assets/204e30b3-dea7-45df-83ae-5d561f6c2e1a" />
+</p>
+
+<p align="center">
+<b>Figura 4.</b> Montaje utilizado para la adquisición de la señal.
+</p>
+
+<p align="center">
+<img width="950" alt="Arduino IoT Cloud ejercicio 3" src="https://github.com/user-attachments/assets/18337ea3-10b3-425b-9173-233a8568fcab" />
+</p>
+
+<p align="center">
+<b>Figura 5.</b> Programa y resultados obtenidos durante la comunicación con Arduino IoT Cloud.
+</p>
+
+---
+
+# 🌡️ Ejercicio 4 – Medición de temperatura
+
+## 🎯 Objetivo
+
+Obtener mediciones de temperatura mediante la ESP32 y procesar los datos para expresarlos en grados Celsius.
+
+---
+
+## 🧰 Materiales y recursos
+
+- ESP32
+- Sensor utilizado para la medición de temperatura
+- Cables jumper
+- Cable USB
+- Computadora
+- Arduino IDE
+- Conexión requerida para la plataforma utilizada
+
+---
+
+## 🔌 Funcionamiento
+
+El sensor adquiere información relacionada con la temperatura del entorno.
+
+La ESP32 recibe esta información y la procesa para obtener una lectura expresada en grados Celsius.
+
+```text
+🌡️ Temperatura ambiental
+           ↓
+        Sensor
+           ↓
+         ESP32
+           ↓
+  Adquisición de datos
+           ↓
+     Procesamiento
+           ↓
+  Temperatura en °C
+           ↓
+Visualización del resultado
+```
+
+---
+
+## 💻 ¿Cómo se trabajó el código?
+
+El programa fue estructurado para realizar de forma repetitiva las siguientes operaciones:
+
+```text
+1. Inicializar el sistema
+           ↓
+2. Leer el sensor
+           ↓
+3. Procesar la señal
+           ↓
+4. Obtener la temperatura
+           ↓
+5. Mostrar el valor en °C
+           ↓
+6. Realizar una nueva lectura
+```
+
+La repetición continua permite observar cómo cambia la temperatura con el tiempo.
+
+---
+
+## ⚙️ Procedimiento
+
+1. Se preparó la ESP32.
+2. Se realizaron las conexiones necesarias.
+3. Se cargó el programa mediante Arduino IDE.
+4. Se inicializó el sistema.
+5. Se adquirieron los datos del sensor.
+6. La ESP32 procesó las mediciones.
+7. Los valores fueron convertidos a temperatura.
+8. Se visualizaron los resultados.
+
+---
+
+## 📊 Resultados
+
+Durante la prueba se observaron mediciones cercanas a:
+
+```text
+27 °C – 28 °C
+```
+
+Las lecturas consecutivas presentaron pequeñas variaciones, correspondientes a los cambios detectados durante la adquisición.
+
+---
+
+## 📸 Evidencias
+
+<p align="center">
+<img width="850" alt="Medición de temperatura" src="https://github.com/user-attachments/assets/d57e5881-2892-4e8b-9931-1ce1d8bed4ca" />
+</p>
+
+<p align="center">
+<b>Figura 6.</b> Obtención de valores de temperatura mediante la ESP32.
+</p>
+
+<p align="center">
+<img width="430" alt="Montaje temperatura" src="https://github.com/user-attachments/assets/d6536bf7-5134-49ab-81fa-037ab0c66239" />
+</p>
+
+<p align="center">
+<b>Figura 7.</b> Evidencia experimental del sistema utilizado.
+</p>
+
+---
+
+# 💡 Ejercicio 5 – Control remoto de un LED
+
+## 🎯 Objetivo
+
+Implementar un servidor web utilizando la ESP32 para controlar remotamente el encendido y apagado de un LED mediante una interfaz accesible desde un navegador.
+
+---
+
+## 🧰 Materiales utilizados
+
+- ESP32
+- LED
+- Resistencia
+- Protoboard
+- Cables jumper
+- Cable USB
+- Computadora
+- Arduino IDE
+- Red Wi-Fi
+- Navegador web
+
+---
+
+## 🔌 Explicación de las conexiones
+
+El LED funciona como un actuador digital.
+
+En el código se definió:
+
+```cpp
+const int ledPin = 2;
+```
+
+Por lo tanto, el control lógico se realizó mediante el **GPIO 2**.
+
+La conexión general fue:
+
+```text
+ESP32
+GPIO 2
+   │
+   ▼
+Resistencia
+   │
+   ▼
+  LED
+   │
+   ▼
+  GND
+```
+
+La resistencia se utiliza para limitar la corriente que circula a través del LED.
+
+---
+
+## 🌐 Arquitectura del sistema
+
+En esta actividad la ESP32 no solamente se conecta a la red, sino que también funciona como un pequeño servidor web.
+
+```text
+┌─────────────────┐
+│ Navegador web   │
+│ PC / Teléfono   │
+└────────┬────────┘
+         │
+         │ Wi-Fi / HTTP
+         ▼
+┌─────────────────┐
+│      ESP32      │
+│  Servidor Web   │
+└────────┬────────┘
+         │
+         │ GPIO 2
+         ▼
+┌─────────────────┐
+│       LED       │
+└─────────────────┘
+```
+
+---
+
+## 💻 ¿Cómo se trabajó el código?
+
+Primero se incluyó:
+
+```cpp
+#include <WiFi.h>
+```
+
+Luego se configuró el servidor web:
+
+```cpp
+WiFiServer server(80);
+```
+
+El puerto **80** corresponde al puerto comúnmente utilizado para comunicación HTTP.
+
+El LED fue configurado como salida:
+
+```cpp
+const int ledPin = 2;
+
+pinMode(ledPin, OUTPUT);
+digitalWrite(ledPin, LOW);
+```
+
+Al iniciar el sistema, el LED permanece apagado.
+
+---
+
+### 📡 Conexión Wi-Fi
+
+El programa establece la conexión mediante:
+
+```cpp
+WiFi.begin(ssid, password);
+```
+
+Después espera hasta obtener una conexión:
+
+```cpp
+while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+}
+```
+
+Finalmente muestra la dirección IP:
+
+```cpp
+Serial.println(WiFi.localIP());
+```
+
+Esta dirección IP es utilizada desde el navegador para ingresar al servidor de la ESP32.
+
+---
+
+### 🌐 Interfaz web
+
+La ESP32 genera una página HTML con dos botones:
+
+```text
+┌─────────────────────────────┐
+│   Control de LED - ESP32    │
+│                             │
+│     [ ENCENDER LED ]        │
+│                             │
+│      [ APAGAR LED ]         │
+└─────────────────────────────┘
+```
+
+Los botones generan solicitudes diferentes.
+
+Para encender:
+
+```text
+GET /ON
+```
+
+Para apagar:
+
+```text
+GET /OFF
+```
+
+---
+
+### 💡 Control del LED
+
+El programa analiza la solicitud recibida.
+
+Para encender:
 
 ```cpp
 if (currentLine.endsWith("GET /ON")) {
@@ -629,9 +808,7 @@ if (currentLine.endsWith("GET /ON")) {
 }
 ```
 
-el GPIO 2 cambia a estado alto y el LED se enciende.
-
-Para apagarlo:
+Para apagar:
 
 ```cpp
 if (currentLine.endsWith("GET /OFF")) {
@@ -639,158 +816,423 @@ if (currentLine.endsWith("GET /OFF")) {
 }
 ```
 
-el GPIO cambia a estado bajo y el LED se apaga.
-
----
-
-## 🌐 Interfaz web desarrollada
-
-Al ingresar la dirección IP del ESP32 desde el navegador se mostró la interfaz:
-
-### `Control de LED - ESP32`
-
-La página presenta un botón verde para encender el LED y un botón rojo para apagarlo.
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/5ca924a9-773f-4f89-9bb0-45ac8be181aa" width="650">
-</p>
-
----
-
-## 💡 Comprobación física
-
-### 🟢 LED encendido
-
-Al seleccionar **ENCENDER LED**, el navegador envía la solicitud correspondiente al ESP32.
-
-El GPIO 2 cambia a estado alto y el LED se enciende.
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/3b4175da-8448-4cc0-988c-1a6f130e3d2d" width="350">
-</p>
-
-### ⚫ LED apagado
-
-Al seleccionar **APAGAR LED**, el GPIO regresa al estado bajo y el LED se apaga.
-
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/7e5dab31-9904-4e30-b98a-350beddc4293" width="350">
-</p>
-
----
-
-## 🔄 Flujo de funcionamiento
+Por lo tanto:
 
 ```text
-        Usuario
-           │
-           ▼
-     Navegador web
-           │
-           ▼
-    Botón ON / OFF
-           │
-           ▼
-    Solicitud HTTP
-           │
-           ▼
-         ESP32
-           │
-           ▼
-        GPIO 2
-           │
-           ▼
-          LED
+Botón ENCENDER
+      ↓
+GET /ON
+      ↓
+ESP32
+      ↓
+GPIO = HIGH
+      ↓
+💡 LED ENCENDIDO
+```
+
+y:
+
+```text
+Botón APAGAR
+      ↓
+GET /OFF
+      ↓
+ESP32
+      ↓
+GPIO = LOW
+      ↓
+⚫ LED APAGADO
 ```
 
 ---
 
-## ✅ Resultado obtenido
+## 🧾 Código utilizado
 
-Se logró controlar correctamente el estado físico del LED mediante una interfaz web.
+> 🔐 Las credenciales originales fueron reemplazadas por valores genéricos para evitar publicar información privada.
 
-El ESP32 funcionó simultáneamente como:
+```cpp
+#include <WiFi.h>
 
-- Dispositivo conectado a una red Wi-Fi.
-- Servidor web.
-- Receptor de solicitudes HTTP.
-- Controlador de una salida digital.
+// Credenciales Wi-Fi
+const char* ssid = "TU_RED_WIFI";
+const char* password = "TU_PASSWORD";
 
-De esta manera, se comprobó una aplicación básica de control remoto utilizando el ESP32.
+// Servidor web en puerto 80
+WiFiServer server(80);
 
----
+// Pin digital del LED
+const int ledPin = 2;
 
-# 📊 Resumen de las actividades
+void setup() {
 
-| N.° | Actividad | Concepto trabajado | Resultado |
-|:---:|:---|:---|:---|
-| **01** | Potenciómetro | Adquisición de datos | Lectura ADC y conversión a voltaje |
-| **02** | Conexión Wi-Fi | Comunicación | ESP32 conectado y con IP asignada |
-| **03** | Plataforma IoT | Monitoreo remoto | Visualización del potenciómetro en la nube |
-| **04** | Sensor + IoT | Adquisición y nube | 🚧 Pendiente |
-| **05** | Control de LED | Control remoto | Encendido y apagado mediante navegador |
+  Serial.begin(115200);
 
----
+  pinMode(ledPin, OUTPUT);
+  digitalWrite(ledPin, LOW);
 
-# 🔄 Integración de las actividades
+  Serial.print("Conectando a la red ");
+  Serial.println(ssid);
 
-A lo largo del taller se trabajaron diferentes etapas relacionadas con un sistema IoT:
+  WiFi.begin(ssid, password);
 
-```text
-┌──────────────────────┐
-│  Adquisición de datos│
-│     Potenciómetro    │
-└──────────┬───────────┘
-           │
-           ▼
-┌──────────────────────┐
-│        ESP32         │
-│ Procesamiento / ADC  │
-└──────────┬───────────┘
-           │
-           ▼
-┌──────────────────────┐
-│        Wi-Fi         │
-│    Comunicación      │
-└──────────┬───────────┘
-           │
-           ▼
-┌──────────────────────┐
-│    Plataforma IoT    │
-│ Monitoreo de datos   │
-└──────────┬───────────┘
-           │
-           ▼
-┌──────────────────────┐
-│    Control remoto    │
-│      LED / Web       │
-└──────────────────────┘
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print(".");
+  }
+
+  Serial.println("");
+  Serial.println("WiFi conectado");
+
+  Serial.print("Direccion IP para controlar el LED: ");
+  Serial.println(WiFi.localIP());
+
+  server.begin();
+}
+
+void loop() {
+
+  WiFiClient client = server.available();
+
+  if (client) {
+
+    String currentLine = "";
+
+    while (client.connected()) {
+
+      if (client.available()) {
+
+        char c = client.read();
+
+        if (c == '\n') {
+
+          if (currentLine.length() == 0) {
+
+            client.println("HTTP/1.1 200 OK");
+            client.println("Content-type:text/html");
+            client.println();
+
+            client.print("<html>");
+            client.print("<head>");
+            client.print("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">");
+
+            client.print("<style>");
+            client.print("body{font-family:Arial;text-align:center;margin-top:50px;}");
+            client.print(".btn{background-color:#4CAF50;color:white;padding:15px 32px;font-size:20px;text-decoration:none;border-radius:8px;}");
+            client.print(".btn-off{background-color:#f44336;}");
+            client.print("</style>");
+
+            client.print("</head>");
+
+            client.print("<body>");
+
+            client.print("<h1>Control de LED - ESP32</h1>");
+
+            client.print("<p>");
+            client.print("<a href=\"/ON\">");
+            client.print("<button class=\"btn\">ENCENDER LED</button>");
+            client.print("</a>");
+            client.print("</p>");
+
+            client.print("<p>");
+            client.print("<a href=\"/OFF\">");
+            client.print("<button class=\"btn btn-off\">APAGAR LED</button>");
+            client.print("</a>");
+            client.print("</p>");
+
+            client.print("</body>");
+            client.print("</html>");
+
+            client.println();
+
+            break;
+
+          } else {
+
+            currentLine = "";
+          }
+
+        } else if (c != '\r') {
+
+          currentLine += c;
+        }
+
+        if (currentLine.endsWith("GET /ON")) {
+          digitalWrite(ledPin, HIGH);
+        }
+
+        if (currentLine.endsWith("GET /OFF")) {
+          digitalWrite(ledPin, LOW);
+        }
+      }
+    }
+
+    client.stop();
+  }
+}
 ```
 
 ---
 
-# 📝 Conclusiones
+## ⚙️ Procedimiento
 
-1. Se logró utilizar el **ESP32** para adquirir y procesar señales analógicas, así como para controlar dispositivos mediante sus salidas digitales.
-
-2. La lectura del potenciómetro permitió trabajar con el **ADC del ESP32**, realizando varias mediciones y convirtiendo posteriormente los valores digitales obtenidos a voltaje.
-
-3. La conexión mediante **Wi-Fi** permitió ampliar las capacidades del ESP32, pasando de un sistema local a un dispositivo capaz de comunicarse mediante una red.
-
-4. El uso de una **plataforma IoT** permitió enviar y visualizar de manera remota la información procesada por el ESP32.
-
-5. Finalmente, mediante la implementación de un **servidor web**, fue posible enviar instrucciones desde un navegador hacia el ESP32 y controlar físicamente el encendido y apagado de un LED.
-
-6. Las actividades realizadas permitieron integrar conceptos fundamentales de IoT como **adquisición de datos, procesamiento, conectividad, monitoreo y control remoto**.
+1. Se montó la ESP32 en la protoboard.
+2. Se conectó el LED.
+3. Se agregó la resistencia correspondiente.
+4. Se conectó el LED al GPIO configurado.
+5. Se configuró la red Wi-Fi.
+6. Se cargó el programa.
+7. La ESP32 se conectó a la red.
+8. Se obtuvo la dirección IP mediante el monitor serial.
+9. Se ingresó la dirección IP desde un navegador.
+10. Se abrió la interfaz web.
+11. Se presionó **ENCENDER LED**.
+12. La ESP32 recibió `/ON`.
+13. El LED se encendió.
+14. Se presionó **APAGAR LED**.
+15. La ESP32 recibió `/OFF`.
+16. El LED se apagó.
 
 ---
 
-<div align="center">
+## 📸 Evidencias
 
-## 🌐 Internet of Things
+### LED apagado
 
-### Sensores • ESP32 • Wi-Fi • Nube • Control
+<p align="center">
+<img width="430" alt="LED apagado" src="https://github.com/user-attachments/assets/e398a353-8a5f-40eb-8e62-8b7b2de1a47a" />
+</p>
 
-**Taller de Internet de las Cosas**
+<p align="center">
+<b>Figura 8.</b> Estado del montaje con el LED apagado.
+</p>
 
-</div>
+### LED encendido
+
+<p align="center">
+<img width="430" alt="LED encendido" src="https://github.com/user-attachments/assets/c7840334-b03e-4f52-a085-53c79a4d6236" />
+</p>
+
+<p align="center">
+<b>Figura 9.</b> Activación del LED mediante la ESP32.
+</p>
+
+---
+
+# 🔄 Flujo general de funcionamiento
+
+Las cinco actividades permitieron avanzar progresivamente desde una lectura local hasta un sistema conectado.
+
+```text
+┌──────────────────────────────┐
+│ 1. ADQUISICIÓN DE DATOS      │
+│ Potenciómetro / Sensor       │
+└──────────────┬───────────────┘
+               ↓
+┌──────────────────────────────┐
+│ 2. ESP32                     │
+│ Lectura mediante ADC/GPIO    │
+└──────────────┬───────────────┘
+               ↓
+┌──────────────────────────────┐
+│ 3. PROCESAMIENTO             │
+│ Promedio / Conversión        │
+└──────────────┬───────────────┘
+               ↓
+┌──────────────────────────────┐
+│ 4. CONECTIVIDAD              │
+│ Wi-Fi                        │
+└──────────────┬───────────────┘
+               ↓
+┌──────────────────────────────┐
+│ 5. IoT                       │
+│ Arduino IoT Cloud / Web      │
+└──────────────┬───────────────┘
+               ↓
+┌──────────────────────────────┐
+│ 6. VISUALIZACIÓN / CONTROL   │
+│ Datos o control del LED      │
+└──────────────────────────────┘
+```
+
+---
+
+# 🧠 ¿Qué se aprendió durante estas actividades?
+
+Las actividades permitieron comprender que un sistema IoT no está compuesto únicamente por un sensor o una conexión a Internet.
+
+Existe una cadena completa de funcionamiento:
+
+```text
+ENTRADA
+   ↓
+ADQUISICIÓN
+   ↓
+PROCESAMIENTO
+   ↓
+COMUNICACIÓN
+   ↓
+PLATAFORMA
+   ↓
+VISUALIZACIÓN
+   ↓
+CONTROL
+```
+
+En los primeros ejercicios, la ESP32 trabajó principalmente como un sistema de adquisición.
+
+Posteriormente se incorporó Wi-Fi, permitiendo que el dispositivo se comunicara con otros sistemas.
+
+Finalmente, la comunicación dejó de ser únicamente de salida, ya que mediante el servidor web fue posible enviar una instrucción desde un usuario hacia la ESP32 para controlar físicamente un LED.
+
+---
+
+# 📊 Resumen de actividades
+
+| Ejercicio | Entrada | Procesamiento | Comunicación | Resultado |
+|---|---|---|---|---|
+| **1** | Potenciómetro | ADC + promedio + conversión | Serial | Voltaje |
+| **2** | Credenciales Wi-Fi | Gestión de conexión | Wi-Fi | Dirección IP |
+| **3** | Potenciómetro | ADC → voltaje | Wi-Fi + IoT Cloud | Variable en la nube |
+| **4** | Sensor de temperatura | Conversión a °C | Sistema digital | Temperatura |
+| **5** | Orden del usuario | Solicitud HTTP | Wi-Fi | Control del LED |
+
+---
+
+# 🔍 Diferencia entre monitoreo y control
+
+Durante el taller se trabajaron dos conceptos importantes.
+
+### 📊 Monitoreo
+
+Consiste en adquirir información del entorno y enviarla hacia el usuario.
+
+```text
+Sensor → ESP32 → Internet → Usuario
+```
+
+Ejemplos desarrollados:
+
+- Voltaje del potenciómetro.
+- Temperatura.
+- Variables transmitidas hacia una plataforma IoT.
+
+### 🎮 Control
+
+Consiste en que el usuario envíe una orden hacia el dispositivo.
+
+```text
+Usuario → Internet / Wi-Fi → ESP32 → Actuador
+```
+
+Ejemplo desarrollado:
+
+```text
+Usuario
+   ↓
+Botón web
+   ↓
+ESP32
+   ↓
+LED
+```
+
+La combinación de ambos conceptos permite desarrollar sistemas IoT más completos.
+
+---
+
+# 💡 Importancia de la ESP32 en el sistema
+
+La ESP32 funcionó como el elemento central de las actividades.
+
+Sus principales funciones fueron:
+
+- Adquirir señales analógicas.
+- Procesar información.
+- Convertir lecturas digitales a magnitudes físicas.
+- Conectarse a redes Wi-Fi.
+- Comunicarse con plataformas IoT.
+- Ejecutar un servidor web.
+- Recibir instrucciones remotas.
+- Controlar actuadores.
+
+Por lo tanto, puede representarse como:
+
+```text
+                 ┌───────────────┐
+Sensores ───────►│               │──────► Internet
+                 │     ESP32     │
+Usuario ◄───────►│               │──────► Actuadores
+                 └───────────────┘
+```
+
+---
+
+# ⚠️ Consideraciones importantes
+
+- Verificar siempre las conexiones antes de energizar el circuito.
+- Compartir una tierra común (`GND`) cuando sea necesario.
+- Verificar qué pines de la ESP32 permiten lectura analógica.
+- No superar los niveles de voltaje permitidos por las entradas de la ESP32.
+- Utilizar resistencias de protección con los LED.
+- Verificar el puerto serial correcto antes de cargar un programa.
+- Confirmar que la ESP32 y el dispositivo de control estén conectados a la red correspondiente cuando la actividad lo requiera.
+- No publicar contraseñas Wi-Fi, claves privadas o credenciales de servicios IoT en GitHub.
+
+---
+
+# 🔐 Seguridad de credenciales
+
+Durante las actividades se utilizaron credenciales de Wi-Fi y servicios IoT.
+
+Estas credenciales **no deben mantenerse visibles en un repositorio público**.
+
+En lugar de:
+
+```cpp
+const char* ssid = "RED_REAL";
+const char* password = "CONTRASEÑA_REAL";
+```
+
+se recomienda publicar:
+
+```cpp
+const char* ssid = "TU_RED_WIFI";
+const char* password = "TU_PASSWORD";
+```
+
+Lo mismo aplica para:
+
+- Device Keys
+- API Keys
+- Tokens
+- Contraseñas
+- Credenciales MQTT
+- Secret Keys de plataformas IoT
+
+---
+
+# ✅ Conclusiones
+
+1. Se logró utilizar la **ESP32 como plataforma principal para adquisición, procesamiento y comunicación de datos**, comprobando su utilidad en aplicaciones de Internet de las Cosas.
+
+2. La lectura del potenciómetro permitió comprender el funcionamiento del **convertidor analógico-digital (ADC)** y la relación entre un valor digital y su voltaje equivalente.
+
+3. La conexión Wi-Fi permitió ampliar el funcionamiento de la ESP32 desde un dispositivo local hacia un dispositivo capaz de comunicarse mediante una red.
+
+4. La integración con **Arduino IoT Cloud** permitió comprobar que una variable obtenida físicamente puede ser transmitida y utilizada dentro de una plataforma IoT.
+
+5. La adquisición de temperatura permitió aplicar el concepto de **sensor → procesamiento → información**, obteniendo una magnitud física interpretable por el usuario.
+
+6. El control del LED mediante un servidor web demostró que la comunicación también puede realizarse en sentido contrario, permitiendo que un usuario envíe instrucciones hacia la ESP32.
+
+7. En conjunto, las actividades permitieron comprender la estructura básica de un sistema IoT, integrando **sensores, ESP32, procesamiento, Wi-Fi, servicios de Internet, visualización y actuadores**.
+
+---
+
+<p align="center">
+  <b>🌐 ESP32 + Sensores + Wi-Fi + IoT = Sistema conectado</b>
+</p>
+
+<p align="center">
+  <i>Taller de Internet of Things (IoT)</i>
+</p>
