@@ -98,7 +98,7 @@ V = (ADC / 4095) × 3.3
 
 ~~~cpp
 float voltaje = promedioADC * 3.3 / 4095.0;
-~~~cpp
+~~~
 
 De esta manera, al modificar la posición del potenciómetro, también cambia el valor de voltaje calculado.
 
