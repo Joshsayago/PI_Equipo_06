@@ -262,16 +262,17 @@ Este ejercicio permitió aplicar el proceso de adquisición y transmisión de da
 
 ## Sensor utilizado
 
-**[Colocar aquí el nombre del sensor utilizado: LM35, LDR, etc.]**
+**- LM35**
 
 El sensor fue conectado al ESP32 y su señal fue adquirida mediante la entrada correspondiente.
+<img width="1200" height="1600" alt="image" src="https://github.com/user-attachments/assets/a96b3e52-f63a-48e0-95cf-9d533e3d083a" />
 
 ## Adquisición de datos
 
 El ESP32 realizó lecturas periódicas del sensor. Un fragmento representativo del proceso es:
 
 ~~~cpp
-int sensorValue = analogRead(sensorPin);
+int milivoltios = analogReadMilliVolts(LM35_PIN);
 ~~~
 
 El valor obtenido fue posteriormente enviado hacia las diferentes plataformas IoT.
@@ -282,29 +283,11 @@ Los datos obtenidos del sensor fueron asociados a una variable de Arduino Cloud 
 
 <div align="center">
 
-<img src="URL_IMAGEN_ARDUINO_CLOUD_EJ04" width="700">
+<img width="1329" height="714" alt="image" src="https://github.com/user-attachments/assets/6ad0ae9c-9ee9-428e-bc7f-a9a3aff9849a" />
+<img width="900" height="1600" alt="image" src="https://github.com/user-attachments/assets/4788113b-f5ef-4eb7-891f-dd2ba691d607" />
 
 </div>
 
-## ThingSpeak
-
-Los valores obtenidos fueron enviados a un canal de ThingSpeak y representados mediante una gráfica.
-
-<div align="center">
-
-<img src="URL_IMAGEN_THINGSPEAK_EJ04" width="700">
-
-</div>
-
-## Ubidots
-
-Los datos del sensor fueron almacenados en una variable de Ubidots y visualizados mediante un widget.
-
-<div align="center">
-
-<img src="URL_IMAGEN_UBIDOTS_EJ04" width="700">
-
-</div>
 
 ## Resultado
 
