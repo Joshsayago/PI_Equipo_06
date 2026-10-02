@@ -191,7 +191,7 @@ El esquema físico de conexión del potenciómetro al ESP32 se realizó de la si
 **Arquitectura de Datos:** A medida que giramos la perilla del potenciómetro, la terminal central varía su nivel de voltaje entre 0V y 3.3V. El ESP32 lee esta señal analógica, realiza el filtrado por software y la convierte en una variable global que se sincroniza automáticamente con el Dashboard en la Nube.
 
 <div align="center">
-  <img width="900" height="1600" alt="image" src="https://github.com/user-attachments/assets/479a0d45-e1ee-4423-a21a-5650d6787099" />
+  <img width="900" height="800" alt="image" src="https://github.com/user-attachments/assets/479a0d45-e1ee-4423-a21a-5650d6787099" />
   <p> <i>Figura 1: Conexión del potenciómetro al pin analógico GPIO34 del ESP32.</i></p>
 </div>
 
@@ -226,6 +226,54 @@ Una vez que los datos llegan a la Nube, se pueden vincular a diferentes elemento
 
   <p>
 </div>
+
+## Ejercicio 04: Monitoreo de Temperatura en Tiempo Real con Sensor LM35 y Plataformas IoT
+
+En este ejercicio se realiza el monitoreo de temperatura en tiempo real utilizando un sensor LM35 del kit Keyestudio conectado al microcontrolador ESP32. El dato de temperatura es procesado localmente mediante un filtrado por promediado de lecturas y posteriormente transmitido a plataformas de IoT en la nube como Arduino IoT Cloud, ThingSpeak y Ubidots.
+
+### Que se necesitó
+
+* Hardware: Placa de desarrollo ESP32, sensor de temperatura LM35 del kit Keyestudio, protoboard y cables de conexion.
+* Software y Plataformas Cloud: Entorno de desarrollo Arduino IDE, archivo de configuracion thingProperties.h, cuenta en Arduino IoT Cloud, ThingSpeak y Ubidots.
+
+---
+
+### Explicacion de las Conexiones y Funcionamiento del Sensor
+
+El sensor LM35 mide temperatura entregando un voltaje de salida proporcional a la escala Celsius, con una relacion de 10 milivoltios por cada grado Celsius (10 mV / °C). 
+
+Las conexiones entre el sensor y la placa ESP32 se realizaron de la siguiente manera:
+1. Pin VCC del LM35: Conectado al pin de alimentacion de la placa.
+2. Pin SIGNAL / OUT del LM35: Conectado al pin GPIO34 (canal ADC1_CH6) del ESP32.
+3. Pin GND del LM35: Conectado a la linea de tierra (GND) del ESP32.
+
+<div align="center">
+ <img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/c95a77ed-b3a9-4a4c-afe2-66a7afe93850" />
+</div>
+
+---
+
+###  Como se trabajo el codigo y la integracion Cloud
+
+El programa realiza el procesamiento de la senal del sensor y gestiona la transmision de datos a la nube mediante los siguientes pasos:
+
+1. Lectura directa en milivoltios: Se utiliza la funcion analogReadMilliVolts en el pin GPIO34 para obtener la lectura directamente en milivoltios.
+2. Muestreo y acumulacion: Se toman 15 lecturas consecutivas con un intervalo de 100 milisegundos entre cada una, acumulando los valores en milivoltios.
+3. Promediado y conversion a grados Celsius: Una vez acumuladas las 15 muestras, se calcula el promedio dividiendo la suma entre 15.0. El resultado en milivoltios se divide entre 10.0 para obtener el valor equivalente en grados Celsius.
+4. Sincronizacion con la nube: La funcion ArduinoCloud.update() se ejecuta continuamente en el bucle principal para mantener la conexion activa y transmitir la variable de temperatura actualizada hacia el dashboard en tiempo real.
+
+---
+
+### 4. Visualizacion en las Plataformas IoT (Dashboards)
+
+
+
+<div align="center">
+ <img width="900" height="1600" alt="image" src="https://github.com/user-attachments/assets/636d4177-4848-436c-afd0-c2c56cb8ed6e" />
+
+</div>
+
+
 
 ## Ejercicio 05: Control de LED vía Interfaz Web (ESP32)
 
