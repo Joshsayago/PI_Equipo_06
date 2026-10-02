@@ -73,15 +73,14 @@ void loop() {
 <p align="center">
 <img width="800" height="458" alt="image" src="https://github.com/user-attachments/assets/4a4922ba-8a73-47f1-9a97-446730992be6" />
 </p>
+
 ## Ejercicio 02: Conexión a Red WiFi (Smartphone Hotspot)
 
-Para que un dispositivo sea considerado parte del "Internet de las Cosas", necesita, por definición, estar conectado a una red. En este ejercicio configuramos el ESP32 para que se conecte a un punto de acceso inalámbrico (en este caso, un Hotspot o zona WiFi compartida desde un Smartphone) y verifique su conexión obteniendo una **Dirección IP local**.
+Para que un dispositivo sea considerado parte del "Internet de las Cosas", necesita, por definición, estar conectado a una red. Se configura el ESP32 para que se conecte a un punto de acceso inalámbrico (un Hotspot de un Smartphone) y verifique su conexión obteniendo una **Dirección IP local**.
 
-### ¿Qué se necesitó para llevarlo a cabo?
-
-Para este ejercicio práctico los requerimientos fueron mínimos en cuanto a hardware, pero muy importantes en configuración:
+### ¿Qué se necesitó?
 * **Hardware:**
-  * Placa de desarrollo ESP32.
+  * ESP32.
   * Cable USB para programación y alimentación.
 * **Software / Conectividad:**
   * Entorno de desarrollo Arduino IDE.
@@ -89,46 +88,42 @@ Para este ejercicio práctico los requerimientos fueron mínimos en cuanto a har
 
 ### Configuración del Hotspot
 
-Antes de subir el código, fue necesario preparar el teléfono móvil:
 1. Activar la opción de compartir internet en el Smartphone.
 2. Definir un **Nombre de Red (SSID)** reconocible (ej. *"iPhone de Diego"*).
 3. Establecer una **Contraseña** de seguridad (ej. *"diego1234567"*).
-*(Nota: Es vital que las credenciales en el código coincidan exactamente con las del teléfono, respetando mayúsculas, minúsculas y espacios).*
+Además, las credenciales en el código tienen que coincidir exactamente con las del teléfono, respetando mayúsculas, minúsculas y espacios.
 
 ### ¿Cómo se trabajó el código?
 
-El código utiliza la librería estándar `<WiFi.h>` del ESP32, la cual facilita enormemente la gestión de redes. La lógica se divide en las siguientes etapas clave:
+El código utiliza la librería estándar <WiFi.h> del ESP32, la cual facilita enormemente la gestión de redes.
 
 1. **Modo Estación (Station Mode):**
-   Usamos la instrucción `WiFi.mode(WIFI_STA);`. Esto le dice al ESP32 que actúe como un "cliente" o "estación" que se va a conectar a un router existente (el celular), en lugar de crear su propia red (Modo Access Point).
+   Se usó la instrucción WiFi.mode(WIFI_STA);. Esto le dice al ESP32 que actúe como un "cliente" o "estación" que se va a conectar a un router existente (el celular), en lugar de crear su propia red (Modo Access Point).
 2. **Proceso de Conexión:**
-   Con `WiFi.begin(ssid, password);` iniciamos el intento de conexión. Como este proceso no es instantáneo, utilizamos un bucle `while` que verifica constantemente el estado de la conexión (`WiFi.status()`). Mientras no esté conectado, el monitor serie imprime puntos `.` creando un efecto de "cargando".
+   Con WiFi.begin(ssid, password); iniciamos el intento de conexión. Como este proceso no es instantáneo, utilizamos un bucle while que verifica constantemente el estado de la conexión (WiFi.status()). Mientras no esté conectado, el monitor serie imprime puntos creando un efecto de "cargando".
 3. **Asignación de IP:**
-   Una vez que el teléfono acepta la conexión del ESP32, le asigna una dirección IP. Usamos `WiFi.localIP()` para leer esta dirección e imprimirla en el Monitor Serie, confirmando el éxito de la red.
+   Una vez que el teléfono acepta la conexión del ESP32, le asigna una dirección IP. Con el WiFi.localIP() para leer esta dirección e imprimirla en el Monitor Serie, confirmando el éxito de la red.
 4. **Resiliencia (Reconexión automática):**
-   Una característica destacada de este código es que dentro del `loop()` se monitorea constantemente el estado del WiFi. Si el celular se apaga, se aleja o la señal cae, el ESP32 lo detecta e intenta reconectarse automáticamente de forma indefinida, garantizando que el dispositivo no se quede "congelado" sin red.
+   Una característica destacada de este código es que dentro del loop() se monitorea constantemente el estado del WiFi. Si el celular se apaga, se aleja o la señal cae, el ESP32 lo detecta e intenta reconectarse automáticamente de forma indefinida, garantizando que el dispositivo no se quede "congelado" sin red.
 
-*(A continuación se muestra una captura de los resultados en el Monitor Serie)*
-<!-- Reemplaza el enlace de abajo con una captura de pantalla de tu Monitor Serie mostrando la IP -->
+Monitor Serie
+
 <div align="center">
-  <img src="ruta/a/tu/captura_monitor_serie.png" alt="Captura del Monitor Serie mostrando la IP" width="600">
+ <img width="800" height="499" alt="image" src="https://github.com/user-attachments/assets/43a289e7-ffd4-4dc4-bd52-94d43fc336a7" />
+
 </div>
 
 ###  Código de Implementación
 
 ```cpp
 #include "WiFi.h"
-
 // Credenciales de la red (Hotspot del celular)
 const char* ssid = "iPhone de Diego";
 const char* password = "diego1234567";
-
 void setup() {
   Serial.begin(115200);
   delay(10);
-
   Serial.println("\n--- Configurando Conexión Wi-Fi ---");
-  
   // 1. Configuramos el ESP32 en modo "Estación" (Cliente)
   WiFi.mode(WIFI_STA);
   
@@ -142,7 +137,6 @@ void setup() {
     delay(500);
     Serial.print(".");
   }
-
   // 4. Conexión exitosa: Mostramos los datos de red
   Serial.println("\n\n=================================");
   Serial.println("¡CONEXIÓN EXITOSA!");
@@ -179,7 +173,7 @@ void loop() {
 
 En este ejercicio, hemos dado un paso crucial en el mundo del IoT: la interacción remota. Configuramos el ESP32 no solo para conectarse a una red WiFi, sino para actuar como un **Servidor Web** capaz de alojar una página web y recibir comandos desde un navegador para encender o apagar un componente físico (un LED).
 
-###¿Qué se necesitó para llevarlo a cabo?
+### ¿Qué se necesitó para llevarlo a cabo?
 
 Para replicar este ejercicio, se utilizaron los siguientes elementos:
 * **Hardware:**
