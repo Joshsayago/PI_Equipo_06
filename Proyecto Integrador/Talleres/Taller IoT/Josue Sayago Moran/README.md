@@ -102,10 +102,10 @@ El circuito físico diseñado es bastante directo:
 *Dinámica:* Cuando enviamos una señal de nivel alto (`HIGH`) desde el Pin 2, la corriente fluye a través de la resistencia hacia el LED, emitiendo luz y cerrando el circuito en GND. Al enviar un nivel bajo (`LOW`), la corriente se detiene y el LED se apaga.
 
 <div align="center">
-  <img width="720" height="1280" alt="image" src="https://github.com/user-attachments/assets/b0ee43ec-cc23-43c5-8ecd-c7998b8779f2" />
+  <img width="720" height="980" alt="image" src="https://github.com/user-attachments/assets/b0ee43ec-cc23-43c5-8ecd-c7998b8779f2" />
 </div>
 
-###¿Cómo se trabajó el código?
+### ¿Cómo se trabajó el código?
 
 El programa transforma al ESP32 en un pequeño dispositivo inteligente con su propia interfaz gráfica. La lógica se divide en tres fases principales:
 
@@ -207,3 +207,6 @@ void loop() {
   }
 }
 ```
+<p align="center">
+<img width="1600" height="402" alt="image" src="https://github.com/user-attachments/assets/5dbfeed9-4412-4a83-a1d8-5ded4e2db3df" />
+<p>
