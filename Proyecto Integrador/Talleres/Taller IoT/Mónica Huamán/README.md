@@ -1,4 +1,4 @@
-<img width="1200" height="1600" alt="image" src="https://github.com/user-attachments/assets/8cee8d04-4392-4913-9565-b32d58000190" /><div align="center">
+ 
 
 # Taller de Internet de las Cosas (IoT)
 
