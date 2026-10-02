@@ -1,4 +1,4 @@
-<div align="center">
+<img width="1200" height="1600" alt="image" src="https://github.com/user-attachments/assets/8cee8d04-4392-4913-9565-b32d58000190" /><div align="center">
 
 # Taller de Internet de las Cosas (IoT)
 
@@ -260,7 +260,7 @@ Este ejercicio permitió aplicar el proceso de adquisición y transmisión de da
 
 ## Sensor utilizado
 
-**[Colocar aquí el nombre del sensor utilizado: LM35, LDR, etc.]**
+<img width="1200" height="1600" alt="image" src="https://github.com/user-attachments/assets/f9ed1ad2-66f4-46c4-9b84-bc7053df2238" />
 
 El sensor fue conectado al ESP32 y su señal fue adquirida mediante la entrada correspondiente.
 
@@ -280,29 +280,12 @@ Los datos obtenidos del sensor fueron asociados a una variable de Arduino Cloud 
 
 <div align="center">
 
-<img src="URL_IMAGEN_ARDUINO_CLOUD_EJ04" width="700">
+<img width="1329" height="714" alt="image" src="https://github.com/user-attachments/assets/b8e5a316-fa6d-48fc-9549-4823d1c74d18" />
+
 
 </div>
 
-## ThingSpeak
-
-Los valores obtenidos fueron enviados a un canal de ThingSpeak y representados mediante una gráfica.
-
-<div align="center">
-
-<img src="URL_IMAGEN_THINGSPEAK_EJ04" width="700">
-
-</div>
-
-## Ubidots
-
-Los datos del sensor fueron almacenados en una variable de Ubidots y visualizados mediante un widget.
-
-<div align="center">
-
-<img src="URL_IMAGEN_UBIDOTS_EJ04" width="700">
-
-</div>
+ 
 
 ## Resultado
 
