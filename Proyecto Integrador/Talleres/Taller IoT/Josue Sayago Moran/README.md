@@ -5,11 +5,11 @@ En este ejercicio se ha optimizado la lectura de un sensor analógico (potenció
 <img width="500" height="450" alt="image" src="https://github.com/user-attachments/assets/ab7c88d0-cd43-4abc-bd76-9487f597e6ff" />
 <p>
   
-### 1. Promediado de Datos (Reducción de Ruido Eléctrico)
+### Promediado de Datos (Reducción de Ruido Eléctrico)
 
 En el mundo físico, los sensores están expuestos a interferencias electromagnéticas y pequeñas fluctuaciones de corriente conocidas como **"ruido eléctrico"**. Si código tomara una sola lectura instantánea, correríamos el riesgo de capturar un "pico" falso, enviando un dato erróneo.
 
-**¿Cómo lo solucionamos en el código?**
+** ¿Cómo lo solucionamos en el código? **
 En lugar de tomar un solo valor, el programa realiza un muestreo de **15 lecturas** consecutivas con un pequeño intervalo de tiempo (delay(100)). 
 * Se acumulan estos valores en la variable suma.
 * Una vez que llegamos a la lectura número 15, dividimos el total entre 15 (suma / 15) para obtener el promedioDigital.
@@ -168,6 +168,64 @@ void loop() {
   delay(5000);
 }
 ```
+##  Ejercicio 03: Telemetría en Tiempo Real y Monitoreo en la Nube (IoT)
+
+En este ejercicio escalamos nuestra aplicación al nivel de un sistema IoT completo. Conectamos un potenciómetro al ESP32 para adquirir datos del mundo físico, procesarlos mediante promediado para eliminar el ruido y transmitir el valor de voltaje en tiempo real hacia plataformas de IoT en la nube (como **Arduino IoT Cloud**, **ThingSpeak** o **Ubidots**).
+
+### ¿Qué se necesitó para llevarlo a cabo?
+  * ESP32.
+  * Potenciómetro (10kΩ recomendado).
+  * Protoboard y cables puente (jumpers).
+  * Entorno de desarrollo Arduino IDE 
+  * Cuenta activa en la plataforma **Arduino IoT Cloud** (o plataformas compatibles como ThingSpeak / Ubidots).
+  * Archivo de propiedades de la nube, donde se gestionan las credenciales WiFi de forma segura y la declaración de variables sincronizadas.
+
+---
+
+### Explicación de las Conexiones y Arquitectura
+El esquema físico de conexión del potenciómetro al ESP32 se realizó de la siguiente manera:
+1. **Pauta / Terminal Extrema 1:** Conectada a la línea de **3.3V** del ESP32.
+2. **Terminal Central (Wiper/Señal):** Conectada al **GPIO34** (Canal ADC1_CH6 del ESP32).
+3. **Pauta / Terminal Extrema 2:** Conectada a **GND (Tierra)**.
+
+**Arquitectura de Datos:** A medida que giramos la perilla del potenciómetro, la terminal central varía su nivel de voltaje entre 0V y 3.3V. El ESP32 lee esta señal analógica, realiza el filtrado por software y la convierte en una variable global que se sincroniza automáticamente con el Dashboard en la Nube.
+
+<div align="center">
+  <img width="900" height="1600" alt="image" src="https://github.com/user-attachments/assets/479a0d45-e1ee-4423-a21a-5650d6787099" />
+  <p> <i>Figura 1: Conexión del potenciómetro al pin analógico GPIO34 del ESP32.</i></p>
+</div>
+
+---
+
+### ¿Cómo se trabajó la integración con la Nube?
+**Gestión de la Nube con thingProperties.h y ArduinoCloud:**
+En lugar de programar peticiones HTTP o conexiones MQTT desde cero, utilizamos la librería oficial de Arduino Cloud. En el archivo auxiliar thingProperties.h se define la variable voltaje y las credenciales WiFi. En la función setup()`, con `ArduinoCloud.begin()` el ESP32 inicia la comunicación con los servidores.
+Antes de saturar la red enviando datos crudos e instables, el código ejecuta un ciclo de muestreo local:
+   * Captura **15 lecturas** consecutivas (delay(100)).
+   * Calcula el promedio matemático (suma / 15.0`) para eliminar picos de ruido eléctrico.
+   * Convierte el promedio digital a voltaje real usando la escala del ADC de 12 bits: 
+     $$\text{Voltaje} = \frac{\text{Promedio Digital} \times 3.3}{4095}$$
+En cada iteración del loop(), la función ArduinoCloud.update() gestiona en segundo plano la reconexión y transmisión de datos. Al momento de asignar el resultado del cálculo a la variable voltaje, la librería detecta el cambio de valor y lo envía inmediatamente a la Nube. Se incluye una función tipo *callback* que reacciona si el valor de la variable es modificado desde un control interactivo (como un Slider o Knob) en el Dashboard web o la App móvil.
+
+---
+
+###  Visualización en las Plataformas IoT (Dashboards)
+
+Una vez que los datos llegan a la Nube, se pueden vincular a diferentes elementos gráficos (widgets) para visualizar la variación del potenciómetro en tiempo real.
+
+<div align="center">
+  <img width="1600" height="997" alt="image" src="https://github.com/user-attachments/assets/d705a15f-6318-488c-ba6f-1cb55d7d1d94" />
+  <p>
+</div>
+
+<br>
+
+<div align="center">
+  <img width="800" height="347" alt="image" src="https://github.com/user-attachments/assets/332a218f-2874-42ef-984d-80f0cf17ce7f" />
+<img width="450" height="800" alt="image" src="https://github.com/user-attachments/assets/9ac434f1-2df2-4fbe-88d9-480164774e72" />
+
+  <p>
+</div>
 
 ## Ejercicio 05: Control de LED vía Interfaz Web (ESP32)
 
