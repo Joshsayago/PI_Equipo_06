@@ -118,40 +118,40 @@ La **matriz morfológica** permite plantear diferentes alternativas de solución
 ## 🛠️ 2. Dominio mecánico
 
 <p align="center">
-  <img width="701" height="518" alt="Matriz morfológica - Dominio mecánico" src="https://github.com/user-attachments/assets/a96f839b-ad8b-4eaf-bdfd-ffd8904f462a" />
+<img width="848" height="695" alt="imagen" src="https://github.com/user-attachments/assets/a56b8283-78d8-4bb6-8430-d18acac58a5e" />
 </p>
 
 | Función parcial | Concepto A | Concepto B | Concepto C |
 |---|---|---|---|
-| Proteger componentes | Carcasa impresa en 3D | Carcasa de acrílico | Caja plástica |
-| Facilitar acceso interno | Tapa desmontable | Tapa con bisagra | Carcasa modular |
+| Proteger componentes | Carcasa impresa en 3D PETG | Carcasa de acrílico | Caja plástica |
+| Facilitar acceso interno | Carcasa desmontable de dos mitades mediante tornillos | Tapa con bisagra | Carcasa modular |
 
 ---
 
 ## 🔋 3. Dominio de energía
 
 <p align="center">
-<img width="802" height="607" alt="image" src="https://github.com/user-attachments/assets/a50167c9-6345-4c08-a4f6-0334b855bc4e" />
+<img width="925" height="608" alt="imagen" src="https://github.com/user-attachments/assets/e988dff6-26f9-4edc-9241-102a5ced26f6" />
 </p>
 
 | Función parcial | Concepto A | Concepto B | Concepto C |
 |---|---|---|---|
-| Alimentar el sistema | Batería recargable Li-ion 18650 | Batería recargable Li-Po | Power bank |
-| Recargar dispositivo | BMS 3S | TP4056 | Cargador externo |
+| Alimentar el sistema | 1 Batería recargable Li-ion 18650 | Batería recargable Li-Po | Power bank |
+| Recargar dispositivo | BMS 1S | TP4056 | TP4056 |
 
 ---
 
 ## 🎛️ 4. Dominio de control
 
 <p align="center">
-<img width="577" height="772" alt="image" src="https://github.com/user-attachments/assets/0c816960-6d57-48bb-afb1-2923e5f3cf69" />
+<img width="467" height="618" alt="imagen" src="https://github.com/user-attachments/assets/c6f93973-f039-49d3-8ec2-5e4400e8de86" />
 </p>
 
 | Función parcial | Concepto A | Concepto B | Concepto C |
 |---|---|---|---|
 | Controlar el sistema | XIAO ESP32S3 Sense | Maix Bit / Sipeed Maix | Raspberry Pi Pico 2 W |
-| Iniciar captura | Botón físico | Aplicación móvil | Captura automática |
-| Controlar iluminación | Potenciometro | Interruptor | Activación automática |
+| Iniciar captura | Pulsadores físicos integrados a la carcasa | Aplicación móvil | Captura automática |
+| Controlar iluminación | Potenciometro | Interruptor | Control por software |
 | Gestionar ubicación | Activación manual | Lectura automática del GPS | Ubicación desde celular |
 
 ---
@@ -159,26 +159,26 @@ La **matriz morfológica** permite plantear diferentes alternativas de solución
 ## 🚨 5. Dominio de actuación
 
 <p align="center">
-  <img width="782" height="752" alt="image" src="https://github.com/user-attachments/assets/520b086e-7fca-4d0c-9b1d-4b308d1b21a8" />
+<img width="461" height="502" alt="imagen" src="https://github.com/user-attachments/assets/4b73935e-09bd-4c7a-a1e0-f9ab5beee4e7" />
 </p>
 
 | Función parcial | Concepto A | Concepto B | Concepto C |
 |---|---|---|---|
 | Confirmar captura | LED indicador | Buzzer | Vibración |
 | Alertar al usuario | LED tipo semáforo | Buzzer | Notificación digital |
-| Mostrar estado del equipo | LCD | Indicadores LED | LED RGB |
+| Mostrar estado del equipo | TFT LCD SPI 2.2" 240×320 | Indicadores LED | LED RGB |
 
 ---
 
 ## 💻 6. Dominio de software
 
 <p align="center">
-  <img width="696" height="968" alt="Matriz morfológica - Dominio de software" src="https://github.com/user-attachments/assets/8a8fadc9-cfb2-49c7-b8b2-c36bba7d7894" />
+<img width="462" height="675" alt="imagen" src="https://github.com/user-attachments/assets/c4915ad0-8056-4891-8025-20e25164a64c" />
 </p>
 
 | Función parcial | Concepto A | Concepto B | Concepto C |
 |---|---|---|---|
-| Detectar grietas | Machine Learning | Procesamiento de imágenes | Detección de bordes |
+| Detectar grietas | Red neuronal convolucional (CNN) | Procesamiento de imágenes | Detección de bordes |
 | Obtener información territorial | Base de datos pública | API geográfica | Mapa de riesgo |
 | Relacionar grieta y zona | Sistema de puntuación | Clasificación automática | Umbrales |
 | Clasificar prioridad | Sistema de puntuación | Baja / media / alta | Porcentaje |
