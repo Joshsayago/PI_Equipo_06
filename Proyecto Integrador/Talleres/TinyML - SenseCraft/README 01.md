@@ -10,8 +10,8 @@ En esta primera parte se implementó un modelo preentrenado de SenseCraft AI par
 
 ### Prueba 1: Detección múltiple (2 integrantes)
 * **Evidencia:**
-  <<img width="1280" height="960" alt="image" src="https://github.com/user-attachments/assets/f9608c34-d2ef-4e8c-b53b-78589d9bb8b6" />
-<img width="1321" height="976" alt="image" src="https://github.com/user-attachments/assets/4fddcd27-558c-40ca-bf7e-2e6ab137f541" />
+  <<img width="1280" height="850" alt="image" src="https://github.com/user-attachments/assets/f9608c34-d2ef-4e8c-b53b-78589d9bb8b6" />
+<img width="1200" height="856" alt="image" src="https://github.com/user-attachments/assets/4fddcd27-558c-40ca-bf7e-2e6ab137f541" />
 
 
 * **Explicación de la prueba:** En esta primera prueba se evaluó la capacidad del modelo para detectar y clasificar simultáneamente a dos personas frente a la cámara. El sistema logra etiquetar correctamente a cada rostro por separado gracias al ajuste dinámico de los umbrales de superposición (*IoU Threshold*), evitando que una sola caja delimitadora encierre a ambos rostros.
@@ -20,7 +20,7 @@ En esta primera parte se implementó un modelo preentrenado de SenseCraft AI par
 
 ### Prueba 2: Detección individual - Integrante 1
 * **Evidencia:**
-  <!-- [AQUÍ VA LA IMAGEN 2: Captura del dispositivo mostrando a un integrante individual con el log de consola a la derecha] -->
+  <img width="1293" height="960" alt="image" src="https://github.com/user-attachments/assets/359ae155-57fb-4ad5-a05e-fb360536cb2b" />
 
 * **Explicación de la prueba:** Se probó el sistema de manera individual. El panel de la derecha (*Device Logger*) muestra en tiempo real las coordenadas de la caja detectada (`boxes`) y las métricas de rendimiento interno (`preprocess`, `inference` y `postprocess`).
 
@@ -28,7 +28,7 @@ En esta primera parte se implementó un modelo preentrenado de SenseCraft AI par
 
 ### Prueba 3: Detección individual - Integrante 2
 * **Evidencia:**
-  <!-- [AQUÍ VA LA IMAGEN 3: Captura del dispositivo mostrando al segundo integrante individual] -->
+<img width="1295" height="972" alt="image" src="https://github.com/user-attachments/assets/cad9065b-6898-4d54-9d0a-48068a65a8b0" />
 
 * **Explicación de la prueba:** Se repitió la prueba con otro integrante para validar la robustez del modelo ante diferentes fisonomías, manteniendo estable el porcentaje de confianza por encima del umbral establecido.
 
