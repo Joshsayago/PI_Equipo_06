@@ -54,10 +54,37 @@ A través del panel de logs se registraron los tiempos de procesamiento por cada
 * **Postprocess (~1 ms - 3 ms):** Tiempo empleado en aplicar los filtros de umbral y renderizar la interfaz gráfica final.
 
 ---
+ 
+## 5. Prueba de Salida GPIO y Activación del LED
 
-## 5. Salida GPIO (Pendiente / En proceso)
-* **Evidencia de configuración GPIO:**
-  <!-- [AQUÍ VA LA IMAGEN 4: Captura de la configuración del pin GPIO en SenseCraft] -->
+En esta sección se completó la configuración del hardware para vincular la detección del modelo a una salida física (GPIO) que activa un indicador LED al cumplirse el reconocimiento.
 
-* **Evidencia del LED encendido:**
-  <!-- [AQUÍ VA LA IMAGEN 5: Fotografía del hardware con el LED encendido ante el reconocimiento exitoso] -->
+### Evidencia 1: Montaje y prueba de hardware con el equipo
+* **Evidencia:**
+  <!-- [AQUÍ VA LA IMAGEN 1: Archivo image_2295d0.jpg - Foto general del equipo con la placa conectada y los integrantes listos para la prueba] -->
+
+* **Explicación:** Se preparó el entorno físico sobre la mesa de trabajo, conectando la placa con la cámara y el sistema de pines GPIO listo para interactuar con los integrantes del equipo.
+
+---
+
+### Evidencia 2: Detalle del módulo de hardware (SenseCraft / XIAO)
+* **Evidencia:**
+  <!-- [AQUÍ VA LA IMAGEN 2: Archivo image_2295f4.jpg - Primer plano de la placa y la cámara sostenida mostrando los componentes y el LED integrado] -->
+
+* **Explicación:** Vista en detalle del dispositivo hardware. Aquí se observa el módulo ensamblado que procesa la inferencia en el borde (*Edge AI*) y gestiona la línea de salida digital para el LED.
+
+---
+
+### Evidencia 3: Validación del modelo con integrante en estación de trabajo
+* **Evidencia:**
+  <!-- [AQUÍ VA LA IMAGEN 3: Archivo image_229d30.jpg - Foto de la integrante frente al portátil mientras se ejecuta la prueba de reconocimiento] -->
+
+* **Explicación:** Se ejecutó la prueba de validación enfocando a la integrante del equipo. Al posicionarse frente a la cámara, el sistema procesó la imagen y reconoció el rostro con el nivel de confianza configurado.
+
+---
+
+### Evidencia 4: Detalle de la activación de salida y LED encendido
+* **Evidencia:**
+  <!-- [AQUÍ VA LA IMAGEN 4: Archivo image_229d50.jpg - Primer plano de la placa con el LED indicador encendido en naranja/amarillo] -->
+
+* **Explicación:** Al cumplirse la condición de reconocimiento positivo en la plataforma SenseCraft, el pin GPIO configurado cambió de estado lógico (nivel bajo a nivel alto), lo que provocó el **encendido exitoso del LED** integrado en la placa, confirmando la correcta comunicación entre la inteligencia artificial y el hardware externo.
