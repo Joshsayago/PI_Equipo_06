@@ -116,14 +116,12 @@ Mónica Huamán Bernal
 
 * Se completó exitosamente el ciclo TinyML completo: desde la recolección local de datos hasta el entrenamiento y despliegue del modelo en el hardware **XIAO ESP32S3 Sense**.
 * El modelo entrenado demostró altos índices de confianza en la etapa de *Preview* (97% para la estructura 3D y 99% para el mouse).
+* Se logró validar la interacción del software con el entorno físico, comprobando que las inferencias locales generan una respuesta digital inmediata a través del pin GPIO y el encendido del LED.
+* **Archivos adjuntos en el repositorio del grupo:**
+  1. Archivo comprimido `.zip` con el dataset de imágenes recopiladas.
+  2. Archivo del modelo entrenado desplegable en el dispositivo (*.uf2 / binarios*).
 
 ## 8. Referencias
 
 - [SenseCraft AI](https://sensecraft.seeed.cc/)
 - [Documentación oficial de Seeed Studio](https://wiki.seeedstudio.com/)
----
-
-* Se logró validar la interacción del software con el entorno físico, comprobando que las inferencias locales generan una respuesta digital inmediata a través del pin GPIO y el encendido del LED.
-* **Archivos adjuntos en el repositorio del grupo:**
-  1. Archivo comprimido `.zip` con el dataset de imágenes recopiladas.
-  2. Archivo del modelo entrenado desplegable en el dispositivo (*.uf2 / binarios*).
