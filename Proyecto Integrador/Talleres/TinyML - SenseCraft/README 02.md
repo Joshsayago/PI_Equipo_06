@@ -2,7 +2,7 @@
 
 ## 1. Descripción de la Tarea
 En esta segunda parte del proyecto, el grupo desarrolló, entrenó y desplegó un modelo de clasificación de imágenes personalizado utilizando el módulo **XIAO ESP32S3 Sense**[cite: 1]. El objetivo fue clasificar objetos en tiempo real (por ejemplo, detectar un *Mouse* u objetos como *BOX ESP32xiao* frente a la clase *Entorno*) y vincular la inferencia a una salida física mediante GPIO para activar un indicador LED[cite: 1].
-Este análisis fue realizado por los integrantes 4 y 5 Dominik Beleván Amaro y Piero Cimei Romero 
+ 
 
 ---
 
@@ -20,10 +20,11 @@ Para garantizar un entrenamiento preciso y representativo, se capturaron muestra
 
 ### Evidencia 1: Panel de recolección de datos y vista previa (Preview)
 * **Integrantes del equipo:**
-  <!-- [AQUÍ PONER EL NOMBRE DE LOS INTEGRANTES DEL GRUPO QUE PARTICIPARON EN LA CAPTURA Y ENTRENAMIENTO] -->
+  Este análisis fue realizado por los integrantes 4 y 5 Dominik Beleván Amaro y Piero Cimei Romero 
 
 * **Evidencia:**
-  <!-- [AQUÍ VA LA IMAGEN 1: Archivo image_231c78.jpg - Captura de la interfaz de SenseCraft con las clases 'Mouse', 'Entorno', el video en vivo y la vista previa del 99% de confianza] -->
+  <img width="1600" height="869" alt="image" src="https://github.com/user-attachments/assets/157d7416-e733-42a7-932c-17dfe2e801f9" />
+
 
 * **Explicación:** En la interfaz de SenseCraft AI se observa la etapa de recolección (`Step 1: Collect Classification Data`)[cite: 10]. En la parte inferior derecha, en la sección **Preview**, se valida el modelo entrenado mostrando un **99% de probabilidad/confianza** para la clase *Mouse* cuando el objeto se encuentra posicionado frente al lente de la cámara[cite: 10].
 
@@ -33,23 +34,21 @@ Para garantizar un entrenamiento preciso y representativo, se capturaron muestra
 
 Tras desplegar el modelo en la placa **XIAO ESP32S3 Sense**, se configuró una regla de salida GPIO para enviar un estado lógico alto cada vez que el modelo clasifique exitosamente el objeto objetivo[cite: 1].
 
-### Evidencia 2: Prueba de salida GPIO con el objeto objetivo y carcasa 3D
-* **Integrantes en la foto:**
-  <!-- [AQUÍ PONER EL NOMBRE DEL INTEGRANTE QUE MANTIENE LA PLACA Y REALIZA LA PRUEBA] -->
-
+### Evidencia 2: Prueba de salida GPIO con el objeto objetivo y carcasa del xiao
+ 
 * **Evidencia:**
-  <!-- [AQUÍ VA LA IMAGEN 2: Archivo image_231c9b.jpg - Foto en primer plano de la placa XIAO con el LED encendido en naranja, sosteniendo la caja 3D azul en la mano] -->
+  <img width="1200" height="1600" alt="image" src="https://github.com/user-attachments/assets/b94d8f24-655f-49e8-a0c4-c76ecbecf8d8" />
+
 
 * **Explicación:** Se sostiene la caja/impresión 3D azul frente al módulo de visión[cite: 11]. Al ser reconocida la clase correspondiente, el pin GPIO cambia su estado y se enciende el LED indicador luminoso integrado en la placa, demostrando la respuesta física e inmediata del hardware ante la inferencia[cite: 1, 11].
 
 ---
 
 ### Evidencia 3: Validación del modelo enfocando el Mouse de prueba
-* **Integrantes en la foto:**
-  <!-- [AQUÍ PONER EL NOMBRE DE LOS INTEGRANTES RESTANTES DEL EQUIPO QUE VALIDAN LA PRUEBA EN EL ESCRITORIO] -->
-
+ 
 * **Evidencia:**
-  <!-- [AQUÍ VA LA IMAGEN 3: Archivo image_231cbb.jpg - Foto enfocando el mouse en la mesa y la placa XIAO con el LED encendido frente a la laptop] -->
+  <img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/a3839354-4c98-4347-a4fb-87be2a15faaa" />
+
 
 * **Explicación:** Se posicionó el *Mouse* sobre la mesa de trabajo en el rango visual de la cámara[cite: 12]. El modelo procesó la imagen en el borde (*Edge AI*) identificando el objeto con éxito, lo que activó nuevamente la salida GPIO y encendió el LED indicador de la tarjeta[cite: 1, 12].
 
