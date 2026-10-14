@@ -158,3 +158,11 @@ El comportamiento observado responde a la integración directa entre el algoritm
 * Se comprobó la integración entre el software SenseCraft AI y la tarjeta **XIAO ESP32S3 Sense** para el control de periferia física mediante visión artificial[cite: 1, 13].
 * Se validó que el indicador LED responde de manera inmediata y estable ante porcentajes de confianza superiores al 53 % tanto para la clase `male` como para `female`.
 * Los resultados demostraron una tasa de certeza consistente (80%–88%) en la estación de trabajo durante las pruebas realizadas con el equipo.
+
+## 9. Referencias
+
+- [SenseCraft AI](https://sensecraft.seeed.cc/)
+- [Documentación oficial de Seeed Studio](https://wiki.seeedstudio.com/)
+- [XIAO ESP32S3 Sense](https://wiki.seeedstudio.com/xiao_esp32s3_sense/)
+
+---
