@@ -1,5 +1,3 @@
-# 🟢  Entrenar y Desplegar un Modelo de Clasificación Personalizado
-
 **Proyecto Integrador · Taller de TinyML & Edge AI**
 
 En esta segunda fase se desarrolló, entrenó y desplegó un modelo personalizado de clasificación de imágenes en el microcontrolador **XIAO ESP32S3 Sense**. A diferencia de la primera parte, el conjunto de datos fue recopilado directamente en el entorno de trabajo para reconocer objetos de uso frecuente (`BOX ESP32xiao` y `Mouse`) frente al fondo de la estación (`Entorno`), conmutando una salida física GPIO tras la validación de las clases.
@@ -106,9 +104,9 @@ Mónica Huamán Bernal
 
 | Objeto Evaluado | Clase Asignada | Confianza (Preview) | Estado del LED | Diagnóstico del Sistema |
 | :--- | :---: | :---: | :---: | :--- |
-| **Carcasa 3D Azul** | `BOX ESP32xiao` | 97% | 🟡 Encendido | Clasificación correcta y activación GPIO confirmada. |
-| **Mouse de Escritorio** | `Mouse` | 99% | 🟡 Encendido | Inferencia de alta precisión e integración física estable. |
-| **Mesa de Trabajo** | `Entorno` | 0% - 2% | ⚫ Apagado | Sin falsos disparos en ausencia de objetos clave. |
+| **Carcasa 3D Azul** | `BOX ESP32xiao` | 97% |  Encendido | Clasificación correcta y activación GPIO confirmada. |
+| **Mouse de Escritorio** | `Mouse` | 99% |  Encendido | Inferencia de alta precisión e integración física estable. |
+| **Mesa de Trabajo** | `Entorno` | 0% - 2% |  Apagado | Sin falsos disparos en ausencia de objetos clave. |
 
 ---
 
