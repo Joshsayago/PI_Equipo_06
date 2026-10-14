@@ -1,4 +1,4 @@
-# 🟢  Implementación de Modelo Preentrenado y Control GPIO
+# Implementación de Modelo Preentrenado y Control GPIO
 
 **Proyecto Integrador · Taller de TinyML & Edge AI**
 
@@ -37,7 +37,7 @@ Para esta fase se utilizó un modelo preentrenado de visión artificial optimiza
 
 Se llevaron a cabo pruebas en la estación de trabajo para evaluar la estabilidad del modelo frente a diferentes integrantes y combinaciones.
 
-### 👥 Prueba 1: Detección Simultánea Múltiple
+### Prueba 1: Detección Simultánea Múltiple
 * **Integrantes en la foto:** Mónica Huamán Bernal y Josue Sayago Morán
 
 <p align="center">
@@ -48,7 +48,7 @@ Se llevaron a cabo pruebas en la estación de trabajo para evaluar la estabilida
 
 - **Evidencia:**
 <p align="center">
-  <img width="900" height="850" alt="image" src="https://github.com/user-attachments/assets/3cae9abd-638c-49e5-b27b-2472c330df49" />
+  <img width="700" height="650" alt="image" src="https://github.com/user-attachments/assets/3cae9abd-638c-49e5-b27b-2472c330df49" />
 <br>
   <em>Detección simultánea de rostros asignando etiquetas de género y porcentajes de confianza en tiempo real.</em>
 </p>
