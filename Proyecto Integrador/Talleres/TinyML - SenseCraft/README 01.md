@@ -1,22 +1,44 @@
-# README: Implementación de Modelo Preentrenado en SenseCraft AI
+# 🟢  Implementación de Modelo Preentrenado y Control GPIO
 
-## 1. Introducción y Marco Teórico
+**Proyecto Integrador · Taller de TinyML & Edge AI**
 
-### Clasificación e Identificación de Género con Inteligencia Artificial
-La clasificación de género mediante visión por computadora utiliza modelos de redes neuronales convolucionales (CNN) entrenados para identificar características faciales clave (facciones, proporciones y estructuras de la cara). En este proyecto se utiliza un modelo preentrenado desplegado en la plataforma **SenseCraft AI**, el cual analiza en tiempo real el flujo de video capturado por la cámara, dibujando un recuadro delimitador (*bounding box*) sobre cada rostro detectado y asignando la etiqueta correspondiente (`male` o `female`) junto con un porcentaje de confianza (*confidence score*).
-
-### Módulo XIAO ESP32S3 Sense / Grove Vision AI
-Para la ejecución de esta prueba se utiliza el dispositivo **XIAO ESP32S3 Sense** (o **Grove - Vision AI Module**), una plataforma hardware orientada a **Edge AI** (inteligencia artificial en el borde). Sus principales características incluyen:
-- **Procesamiento On-Device:** Capacidad de ejecutar la inferencia de redes neuronales de forma local sin depender continuamente de un servidor en la nube.
-- **Módulo de Cámara Integrado:** Permite la captura continua de fotogramas a bajo consumo energético.
-- **General Purpose Input/Output (GPIO):** Pines programables que permiten interactuar con el entorno físico, enviando señales digitales (como encender un LED o activar un actuador) en respuesta a los resultados de la inferencia.
+En este primer apartado se realiza el despliegue de un modelo preentrenado para visión computacional en la plataforma **SenseCraft AI**, ejecutándolo directamente sobre la tarjeta **XIAO ESP32S3 Sense**. Se evaluó el modelo con pruebas de reconocimiento visual en tiempo real junto a los miembros del equipo y se configuró una línea de salida digital GPIO para conmutar un LED indicador cuando se satisface el reconocimiento.
 
 ---
 
-## 2. Pruebas del Modelo con Integrantes del Equipo
+##  1. Objetivos
 
-### Prueba 1: Detección múltiple
-* **Integrantes en la foto:** Mónica y Josue
+* **Despliegue On-Device:** Implementar y ejecutar un modelo de detección y clasificación en tiempo real sobre el hardware de procesamiento en el borde (*XIAO ESP32S3 Sense*).
+* **Validación Experimental:** Validar la capacidad de detección del algoritmo tanto en tomas individuales como en pruebas grupales con integrantes del equipo.
+* **Calibración de Parámetros:** Evaluar el impacto práctico del umbral de confianza (*Confidence Threshold*) y del umbral de superposición (*IoU Threshold*) en el rendimiento del modelo.
+* **Integración Hardware-Software:** Configurar los pines de salida GPIO para accionar una respuesta física (encendido de un indicador LED) vinculada a los eventos de detección.
+
+---
+
+##  2. Recursos y Componentes de Hardware
+
+| Recurso | Tipo | Función Principal |
+| :--- | :--- | :--- |
+| **XIAO ESP32S3 Sense** | Hardware / SoC | Microcontrolador de alto rendimiento para ejecución de redes neuronales en el borde. |
+| **Cámara OV2640** | Hardware / Sensor | Captura continua de fotogramas e ingreso de video al modelo de visión. |
+| **SenseCraft AI** | Software / Web | Entorno de gestión, configuración de umbrales y monitoreo de inferencias en vivo. |
+| **Modelo Preentrenado** | Red Neuronal | Algoritmo de clasificación facial para la detección de características y género. |
+| **Salida Digital GPIO** | Periférico / Hardware | Control del estado lógico del indicador LED según el resultado del procesamiento. |
+
+---
+
+##  3. Fundamentación e Implementación
+
+Para esta fase se utilizó un modelo preentrenado de visión artificial optimizado para dispositivos de bajo consumo. El sistema analiza el flujo de imágenes capturado por el lente de la cámara del **XIAO ESP32S3 Sense**, identifica rostros y genera un recuadro delimitador (*bounding box*) junto con la probabilidad calculada (`male` o `female`).
+
+---
+
+##  4. Pruebas de Reconocimiento y Evaluación con Integrantes
+
+Se llevaron a cabo pruebas en la estación de trabajo para evaluar la estabilidad del modelo frente a diferentes integrantes y combinaciones.
+
+### 👥 Prueba 1: Detección Simultánea Múltiple
+* **Integrantes en la foto:** Mónica Huamán Bernal y Josue Sayago Morán
 
 <p align="center">
   <img width="1100" height="850" alt="image" src="https://github.com/user-attachments/assets/8d4cba8d-fc15-447f-9f19-b04889131d07" />
@@ -32,82 +54,107 @@ Para la ejecución de esta prueba se utiliza el dispositivo **XIAO ESP32S3 Sense
 ---
 
 ### Prueba 2: Detección individual 1
-* **Integrante en la foto:** Josue
+* **Integrante en la foto:** Piero Simei Romero
 
 - **Evidencia:**
 <p align="center">
-  <img width="1100" height="850" alt="image" src="https://github.com/user-attachments/assets/0ed17ebf-8926-43cd-acff-6704c2dd9e11" />
+ <img width="1284" height="994" alt="image" src="https://github.com/user-attachments/assets/3fde6091-db3f-4ca5-8632-0108aa01099b" />
+
 </p>
 
-- **Explicación de la prueba:** Se probó el sistema de manera individual. El panel de la derecha (*Device Logger*) muestra en tiempo real las coordenadas de la caja detectada (`boxes`) y las métricas de rendimiento interno (`preprocess`, `inference` y `postprocess`).
+* **Resultado obtenido:** Etiqueta `male` con confianza de **88%**.
+* **Análisis técnico:** Se validó la inferencia de manera individual. En la consola lateral (*Device Logger*) se verificaron los tiempos de ciclo, confirmando una tasa de procesamiento estable con un tiempo de inferencia cercano a los **960 ms**.
 
 ---
 
 ### Prueba 3: Detección individual 2
-* **Integrante en la foto:** Diego
+* **Integrante en la foto:** Diego Alessandre Murga Saavedra
 
 - **Evidencia:**
 <p align="center">
   <img width="1100" height="850" alt="image" src="https://github.com/user-attachments/assets/30220c44-4fff-419d-a3a4-6135de15b7f2" />
 </p>
 
-- **Explicación de la prueba:** Se repitió la prueba con otro integrante para validar la robustez del modelo ante diferentes fisonomías, manteniendo estable el porcentaje de confianza por encima del umbral establecido.
+* **Resultado obtenido:** Etiqueta `male` con confianza de **86%**.
+* **Análisis técnico:** Se confirmó la repetibilidad del modelo ante cambios de posición y condiciones de iluminación del ambiente de trabajo, superando sin inconvenientes el valor crítico del umbral establecido.
 
 ---
 
-## 3. Análisis de Parámetros de Configuración
+## 5. Configuración de las Reglas de Salida GPIO
 
-- **Confidence Threshold (Umbral de confianza: 83):**
-  * **Qué significa:** Define el porcentaje mínimo de certeza que exige el modelo para validar una detección.
-  * **Por qué se configuró en 83:** Se estableció en este valor para evitar falsos positivos (por ejemplo, que elementos del fondo sean confundidos con personas). Cualquier rostro detectado con una probabilidad menor a este porcentaje es descartado automáticamente.
+Para vincular las inferencias del modelo con la respuesta física en la tarjeta, se accedió a la sección **Salida > GPIO** en SenseCraft AI[cite: 13]. Se configuró la conmutación de la salida digital para activar el LED cuando cualquier reconocimiento válido supere el umbral de confianza establecido[cite: 13].
 
-- **IoU Threshold (Intersection over Union: 44):**
-  * **Qué significa:** Es el umbral de superposición utilizado para el filtrado de cajas duplicadas (*Non-Maximum Suppression*).
-  * **Por qué se configuró en 44:** Permite que el sistema diferencie con precisión a dos personas cuando se encuentran cerca (como en la primera prueba), evitando que aparezcan múltiples recuadros encimados sobre un mismo rostro.
+### Parámetros Configurables de la Regla
 
----
-
-## 4. Métricas de Rendimiento del Dispositivo (Device Logger)
-
-A través del panel de logs se registraron los tiempos de procesamiento por cada fotograma:
-- **Preprocess (~73 ms - 80 ms):** Tiempo que tarda la placa XIAO en capturar, redimensionar y normalizar la imagen de la cámara.
-- **Inference (~950 ms - 970 ms):** Tiempo que le toma a la red neuronal en el chip ejecutar el procesamiento matemático para reconocer y clasificar los rostros.
-- **Postprocess (~1 ms - 3 ms):** Tiempo empleado en aplicar los filtros de umbral y renderizar la interfaz gráfica final.
+| Parámetro | Valor Asignado | Función / Descripción |
+| :--- | :--- | :--- |
+| **Objetos configurados** | `male` / `female` | Clases que disparan el evento de activación de salida[cite: 13]. |
+| **Salida GPIO** | `LED` | Pin de salida digital conectado al indicador luminoso integrado[cite: 13]. |
+| **Condición lógica** | `Mayor que` | Operador de comparación evaluado sobre el nivel de confianza[cite: 13]. |
+| **Umbral de confianza** | `53` | Porcentaje mínimo requerido para conmutar la salida a estado ALTO[cite: 13]. |
+| **Estado predeterminado** | `LED apagado` | Estado inicial del pin cuando no hay detección válida[cite: 13]. |
+| **Estado activo** | `LED encendido` | Estado del pin al cumplirse la condición en cualquiera de las clases[cite: 13]. |
 
 ---
 
-## 5. Prueba de Salida GPIO y Activación del LED
+## 6. Evidencias Fotográficas e Interpretación de los Integrantes
 
-En esta sección se completó la configuración del hardware para vincular la detección del modelo a una salida física (GPIO) que activa un indicador LED al cumplirse el reconocimiento.
+Se realizaron las verificaciones en vivo con los integrantes del equipo para comprobar la activación del LED ante detecciones afirmativas.
 
-### Evidencia 1: Montaje y prueba de hardware con el equipo
-* **Integrantes en la foto:** Mónica y Josue
+### 👤 Prueba 1: Integrante Masculino (Detección Positiva)
+ <img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/bc3e73f1-57eb-40c8-a290-7fd253dd3780" />
+ 
 
-- **Evidencia:**
-<p align="center">
-  <img width="1100" height="858" alt="image" src="https://github.com/user-attachments/assets/5b869d28-2d79-48f6-a796-22184efa10b7" />
-</p>
+* **Nombre del integrante:**  Josué Sayago 
+* **Resultados de la inferencia:**
+  * **Etiqueta detectada:** `male`
+  * **Confianza obtenida:** 86%
+  * **Umbral GPIO:** Mayor que 53%
+  * **Estado del LED:** 🟡 **Encendido**
+    <img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/df709202-4717-4a8d-b77b-385b06ff9429" />
 
-- **Explicación:** Se preparó el entorno físico sobre la mesa de trabajo, conectando la placa con la cámara y el sistema de pines GPIO listo para interactuar con los integrantes del equipo.
-
-<p align="center">
-  <img width="900" height="800" alt="image" src="https://github.com/user-attachments/assets/b38f0095-0c96-4167-bd03-5a24d80cc5ef" />
-</p>
+* **Interpretación técnica:** El modelo identificó a la persona con la etiqueta `male` y un 86% de certeza. Al superar holgadamente el umbral ($86\% > 53\%$), el sistema envió el pulso digital a la salida GPIO y el **LED se encendió exitosamente**.
 
 ---
 
-### Evidencia 2: Detalle del módulo XIAO ESP32S3 Sense
-* **Integrante en la foto:** Mónica
+### 👤 Prueba 2: Integrante Femenina (Detección Positiva)
 
-<p align="center">
-  <img width="900" height="800" alt="image" src="https://github.com/user-attachments/assets/8b0a3fff-123b-4ad8-8a4d-d59c366884d7" />
-</p>
+ <img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/1fb8bd7b-c0b2-45bb-a608-3b80314535b0" />
 
-- **Evidencia:**
-<p align="center">
-  <img width="900" height="800" alt="image" src="https://github.com/user-attachments/assets/ad9952b5-3be3-494e-8fbd-e41d7b729617" />
-</p>
 
-- **Explicación:** Vista en detalle del dispositivo hardware XIAO. Aquí se observa el módulo ensamblado que procesa la inferencia en el borde (*Edge AI*) y gestiona la línea de salida digital para el LED.
+* **Nombre de la integrante:**  Mónica Huamán 
+* **Resultados de la inferencia:**
+  * **Etiqueta detectada:** `female`
+  * **Confianza obtenida:** 80%
+  * **Umbral GPIO:** Mayor que 53%
+  * **Estado del LED:** 🟡 **Encendido**
+    <img width="1200" height="1600" alt="image" src="https://github.com/user-attachments/assets/331d841b-3c31-414b-9e73-3dc9429bf6e4" />
 
-- **Resultado de Activación:** Al cumplirse la condición de reconocimiento positivo en la plataforma SenseCraft, el pin GPIO configurado cambió de estado lógico (nivel bajo a nivel alto), lo que provocó el **encendido exitoso del LED** integrado en la placa XIAO, confirmando la correcta comunicación entre la inteligencia artificial y el hardware externo.
+* **Interpretación técnica:** Al posicionarte frente a la cámara, el modelo te identificó con la etiqueta `female` y un 80% de confianza. Como el valor superó el umbral configurado ($80\% > 53\%$), la condición de activación se cumplió nuevamente de forma correcta y el **LED también se encendió**, confirmando que el hardware responde ante la presencia de ambos integrantes.
+
+---
+
+### 📊 Resumen de Respuestas del Hardware
+
+| Integrante Evaluado | Clase Detectada | Confianza | ¿Supera el Umbral (>53%)? | Estado del LED |
+| :--- | :--- | :---: | :---: | :---: |
+| Josué| `male` | 86% | **Sí** | 🟡 Encendido |
+| Mónica | `female` | 80% | **Sí** | 🟡 Encendido |
+
+---
+
+## 7. Explicación del Funcionamiento del LED
+
+El comportamiento observado responde a la integración directa entre el algoritmo de clasificación y el pin de salida física:
+
+1. **Captura e Inferencia:** La cámara del dispositivo XIAO ESP32S3 Sense procesa el rostro presente en el entorno y determina su etiqueta y porcentaje de confianza[cite: 1].
+2. **Evaluación de Umbral:** SenseCraft AI verifica si el porcentaje de confianza obtenido por el modelo es mayor a 53[cite: 13].
+3. **Respuesta Física:** Al ser la confianza de 86% para `male` y de 80% para `female`, en ambos casos se superó el valor de 53 %, por lo que la señal GPIO conmuta a nivel alto y el **LED permanece encendido durante el reconocimiento activo de cualquiera de los dos integrantes**.
+
+---
+
+## 8. Conclusiones
+
+* Se comprobó la integración entre el software SenseCraft AI y la tarjeta **XIAO ESP32S3 Sense** para el control de periferia física mediante visión artificial[cite: 1, 13].
+* Se validó que el indicador LED responde de manera inmediata y estable ante porcentajes de confianza superiores al 53 % tanto para la clase `male` como para `female`.
+* Los resultados demostraron una tasa de certeza consistente (80%–88%) en la estación de trabajo durante las pruebas realizadas con el equipo.
