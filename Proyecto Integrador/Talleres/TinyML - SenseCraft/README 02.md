@@ -1,4 +1,4 @@
-* Proyecto Integrador · Taller de TinyML & Edge AI *
+# Proyecto Integrador · Taller de TinyML & Edge AI 
 
 En esta segunda fase se desarrolló, entrenó y desplegó un modelo personalizado de clasificación de imágenes en el microcontrolador **XIAO ESP32S3 Sense**. A diferencia de la primera parte, el conjunto de datos fue recopilado directamente en el entorno de trabajo para reconocer objetos de uso frecuente (`BOX ESP32xiao` y `Mouse`) frente al fondo de la estación (`Entorno`), conmutando una salida física GPIO tras la validación de las clases.
 
