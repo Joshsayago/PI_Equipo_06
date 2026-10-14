@@ -1,4 +1,4 @@
-# 🟢 README 2: Entrenar y Desplegar un Modelo de Clasificación Personalizado
+# 🟢  Entrenar y Desplegar un Modelo de Clasificación Personalizado
 
 **Proyecto Integrador · Taller de TinyML & Edge AI**
 
