@@ -42,11 +42,15 @@ Se llevaron a cabo pruebas en la estación de trabajo para evaluar la estabilida
 
 <p align="center">
   <img width="1100" height="850" alt="image" src="https://github.com/user-attachments/assets/8d4cba8d-fc15-447f-9f19-b04889131d07" />
+  <br>
+  <em>Detección simultánea de los integrantes <b>Mónica</b> y <b>Josué</b> frente al sensor óptico.</em>
 </p>
 
 - **Evidencia:**
 <p align="center">
   <img width="900" height="850" alt="image" src="https://github.com/user-attachments/assets/3cae9abd-638c-49e5-b27b-2472c330df49" />
+<br>
+  <em>Detección simultánea de rostros asignando etiquetas de género y porcentajes de confianza en tiempo real.</em>
 </p>
 
 - **Explicación de la prueba:** En esta primera prueba se evaluó la capacidad del modelo para detectar y clasificar simultáneamente a dos personas frente a la cámara. El sistema logra etiquetar correctamente a cada rostro por separado gracias al ajuste dinámico de los umbrales de superposición (*IoU Threshold*), evitando que una sola caja delimitadora encierre a ambos rostros.
@@ -59,7 +63,8 @@ Se llevaron a cabo pruebas en la estación de trabajo para evaluar la estabilida
 - **Evidencia:**
 <p align="center">
  <img width="1284" height="994" alt="image" src="https://github.com/user-attachments/assets/3fde6091-db3f-4ca5-8632-0108aa01099b" />
-
+<br>
+  <em>Prueba de reconocimiento individual del integrante <b>Piero</b>, obteniendo la etiqueta male con un 88% de confianza y visualizando las métricas en el Device Logger.</em>
 </p>
 
 * **Resultado obtenido:** Etiqueta `male` con confianza de **88%**.
@@ -73,6 +78,8 @@ Se llevaron a cabo pruebas en la estación de trabajo para evaluar la estabilida
 - **Evidencia:**
 <p align="center">
   <img width="1100" height="850" alt="image" src="https://github.com/user-attachments/assets/30220c44-4fff-419d-a3a4-6135de15b7f2" />
+  <br>
+  <em>Validación del modelo con el integrante <b>Diego</b>, registrando la etiqueta male con un 86% de confianza.</em>
 </p>
 
 * **Resultado obtenido:** Etiqueta `male` con confianza de **86%**.
@@ -102,36 +109,52 @@ Para vincular las inferencias del modelo con la respuesta física en la tarjeta,
 Se realizaron las verificaciones en vivo con los integrantes del equipo para comprobar la activación del LED ante detecciones afirmativas.
 
 ### 👤 Prueba 1: Integrante Masculino (Detección Positiva)
- <img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/bc3e73f1-57eb-40c8-a290-7fd253dd3780" />
- 
 
-* **Nombre del integrante:**  Josué Sayago 
-* **Resultados de la inferencia:**
+<p align="center">
+  <img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/bb0d3cad-4af1-422a-b5fe-aa4ba468fb68" />
+  <br>
+  <em>Ubicación del integrante <b>Josué</b> frente a la cámara del XIAO ESP32S3 Sense para validar la conmutación del pin GPIO.</em>
+</p>
+
+- **Nombre del integrante:** Josué Sayago
+- **Resultados de la inferencia:**
   * **Etiqueta detectada:** `male`
   * **Confianza obtenida:** 86%
   * **Umbral GPIO:** Mayor que 53%
   * **Estado del LED:** 🟡 **Encendido**
-    <img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/df709202-4717-4a8d-b77b-385b06ff9429" />
 
-* **Interpretación técnica:** El modelo identificó a la persona con la etiqueta `male` y un 86% de certeza. Al superar holgadamente el umbral ($86\% > 53\%$), el sistema envió el pulso digital a la salida GPIO y el **LED se encendió exitosamente**.
+<p align="center">
+ <img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/f803eca8-68b3-43aa-8214-5f6d3ca04635" />
+  <br>
+  <em>Activación exitosa de la salida GPIO con el LED encendido al validarse la condición de inferencia.</em>
+</p>
+
+- **Interpretación técnica:** El modelo identificó a la persona con la etiqueta `male` y un 86% de certeza. Al superar holgadamente el umbral ($86\% > 53\%$), el sistema envió el pulso digital a la salida GPIO y el **LED se encendió exitosamente**.
 
 ---
 
 ### 👤 Prueba 2: Integrante Femenina (Detección Positiva)
 
- <img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/1fb8bd7b-c0b2-45bb-a608-3b80314535b0" />
+<p align="center">
+ <img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/02cbabb6-522b-4003-98ad-fe5cffcc7971" />
+  <br>
+  <em>Ubicación de la integrante <b>Mónica</b> frente a la cámara del XIAO ESP32S3 Sense para validar la conmutación del pin GPIO.</em>
+</p>
 
-
-* **Nombre de la integrante:**  Mónica Huamán 
-* **Resultados de la inferencia:**
+- **Nombre de la integrante:** Mónica Huamán
+- **Resultados de la inferencia:**
   * **Etiqueta detectada:** `female`
   * **Confianza obtenida:** 80%
   * **Umbral GPIO:** Mayor que 53%
   * **Estado del LED:** 🟡 **Encendido**
-    <img width="1200" height="1600" alt="image" src="https://github.com/user-attachments/assets/331d841b-3c31-414b-9e73-3dc9429bf6e4" />
 
-* **Interpretación técnica:** Al posicionarte frente a la cámara, el modelo te identificó con la etiqueta `female` y un 80% de confianza. Como el valor superó el umbral configurado ($80\% > 53\%$), la condición de activación se cumplió nuevamente de forma correcta y el **LED también se encendió**, confirmando que el hardware responde ante la presencia de ambos integrantes.
+<p align="center">
+ <img width="1200" height="1600" alt="image" src="https://github.com/user-attachments/assets/d8241e9f-6685-4e1c-bab7-0a661f0cc7e5" />
+  <br>
+  <em>Activación exitosa de la salida GPIO con el LED encendido al validarse la condición de inferencia.</em>
+</p>
 
+- **Interpretación técnica:** Al posicionarse frente a la cámara, el modelo identificó a Mónica con la etiqueta `female` y un 80% de confianza. Como el valor superó el umbral configurado ($80\% > 53\%$), la condición de activación se cumplió nuevamente de forma correcta y el **LED también se encendió**, confirmando que el hardware responde ante la presencia de ambos integrantes.
 ---
 
 ### 📊 Resumen de Respuestas del Hardware
