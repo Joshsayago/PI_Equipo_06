@@ -1,4 +1,6 @@
-# Proyecto Integrador · Taller de TinyML & Edge AI 
+# 🟢  Entrenar y Desplegar un Modelo de Clasificación Personalizado
+
+**Proyecto Integrador · Taller de TinyML & Edge AI**
 
 En esta segunda fase se desarrolló, entrenó y desplegó un modelo personalizado de clasificación de imágenes en el microcontrolador **XIAO ESP32S3 Sense**. A diferencia de la primera parte, el conjunto de datos fue recopilado directamente en el entorno de trabajo para reconocer objetos de uso frecuente (`BOX ESP32xiao` y `Mouse`) frente al fondo de la estación (`Entorno`), conmutando una salida física GPIO tras la validación de las clases.
 
@@ -44,8 +46,12 @@ Para el entrenamiento del modelo se habilitó la captura continua de imágenes e
 Tras completar el proceso de entrenamiento (`Step 2: Training`), se realizaron las pruebas de inferencia previa directamente sobre la plataforma para analizar los puntajes de confianza del algoritmo.
 
 ### 4.1. Evaluación de la Clase: BOX ESP32xiao
-
-<img width="1600" height="882" alt="image" src="https://github.com/user-attachments/assets/4fa94db0-3521-47f0-b37e-860c63d797b3" />
+<p align="center">
+ <img width="1600" height="882" alt="image" src="https://github.com/user-attachments/assets/4fa94db0-3521-47f0-b37e-860c63d797b3" />
+  <br>
+  <em>Prueba previa en SenseCraft AI reconociendo la estructura 3D azul (BOX ESP32xiao) con un 97% de confianza.</em>
+</p>
+ 
 
 
 * **Etiqueta predicha:** `BOX ESP32xiao`
@@ -56,8 +62,11 @@ Tras completar el proceso de entrenamiento (`Step 2: Training`), se realizaron l
 ---
 
 ### 4.2. Evaluación de la Clase: Mouse
-<img width="1600" height="869" alt="image" src="https://github.com/user-attachments/assets/cb0e2905-2f82-42f1-a2d3-32e615d51644" />
-
+<p align="center">
+ <img width="1600" height="869" alt="image" src="https://github.com/user-attachments/assets/cb0e2905-2f82-42f1-a2d3-32e615d51644" />
+  <br>
+  <em>Inferencia en vivo en SenseCraft AI identificando el mouse sobre la mesa de trabajo con un 99% de precisión.</em>
+</p> 
 
 * **Etiqueta predicha:** `Mouse`
 * **Porcentaje de confianza obtenido:** **99%**
@@ -71,8 +80,11 @@ Tras completar el proceso de entrenamiento (`Step 2: Training`), se realizaron l
 Posteriormente al despliegue del modelo en la placa, se habilitó la línea GPIO para enlazar el resultado de la inferencia con el encendido del LED indicador.
 
 ### 5.1. Prueba de Hardware 1: Detección de la Carcasa 3D (BOX)
-
+<p align="center">
 <img width="1200" height="1600" alt="image" src="https://github.com/user-attachments/assets/37e9260e-d371-4c7d-97c2-7398362fbe57" />
+  <br>
+  <em>Reconocimiento de la carcasa de impresión 3D sosteniendo la placa, accionando el pin GPIO para encender el LED indicador.</em>
+</p> 
 
 
 * **Integrante a cargo de la prueba:**
@@ -86,8 +98,12 @@ Posteriormente al despliegue del modelo en la placa, se habilitó la línea GPIO
 ---
 
 ### 5.2. Prueba de Hardware 2: Detección del Periférico (Mouse)
-
-<img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/1dce9411-4136-4339-98e7-a959f416d284" />
+<p align="center">
+  <img width="1600" height="1200" alt="image" src="https://github.com/user-attachments/assets/1dce9411-4136-4339-98e7-a959f416d284" />
+  <br>
+  <em>Verificación de la inferencia sobre el mouse en el escritorio con la participación del equipo, activando la respuesta física del LED.</em>
+</p>
+ 
 
 
 * **Integrantes participando en la prueba:**
@@ -104,9 +120,9 @@ Mónica Huamán Bernal
 
 | Objeto Evaluado | Clase Asignada | Confianza (Preview) | Estado del LED | Diagnóstico del Sistema |
 | :--- | :---: | :---: | :---: | :--- |
-| **Carcasa 3D Azul** | `BOX ESP32xiao` | 97% |  Encendido | Clasificación correcta y activación GPIO confirmada. |
-| **Mouse de Escritorio** | `Mouse` | 99% |  Encendido | Inferencia de alta precisión e integración física estable. |
-| **Mesa de Trabajo** | `Entorno` | 0% - 2% |  Apagado | Sin falsos disparos en ausencia de objetos clave. |
+| **Carcasa 3D Azul** | `BOX ESP32xiao` | 97% | 🟡 Encendido | Clasificación correcta y activación GPIO confirmada. |
+| **Mouse de Escritorio** | `Mouse` | 99% | 🟡 Encendido | Inferencia de alta precisión e integración física estable. |
+| **Mesa de Trabajo** | `Entorno` | 0% - 2% | ⚫ Apagado | Sin falsos disparos en ausencia de objetos clave. |
 
 ---
 
