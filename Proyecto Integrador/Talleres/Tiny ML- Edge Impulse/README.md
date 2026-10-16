@@ -1,4 +1,4 @@
-#Clasificación de Imágenes con TinyML (Edge Impulse, Arduino y SenseCraft)
+# Clasificación de Imágenes con TinyML (Edge Impulse, Arduino y SenseCraft)
 
 Se presenta el desarrollo e implementación de un sistema de TinyML (Machine Learning en dispositivos de borde) enfocado en la clasificación de imágenes en tiempo real. El proyecto utiliza un microcontrolador con cámara (XIAO ESP32S3) para reconocer y diferenciar entre dos clases específicas: el integrante **Josue** y una **botella**. Todo el flujo comprende desde la recolección y etiquetado del dataset, el diseño del impulso y entrenamiento en Edge Impulse, hasta la validación estadística y el despliegue visual en SenseCraft.
 
