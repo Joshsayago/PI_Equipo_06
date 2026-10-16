@@ -62,32 +62,37 @@ Explorador de Datos y Pruebas Individuales: El explorador de datos clasificados 
 #### 1. Análisis de la Matriz de Confusión y Explorador de Características
 * **Matriz de Confusión:** Los resultados muestran un rendimiento de clasificación perfecto en el conjunto de validación. Ambas clases (`BOTELLA_AGUA` y `JOSUE`) obtuvieron un **100% de aciertos**, sin registrarse confusiones (0%) ni muestras clasificadas como `INCIERTO` (0%). Asimismo, la **Puntuación de F1** alcanza el valor máximo de **1.00** para ambas categorías, lo que evidencia un equilibrio óptimo entre la precisión y la sensibilidad del modelo.
 * **Explorador de Características:** El gráfico de dispersión espacial demuestra una separación clara y definida entre los grupos de datos. Las muestras correspondientes a `Botella_agua` y `Josue` se agrupan en regiones totalmente independientes, confirmando que el algoritmo extrajo características visuales robustas y distinguibles para cada clase sin solapamientos.
+
+<p align="center">
 <img width="735" height="681" alt="image" src="https://github.com/user-attachments/assets/3d102f60-6cfd-489f-9824-1b109d2bac21" />
+</p>
 
 #### 2. Métricas Globales del Modelo (Versión No Optimizada - float32)
 * **Precisión Global (*Accuracy*):** El modelo registra un **100.00%** de precisión total, validando la efectividad del aprendizaje por transferencia implementado.
 * **Área bajo la curva ROC (AUC):** Con un valor de **1.00**, indica una capacidad predictiva y de discriminación ideal entre las clases evaluadas.
-* **Precisión y Sensibilidad (*Recall*) Media Ponderada:** Ambas métricas se sitúan en **1.00**, lo que ratifica la ausencia absoluta de errores de tipo I (falsos positivos) y tipo II (falsos negativos).
+* **Precisión y Sensibilidad (*Recall*) Media Ponderada:** Ambas métricas se sitúan en **1.00**, lo que ratifica la ausencia de errores de tipo I (falsos positivos) y tipo II (falsos negativos).
 * **Puntuación F1 Media Ponderada:** El valor de **1.00** consolida la alta fiabilidad y consistencia estadística del modelo antes de aplicar procesos de cuantización u optimización en el dispositivo de borde.
+
+<p align="center">
 <img width="726" height="687" alt="image" src="https://github.com/user-attachments/assets/c18d6745-f8e7-4dc7-a6ac-0baf2e26c80d" />
-
-
-
-* **Precisión (*Accuracy*):** 100.0% de acierto en el conjunto de validación[cite: 8].
-* **Pérdida (*Loss*):** 0.04[cite: 8].
-* **Matriz de Confusión:** Mostró una separación perfecta entre ambas clases (`Josue` y `botella`), sin falsos positivos ni falsos negativos registrados en la validación[cite: 8].
-* **Métricas adicionales:**
-  * Área bajo la curva ROC (AUC): `1.00`.
-  * Precisión promedio ponderada: `1.00`.
-  * Sensibilidad (*Recall*): `1.00`.
-  * Puntaje F1 (*F1-Score*): `1.00`.
-* **Rendimiento en Dispositivo (*On-device performance*):** Se seleccionó la optimización **Quantized (int8)** para reducir la latencia, el consumo de memoria RAM y el tamaño en la memoria Flash, manteniendo la misma precisión que el modelo flotante (*float32*)[cite: 10].
+</p>
 
 ---
 
 ## 5. Despliegue y Pruebas en SenseCraft / Arduino IDE
-El modelo optimizado en formato TensorFlow Lite (`int8 quantized`) se exportó para su implementación práctica[cite: 10, 16]:
-* **Implementación en Arduino IDE:** Se descargó la librería de Arduino del proyecto[cite: 10], se configuraron los pines específicos para la placa **XIAO ESP32S3** (ajustando parámetros de la cámara y el búfer de memoria `arena_size` en caso de requerir espacio adicional)[cite: 11, 12, 13, 14], logrando visualizar las predicciones en tiempo real a través del Monitor de Serie[cite: 15].
-* **Pruebas de Visualización en SenseCraft:** 
-  * Se subió el archivo del modelo cuantizado (`.lite`) a la plataforma de espacio de trabajo de **SenseCraft**[cite: 16, 17].
-  * Durante las pruebas en tiempo real frente a la cámara, el sistema logró identificar de forma correcta y fluida tanto al integrante **Josue** como a la **botella**, mostrando barras de probabilidad con altos porcentajes de confianza en la interfaz gráfica[cite: 17].
+El modelo optimizado en formato TensorFlow Lite (`int8 quantized`) se intentó exportar para su implementación práctica. Entonces, en la fase de despliegue mediante la plataforma web SenseCraft AI, se procedió a cargar el modelo optimizado y a registrar las clases correspondientes (0: JOSUE y 1: BOTELLA AGUA). No obstante, la ejecución de la prueba en tiempo real se vio interrumpida debido la falta de tiempo en el laboratorio con el microcontrolador XIAO ESP32S3 Sense (reflejado en el estado de 'Dispositivo desconectado'). 
+<center>
+  <img width="1600" height="999" alt="image" src="https://github.com/user-attachments/assets/5f20a2c4-141f-40bb-8854-6d0252388d65" />
+
+  <br>
+  <em>Figura X: Configuración y carga del archivo de modelo en SenseCraft AI, asignando las etiquetas correspondientes a las clases del proyecto.</em>
+</center>
+
+<br>
+
+<center>
+<img width="1600" height="999" alt="image" src="https://github.com/user-attachments/assets/02afe628-1ff6-4fe2-b61f-aa5d0f904994" />
+
+  <br>
+  <em>Figura Y: Advertencia de estado del sistema en el espacio de trabajo de SenseCraft, indicando la interrupción de la prueba por falta de conexión con el hardware XIAO ESP32S3 Sense.</em>
+</center>
