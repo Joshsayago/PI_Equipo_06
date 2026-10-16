@@ -10,32 +10,49 @@ Para el entrenamiento del modelo de red neuronal se recolectó un conjunto de da
 * **Clase 2:** `botella` (fotografías de una botella de agua como prueba).
 
 El proceso de carga y estructuración de los datos se realizó mediante las siguientes etapas:
-* **Carga de archivos:** Las imágenes de cada clase se subieron de forma independiente a la plataforma Edge Impulse utilizando la opción de carga directa de archivos individuales o carpetas[cite: 1, 2].
-* **Etiquetado:** Se asignó una etiqueta personalizada a cada conjunto (`Josue` y `botella`), indicando que no se trataba de un proyecto de detección de objetos con delimitadores (*bounding boxes*), sino de una tarea de clasificación de imágenes general[cite: 3].
-* **División del Dataset (Split):** El conjunto de datos se dividió automáticamente para separar los datos de entrenamiento y las pruebas de validación[cite: 3, 4].
+* **Carga de archivos:** Las imágenes de cada clase se subieron de forma independiente a la plataforma Edge Impulse utilizando la opción de carga directa de archivos individuales o carpetas.
+* **Etiquetado:** Se asignó una etiqueta personalizada a cada conjunto (`Josue` y `botella`), indicando que no se trataba de un proyecto de detección de objetos con delimitadores (*bounding boxes*), sino de una tarea de clasificación de imágenes general.
+* **División del Dataset (Split):** El conjunto de datos se dividió automáticamente para separar los datos de entrenamiento y las pruebas de validación.
 
 ---
 
-## 3. Configuración en Edge Impulse (Paso a Paso - Incluyendo Paso 6)
-El pipeline de procesamiento y entrenamiento del modelo se configuró en la plataforma de Edge Impulse siguiendo una estructura modular:
+Configuración en Edge Impulse (Paso a Paso - Incluyendo Paso 6)
+El pipeline de procesamiento y entrenamiento del modelo se configuró en la plataforma de Edge Impulse siguiendo una estructura modular.
+
+1. **Creación del Proyecto:** Se configuró un nuevo proyecto enfocado en la clasificación de imágenes
 <img width="1600" height="877" alt="image" src="https://github.com/user-attachments/assets/f14f8ee7-c949-49be-9f4f-3073d5f1d499" />
 imagen del proyecto:
 
-1. **Creación del Proyecto:** Se configuró un nuevo proyecto enfocado en la clasificación de imágenes[cite: 1, 2].
 2. **Diseño del Impulso (*Impulse Design*):** 
-   * Se estableció un bloque de entrada de imagen (*Image data*), redimensionando las entradas a una resolución estándar de **96x96 píxeles**[cite: 5].
-   * Como **Processing Block**, se seleccionó *Image*, encargado de preprocesar, normalizar y ajustar la profundidad de color (RGB) de las imágenes[cite: 6, 7].
-   * Como **Learning Block**, se seleccionó **Transfer Learning (Images)**[cite: 6, 7]. Esta opción aprovecha un modelo preentrenado para extraer características visuales complejas, permitiendo obtener un rendimiento óptimo incluso con datasets pequeños[cite: 6].
-3. **Configuración de Entrenamiento:**
-   * **Ciclos de entrenamiento (*Epochs*):** Se configuraron 30 ciclos[cite: 7].
-   * **Tasa de aprendizaje (*Learning rate*):** 0.0005[cite: 7].
-   * **Procesador:** CPU[cite: 7].
-4. **Generación de Características y Entrenamiento:** Se ejecutó la extracción de características (*Generate features*) y posteriormente el entrenamiento de la red neuronal (*Save & train*)[cite: 7, 8].
-
+   * Se estableció un bloque de entrada de imagen (*Image data*), redimensionando las entradas a una resolución estándar de **96x96 píxeles**.
+   * Como **Processing Block**, se seleccionó *Image*, encargado de preprocesar, normalizar y ajustar la profundidad de color (RGB) de las imágenes.
+   * Como **Learning Block**, se seleccionó **Transfer Learning (Images)**. Esta opción aprovecha un modelo preentrenado para extraer características visuales complejas, permitiendo obtener un rendimiento óptimo incluso con datasets pequeños.
+     
 ---
 
 ## 4. Pruebas Estadísticas y Métricas de Validación
 Una vez completado el entrenamiento, se evaluó el desempeño del modelo utilizando el conjunto de validación (*validation set*), obteniendo métricas estadísticas sobresalientes:
+<img width="744" height="452" alt="image" src="https://github.com/user-attachments/assets/c3f29ecd-a357-4e66-885b-8ace91ebbdad" />
+<img width="735" height="744" alt="image" src="https://github.com/user-attachments/assets/5efa356b-6082-4f3f-b579-94f3adf73383" />
+<img width="729" height="636" alt="image" src="https://github.com/user-attachments/assets/f075f8b0-ae62-4eb8-bf9d-8495b56aafbb" />
+
+
+
+### Interpretación de Resultados Estadísticos y de Validación
+
+#### 1. Análisis de la Matriz de Confusión y Explorador de Características
+* **Matriz de Confusión:** Los resultados muestran un rendimiento de clasificación perfecto en el conjunto de validación. Ambas clases (`BOTELLA_AGUA` y `JOSUE`) obtuvieron un **100% de aciertos**, sin registrarse confusiones (0%) ni muestras clasificadas como `INCIERTO` (0%). Asimismo, la **Puntuación de F1** alcanza el valor máximo de **1.00** para ambas categorías, lo que evidencia un equilibrio óptimo entre la precisión y la sensibilidad del modelo.
+* **Explorador de Características:** El gráfico de dispersión espacial demuestra una separación clara y definida entre los grupos de datos. Las muestras correspondientes a `Botella_agua` y `Josue` se agrupan en regiones totalmente independientes, confirmando que el algoritmo extrajo características visuales robustas y distinguibles para cada clase sin solapamientos.
+<img width="735" height="681" alt="image" src="https://github.com/user-attachments/assets/3d102f60-6cfd-489f-9824-1b109d2bac21" />
+
+#### 2. Métricas Globales del Modelo (Versión No Optimizada - float32)
+* **Precisión Global (*Accuracy*):** El modelo registra un **100.00%** de precisión total, validando la efectividad del aprendizaje por transferencia implementado.
+* **Área bajo la curva ROC (AUC):** Con un valor de **1.00**, indica una capacidad predictiva y de discriminación ideal entre las clases evaluadas.
+* **Precisión y Sensibilidad (*Recall*) Media Ponderada:** Ambas métricas se sitúan en **1.00**, lo que ratifica la ausencia absoluta de errores de tipo I (falsos positivos) y tipo II (falsos negativos).
+* **Puntuación F1 Media Ponderada:** El valor de **1.00** consolida la alta fiabilidad y consistencia estadística del modelo antes de aplicar procesos de cuantización u optimización en el dispositivo de borde.
+<img width="726" height="687" alt="image" src="https://github.com/user-attachments/assets/c18d6745-f8e7-4dc7-a6ac-0baf2e26c80d" />
+
+
 * **Precisión (*Accuracy*):** 100.0% de acierto en el conjunto de validación[cite: 8].
 * **Pérdida (*Loss*):** 0.04[cite: 8].
 * **Matriz de Confusión:** Mostró una separación perfecta entre ambas clases (`Josue` y `botella`), sin falsos positivos ni falsos negativos registrados en la validación[cite: 8].
