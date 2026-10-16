@@ -1,14 +1,13 @@
-# Informe de Proyecto: Clasificación de Imágenes con TinyML (Edge Impulse, Arduino y SenseCraft)
+#Clasificación de Imágenes con TinyML (Edge Impulse, Arduino y SenseCraft)
 
-## 1. Introducción
-El presente informe detalla el desarrollo e implementación de un sistema de TinyML (Machine Learning en dispositivos de borde) enfocado en la clasificación de imágenes en tiempo real[cite: 1]. El proyecto utiliza un microcontrolador con cámara (como la placa XIAO ESP32S3) para reconocer y diferenciar entre dos clases específicas: el integrante **Josue** y una **botella**[cite: 1, 12, 13]. Todo el flujo comprende desde la recolección y etiquetado del dataset, el diseño del impulso y entrenamiento en Edge Impulse, hasta la validación estadística y el despliegue visual en SenseCraft[cite: 1, 5, 16].
+Se presenta el desarrollo e implementación de un sistema de TinyML (Machine Learning en dispositivos de borde) enfocado en la clasificación de imágenes en tiempo real. El proyecto utiliza un microcontrolador con cámara (XIAO ESP32S3) para reconocer y diferenciar entre dos clases específicas: el integrante **Josue** y una **botella**. Todo el flujo comprende desde la recolección y etiquetado del dataset, el diseño del impulso y entrenamiento en Edge Impulse, hasta la validación estadística y el despliegue visual en SenseCraft.
 
 ---
 
-## 2. Dataset de Imágenes y Etiquetas
+## Dataset de Imágenes y Etiquetas del proyecto
 Para el entrenamiento del modelo de red neuronal se recolectó un conjunto de datos (dataset) compuesto por dos clases principales:
-* **Clase 1:** `Josue` (fotografías del integrante bajo diferentes ángulos e iluminación).
-* **Clase 2:** `botella` (fotografías del objeto de prueba).
+* **Clase 1:** `Josue` (fotografías del integrante bajo diferentes ángulos y poses).
+* **Clase 2:** `botella` (fotografías de una botella de agua como prueba).
 
 El proceso de carga y estructuración de los datos se realizó mediante las siguientes etapas:
 * **Carga de archivos:** Las imágenes de cada clase se subieron de forma independiente a la plataforma Edge Impulse utilizando la opción de carga directa de archivos individuales o carpetas[cite: 1, 2].
@@ -19,6 +18,8 @@ El proceso de carga y estructuración de los datos se realizó mediante las sigu
 
 ## 3. Configuración en Edge Impulse (Paso a Paso - Incluyendo Paso 6)
 El pipeline de procesamiento y entrenamiento del modelo se configuró en la plataforma de Edge Impulse siguiendo una estructura modular:
+<img width="1600" height="877" alt="image" src="https://github.com/user-attachments/assets/f14f8ee7-c949-49be-9f4f-3073d5f1d499" />
+imagen del proyecto:
 
 1. **Creación del Proyecto:** Se configuró un nuevo proyecto enfocado en la clasificación de imágenes[cite: 1, 2].
 2. **Diseño del Impulso (*Impulse Design*):** 
