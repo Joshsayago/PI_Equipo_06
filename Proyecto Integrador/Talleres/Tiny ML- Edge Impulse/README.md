@@ -31,12 +31,31 @@ imagen del proyecto:
 ---
 
 ## 4. Pruebas Estadísticas y Métricas de Validación
-Una vez completado el entrenamiento, se evaluó el desempeño del modelo utilizando el conjunto de validación (*validation set*), obteniendo métricas estadísticas sobresalientes:
-<img width="744" height="452" alt="image" src="https://github.com/user-attachments/assets/c3f29ecd-a357-4e66-885b-8ace91ebbdad" />
+Una vez completado el entrenamiento, se evaluó el desempeño del modelo utilizando el conjunto de validación (*validation set*), obteniendo métricas estadísticas sobresalientes.
+
+Matriz de Confusión y Precisión General: El modelo alcanza una precisión del 100.0% y una pérdida de 0.00 en el conjunto de validación. La matriz de confusión refleja un 100% de aciertos para ambas clases (BOTELLA_AGUA y JOSUE), sin ningún error de clasificación cruzada (0%) y una puntuación de F1 de 1.00. Esto se mantiene tanto en su versión cuantizada (int8) como no optimizada (float32).  
+
+<p align="center">
+<img width="644" height="352" alt="image" src="https://github.com/user-attachments/assets/c3f29ecd-a357-4e66-885b-8ace91ebbdad" />
+</p>
+
+Métricas de Evaluación Global: Las pruebas estadísticas del conjunto de validación arrojan un Área bajo la curva ROC de 1.00, una precisión media ponderada de 1.00, un promedio ponderado de llamada (Recall) de 1.00 y una puntuación media ponderada en F1 de 1.00, lo que demuestra una discriminación perfecta y una alta fiabilidad del modelo. 
+
+<p align="center">
 <img width="735" height="744" alt="image" src="https://github.com/user-attachments/assets/5efa356b-6082-4f3f-b579-94f3adf73383" />
+</p>
+
+Explorador de Características: El gráfico de distribución espacial muestra dos cúmulos (clusters) totalmente independientes y distantes entre las características de Botella_agua y Josue, lo que indica que el sistema ha extraído patrones visuales únicos y distinguibles para cada clase sin zonas de ambigüedad.
+
+<p align="center">
 <img width="729" height="636" alt="image" src="https://github.com/user-attachments/assets/f075f8b0-ae62-4eb8-bf9d-8495b56aafbb" />
+</p>
 
+Explorador de Datos y Pruebas Individuales: El explorador de datos clasificados valida que la totalidad de las muestras de prueba fueron categorizadas correctamente (indicadas en color verde). Al evaluar una muestra específica (como botella_agua_042), el sistema emite un resultado detallado con una probabilidad de 1.00 (100%) para la clase correcta y 0 para la alternativa, confirmando la estabilidad del sistema en la inferencia individual.   
 
+<p align="center">
+<img width="1024" height="642" alt="image" src="https://github.com/user-attachments/assets/548c7e02-9ff1-4259-b62e-cb80cb4b40a9" />
+</p>
 
 ### Interpretación de Resultados Estadísticos y de Validación
 
@@ -53,14 +72,15 @@ Una vez completado el entrenamiento, se evaluó el desempeño del modelo utiliza
 <img width="726" height="687" alt="image" src="https://github.com/user-attachments/assets/c18d6745-f8e7-4dc7-a6ac-0baf2e26c80d" />
 
 
+
 * **Precisión (*Accuracy*):** 100.0% de acierto en el conjunto de validación[cite: 8].
 * **Pérdida (*Loss*):** 0.04[cite: 8].
 * **Matriz de Confusión:** Mostró una separación perfecta entre ambas clases (`Josue` y `botella`), sin falsos positivos ni falsos negativos registrados en la validación[cite: 8].
 * **Métricas adicionales:**
-  * Área bajo la curva ROC (AUC): `1.00`[cite: 8].
-  * Precisión promedio ponderada: `1.00`[cite: 8].
-  * Sensibilidad (*Recall*): `1.00`[cite: 8].
-  * Puntaje F1 (*F1-Score*): `1.00`[cite: 8].
+  * Área bajo la curva ROC (AUC): `1.00`.
+  * Precisión promedio ponderada: `1.00`.
+  * Sensibilidad (*Recall*): `1.00`.
+  * Puntaje F1 (*F1-Score*): `1.00`.
 * **Rendimiento en Dispositivo (*On-device performance*):** Se seleccionó la optimización **Quantized (int8)** para reducir la latencia, el consumo de memoria RAM y el tamaño en la memoria Flash, manteniendo la misma precisión que el modelo flotante (*float32*)[cite: 10].
 
 ---
