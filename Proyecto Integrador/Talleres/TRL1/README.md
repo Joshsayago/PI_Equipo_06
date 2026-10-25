@@ -1,4 +1,4 @@
-#  Tecnología Emergente 
+# Tecnología Emergente  
 
 ## Aprendizaje autosupervisado y modelos de visión fundacionales para detectar grietas en concreto
 
@@ -20,102 +20,92 @@
 
 # 1. Descripción breve de la tecnología
 
-El **aprendizaje autosupervisado** (*self-supervised learning*) es una técnica de inteligencia artificial que permite que un modelo aprenda representaciones útiles a partir de datos sin que todas las imágenes tengan que ser etiquetadas manualmente[cite: 2]. En visión por computadora, el modelo aprende patrones visuales —por ejemplo, texturas, bordes, formas y relaciones espaciales— mediante objetivos de aprendizaje construidos a partir de las propias imágenes[cite: 2]. Posteriormente, esas representaciones se pueden adaptar a una tarea específica, como detectar o segmentar grietas[cite: 2].
+El **aprendizaje autosupervisado** (*self-supervised learning*) es una técnica de inteligencia artificial que permite que un modelo aprenda representaciones útiles a partir de datos sin que todas las imágenes tengan que ser etiquetadas manualmente. En visión por computadora, el modelo aprende patrones visuales —como texturas, bordes, formas y relaciones espaciales— mediante objetivos construidos a partir de las propias imágenes para luego adaptarlas a tareas específicas, como detectar o segmentar grietas.
 
-Una línea reciente combina este enfoque con **modelos de visión fundacionales**[cite: 2]. Un ejemplo es DINOv2, preentrenado mediante aprendizaje autosupervisado con un gran conjunto de imágenes para producir representaciones visuales reutilizables en diversas tareas[cite: 2]. Investigaciones publicadas en 2024 y 2026 han estudiado su aplicación, junto con otros métodos autosupervisados, a la detección de grietas en concreto[cite: 2].
+Una línea reciente combina este enfoque con **modelos de visión fundacionales**. Un ejemplo destacado es DINOv2, preentrenado mediante aprendizaje autosupervisado para producir representaciones visuales reutilizables en diversas tareas. Investigaciones recientes han estudiado su aplicación, junto con otros métodos autosupervisados, orientados específicamente a la detección de grietas en estructuras de concreto.
 
-La ventaja potencial es reducir la dependencia de grandes conjuntos de imágenes anotadas manualmente y mejorar la capacidad del modelo para reconocer grietas en superficies, texturas o condiciones visuales diferentes[cite: 2]. Sin embargo, el aprendizaje autosupervisado no garantiza por sí solo que el modelo sea preciso: es necesario validarlo con imágenes representativas del entorno real de aplicación[cite: 2].
+La ventaja principal es reducir la dependencia de grandes conjuntos de imágenes anotadas manualmente. No obstante, el aprendizaje autosupervisado no garantiza por sí solo una precisión total, por lo que es indispensable validarlo con imágenes representativas del entorno real de aplicación[2].
 
 ---
 
 # 2. Relación con el proyecto CrackScan
 
-CrackScan propone un sistema portátil de apoyo a la inspección preliminar de grietas en viviendas de concreto de Lima Metropolitana[cite: 2]. Su flujo previsto combina dos grupos de información[cite: 2]:
+CrackScan propone un sistema portátil de apoyo a la inspección preliminar de grietas en viviendas de concreto de Lima Metropolitana. Su flujo previsto combina dos tipos de información:
 
-1. **Información visual:** una cámara captura la superficie y un modelo de visión por computadora identifica la grieta y obtiene las características que se definan para el prototipo[cite: 2].
-2. **Contexto geográfico:** el GPS obtiene las coordenadas del punto de inspección para consultar el nivel de riesgo/daño sísmico correspondiente en la capa geográfica seleccionada[cite: 2].
+1. **Información visual:** una cámara captura la superficie y un modelo de visión por computadora identifica la grieta y obtiene sus características.
+2. **Contexto geográfico:** el GPS obtiene las coordenadas del punto de inspección para consultar el nivel de riesgo o daño sísmico correspondiente en la capa geográfica seleccionada.
 
-La tecnología estudiada se relaciona principalmente con el primer grupo: el aprendizaje autosupervisado podría servir para entrenar o adaptar el modelo de visión que detecta y segmenta las grietas, especialmente si el equipo dispone de muchas fotografías sin etiquetar y pocos ejemplos etiquetados con precisión[cite: 2]. La información visual resultante se combinaría después con el nivel de riesgo/daño sísmico de la zona mediante criterios de evaluación definidos por el equipo[cite: 2]. La tecnología autosupervisada no establece por sí misma la regla que combina ambos grupos de información ni determina que una vivienda vaya a colapsar[cite: 2].
+La tecnología estudiada se relaciona con el primer componente: el aprendizaje autosupervisado sirve para entrenar o adaptar el modelo de visión encargado de detectar y segmentar las grietas, especialmente cuando se cuenta con muchas fotografías sin etiquetar y pocos ejemplos precisos. 
 
-**Alcance y limitación:** se trata de una tecnología candidata para investigar, no de una decisión confirmada de implementación[cite: 2]. Modelos fundacionales como DINOv2 pueden ser demasiado exigentes para ejecutarse directamente en un microcontrolador de recursos limitados[cite: 2]. CrackScan tendría que evaluar alternativas como realizar el análisis en un teléfono u ordenador, usar un servicio externo o destilar/optimizar un modelo más pequeño[cite: 2]. Además, obtener el ancho real de una grieta en milímetros requiere calibración o una referencia de escala; la segmentación de píxeles no lo proporciona automáticamente[cite: 2].
+**Alcance y limitación:** Se trata de una tecnología candidata para investigación y no de una implementación definitiva. Los modelos fundacionales como DINOv2 suelen ser muy pesados para ejecutarse directamente en un microcontrolador de recursos limitados, por lo que CrackScan tendría que evaluar alternativas como el procesamiento en un dispositivo móvil, un ordenador de campo o la optimización de un modelo más ligero. Además, medir el ancho real de una grieta en milímetros requiere calibración o una escala de referencia; la segmentación de píxeles por sí sola no lo proporciona.
 
 ---
 
 # 3. Estado del arte
 
-La investigación ha evolucionado desde métodos autosupervisados que evitaban necesitar pares de imágenes perfectamente etiquetadas hasta enfoques recientes que reutilizan modelos visuales preentrenados, generan datos específicos del entorno o segmentan grietas sin máscaras manuales[cite: 2].
+La investigación ha evolucionado desde métodos autosupervisados tradicionales hasta enfoques recientes que reutilizan modelos visuales preentrenados y generan datos específicos del entorno.
 
 | Ref. | Año y trabajo | Aporte principal | Relevancia para CrackScan y límites |
 |---|---|---|---|
-| [1] | Zhang, Zhang y Cheng, aprendizaje estructural autosupervisado con redes generativas adversarias consistentes en ciclo[cite: 2] | Propone detectar grietas a nivel de píxel sin requerir pares de imágenes de entrada/salida ni máscaras de referencia tradicionales; prueba el método en cuatro conjuntos de datos[cite: 2]. | Es un antecedente temprano que muestra cómo reducir la dependencia de etiquetado manual[cite: 2]. No es un modelo fundacional moderno y utiliza una arquitectura generativa específica[cite: 2]. |
-| [2] | Oquab et al., DINOv2[cite: 2] | Presenta un modelo visual preentrenado con aprendizaje autosupervisado para generar representaciones visuales reutilizables en diversas tareas[cite: 2]. | Proporciona el fundamento de los modelos de visión fundacionales que podrían adaptarse al análisis de imágenes de grietas[cite: 2]. El artículo no se centra específicamente en grietas ni en viviendas[cite: 2]. |
-| [3] | Sohaib et al., SS-YOLO para grietas finas en concreto[cite: 2] | Combina YOLOv8, módulos de atención y pseudoetiquetado autosupervisado para mejorar la detección y segmentación de grietas finas con datos limitados[cite: 2]. | Está directamente relacionado con la detección visual de grietas en concreto[cite: 2]. Utiliza una arquitectura concreta; los resultados no garantizan el mismo desempeño sobre fotografías de viviendas de Lima[cite: 2]. |
-| [4] | Shim, adaptación de dominio autosupervisada con un modelo generativo de *inpainting*[cite: 2] | Ajusta Stable Diffusion mediante DreamBooth para generar imágenes y etiquetas de grietas adaptadas al entorno objetivo, y utiliza esos datos para entrenar el detector[cite: 2]. El estudio informa mejoras de F1 en dos conjuntos objetivo y prueba de campo en el techo de un túnel[cite: 2]. | Aborda un reto relevante para CrackScan: un modelo entrenado con un tipo de superficie puede fallar cuando cambian el material o las condiciones del lugar[cite: 2]. La generación de imágenes no elimina la necesidad de validar con fotografías reales[cite: 2]. |
-| [5] | Zhu et al., detección de grietas con DINOv2 autosupervisado[cite: 2] | Evalúa DINOv2 como extractor de características visuales para identificar grietas, con un clasificador lineal, incluyendo imágenes sin etiquetar, fondos complejos y distintas texturas[cite: 2]. | Es uno de los antecedentes más próximos al tema seleccionado: conecta de forma explícita un modelo visual fundacional autosupervisado con la detección de grietas[cite: 2]. No significa que el modelo mida por sí solo ancho real ni clasifique automáticamente el riesgo de una vivienda[cite: 2]. |
-| [6] | Kyem et al., Crack-Segmenter, transformador multiescala autosupervisado[cite: 2] | Propone segmentación de grietas en pavimentos sin anotaciones manuales de píxeles, con extracción multiescala, atención direccional y fusión de características[cite: 2]. Evalúa el método en diez conjuntos públicos frente a trece métodos supervisados[cite: 2]. | Muestra la evolución hacia la segmentación autosupervisada y la reducción del costo de anotación[cite: 2]. Se centra en pavimentos, por lo que requiere adaptación y pruebas antes de aplicarse a paredes de concreto de viviendas[cite: 2]. |
+| [1] | Zhang et al., aprendizaje estructural con redes adversarias | Propone detectar grietas a nivel de píxel sin requerir pares de imágenes de entrada/salida ni máscaras de referencia tradicionales. | Antecedente temprano para reducir la dependencia de etiquetado manual; utiliza una arquitectura generativa específica. |
+| [2] | Oquab et al., DINOv2 | Presenta un modelo visual preentrenado con aprendizaje autosupervisado para generar representaciones visuales reutilizables. | Base de los modelos fundacionales aplicables a imágenes de grietas, aunque no se centra específicamente en viviendas. |
+| [3] | Sohaib et al., SS-YOLO | Combina YOLOv8, módulos de atención y pseudoetiquetado autosupervisado para grietas finas. | Relacionado directamente con concreto, aunque requiere validación con el tipo de viviendas de Lima. |
+| [4] | Shim, adaptación de dominio con *inpainting* | Ajusta Stable Diffusion mediante DreamBooth para generar imágenes y etiquetas de grietas adaptadas al entorno objetivo. | Aborda el cambio de condiciones entre superficies, aunque requiere validación con fotos reales. |
+| [5] | Zhu et al., DINOv2 para grietas | Evalúa DINOv2 como extractor de características visuales con un clasificador lineal para identificar grietas. | Antecedente próximo que conecta modelos fundacionales con grietas, sin medir ancho ni riesgo estructural por sí solo. |
+| [6] | Kyem et al., Crack-Segmenter | Propone segmentación de grietas en pavimentos sin anotaciones manuales de píxeles mediante un transformador multiescala. | Muestra la evolución hacia la segmentación autosupervisada, centrado en pavimentos (requiere adaptación a paredes). |
 
 ## 3.1. Síntesis del estado del arte
 
-Los trabajos revisados muestran que el aprendizaje autosupervisado puede contribuir a la detección y segmentación de grietas con menor dependencia de anotaciones manuales[cite: 2]. DINOv2 ofrece representaciones visuales generales que pueden adaptarse a tareas específicas [2], [5][cite: 2], mientras que métodos especializados como SS-YOLO y Crack-Segmenter incorporan técnicas de atención, pseudoetiquetado o aprendizaje de consistencia [3], [6][cite: 2]. La adaptación de dominio también intenta responder a las diferencias entre superficies y entornos de captura [4][cite: 2].
-
-Persisten desafíos importantes: las grietas pueden ser muy finas, las sombras y texturas pueden generar falsos positivos, el desempeño puede variar entre conjuntos de datos y la cuantificación en milímetros requiere una referencia de escala[cite: 2]. Por tanto, para CrackScan la contribución no debe describirse como inventar la detección de grietas, sino como investigar una opción de visión computacional apropiada y validarla en el escenario definido, antes de integrar su resultado con el contexto geográfico de riesgo/daño sísmico[cite: 2].
+Los trabajos demuestran que el aprendizaje autosupervisado reduce la necesidad de anotaciones manuales extensas. Mientras que DINOv2 ofrece representaciones generales adaptables, los métodos especializados incorporan atención y pseudoetiquetado. Sin embargo, persisten retos como los falsos positivos por sombras o texturas y la necesidad de referencias de escala para mediciones precisas.
 
 ---
 
 # 4. Patentes y solicitudes relacionadas
-
-La búsqueda identificó documentos de patente relacionados con la detección visual de grietas mediante redes neuronales y sistemas de inspección con cámara[cite: 2]. **No se verificó una patente que coincida exactamente con la combinación específica “DINOv2 autosupervisado para detectar grietas en concreto”;** los siguientes documentos son antecedentes tecnológicos cercanos, no prueba de que esa combinación concreta esté patentada[cite: 2].
+ 
+Durante la búsqueda se identificó documentos de patente relacionados con la detección visual de grietas mediante redes neuronales y sistemas de inspección con cámara. **No se verificó una patente que coincida exactamente con la combinación específica “DINOv2 autosupervisado para detectar grietas en concreto”;** los siguientes documentos son antecedentes tecnológicos cercanos, no prueba de que esa combinación concreta esté patentada.
 
 | Ref. | Documento | Tecnología descrita | Relación y diferencia con CrackScan |
 |---|---|---|---|
-| [7] | *Defect detection in image space*, patente de EE. UU. US 12,260,538 B2[cite: 2] | Describe transformar imágenes para suprimir información no relacionada con la grieta y entrenar una red neuronal para detectar defectos/grietas en imágenes[cite: 2]. Google Patents la muestra como concedida y activa[cite: 2]. | Es pertinente por el procesamiento de imágenes para separar las grietas del fondo[cite: 2]. No es una patente de DINOv2 y no describe el flujo completo de CrackScan con GPS y mapa de riesgo sísmico[cite: 2]. |
-| [8] | *A concrete component crack detection method based on deep learning algorithm*, patente china CN 118505597 B[cite: 2] | Describe detección de grietas en elementos de concreto mediante un algoritmo de aprendizaje profundo y su adaptación a una aplicación móvil, usando YOLOX y bibliotecas móviles[cite: 2]. El registro indica que se concedió en noviembre de 2025[cite: 2]. | Es relevante por la detección portátil de grietas en concreto[cite: 2]. Su enfoque es la implementación móvil de un detector, no la integración autosupervisada de DINOv2 con el contexto geográfico de riesgo[cite: 2]. |
-| [9] | *Active damage detection system and method for detecting cracks in a surface*, solicitud de patente estadounidense US 2025/0378545 A1[cite: 2] | Propone un sistema robótico que cambia adaptativamente los puntos de vista de una cámara, distingue grietas de rayones y fusiona observaciones de distintas perspectivas[cite: 2]. Google Patents la muestra como pendiente[cite: 2]. | Muestra una línea de evolución hacia inspecciones visuales activas[cite: 2]. A diferencia de CrackScan, describe una plataforma robótica con cámara móvil y no el sistema portátil de mano propuesto por el equipo[cite: 2]. |
-
-**Nota sobre patentes:** el estado jurídico indicado corresponde al registro consultado y puede cambiar[cite: 2]. Esta revisión es exploratoria; no constituye una búsqueda exhaustiva de patentabilidad ni una opinión sobre libertad de operación[cite: 2].
+| [7] | *Defect detection in image space*, patente de EE. UU. US 12,260,538 B2. | Describe transformar imágenes para suprimir información no relacionada con la grieta y entrenar una red neuronal para detectar defectos/grietas en imágenes. Google Patents la muestra como concedida y activa. | Es pertinente por el procesamiento de imágenes para separar las grietas del fondo. No es una patente de DINOv2 y no describe el flujo completo de CrackScan con GPS y mapa de riesgo sísmico. |
+| [8] | *A concrete component crack detection method based on deep learning algorithm*, patente china CN 118505597 B | Describe detección de grietas en elementos de concreto mediante un algoritmo de aprendizaje profundo y su adaptación a una aplicación móvil, usando YOLOX y bibliotecas móviles. El registro indica que se concedió en noviembre de 2025. | Es relevante por la detección portátil de grietas en concreto. Su enfoque es la implementación móvil de un detector, no la integración autosupervisada de DINOv2 con el contexto geográfico de riesgo. |
+| [9] | *Active damage detection system and method for detecting cracks in a surface*, solicitud de patente estadounidense US 2025/0378545 A1. | Propone un sistema robótico que cambia adaptativamente los puntos de vista de una cámara, distingue grietas de rayones y fusiona observaciones de distintas perspectivas. Google Patents la muestra como pendiente. | Muestra una línea de evolución hacia inspecciones visuales activas. A diferencia de CrackScan, describe una plataforma robótica con cámara móvil y no el sistema portátil de mano propuesto por el equipo. |
 
 ---
 
 # 5. Posibles aplicaciones y evolución futura
 
-- **Inspección de infraestructura:** detección y segmentación de grietas en edificios, puentes, túneles, pavimentos y otras estructuras de concreto[cite: 2].
-- **Menor costo de etiquetado:** aprovechar grandes colecciones de imágenes sin etiquetar y reservar el etiquetado experto para validación y ajuste[cite: 2].
-- **Adaptación a condiciones reales:** mejorar la respuesta ante variaciones de iluminación, textura, cámara y tipo de superficie mediante adaptación de dominio[cite: 2].
-- **Despliegue en dispositivos portátiles:** comprimir, destilar u optimizar modelos para ejecutarlos en teléfonos, ordenadores de campo o dispositivos de borde con recursos limitados[cite: 2].
-- **Integración con información geográfica:** asociar resultados visuales con coordenadas y capas territoriales para organizar inspecciones y apoyar la priorización después de un sismo[cite: 2].
-- **Validación y explicabilidad:** desarrollar sistemas que informen qué características visuales detectaron, con qué incertidumbre y bajo qué limitaciones, facilitando la revisión de especialistas[cite: 2].
-
-Las áreas que podrían beneficiarse incluyen ingeniería civil, mantenimiento de infraestructura, gestión del riesgo de desastres, municipalidades, empresas de inspección, aseguradoras e investigación en inteligencia artificial aplicada[cite: 2]. Para CrackScan, la prioridad sería demostrar que el análisis visual funciona de forma fiable en imágenes representativas y después validar el método de integración con el nivel de riesgo/daño sísmico de la zona[cite: 2].
+- **Inspección de infraestructura:** Detección en edificios, puentes, túneles y pavimentos.
+- **Optimización de costos:** Aprovechamiento de grandes volúmenes de imágenes sin etiquetar.
+- **Adaptación a condiciones reales:** Mejora ante variaciones de iluminación y texturas.
+- **Despliegue portátil:** Destilación y compresión de modelos para dispositivos de borde.
+- **Integración geográfica:** Asociación de resultados visuales con coordenadas para la priorización post-sismo.
 
 ---
 
 # 6. Conclusión
 
-El aprendizaje autosupervisado y los modelos de visión fundacionales representan una línea emergente de inteligencia artificial para la detección de grietas porque permiten aprender patrones visuales con menor dependencia de etiquetas manuales y adaptar esas representaciones a tareas específicas[cite: 2]. La investigación reciente ya explora su aplicación a grietas de concreto [3]–[6][cite: 2], mientras que las patentes relacionadas muestran interés en técnicas de detección neuronal y sistemas de inspección visual [7]–[9][cite: 2].
-
-La tecnología se relaciona con CrackScan porque podría mejorar el módulo encargado de detectar y caracterizar la grieta a partir de una imagen[cite: 2]. No resuelve por sí sola la evaluación del riesgo: CrackScan deberá integrar ese resultado con el nivel de riesgo/daño sísmico geográfico mediante criterios definidos y validados[cite: 2]. La elección del modelo final dependerá de la calidad de los resultados, los datos disponibles y las limitaciones de procesamiento del prototipo[cite: 2].
+El aprendizaje autosupervisado y los modelos de visión fundacionales representan una vía prometedora para la detección de grietas con menor dependencia de etiquetas manuales. Para CrackScan, esta tecnología optimiza el módulo de captura y análisis visual, el cual debe complementarse de forma estructurada con la evaluación del contexto geográfico y de riesgo sísmico.
 
 ---
 
 # 7. Referencias (formato IEEE)
 
-[1] K. Zhang, Y. Zhang, and H. D. Cheng, “Self-supervised structure learning for crack detection based on cycle-consistent generative adversarial networks,” *Journal of Computing in Civil Engineering*, vol. 34, no. 3, 2020, doi: [10.1061/(ASCE)CP.1943-5487.0000883](https://doi.org/10.1061/%28ASCE%29CP.1943-5487.0000883).[cite: 2]
+[1] K. Zhang, Y. Zhang, and H. D. Cheng, “Self-supervised structure learning for crack detection based on cycle-consistent generative adversarial networks,” *Journal of Computing in Civil Engineering*, vol. 34, no. 3, 2020. 
 
-[2] M. Oquab *et al*., “DINOv2: Learning robust visual features without supervision,” arXiv:2304.07193, 2023. [En línea]. Disponible: https://arxiv.org/abs/2304.07193.[cite: 2]
+[2] M. Oquab *et al*., “DINOv2: Learning robust visual features without supervision,” arXiv:2304.07193, 2023. 
 
-[3] M. Sohaib, M. J. Hasan, M. A. Shah, and Z. Zheng, “A robust self-supervised approach for fine-grained crack detection in concrete structures,” *Scientific Reports*, vol. 14, no. 1, Art. no. 12646, 2024, doi: [10.1038/s41598-024-63575-x](https://doi.org/10.1038/s41598-024-63575-x).[cite: 2]
+[3] M. Sohaib, M. J. Hasan, M. A. Shah, and Z. Zheng, “A robust self-supervised approach for fine-grained crack detection in concrete structures,” *Scientific Reports*, vol. 14, no. 1, 2024. 
 
-[4] S. Shim, “Self-supervised domain adaptive approach for extrapolated crack segmentation with fine-tuned inpainting generative model,” *Computer-Aided Civil and Infrastructure Engineering*, vol. 40, no. 21, pp. 3333–3358, 2025, doi: [10.1111/mice.13517](https://doi.org/10.1111/mice.13517).[cite: 2]
+[4] S. Shim, “Self-supervised domain adaptive approach for extrapolated crack segmentation with fine-tuned inpainting generative model,” *Computer-Aided Civil and Infrastructure Engineering*, vol. 40, no. 21, 2025. 
 
-[5] T. Zhu, A. Braytee, K. Thiyagarajan, X. Zi, S. Mustapha, X. Tao, *et al*., “Autonomous detection of concrete cracks using self-supervised DinoV2,” *Machine Intelligence Research*, vol. 23, pp. 168–184, 2026, doi: [10.1007/s11633-025-1553-5](https://doi.org/10.1007/s11633-025-1553-5).[cite: 2]
+[5] T. Zhu *et al*., “Autonomous detection of concrete cracks using self-supervised DinoV2,” *Machine Intelligence Research*, vol. 23, 2026. 
 
-[6] B. A. Kyem, J. K. Asamoah, E. Denteh, A. Danyo, and A. Aboah, “Self-supervised multi-scale transformer with attention-guided fusion for efficient crack detection,” *Automation in Construction*, vol. 181, pt. A, Art. no. 106591, 2026, doi: [10.1016/j.autcon.2025.106591](https://doi.org/10.1016/j.autcon.2025.106591).[cite: 2]
+[6] B. A. Kyem *et al*., “Self-supervised multi-scale transformer with attention-guided fusion for efficient crack detection,” *Automation in Construction*, vol. 181, 2026. 
 
-[7] J. Cheng, Y. Sun, W. Xiong, W. Chen, Y. Li, and Y. Quan, “Defect detection in image space,” U.S. Patent 12,260,538 B2, Mar. 25, 2025. [En línea]. Disponible: https://patents.google.com/patent/US12260538B2/en.[cite: 2]
+[7] J. Cheng *et al*., “Defect detection in image space,” U.S. Patent 12,260,538 B2, Mar. 25, 2025. 
+[8] P. Zhu *et al*., “A concrete component crack detection method based on deep learning algorithm,” Chinese Patent CN 118505597 B, Nov. 7, 2025. 
 
-[8] P. Zhu *et al*., “A concrete component crack detection method based on deep learning algorithm,” Chinese Patent CN 118505597 B, Nov. 7, 2025. [En línea]. Disponible: https://patents.google.com/patent/CN118505597B/en.[cite: 2]
-
-[9] M. R. Jahanshahi and W. Tang, “Active damage detection system and method for detecting cracks in a surface,” U.S. Patent Application Publication US 2025/0378545 A1, Dec. 11, 2025. [En línea]. Disponible: https://patents.google.com/patent/US20250378545A1/en.[cite: 2]
+[9] M. R. Jahanshahi and W. Tang, “Active damage detection system and method for detecting cracks in a surface,” U.S. Patent Application Publication US 2025/0378545 A1, Dec. 11, 2025. 
 
 ---
 
