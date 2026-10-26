@@ -4,7 +4,6 @@
 
 **Equipo:** Equipo 06  
 **Proyecto:** CrackScan  
-**Etapa documentada:** Revisión de principios y antecedentes tecnológicos  
 
 ---
 
