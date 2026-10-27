@@ -217,8 +217,7 @@ Estas actividades son propuestas de desarrollo y no resultados ya obtenidos.
 
 ## 8. Referencias
 
-[1] K. Zhang, Y. Zhang, and H. D. Cheng, “Self-supervised structure learning for crack detection based on cycle-consistent generative adversarial networks,” *Journal of Computing in Civil Engineering*, vol. 34, no. 3, Art. no. 04020004, 2020, doi: 10.1061/(ASCE)CP.1943-5487.0000883. [Online]. Disponible en: https://doi.org/10.1061/(ASCE)CP.1943-5487.0000883
-
+[1] K. Zhang, Y. Zhang, and H. D. Cheng, “Self-supervised structure learning for crack detection based on cycle-consistent generative adversarial networks,” *Journal of Computing in Civil Engineering*, vol. 34, no. 3, Art. no. 04020004, 2020, doi: 10.1061/(ASCE)CP.1943-5487.0000883. [Online]. Disponible en: https://sci-hub.ru/10.1061/(ASCE)CP.1943-5487.0000883)
 [2] M. Oquab et al., “DINOv2: Learning robust visual features without supervision,” arXiv preprint arXiv:2304.07193, 2023, doi: 10.48550/arXiv.2304.07193. [Online]. Disponible en: https://arxiv.org/abs/2304.07193
 
 [3] M. Sohaib, M. J. Hasan, M. A. Shah, and Z. Zheng, “A robust self-supervised approach for fine-grained crack detection in concrete structures,” *Scientific Reports*, vol. 14, no. 1, Art. no. 12646, 2024, doi: 10.1038/s41598-024-63575-x. [Online]. Disponible en: https://doi.org/10.1038/s41598-024-63575-x
