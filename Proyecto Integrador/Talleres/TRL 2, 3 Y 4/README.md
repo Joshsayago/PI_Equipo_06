@@ -226,23 +226,23 @@ El desarrollo progresivo TRL 2, 3 y 4 permite pasar de la investigación documen
 ---
 ## 6. Referencias
 
-[1] K. Zhang, Y. Zhang, and H. D. Cheng, “Self-supervised structure learning for crack detection based on cycle-consistent generative adversarial networks,” *Journal of Computing in Civil Engineering*, vol. 34, no. 3, Art. no. 04020004, 2020, doi: 10.1061/(ASCE)CP.1943-5487.0000883.
+[1] K. Zhang, Y. Zhang, and H. D. Cheng, “Self-supervised structure learning for crack detection based on cycle-consistent generative adversarial networks,” Journal of Computing in Civil Engineering, vol. 34, no. 3, Art. no. 04020004, 2020, doi: 10.1061/(ASCE)CP.1943-5487.0000883. [Online]. Disponible en: https://sci-hub.ru/10.1061/(ASCE)CP.1943-5487.0000883
 
-[2] M. Oquab et al., “DINOv2: Learning robust visual features without supervision,” arXiv preprint arXiv:2304.07193, 2023, doi: 10.48550/arXiv.2304.07193.
+[2] M. Oquab et al., “DINOv2: Learning robust visual features without supervision,” arXiv preprint arXiv:2304.07193, 2023, doi: 10.48550/arXiv.2304.07193. [Online]. Disponible en: https://arxiv.org/abs/2304.07193
 
-[3] M. Sohaib, M. J. Hasan, M. A. Shah, and Z. Zheng, “A robust self-supervised approach for fine-grained crack detection in concrete structures,” *Scientific Reports*, vol. 14, no. 1, Art. no. 12646, 2024, doi: 10.1038/s41598-024-63575-x.
+[3] M. Sohaib, M. J. Hasan, M. A. Shah, and Z. Zheng, “A robust self-supervised approach for fine-grained crack detection in concrete structures,” Scientific Reports, vol. 14, no. 1, Art. no. 12646, 2024, doi: 10.1038/s41598-024-63575-x. [Online]. Disponible en: https://doi.org/10.1038/s41598-024-63575-x
 
-[4] S. Shim, “Self-supervised domain adaptive approach for extrapolated crack segmentation with fine-tuned inpainting generative model,” *Computer-Aided Civil and Infrastructure Engineering*, vol. 40, no. 21, pp. 3333–3358, 2025, doi: 10.1111/mice.13517.
+[4] S. Shim, “Self-supervised domain adaptive approach for extrapolated crack segmentation with fine-tuned inpainting generative model,” Computer-Aided Civil and Infrastructure Engineering, vol. 40, no. 21, pp. 3333–3358, 2025, doi: 10.1111/mice.13517. [Online]. Disponible en: https://doi.org/10.1111/mice.13517
 
-[5] T. Zhu et al., “Autonomous detection of concrete cracks using self-supervised DinoV2,” *Machine Intelligence Research*, vol. 23, no. 1, pp. 168–184, 2026, doi: 10.1007/s11633-025-1553-5.
+[5] T. Zhu et al., “Autonomous detection of concrete cracks using self-supervised DinoV2,” Machine Intelligence Research, vol. 23, no. 1, pp. 168–184, 2026, doi: 10.1007/s11633-025-1553-5. [Online]. Disponible en: https://doi.org/10.1007/s11633-025-1553-5
 
-[6] B. A. Kyem, J. K. Asamoah, E. Denteh, A. Danyo, and A. Aboah, “Self-supervised multi-scale transformer with Attention-Guided Fusion for efficient crack detection,” *Automation in Construction*, vol. 181, Art. no. 106591, 2026.
+[6] B. A. Kyem, J. K. Asamoah, E. Denteh, A. Danyo, and A. Aboah, “Self-supervised multi-scale transformer with Attention-Guided Fusion for efficient crack detection,” Automation in Construction, vol. 181, Art. no. 106591, 2026. [Online]. Disponible en: https://www.sciencedirect.com/science/article/pii/S0926580525006314
 
-[7] J. Cheng, Y. Sun, W. Xiong, W. Chen, Y. Li, and Y. Quan, “Defect detection in image space,” U.S. Patent 12,260,538 B2, Mar. 25, 2025.
+[7] J. Cheng, Y. Sun, W. Xiong, W. Chen, Y. Li, and Y. Quan, “Defect detection in image space,” U.S. Patent 12,260,538 B2, Mar. 25, 2025. [Online]. Disponible en: https://patents.google.com/patent/US12260538B2/en
 
-[8] Tianjin Research Institute for Water Transport Engineering, MOT, assignee, “Concrete member crack detection method based on deep learning algorithm,” Chinese Patent CN118505597B, Nov. 7, 2025.
+[8] Tianjin Research Institute for Water Transport Engineering, MOT, assignee, “Concrete member crack detection method based on deep learning algorithm,” Chinese Patent CN118505597B, Nov. 7, 2025. [Online]. Disponible en: https://patents.google.com/patent/CN118505597B/en
 
-[9] M. R. Jahanshahi and W. Tang, “Active damage detection system and method for detecting cracks in a surface,” U.S. Patent Application Publication US20250378545A1, Dec. 11, 2025.
+[9] M. R. Jahanshahi and W. Tang, “Active damage detection system and method for detecting cracks in a surface,” U.S. Patent Application Publication US20250378545A1, Dec. 11, 2025. [Online]. Disponible en: https://patents.google.com/patent/US20250378545A1/en
 
 <div align="center">
 
