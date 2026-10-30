@@ -106,7 +106,7 @@ Al finalizar el TRL 2 se espera disponer de un concepto tecnológico estructurad
 ## 2. TRL 3: Prueba de concepto experimental
 
 ### 2.1. Objetivo
-Desarrollar una primera implementación experimental del módulo de inteligencia artificial de CrackScan para demostrar que los principios tecnológicos identificados pueden aplicarse al reconocimiento y segmentación de grietas en fotografías de superficies de concreto. [3] [5] [6]
+Desarrollar una primera implementación experimental del módulo de inteligencia artificial de CrackScan para demostrar que los principios tecnológicos identificados pueden aplicarse al reconocimiento y segmentación de grietas en fotografías de superficies de concreto. [3] [4] [5]
 
 ### 2.2. Desarrollo del conjunto de datos
 Se recopilarán fotografías de superficies de concreto considerando superficies con grietas longitudinales, transversales, diagonales, ramificadas, sin grietas, y con manchas, sombras y juntas. Para clasificación se asignarán etiquetas de presencia/ausencia; para segmentación se usarán máscaras de referencia. [1]
@@ -151,7 +151,7 @@ Contar con una prueba de concepto funcional que demuestre experimentalmente la c
 ## 3. TRL 4: Validación tecnológica en laboratorio
 
 ### 3.1. Objetivo
-Validar experimentalmente el funcionamiento del módulo de análisis visual de CrackScan mediante la integración de sus principales componentes en un entorno controlado de laboratorio. [8] [9]
+Validar experimentalmente el funcionamiento del módulo de análisis visual de CrackScan mediante la integración de sus principales componentes en un entorno controlado de laboratorio. [7] [8]
 
 ### 3.2. Desarrollo del prototipo experimental
 
@@ -175,7 +175,7 @@ Se utilizarán probetas, placas o superficies de concreto con grietas de diferen
 5. Obtener máscara, calcular características y comparar con referencias.
 
 ### 3.5. Validación de la segmentación
-Se compararán las máscaras generadas con referencias manuales usando **IoU** y **Dice**, analizando errores de omisión, falsos positivos por sombras o confusión con juntas. [7]
+Se compararán las máscaras generadas con referencias manuales usando **IoU** y **Dice**, analizando errores de omisión, falsos positivos por sombras o confusión con juntas. [6]
 
 ### 3.6. Validación de las mediciones geométricas
 *   **A. Medición del ancho:** Abertura transversal comparada con instrumentos de referencia.
@@ -232,17 +232,15 @@ El desarrollo progresivo TRL 2, 3 y 4 permite pasar de la investigación documen
 
 [3] M. Sohaib, M. J. Hasan, M. A. Shah, and Z. Zheng, “A robust self-supervised approach for fine-grained crack detection in concrete structures,” Scientific Reports, vol. 14, no. 1, Art. no. 12646, 2024, doi: 10.1038/s41598-024-63575-x. [Online]. Disponible en: https://doi.org/10.1038/s41598-024-63575-x
 
-[4] S. Shim, “Self-supervised domain adaptive approach for extrapolated crack segmentation with fine-tuned inpainting generative model,” Computer-Aided Civil and Infrastructure Engineering, vol. 40, no. 21, pp. 3333–3358, 2025, doi: 10.1111/mice.13517. [Online]. Disponible en: https://doi.org/10.1111/mice.13517
+[4] T. Zhu et al., “Autonomous detection of concrete cracks using self-supervised DinoV2,” Machine Intelligence Research, vol. 23, no. 1, pp. 168–184, 2026, doi: 10.1007/s11633-025-1553-5. [Online]. Disponible en: https://doi.org/10.1007/s11633-025-1553-5
 
-[5] T. Zhu et al., “Autonomous detection of concrete cracks using self-supervised DinoV2,” Machine Intelligence Research, vol. 23, no. 1, pp. 168–184, 2026, doi: 10.1007/s11633-025-1553-5. [Online]. Disponible en: https://doi.org/10.1007/s11633-025-1553-5
+[5] B. A. Kyem, J. K. Asamoah, E. Denteh, A. Danyo, and A. Aboah, “Self-supervised multi-scale transformer with Attention-Guided Fusion for efficient crack detection,” Automation in Construction, vol. 181, Art. no. 106591, 2026. [Online]. Disponible en: https://www.sciencedirect.com/science/article/pii/S0926580525006314
 
-[6] B. A. Kyem, J. K. Asamoah, E. Denteh, A. Danyo, and A. Aboah, “Self-supervised multi-scale transformer with Attention-Guided Fusion for efficient crack detection,” Automation in Construction, vol. 181, Art. no. 106591, 2026. [Online]. Disponible en: https://www.sciencedirect.com/science/article/pii/S0926580525006314
+[6] J. Cheng, Y. Sun, W. Xiong, W. Chen, Y. Li, and Y. Quan, “Defect detection in image space,” U.S. Patent 12,260,538 B2, Mar. 25, 2025. [Online]. Disponible en: https://patents.google.com/patent/US12260538B2/en
 
-[7] J. Cheng, Y. Sun, W. Xiong, W. Chen, Y. Li, and Y. Quan, “Defect detection in image space,” U.S. Patent 12,260,538 B2, Mar. 25, 2025. [Online]. Disponible en: https://patents.google.com/patent/US12260538B2/en
+[7] Tianjin Research Institute for Water Transport Engineering, MOT, assignee, “Concrete member crack detection method based on deep learning algorithm,” Chinese Patent CN118505597B, Nov. 7, 2025. [Online]. Disponible en: https://patents.google.com/patent/CN118505597B/en
 
-[8] Tianjin Research Institute for Water Transport Engineering, MOT, assignee, “Concrete member crack detection method based on deep learning algorithm,” Chinese Patent CN118505597B, Nov. 7, 2025. [Online]. Disponible en: https://patents.google.com/patent/CN118505597B/en
-
-[9] M. R. Jahanshahi and W. Tang, “Active damage detection system and method for detecting cracks in a surface,” U.S. Patent Application Publication US20250378545A1, Dec. 11, 2025. [Online]. Disponible en: https://patents.google.com/patent/US20250378545A1/en
+[8] M. R. Jahanshahi and W. Tang, “Active damage detection system and method for detecting cracks in a surface,” U.S. Patent Application Publication US20250378545A1, Dec. 11, 2025. [Online]. Disponible en: https://patents.google.com/patent/US20250378545A1/en
 
 <div align="center">
 
