@@ -243,12 +243,10 @@ Los materiales y componentes principales del proyecto han sido adquiridos por el
 | 6 | Botón pulsador | Redondo, de 1 a 2 cm, con cuerpo roscado y tuerca de ajuste. |
 | 7 | Anillo de LEDs RGB | Tipo 5050 WS2812, de 16 LEDs o configuración similar en cadena. |
 | 8 | Extensión USB tipo C | Conector macho a hembra. |
-| 9 | Cables de conexión (jumpers) | Configuraciones hembra-macho, macho-macho y hembra-hembra. |
-| 10 | Tiras de pines soldables | Juegos de pines macho y hembra. |
-| 11 | Conectores para PCB | Bloques terminales de tornillo, de color verde o azul. |
-| 12 | Tornillos M3 × 20 mm | 10 unidades. |
-| 13 | Tornillos M3 × 10 mm | 4 unidades. |
-| 14 | Tornillos M3 × 5 mm | 4 unidades. |
+| 9 | Conectores para PCB | Bloques terminales de tornillo, de color verde o azul. |
+| 10 | Tornillos M3 × 20 mm | 10 unidades. |
+| 11 | Tornillos M3 × 10 mm | 4 unidades. |
+| 12 | Tornillos M3 × 5 mm | 4 unidades. |
 
 La adquisición de materiales representa un avance en la preparación de la implementación física. Sin embargo, la disponibilidad de los componentes no demuestra todavía su integración ni su funcionamiento conjunto.
 
