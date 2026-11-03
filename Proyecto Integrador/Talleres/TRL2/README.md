@@ -209,10 +209,9 @@ El equipo cuenta con un diseño tridimensional del dispositivo CrackScan. Este d
 La correspondencia entre el diseño 3D y la distribución electrónica definitiva deberá comprobarse mediante la revisión de las dimensiones, soportes, espacios internos y conexiones.
 
  <p align="center">
-<img width="323" height="287" alt="image" src="https://github.com/user-attachments/assets/e062f56e-724a-4190-8af6-7a2f2332fcc2" />
-<img width="607" height="393" alt="image" src="https://github.com/user-attachments/assets/76e9bb0b-73e6-4691-bafe-9408965163b8" />
-<img width="372" height="270" alt="image" src="https://github.com/user-attachments/assets/3659d7c5-5718-4e87-b39a-14631d6a6089" />
-
+<img width="638" height="468" alt="image" src="https://github.com/user-attachments/assets/370a8d66-3962-4ddb-b00b-31d5963dbfc7" />
+<img width="619" height="438" alt="image" src="https://github.com/user-attachments/assets/a1e78122-a1a3-4216-be4e-760bccb84906" />
+ 
   <br>
   <em>Figura 3. Diseño tridimensional de la estructura del prototipo portátil CrackScan.</em>
 </p>
