@@ -1,4 +1,17 @@
-# PARTE III. TRL 4 – VALIDACIÓN TECNOLÓGICA EN ENTORNO DE LABORATORIO
+#  TRL 4 – VALIDACIÓN TECNOLÓGICA EN ENTORNO DE LABORATORIO
+<div align="center">
+
+**Equipo:** Equipo 06  
+**Proyecto:** CrackScan  
+**Universidad:** Universidad Peruana Cayetano Heredia   
+
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Computer Vision](https://img.shields.io/badge/Computer_Vision-000000?style=for-the-badge&logo=opencv&logoColor=white)
+![GIS](https://img.shields.io/badge/GIS-5C8A3C?style=for-the-badge&logo=qgis&logoColor=white)
+![Hardware](https://img.shields.io/badge/Hardware-555555?style=for-the-badge&logo=arduino&logoColor=white)
+![Markdown](https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white)
+
+</div>
 
 ## 15. Introducción y alcance del TRL 4
 
