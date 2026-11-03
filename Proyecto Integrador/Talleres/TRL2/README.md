@@ -150,7 +150,12 @@ La propuesta se sustenta en investigaciones relacionadas con la inspección visu
 ### 4.1. Análisis de los antecedentes
 
 SDNET2018 constituye una referencia importante porque reúne imágenes de superficies de concreto con diferentes condiciones visuales. Incluye grietas de distintas dimensiones y obstáculos como sombras, rugosidad, bordes y manchas. Esto permite reconocer que un sistema de detección debe evaluarse frente a variaciones que pueden dificultar el reconocimiento automático [1].
-<img width="393" height="345" alt="image" src="https://github.com/user-attachments/assets/62d7197f-b1bc-4db7-b13b-94961fdcc52c" />
+<p align="center">
+  <img width="393" height="345" alt="image" src="https://github.com/user-attachments/assets/62d7197f-b1bc-4db7-b13b-94961fdcc52c" />
+
+  <br>
+  <em>Figura 5. Ejemplos de imágenes del conjunto de datos SDNET2018 que muestran: (a) grietas finas, (b) grietas gruesas, (c) sombras, (d) manchas, (e) superficies rugosas, (f) inclusiones y vacíos, (g) bordes, (h) juntas y descascaramiento superficial, e (i) obstrucciones en el fondo.</em>
+</p>
 
 
 Por otro lado, la guía ACI PRC-228.4-23 establece criterios para realizar inspecciones visuales y documentar características físicas observables. Su contenido permite orientar los parámetros que CrackScan pretende registrar, sin asumir que la observación visual determina por sí sola la condición estructural completa [2].
