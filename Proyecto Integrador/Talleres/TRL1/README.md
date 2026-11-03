@@ -440,11 +440,6 @@ Estas actividades corresponden a propuestas de desarrollo y no representan resul
 
 [9] M. R. Jahanshahi y W. Tang, “Active damage detection system and method for detecting cracks in a surface,” solicitud de patente estadounidense US20250378545A1, 11 de diciembre de 2025. Disponible en: [Google Patents](https://patents.google.com/patent/US20250378545A1/en).
 
-[10] Y. Vashpanov, J.-Y. Son, G. Heo, T. Podousova e Y. S. Kim, “Determination of Geometric Parameters of Cracks in Concrete by Image Processing,” *Advances in Civil Engineering*, vol. 2019, art. 2398124, 2019. doi: [10.1155/2019/2398124](https://doi.org/10.1155/2019/2398124).
-
-[11] S. Sreedhara, T. J. Sorensen, A. Poursaee y B. E. Ross, “Practical Application of Digital Image Processing in Measuring Concrete Crack Widths in Field Studies,” *Practice Periodical on Structural Design and Construction*, vol. 28, n.º 1, 2023. doi: [10.1061/(ASCE)SC.1943-5576.0000735](https://doi.org/10.1061/(ASCE)SC.1943-5576.0000735).
-
-[12] OpenCV, “Camera Calibration,” *OpenCV Documentation*. Disponible en: [OpenCV Documentation](https://docs.opencv.org/4.x/dc/dbb/tutorial_py_calibration.html).
 
 ---
 
