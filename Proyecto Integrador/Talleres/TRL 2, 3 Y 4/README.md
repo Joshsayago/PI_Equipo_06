@@ -234,20 +234,21 @@ Los materiales y componentes principales del proyecto han sido adquiridos por el
  
 | N.° | Material o componente | Especificaciones |
 |:---:|---|---|
-| 1  |  XIAO ESP32S3 Sense | Microcontrolador con conectividad inalámbrica Wi-Fi y Bluetooth, cámara integrada y micrófono digital, utilizado como unidad de procesamiento y control del sistema. |
-| 2 | Anillo de LEDs RGB | Tipo 5050 WS2812, de 16 LEDs o configuración similar en cadena. |
-| 3 | Pantalla OLED | 2.4 pulgadas, resolución 128 × 64, color blanco, interfaz I2C, controlador SSD1309 y alimentación de 3.3 V. |
-| 4 | Switch de encendido | Interruptor de 2 pines, color rojo, de presión y sin tornillos. |
-| 5 | Botón pulsador | Redondo, de 1 a 2 cm, con cuerpo roscado y tuerca de ajuste. |
-| 6 | Cables de conexión (jumpers) | Configuraciones hembra-macho, macho-macho y hembra-hembra. |
-| 7 | Portapilas para batería 18650 | Portapilas para soldar, compatible con batería de litio de 3.7 V. |
-| 8 | Tiras de pines soldables | Juegos de pines macho y hembra. |
-| 9 | Conectores para PCB | Bloques terminales de tornillo, de color verde o azul. |
-| 10 | Módulo MT3608 | Módulo elevador de tensión DC-DC (boost). |
-| 11 | Tornillos M3 × 20 mm | 10 unidades. |
-| 12 | Tornillos M3 × 10 mm | 4 unidades. |
-| 13 | Tornillos M3 × 5 mm | 4 unidades. |
-| 14 | Extensión USB tipo C | Conector macho a hembra. |
+| 1 |XIAO ESP32S3 Sense | Microcontrolador con conectividad Wi-Fi y Bluetooth, cámara integrada y micrófono digital, utilizado como unidad de procesamiento y control del sistema. |
+| 2 | Pantalla OLED | 2.4 pulgadas, resolución 128 × 64, color blanco, interfaz I2C, controlador SSD1309 y alimentación de 3.3 V. |
+| 3 | Módulo MT3608 | Módulo elevador de tensión DC-DC (Boost). |
+| 4 | Portapilas para batería 18650 | Portapilas para soldar, compatible con batería de litio de 3.7 V. |
+| 5 | Switch de encendido | Interruptor de 2 pines, color rojo, de presión y sin tornillos. |
+| 6 | Botón pulsador | Redondo, de 1 a 2 cm, con cuerpo roscado y tuerca de ajuste. |
+| 7 | Anillo de LEDs RGB | Tipo 5050 WS2812, de 16 LEDs o configuración similar en cadena. |
+| 8 | Extensión USB tipo C | Conector macho a hembra. |
+| 9 | Cables de conexión (jumpers) | Configuraciones hembra-macho, macho-macho y hembra-hembra. |
+| 10 | Tiras de pines soldables | Juegos de pines macho y hembra. |
+| 11 | Conectores para PCB | Bloques terminales de tornillo, de color verde o azul. |
+| 12 | Tornillos M3 × 20 mm | 10 unidades. |
+| 13 | Tornillos M3 × 10 mm | 4 unidades. |
+| 14 | Tornillos M3 × 5 mm | 4 unidades. |
+
 La adquisición de materiales representa un avance en la preparación de la implementación física. Sin embargo, la disponibilidad de los componentes no demuestra todavía su integración ni su funcionamiento conjunto.
 
 ## 7. Perfil del proyecto
