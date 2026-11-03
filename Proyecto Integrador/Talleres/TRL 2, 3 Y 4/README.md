@@ -234,7 +234,7 @@ Los materiales y componentes principales del proyecto han sido adquiridos por el
  
 | N.° | Material o componente | Especificaciones |
 |:---:|---|---|
-| 1 | Extensión USB tipo C | Conector macho a hembra. |
+| 1  |  XIAO ESP32S3 Sense | Microcontrolador con conectividad inalámbrica Wi-Fi y Bluetooth, cámara integrada y micrófono digital, utilizado como unidad de procesamiento y control del sistema. |
 | 2 | Anillo de LEDs RGB | Tipo 5050 WS2812, de 16 LEDs o configuración similar en cadena. |
 | 3 | Pantalla OLED | 2.4 pulgadas, resolución 128 × 64, color blanco, interfaz I2C, controlador SSD1309 y alimentación de 3.3 V. |
 | 4 | Switch de encendido | Interruptor de 2 pines, color rojo, de presión y sin tornillos. |
@@ -247,7 +247,7 @@ Los materiales y componentes principales del proyecto han sido adquiridos por el
 | 11 | Tornillos M3 × 20 mm | 10 unidades. |
 | 12 | Tornillos M3 × 10 mm | 4 unidades. |
 | 13 | Tornillos M3 × 5 mm | 4 unidades. |
-
+| 14 | Extensión USB tipo C | Conector macho a hembra. |
 La adquisición de materiales representa un avance en la preparación de la implementación física. Sin embargo, la disponibilidad de los componentes no demuestra todavía su integración ni su funcionamiento conjunto.
 
 ## 7. Perfil del proyecto
