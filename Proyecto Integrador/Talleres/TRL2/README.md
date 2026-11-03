@@ -287,11 +287,5 @@ La adquisición de materiales representa un avance en la preparación de la impl
 
 [3] Y. Liu, J. Yao, X. Lu, R. Xie, and L. Li, “DeepCrack: A deep hierarchical feature learning architecture for crack segmentation,” *Neurocomputing*, vol. 338, pp. 139–153, 2019. https://doi.org/10.1016/j.neucom.2019.01.036
 
-[4] “Concrete structure crack inspection device and crack inspection method,” European Patent EP1813934A1, 2007. https://patents.google.com/patent/EP1813934A1/en
 
-[5] “Image-based crack detection,” U.S. Patent US8873837B2, 2014. https://patents.google.com/patent/US8873837B2/en
-
-[6] “Electrical methods and systems for concrete testing,” Canadian Patent Application CA3122674A1, 2021. https://patents.google.com/patent/CA3122674A1/en
-
-[7] Centro Nacional de Estimación, Prevención y Reducción del Riesgo de Desastres (CENEPRED), Sistema de Información para la Gestión del Riesgo de Desastres (SIGRID). https://sigrid.cenepred.gob.pe/
 
