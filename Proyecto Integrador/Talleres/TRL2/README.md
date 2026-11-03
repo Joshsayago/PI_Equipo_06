@@ -14,9 +14,6 @@
 </div>
 
 ---
-
-# PARTE I. TRL 2 – FORMULACIÓN DEL CONCEPTO O APLICACIÓN DE LA PROPUESTA TECNOLÓGICA
-
 ## 1. Introducción y alcance del TRL 2
 
 CrackScan es una propuesta de sistema inteligente portátil orientado al apoyo de la inspección preliminar de grietas en viviendas de Lima Metropolitana. Surge ante la necesidad de contar con herramientas que faciliten el registro y la caracterización visual de daños superficiales en elementos de concreto, incorporando información geográfica del entorno donde se realiza la inspección.
