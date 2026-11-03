@@ -1,246 +1,737 @@
-# TRL 2, TRL 3 y TRL 4: Desarrollo tecnológico de CrackScan
+
+# CrackScan: TRL 2, TRL 3 y TRL 4
 
 <div align="center">
 
-**Proyecto:** Sistema inteligente portátil para apoyo a la inspección de grietas en viviendas de Lima Metropolitana.  
-**Tecnología emergente:** Aprendizaje autosupervisado y modelos de visión fundacionales para detectar y segmentar grietas en concreto.  
 **Equipo:** Equipo 06  
-
-<br>
+**Proyecto:** CrackScan  
+**Universidad:** Universidad Peruana Cayetano Heredia   
 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
 ![Computer Vision](https://img.shields.io/badge/Computer_Vision-000000?style=for-the-badge&logo=opencv&logoColor=white)
+![GIS](https://img.shields.io/badge/GIS-5C8A3C?style=for-the-badge&logo=qgis&logoColor=white)
+![Hardware](https://img.shields.io/badge/Hardware-555555?style=for-the-badge&logo=arduino&logoColor=white)
 ![Markdown](https://img.shields.io/badge/Markdown-000000?style=for-the-badge&logo=markdown&logoColor=white)
 
 </div>
 
 ---
 
-## 1. TRL 2: Formulación del concepto tecnológico
+# PARTE I. TRL 2 – FORMULACIÓN DEL CONCEPTO O APLICACIÓN DE LA PROPUESTA TECNOLÓGICA
 
-### 1.1. Objetivo
-Formular el concepto tecnológico de un sistema de análisis visual de grietas en superficies de concreto mediante inteligencia artificial, tomando como base el aprendizaje autosupervisado y los modelos de visión fundacionales estudiados en el TRL 1.  
-En esta etapa se establece la arquitectura conceptual de la tecnología, se definen sus componentes, entradas, procesos y salidas, y se identifican los recursos necesarios para desarrollar una prueba de concepto experimental. [1] [2]
+## 1. Introducción y alcance del TRL 2
 
-### 1.2. Concepto tecnológico propuesto
-CrackScan propone desarrollar un sistema de análisis visual capaz de identificar y caracterizar grietas presentes en superficies de concreto mediante fotografías digitales.  
-La tecnología se fundamentará en el aprovechamiento de representaciones visuales obtenidas mediante modelos preentrenados, particularmente DINOv2, y su adaptación a tareas específicas de reconocimiento y segmentación de grietas.  
-El concepto considera que el análisis se desarrollará en diferentes etapas:
-1. Captura de una fotografía de la superficie de concreto.
-2. Preprocesamiento de la imagen para adecuarla a los requerimientos del modelo.
-3. Extracción de características visuales mediante un modelo de visión.
-4. Identificación y segmentación de las regiones correspondientes a las grietas.
-5. Procesamiento geométrico de la región segmentada.
-6. Obtención de parámetros visuales y geométricos.
-7. Registro de los resultados y asociación de metadatos geográficos, cuando se disponga de GPS.  
+CrackScan es una propuesta de sistema inteligente portátil orientado al apoyo de la inspección preliminar de grietas en viviendas de Lima Metropolitana. Surge ante la necesidad de contar con herramientas que faciliten el registro y la caracterización visual de daños superficiales en elementos de concreto, incorporando información geográfica del entorno donde se realiza la inspección.
 
-El sistema estará orientado a proporcionar información preliminar para apoyar la inspección técnica, sin sustituir una evaluación estructural profesional.
+En esta etapa se formula la aplicación práctica de los principios científicos y tecnológicos que sustentan la propuesta. Se establece cómo podrían integrarse la captura de imágenes, el procesamiento digital, la georreferenciación y la información geoespacial para generar un registro preliminar de las características observadas.
 
-### 1.3. Arquitectura tecnológica propuesta
-Se plantea una arquitectura modular compuesta por los siguientes elementos:
+El resultado de este nivel es la definición del concepto tecnológico, su arquitectura funcional, los requerimientos iniciales y la identificación de antecedentes científicos y tecnológicos relacionados.
 
-*   **A. Módulo de adquisición de imágenes:** Recibe fotografías de superficies de concreto mediante una cámara digital o dispositivo móvil. Las imágenes deberán mostrar la superficie de interés con suficiente resolución y condiciones de captura que permitan distinguir las características de las grietas.
-*   **B. Módulo de preprocesamiento:** Realiza las operaciones necesarias para preparar las fotografías antes de introducirlas al modelo de inteligencia artificial. Entre las operaciones consideradas se encuentran: redimensionamiento, normalización de valores de píxeles, conversión de formatos, ajustes de contraste y organización de los datos de entrada.
-*   **C. Módulo de inteligencia artificial:** Constituye el núcleo tecnológico de CrackScan. Se propone investigar DINOv2 como extractor de características visuales, debido a su capacidad de generar representaciones reutilizables mediante preentrenamiento autosupervisado. Para obtener una segmentación específica de grietas, las características extraídas deberán conectarse con un módulo de segmentación o una cabeza de predicción a nivel de píxel.
-*   **D. Módulo de procesamiento geométrico:** Utiliza la máscara de segmentación generada por el modelo para obtener características cuantificables de la grieta:
-    *   *Ancho:* abertura transversal de la grieta.
-    *   *Longitud:* extensión del recorrido de la grieta.
-    *   *Orientación:* dirección predominante respecto de una referencia definida.
-    *   *Patrón visual:* configuración de la grieta y sus ramificaciones.  
-    *La conversión de píxeles a unidades físicas requerirá una referencia de escala o procedimiento de calibración.*
-*   **E. Módulo de georreferenciación y registro:** Permite asociar los resultados del análisis visual con información complementaria (fotografía original, fecha, hora, coordenadas GPS, parámetros geométricos y resultado del análisis visual). La información geográfica se utilizará como metadato y podrá relacionarse con información territorial sobre el nivel de riesgo o daño sísmico.
+### 1.1. Problema y aplicación propuesta
 
-### 1.4. Entradas, procesos y salidas
+La inspección visual de grietas en superficies de concreto permite reconocer manifestaciones físicas como aberturas, fisuras, ramificaciones y variaciones geométricas. Sin embargo, su documentación puede depender de la observación y el registro manual, lo que dificulta estandarizar la información recopilada durante distintas inspecciones.
 
-| Entradas | Procesamiento | Salidas |
-| :--- | :--- | :--- |
-| Fotografía digital | Preprocesamiento | Imagen preparada |
-| Imagen preparada | Extracción de características | Representación visual |
-| Representación visual | Reconocimiento | Identificación de grieta |
-| Imagen y características | Segmentación | Máscara de grieta |
-| Máscara segmentada | Análisis geométrico | Ancho, longitud y orientación |
-| Referencia de escala | Calibración | Dimensiones físicas estimadas |
-| Coordenadas GPS | Georreferenciación | Registro de ubicación |
+CrackScan propone desarrollar un dispositivo portátil que permita capturar fotografías de grietas, procesarlas mediante herramientas de visión artificial y asociar los resultados con una ubicación geográfica.
 
-### 1.5. Selección preliminar de herramientas
+La propuesta considera dos grupos de información:
 
-| Herramienta | Aplicación |
-| :--- | :--- |
-| **Python** | Lenguaje de programación principal |
-| **PyTorch** | Implementación y adaptación de modelos de inteligencia artificial |
-| **DINOv2** | Extracción de características visuales |
-| **OpenCV** | Preprocesamiento y procesamiento geométrico |
-| **NumPy** | Operaciones numéricas y análisis de matrices |
-| **Matplotlib** | Visualización de resultados experimentales |
-| **Conjunto de datos de grietas** | Entrenamiento, adaptación y evaluación del modelo |
+- **Caracterización visual:** identificación de la presencia de grietas y estimación de características observables, como ancho, longitud, orientación y patrón.
+- **Contexto geográfico:** registro de coordenadas mediante GPS y consulta de información geoespacial relacionada con el nivel de riesgo o daño sísmico de la zona.
 
-*La disponibilidad de recursos computacionales determinará si el procesamiento se realizará en una computadora durante las primeras pruebas o si posteriormente podrá trasladarse a una plataforma portátil.*
+La combinación de ambas fuentes busca proporcionar información preliminar que permita organizar y priorizar inspecciones técnicas posteriores. El sistema no pretende determinar por sí solo la seguridad estructural de una vivienda ni predecir su colapso.
 
-### 1.6. Requerimientos tecnológicos
-1. Disponer de fotografías de superficies de concreto con y sin grietas.
-2. Contar con imágenes que presenten diferentes características geométricas y condiciones de captura.
-3. Disponer de máscaras de referencia para evaluar la segmentación.
-4. Implementar un modelo capaz de reconocer o segmentar grietas.
-5. Incorporar un procedimiento de calibración para realizar mediciones físicas.
-6. Establecer métricas para evaluar el rendimiento del modelo.
-7. Garantizar que los registros experimentales puedan asociarse con sus imágenes originales.
+## 2. Concepto tecnológico y arquitectura funcional
 
-### 1.7. Plan preliminar de experimentación
-Se propone realizar pruebas iniciales con imágenes digitales de grietas en concreto. Las fotografías deberán incluir variaciones de iluminación, textura, distancia, orientación y abertura de grieta. También se incluirán superficies sin grietas que presenten irregularidades, manchas, juntas o sombras. Se plantea comparar una alternativa convencional de segmentación con una arquitectura que aproveche las características visuales de DINOv2.
+### 2.1. Frontera del sistema
 
-### 1.8. Entregables del TRL 2
-*   Arquitectura conceptual del sistema.
-*   Diagrama de bloques del funcionamiento.
-*   Definición de entradas, procesos y salidas.
-*   Selección preliminar de herramientas.
-*   Identificación de requerimientos tecnológicos.
-*   Protocolo inicial de experimentación.
-*   Justificación de la arquitectura seleccionada.
+El sistema recibe como entradas una superficie de concreto que será inspeccionada, energía eléctrica para su funcionamiento y la interacción del usuario mediante los controles disponibles.
 
-### 1.9. Resultado esperado
-Al finalizar el TRL 2 se espera disponer de un concepto tecnológico estructurado y técnicamente fundamentado que permita iniciar la implementación experimental del módulo de análisis visual de CrackScan.
+La cámara obtiene una imagen de la superficie. El procesamiento digital permite analizar sus características visuales y reconocer posibles grietas. Paralelamente, el módulo GPS permite registrar la ubicación geográfica de la inspección.
+
+La información visual y geográfica se organiza para generar un registro que incluya las características identificadas y el contexto territorial consultado.
+
+Las salidas previstas son:
+
+- Imagen de la superficie inspeccionada.
+- Identificación de presencia o ausencia de grietas.
+- Caracterización geométrica visual.
+- Coordenadas geográficas del registro.
+- Información geoespacial asociada a la zona.
+- Resultado preliminar de apoyo a la priorización de inspecciones.
+
+<p align="center">
+ <img width="1133" height="607" alt="image" src="https://github.com/user-attachments/assets/6ea693ad-95d3-4eaf-97e5-d32a33d91b5c" />
+  <br>
+  <em>Figura 1. Diagrama de caja negra del sistema inteligente portátil para el apoyo a la inspección de grietas.</em>
+</p>
+
+ 
+### 2.2. Secuencia de operación propuesta
+
+| Etapa | Funcionamiento previsto |
+|---|---|
+| 1. Inicio del sistema | El usuario enciende el dispositivo y verifica la disponibilidad de sus componentes. |
+| 2. Captura de imagen | La cámara obtiene una fotografía de la superficie de concreto que será evaluada. |
+| 3. Procesamiento visual | El sistema analiza la imagen para identificar posibles grietas y extraer sus características visuales. |
+| 4. Georreferenciación | El módulo GPS obtiene las coordenadas geográficas correspondientes al lugar de inspección. |
+| 5. Consulta geoespacial | Las coordenadas se utilizan para consultar la información territorial disponible sobre el riesgo o daño sísmico de la zona. |
+| 6. Integración de información | Se relacionan las características visuales con el contexto geográfico, conservando ambos datos como fuentes diferenciadas. |
+| 7. Generación del registro | Se presenta la información obtenida para apoyar la identificación y priorización de inspecciones técnicas. |
+
+La secuencia representa el funcionamiento conceptual del sistema. La disponibilidad y precisión de cada etapa deberán comprobarse experimentalmente.
+
+### 2.3. Relación entre los módulos
+
+La arquitectura funcional de CrackScan considera cinco módulos principales:
+
+| Módulo | Función | Resultado esperado |
+|---|---|---|
+| Captura de imágenes | Obtener fotografías de superficies de concreto. | Imagen digital de inspección. |
+| Procesamiento de imágenes | Identificar grietas y caracterizar sus propiedades visuales. | Información visual de la grieta. |
+| Geolocalización | Obtener coordenadas mediante GPS. | Registro de latitud y longitud. |
+| Información geoespacial | Consultar información territorial asociada a la ubicación. | Contexto de riesgo sísmico de la zona. |
+| Control y visualización | Coordinar las operaciones y presentar los resultados. | Registro integrado de inspección. |
+
+<p align="center">
+ <img width="1115" height="617" alt="image" src="https://github.com/user-attachments/assets/46b4d3f2-b75f-4520-b4e5-1a23b3cfd531" />
+  <br>
+  <em>Figura 2. Esquema de funciones que representa las principales operaciones del sistema CrackScan.</em>
+</p>
+
+ 
+### 2.4. Fundamentos tecnológicos
+
+**a) Visión artificial y procesamiento digital de imágenes**
+
+La visión artificial permite analizar imágenes digitales mediante algoritmos capaces de reconocer patrones y características visuales. En CrackScan, este fundamento se utilizaría para identificar regiones que presenten características compatibles con grietas en superficies de concreto.
+
+El análisis podría incluir técnicas de clasificación y segmentación. La clasificación permitiría distinguir imágenes con y sin grietas, mientras que la segmentación permitiría delimitar los píxeles correspondientes a la grieta.
+
+**b) Caracterización geométrica**
+
+La caracterización visual considera parámetros como ancho, longitud, orientación y patrón. Para convertir dimensiones expresadas en píxeles a unidades físicas, como milímetros, será necesario incorporar una referencia de escala o un procedimiento de calibración.
+
+Por ello, la identificación visual de una grieta no equivale automáticamente a una medición física exacta.
+
+**c) Sistema de posicionamiento global (GPS)**
+
+El GPS permite obtener coordenadas geográficas mediante señales de satélites. En CrackScan, su función será asociar cada registro de inspección con una ubicación, permitiendo relacionar posteriormente la observación con información territorial.
+
+**d) Sistemas de información geográfica (SIG)**
+
+Los SIG permiten almacenar, analizar y representar información asociada a ubicaciones geográficas. Su aplicación en CrackScan permitirá consultar información territorial disponible mediante coordenadas, considerando las capas relacionadas con el riesgo o daño sísmico de la zona.
+
+**e) Integración de información**
+
+La integración propuesta relaciona la caracterización visual de la grieta con el contexto geográfico de la inspección. Ambas fuentes aportan información complementaria, pero no representan una relación causal directa ni sustituyen una evaluación estructural especializada.
+
+## 3. Objetivo e hipótesis de trabajo
+
+**Objetivo del TRL 2.**
+
+Formular el concepto tecnológico de un sistema portátil que integre el análisis visual de grietas en superficies de concreto con información geográfica del entorno, para apoyar el registro y la priorización preliminar de inspecciones técnicas en viviendas de Lima Metropolitana.
+
+**Hipótesis de trabajo.**
+
+La integración de herramientas de procesamiento de imágenes, georreferenciación e información geoespacial permitiría organizar información visual y territorial de una inspección en un único registro, facilitando la identificación de viviendas que podrían requerir una evaluación técnica posterior.
+
+**Pregunta de investigación.**
+
+¿En qué medida la integración del análisis visual de grietas y la información geográfica del entorno puede contribuir a generar registros preliminares útiles para priorizar inspecciones técnicas en viviendas?
+
+## 4. Estado del arte aplicado a CrackScan
+
+La propuesta se sustenta en investigaciones relacionadas con la inspección visual de concreto, la detección automatizada de grietas y el análisis de imágenes digitales.
+
+| Referencia | Trabajo | Aporte principal | Relación con CrackScan |
+|---|---|---|---|
+| [1] | Dorafshan et al. (2018). SDNET2018. | Presenta un conjunto de más de 56 000 imágenes de concreto con y sin grietas, incluyendo superficies de muros, pavimentos y tableros de puentes. | Proporciona un antecedente para desarrollar y evaluar modelos de detección de grietas mediante imágenes. |
+| [2] | ACI PRC-228.4-23 (2023). Visual Condition Survey of Concrete. | Desarrolla criterios para planificar, ejecutar y documentar inspecciones visuales de estructuras de concreto. | Sustenta la identificación y documentación de características visibles, incluyendo grietas y sus dimensiones geométricas. |
+| [3] | Zhu et al. (2021). DeepCrack. | Presenta un conjunto de datos y un enfoque de aprendizaje profundo para la segmentación de grietas. | Constituye un antecedente para estudiar la delimitación de grietas a nivel de píxel. |
+
+### 4.1. Análisis de los antecedentes
+
+SDNET2018 constituye una referencia importante porque reúne imágenes de superficies de concreto con diferentes condiciones visuales. Incluye grietas de distintas dimensiones y obstáculos como sombras, rugosidad, bordes y manchas. Esto permite reconocer que un sistema de detección debe evaluarse frente a variaciones que pueden dificultar el reconocimiento automático [1].
+
+Por otro lado, la guía ACI PRC-228.4-23 establece criterios para realizar inspecciones visuales y documentar características físicas observables. Su contenido permite orientar los parámetros que CrackScan pretende registrar, sin asumir que la observación visual determina por sí sola la condición estructural completa [2].
+
+Finalmente, DeepCrack aporta antecedentes para la segmentación de grietas, una tarea que permitiría delimitar su forma y extensión en una imagen [3].
+
+### 4.2. Brecha de aplicación identificada
+
+Los antecedentes revisados desarrollan herramientas para reconocer, segmentar o documentar grietas en superficies de concreto. Sin embargo, la propuesta de CrackScan busca integrar estas funciones con el registro geográfico y la consulta de información territorial relacionada con el contexto sísmico.
+
+La oportunidad de aplicación identificada consiste en evaluar la integración de:
+
+1. Captura portátil de imágenes de superficies de concreto.
+2. Caracterización visual de grietas.
+3. Registro de coordenadas geográficas.
+4. Consulta de información geoespacial.
+5. Organización conjunta de información visual y territorial.
+
+Esta integración deberá validarse mediante pruebas específicas. No se afirma que represente una tecnología inédita a nivel mundial.
+
+## 5. Análisis preliminar de patentabilidad y protección
+
+### 5.1. Antecedentes tecnológicos
+
+La búsqueda de antecedentes permite reconocer soluciones previamente desarrolladas para la inspección de grietas mediante imágenes y sistemas portátiles.
+
+| Documento | Tecnología descrita | Relación y diferencia con CrackScan |
+|---|---|---|
+| EP1813934A1. Concrete structure crack inspection device and crack inspection method. | Describe la captura de imágenes de estructuras de concreto, procesamiento de datos y representación de grietas mediante información vectorial. | Comparte el análisis de imágenes y la caracterización geométrica. CrackScan plantea incorporar además el registro geográfico y la consulta de información territorial. |
+| US8873837B2. Image-based crack detection. | Describe métodos de detección y cuantificación de grietas mediante procesamiento de imágenes y reconocimiento de patrones. | Es un antecedente directo de análisis visual automatizado. No demuestra la integración específica propuesta por CrackScan. |
+| CA3122674A1. Electrical methods and systems for concrete testing. | Describe sistemas portátiles de inspección de concreto que incorporan procesamiento de imágenes para detectar y caracterizar daños. | Se relaciona con la inspección portátil y el procesamiento de imágenes. La propuesta de CrackScan incorpora como elemento adicional el contexto geoespacial de la ubicación. |
+
+### 5.2. Análisis preliminar
+
+La revisión evidencia que la captura y el procesamiento de imágenes para detectar grietas cuentan con antecedentes tecnológicos. Por ello, la utilización de una cámara o un algoritmo de detección no constituye, por sí sola, una característica novedosa.
+
+El aspecto que merece mayor análisis es la integración funcional entre la caracterización visual de grietas, la georreferenciación y la consulta de información geoespacial dentro de un sistema portátil de apoyo a la inspección.
+
+| Criterio | Evaluación preliminar |
+|---|---|
+| Novedad | Requiere comparar la combinación funcional propuesta con los documentos y soluciones existentes. |
+| Nivel inventivo | Debe determinarse si la integración propuesta presenta una solución técnica que no resulte evidente a partir de los antecedentes. |
+| Aplicación industrial | Se plantea una aplicación en el registro y apoyo a la inspección preliminar de viviendas. |
+| Descripción suficiente | Se cuenta con el concepto funcional, el diseño 3D y los esquemas del sistema. Los parámetros de funcionamiento y la integración deberán precisarse. |
+
+Esta evaluación es exploratoria y no constituye una opinión legal de patentabilidad. La protección de una eventual invención requerirá una búsqueda más exhaustiva de documentos y reivindicaciones.
+
+## 6. Diseño conceptual y requisitos de ingeniería
+
+### 6.1. Diseño tridimensional
+
+El equipo cuenta con un diseño tridimensional del dispositivo CrackScan. Este diseño constituye un avance en la definición de la configuración física del sistema y permite visualizar la disposición prevista de sus componentes.
+
+La correspondencia entre el diseño 3D y la distribución electrónica definitiva deberá comprobarse mediante la revisión de las dimensiones, soportes, espacios internos y conexiones.
+
+ <p align="center">
+<img width="323" height="287" alt="image" src="https://github.com/user-attachments/assets/e062f56e-724a-4190-8af6-7a2f2332fcc2" />
+<img width="607" height="393" alt="image" src="https://github.com/user-attachments/assets/76e9bb0b-73e6-4691-bafe-9408965163b8" />
+<img width="372" height="270" alt="image" src="https://github.com/user-attachments/assets/3659d7c5-5718-4e87-b39a-14631d6a6089" />
+
+  <br>
+  <em>Figura 3. Diseño tridimensional de la estructura del prototipo portátil CrackScan.</em>
+</p>
+ 
+### 6.2. Requisitos de diseño
+
+| Requisito | Implementación prevista | Verificación posterior |
+|---|---|---|
+| Portabilidad | Estructura compacta que permita el traslado y uso durante inspecciones. | Evaluar dimensiones, peso y facilidad de manipulación. |
+| Captura de imágenes | Cámara integrada al dispositivo. | Comprobar calidad y estabilidad de las fotografías. |
+| Procesamiento visual | Algoritmo de detección y caracterización de grietas. | Evaluar resultados con imágenes de referencia. |
+| Georreferenciación | Módulo GPS. | Comparar coordenadas con una ubicación de referencia. |
+| Consulta geoespacial | Acceso a información territorial mediante coordenadas. | Verificar correspondencia entre ubicación y capa consultada. |
+| Alimentación | Sistema de alimentación eléctrica para los componentes. | Comprobar autonomía y estabilidad de funcionamiento. |
+| Visualización | Interfaz para presentar la información de inspección. | Verificar que los datos se presenten correctamente. |
+
+### 6.3. Selección de componentes
+
+Los materiales y componentes principales del proyecto han sido adquiridos por el equipo. Su selección responde a los requerimientos de captura, procesamiento, posicionamiento y alimentación del dispositivo.
+
+ 
+| N.° | Material o componente | Especificaciones |
+|:---:|---|---|
+| 1 | Extensión USB tipo C | Conector macho a hembra. |
+| 2 | Anillo de LEDs RGB | Tipo 5050 WS2812, de 16 LEDs o configuración similar en cadena. |
+| 3 | Pantalla OLED | 2.4 pulgadas, resolución 128 × 64, color blanco, interfaz I2C, controlador SSD1309 y alimentación de 3.3 V. |
+| 4 | Switch de encendido | Interruptor de 2 pines, color rojo, de presión y sin tornillos. |
+| 5 | Botón pulsador | Redondo, de 1 a 2 cm, con cuerpo roscado y tuerca de ajuste. |
+| 6 | Cables de conexión (jumpers) | Configuraciones hembra-macho, macho-macho y hembra-hembra. |
+| 7 | Portapilas para batería 18650 | Portapilas para soldar, compatible con batería de litio de 3.7 V. |
+| 8 | Tiras de pines soldables | Juegos de pines macho y hembra. |
+| 9 | Conectores para PCB | Bloques terminales de tornillo, de color verde o azul. |
+| 10 | Módulo MT3608 | Módulo elevador de tensión DC-DC (boost). |
+| 11 | Tornillos M3 × 20 mm | 10 unidades. |
+| 12 | Tornillos M3 × 10 mm | 4 unidades. |
+| 13 | Tornillos M3 × 5 mm | 4 unidades. |
+
+La adquisición de materiales representa un avance en la preparación de la implementación física. Sin embargo, la disponibilidad de los componentes no demuestra todavía su integración ni su funcionamiento conjunto.
+
+## 7. Perfil del proyecto
+
+**Usuarios y aplicación.** CrackScan está orientado a apoyar el registro preliminar de grietas en superficies de concreto de viviendas de Lima Metropolitana. Su información podría resultar útil para organizar inspecciones y reconocer ubicaciones que requieran una evaluación técnica posterior.
+
+**Alcance.** El sistema busca identificar y caracterizar visualmente grietas, asociar los registros con coordenadas geográficas y consultar información territorial relacionada con el contexto sísmico.
+
+**Limitaciones.** El resultado no representa un diagnóstico estructural ni una certificación de seguridad de la vivienda. La interpretación de los daños y la determinación de la condición estructural corresponden a profesionales competentes.
+
+**Entregables del TRL 2.**
+
+- Concepto tecnológico formulado.
+- Caja negra y esquema de funciones.
+- Secuencia de operación.
+- Diseño tridimensional.
+- Requerimientos iniciales de ingeniería.
+- Revisión de antecedentes científicos.
+- Análisis preliminar de propiedad intelectual.
+
+## 8. Conclusiones del TRL 2
+
+1. Se formuló el concepto tecnológico de CrackScan como un sistema portátil que integra caracterización visual de grietas y contexto geográfico.
+2. Se identificaron los fundamentos de visión artificial, procesamiento digital de imágenes, GPS y sistemas de información geográfica.
+3. La revisión científica permitió identificar antecedentes para la detección, segmentación y documentación de grietas en superficies de concreto.
+4. La revisión de patentes evidenció que existen antecedentes de inspección mediante imágenes, por lo que la integración funcional propuesta debe evaluarse frente a las soluciones existentes.
+5. El diseño tridimensional, la adquisición de materiales y los esquemas funcionales constituyen avances de diseño para preparar la construcción y validación experimental del sistema.
 
 ---
 
-## 2. TRL 3: Prueba de concepto experimental
+# PARTE II. TRL 3 – DESARROLLO EXPERIMENTAL O PRUEBA DEL CONCEPTO TECNOLÓGICO
 
-### 2.1. Objetivo
-Desarrollar una primera implementación experimental del módulo de inteligencia artificial de CrackScan para demostrar que los principios tecnológicos identificados pueden aplicarse al reconocimiento y segmentación de grietas en fotografías de superficies de concreto. [3] [4] [5]
+## 9. Introducción y alcance del TRL 3
 
-### 2.2. Desarrollo del conjunto de datos
-Se recopilarán fotografías de superficies de concreto considerando superficies con grietas longitudinales, transversales, diagonales, ramificadas, sin grietas, y con manchas, sombras y juntas. Para clasificación se asignarán etiquetas de presencia/ausencia; para segmentación se usarán máscaras de referencia. [1]
+El TRL 3 corresponde al desarrollo experimental o prueba de concepto de la propuesta tecnológica. En esta etapa se busca demostrar que los principios y componentes identificados durante la formulación del proyecto pueden funcionar de acuerdo con las funciones previstas.
 
-### 2.3. Implementación del modelo de inteligencia artificial
-*   **Experimento 1 (Reconocimiento mediante DINOv2):** Usa un modelo DINOv2 preentrenado para extraer características visuales conectadas a una cabeza de clasificación.
-*   **Experimento 2 (Segmentación de grietas):** Implementa una arquitectura que utiliza características visuales de DINOv2 junto con un módulo de segmentación a nivel de píxel.
+Para CrackScan, la prueba de concepto se orienta a comprobar experimentalmente la viabilidad de los componentes principales: captura de imágenes, procesamiento visual, georreferenciación y consulta de información geoespacial.
 
-### 2.4. Procesamiento geométrico preliminar
-Una vez obtenida la máscara, se estudia el cálculo de ancho (abertura transversal), longitud (extensión del recorrido), orientación (dirección predominante) y patrón visual (continuidad y ramificaciones).
+A diferencia del TRL 2, donde se definió la arquitectura conceptual, en este nivel se establecen procedimientos experimentales para evaluar el funcionamiento individual de los componentes y obtener datos que permitan identificar sus limitaciones.
 
-### 2.5. Diseño experimental
-Se divide el conjunto de datos en tres subconjuntos (**entrenamiento, validación y prueba**). Las imágenes de una misma grieta, superficie o vivienda permanecerán en una sola partición para evitar filtraciones de datos.
+Las pruebas descritas en este documento constituyen el protocolo experimental propuesto. Sus resultados deberán incorporarse después de ejecutar los ensayos.
 
-### 2.6. Evaluación del desempeño
+## 10. Objetivo e hipótesis experimental
 
-| Componente | Indicador | Finalidad |
-| :--- | :--- | :--- |
-| Clasificación | Precisión | Evaluar la proporción de predicciones positivas correctas |
-| Clasificación | Sensibilidad | Evaluar la capacidad de identificar grietas existentes |
-| Clasificación | F1-score | Equilibrar precisión y sensibilidad |
-| Segmentación | IoU | Medir la superposición entre la máscara predicha y la real |
-| Segmentación | Dice | Evaluar la similitud entre ambas máscaras |
-| Medición | Error absoluto medio | Comparar las mediciones con valores de referencia |
-| Procesamiento | Tiempo de inferencia | Evaluar el tiempo requerido por imagen |
+**Objetivo del TRL 3.**
 
-### 2.7. Comparación de alternativas tecnológicas
-Se comparará el enfoque basado en DINOv2 con una alternativa de referencia especializada en segmentación de grietas en términos de calidad, cantidad de datos requeridos, tiempo de procesamiento, consumo de memoria y generalización.
+Evaluar experimentalmente el funcionamiento individual de los componentes principales de CrackScan mediante ensayos controlados de captura de imágenes, detección de grietas, georreferenciación y consulta de información geoespacial.
 
-### 2.8. Entregables del TRL 3
-*   Conjunto de imágenes organizado y documentado.
-*   Código de implementación del modelo.
-*   Modelo experimental de clasificación y segmentación.
-*   Resultados de las pruebas computacionales y máscaras generadas.
-*   Comparación con alternativa de referencia e informe de evaluación.
+**Hipótesis experimental.**
 
-### 2.9. Resultado esperado
-Contar con una prueba de concepto funcional que demuestre experimentalmente la capacidad de un modelo de IA para reconocer y/o segmentar grietas.
+Los componentes principales de CrackScan pueden ejecutar sus funciones de manera individual bajo condiciones controladas, permitiendo obtener imágenes de superficies de concreto, identificar características visuales, registrar coordenadas y consultar información territorial asociada.
+
+## 11. Desarrollo de pruebas experimentales
+
+### 11.1. Prueba de captura de imágenes
+
+**Objetivo:** comprobar que la cámara seleccionada permite obtener fotografías de superficies de concreto con características visuales suficientes para el posterior análisis de grietas.
+
+**Materiales:**
+
+- Cámara seleccionada para CrackScan.
+- Superficies de concreto con grietas y sin grietas.
+- Sistema de alimentación correspondiente.
+- Dispositivo de almacenamiento.
+- Regla o referencia de escala para algunas fotografías.
+
+**Procedimiento propuesto:**
+
+1. Preparar superficies de concreto con diferentes características visuales.
+2. Colocar la cámara a una distancia definida de la superficie.
+3. Capturar imágenes bajo diferentes condiciones de iluminación.
+4. Repetir la captura manteniendo una distancia y orientación similares.
+5. Registrar la resolución, nitidez y condiciones de cada fotografía.
+6. Verificar que las imágenes puedan almacenarse y utilizarse posteriormente.
+
+**Variables de evaluación:**
+
+| Variable | Indicador |
+|---|---|
+| Resolución | Dimensiones de la imagen en píxeles. |
+| Nitidez | Presencia de desenfoque o pérdida de detalle. |
+| Iluminación | Condiciones de luz durante la captura. |
+| Repetibilidad | Similitud visual entre capturas realizadas bajo condiciones equivalentes. |
+| Almacenamiento | Capacidad de guardar y recuperar las imágenes. |
+
+
+### 11.2. Prueba de detección y caracterización de grietas
+
+**Objetivo:** evaluar la viabilidad del procesamiento digital para identificar grietas en fotografías de superficies de concreto.
+
+**Materiales:**
+
+- Computadora para procesamiento.
+- Conjunto de imágenes de concreto con y sin grietas.
+- Herramientas de procesamiento digital de imágenes.
+- Modelo de detección o segmentación seleccionado.
+- Imágenes de referencia etiquetadas.
+
+**Procedimiento propuesto:**
+
+1. Recopilar imágenes de superficies de concreto con y sin grietas.
+2. Incorporar conjuntos de datos públicos como SDNET2018, verificando sus condiciones de uso.
+3. Seleccionar fotografías representativas de superficies similares a las que se espera inspeccionar.
+4. Clasificar manualmente las imágenes según la presencia o ausencia de grietas.
+5. Cuando se utilice segmentación, elaborar máscaras de referencia que delimiten los píxeles correspondientes a las grietas.
+6. Preparar los datos para el entrenamiento y evaluación del modelo.
+7. Ejecutar el modelo sobre imágenes que no hayan sido utilizadas durante su entrenamiento.
+8. Comparar las predicciones con las etiquetas de referencia.
+
+La clasificación manual constituye una etapa de preparación y control de los datos. No significa que el sistema deba depender permanentemente de una clasificación manual para realizar cada inspección.
+
+Se debe distinguir entre:
+
+- **Clasificación:** determina si una imagen contiene una grieta.
+- **Detección:** identifica la presencia y ubicación aproximada de una grieta.
+- **Segmentación:** delimita los píxeles que corresponden a la grieta.
+
+Para obtener medidas físicas de ancho y longitud, será necesario realizar una calibración de escala.
+
+**Indicadores de evaluación:**
+
+| Indicador | Propósito |
+|---|---|
+| Exactitud (Accuracy) | Proporción total de predicciones correctas. |
+| Precisión (Precision) | Proporción de detecciones positivas que realmente corresponden a grietas. |
+| Sensibilidad (Recall) | Proporción de grietas reales que logra identificar el modelo. |
+| F1-score | Equilibrio entre precisión y sensibilidad. |
+| IoU o Dice | Evaluación de la coincidencia entre máscaras reales y predichas, cuando se realice segmentación. |
+ 
+
+### 11.3. Prueba de georreferenciación
+
+**Objetivo:** comprobar que el módulo GPS permite obtener coordenadas geográficas que puedan asociarse a cada registro de inspección.
+
+**Materiales:**
+
+- Módulo GPS adquirido.
+- Microcontrolador seleccionado.
+- Sistema de alimentación.
+- Computadora para visualizar los datos.
+- Ubicación de referencia conocida.
+
+**Procedimiento propuesto:**
+
+1. Conectar el módulo GPS al sistema de control.
+2. Ubicar el dispositivo en un espacio con recepción adecuada de señal satelital.
+3. Esperar la adquisición de coordenadas.
+4. Registrar los valores de latitud y longitud.
+5. Repetir la medición en diferentes momentos.
+6. Comparar las coordenadas obtenidas con una ubicación de referencia.
+7. Registrar las diferencias observadas.
+
+**Indicadores de evaluación:**
+
+| Variable | Indicador |
+|---|---|
+| Latitud | Coordenada geográfica registrada. |
+| Longitud | Coordenada geográfica registrada. |
+| Tiempo de adquisición | Tiempo necesario para obtener una posición válida. |
+| Repetibilidad | Variación entre mediciones realizadas en condiciones similares. |
+| Disponibilidad de señal | Capacidad del módulo para obtener coordenadas. |
+ 
+
+### 11.4. Prueba de consulta geoespacial
+
+**Objetivo:** comprobar que una coordenada geográfica puede relacionarse con información territorial disponible sobre el contexto de riesgo o daño sísmico de la zona.
+
+**Materiales:**
+
+- Computadora.
+- Coordenadas geográficas de prueba.
+- Plataforma o servicio geoespacial seleccionado.
+- Información territorial de referencia.
+- Herramientas de consulta geográfica.
+
+**Procedimiento propuesto:**
+
+1. Seleccionar una ubicación de prueba dentro del área de aplicación.
+2. Obtener sus coordenadas geográficas.
+3. Consultar la información territorial disponible en la plataforma seleccionada, como los recursos del SIGRID/CENEPRED cuando corresponda.
+4. Identificar la capa geográfica pertinente para el objetivo del proyecto.
+5. Comprobar si la coordenada se encuentra dentro de una entidad o zona representada por dicha capa.
+6. Registrar el atributo territorial asociado, cuando la información disponible lo permita.
+7. Comparar la ubicación consultada con la representación cartográfica.
+
+La consulta dependerá de la disponibilidad, cobertura, escala y atributos de las capas geográficas. No se asumirá que toda coordenada dispone de un valor individual de daño sísmico.
+
+**Indicadores de evaluación:**
+
+| Variable | Indicador |
+|---|---|
+| Disponibilidad de información | Existencia de una capa geográfica pertinente. |
+| Correspondencia espacial | Coincidencia entre coordenada y entidad geográfica. |
+| Consulta de atributos | Capacidad de recuperar información asociada. |
+| Trazabilidad | Posibilidad de conservar la fuente y el registro consultado. |
+ 
+
+## 12. Organización de los datos experimentales
+
+Los ensayos deberán generar registros que permitan identificar qué componente fue evaluado, bajo qué condiciones y cuál fue el resultado obtenido.
+
+Se propone utilizar las siguientes estructuras:
+
+**Registro de imágenes**
+
+| Código | Superficie | Presencia de grieta | Condición de iluminación | Observaciones |
+|---|---|---|---|---|
+| IMG-001 | Concreto | Por determinar | Por registrar | Por completar |
+| IMG-002 | Concreto | Por determinar | Por registrar | Por completar |
+| IMG-003 | Concreto | Por determinar | Por registrar | Por completar |
+
+**Registro GPS**
+
+| Ensayo | Latitud | Longitud | Coordenada de referencia | Diferencia observada |
+|---|---|---|---|---|
+| GPS-001 | Pendiente | Pendiente | Por registrar | Pendiente |
+| GPS-002 | Pendiente | Pendiente | Por registrar | Pendiente |
+
+**Registro de consulta geoespacial**
+
+| Ensayo | Coordenadas consultadas | Fuente cartográfica | Atributo recuperado | Resultado |
+|---|---|---|---|---|
+| GIS-001 | Por registrar | Por definir | Por definir | Pendiente |
+| GIS-002 | Por registrar | Por definir | Por definir | Pendiente |
+
+Las tablas anteriores son formatos de registro y no representan resultados experimentales obtenidos.
+
+## 13. Demo o prototipo inicial
+
+Para demostrar la viabilidad del concepto en esta etapa, se propone desarrollar pruebas individuales de los componentes antes de integrarlos en un dispositivo completo.
+
+La demostración inicial podría incluir:
+
+- Captura y almacenamiento de una fotografía de concreto.
+- Ejecución de un procedimiento de procesamiento de imágenes.
+- Obtención de coordenadas GPS.
+- Consulta de una ubicación en una plataforma geoespacial.
+- Presentación individual de los resultados.
+
+La ejecución de estas pruebas permitirá identificar incompatibilidades, limitaciones de los componentes y requerimientos adicionales para la integración.
+
+ 
+
+## 14. Conclusiones del TRL 3
+
+1. Se establecieron pruebas experimentales para evaluar los componentes principales de CrackScan.
+2. La captura de imágenes y el procesamiento visual permitirán estudiar la viabilidad de identificar grietas en superficies de concreto.
+3. La prueba GPS permitirá comprobar la obtención de coordenadas para asociar cada inspección con una ubicación.
+4. La consulta geoespacial permitirá evaluar la disponibilidad y correspondencia de información territorial asociada a las coordenadas.
+5. Los resultados experimentales deberán documentarse mediante registros, mediciones y evidencias antes de afirmar que los componentes han demostrado su funcionamiento.
 
 ---
 
-## 3. TRL 4: Validación tecnológica en laboratorio
+# PARTE III. TRL 4 – VALIDACIÓN TECNOLÓGICA EN ENTORNO DE LABORATORIO
 
-### 3.1. Objetivo
-Validar experimentalmente el funcionamiento del módulo de análisis visual de CrackScan mediante la integración de sus principales componentes en un entorno controlado de laboratorio. [7] [8]
+## 15. Introducción y alcance del TRL 4
 
-### 3.2. Desarrollo del prototipo experimental
+El TRL 4 corresponde a la validación tecnológica en un entorno de laboratorio mediante un prototipo de baja fidelidad. En esta etapa se busca integrar componentes básicos para comprobar que pueden funcionar conjuntamente bajo condiciones controladas.
 
-| Componente | Función |
-| :--- | :--- |
-| Cámara digital o dispositivo móvil | Captura de imágenes |
-| Computadora de procesamiento | Ejecución del modelo de inteligencia artificial |
-| Modelo de segmentación | Identificación de los píxeles de la grieta |
-| Software de procesamiento | Cálculo de características geométricas |
-| Referencia de escala | Calibración de dimensiones |
-| Sistema de almacenamiento | Registro de imágenes y resultados |
+Para CrackScan, esta fase considera la integración progresiva de la estructura física, el sistema de captura de imágenes, el procesamiento visual, la georreferenciación y la consulta de información geoespacial.
 
-### 3.3. Preparación de muestras de concreto
-Se utilizarán probetas, placas o superficies de concreto con grietas de diferentes características. Las dimensiones reales se obtendrán mediante instrumentos de precisión (microscopios de medición o comparadores de fisuras).
+El objetivo no es demostrar todavía el funcionamiento definitivo del dispositivo en viviendas reales, sino comprobar que la arquitectura básica puede ejecutar una secuencia de inspección simulada y producir registros coherentes.
 
-### 3.4. Procedimiento de captura experimental
-1. Identificar y registrar la muestra.
-2. Realizar medición de referencia.
-3. Capturar fotografía con referencia de escala.
-4. Procesar mediante el modelo de IA.
-5. Obtener máscara, calcular características y comparar con referencias.
+## 16. Objetivo e hipótesis de validación
 
-### 3.5. Validación de la segmentación
-Se compararán las máscaras generadas con referencias manuales usando **IoU** y **Dice**, analizando errores de omisión, falsos positivos por sombras o confusión con juntas. [6]
+**Objetivo del TRL 4.**
 
-### 3.6. Validación de las mediciones geométricas
-*   **A. Medición del ancho:** Abertura transversal comparada con instrumentos de referencia.
-*   **B. Medición de la longitud:** Recorrido o esqueleto geométrico.
-*   **C. Medición de la orientación:** Dirección predominante en grados.
-*   **D. Caracterización del patrón:** Continuidad y ramificaciones.
+Integrar los componentes básicos de CrackScan en un prototipo de baja fidelidad y evaluar su funcionamiento conjunto mediante pruebas controladas en un entorno de laboratorio.
 
-### 3.7. Escenarios de validación
-*   **Escenario A:** Superficies con grietas finas.
-*   **Escenario B:** Superficies con grietas pronunciadas o ramificadas.
-*   **Escenario C:** Superficies sin grietas o con irregularidades superficiales.
+**Hipótesis de validación.**
 
-### 3.8. Integración del registro geográfico
-Verificación de la asociación de coordenadas GPS y metadatos. La consulta a bases como SIGRID/CENEPRED se mantendrá diferenciada de los resultados del análisis visual.
+La integración de los módulos de captura, procesamiento visual, georreferenciación y consulta geoespacial permitirá ejecutar una secuencia básica de inspección simulada, generando registros que relacionen las características visuales de una superficie con su ubicación geográfica.
 
-### 3.9. Evaluación del funcionamiento integral
-Se evaluarán métricas de captura, segmentación (IoU/Dice), mediciones geométricas (error absoluto en mm y grados), tiempo de inferencia, repetibilidad e integridad de datos.
+## 17. Arquitectura del prototipo integrado
 
-### 3.10. Entregables del TRL 4
-*   Prototipo experimental de laboratorio integrado.
-*   Registro de muestras, fotografías y máscaras generadas.
-*   Comparación con instrumentos de referencia y evaluación de repetibilidad.
-*   Informe de validación tecnológica.
+### 17.1. Integración física
 
-### 3.11. Resultado esperado
-Contar con un prototipo experimental validado en condiciones controladas de laboratorio, capaz de procesar fotografías, segmentar grietas y estimar características geométricas.
+La estructura tridimensional desarrollada durante la etapa de diseño constituye la base para organizar los componentes del dispositivo.
+
+En esta fase se deberá comprobar la correspondencia entre el diseño y los materiales adquiridos, considerando:
+
+- Espacios disponibles para los componentes electrónicos.
+- Ubicación y orientación de la cámara.
+- Acceso a los controles y conexiones.
+- Distribución de la alimentación eléctrica.
+- Protección y estabilidad de los módulos.
+- Facilidad de manipulación del dispositivo.
+  
+### 17.2. Integración electrónica
+
+La integración electrónica deberá permitir la comunicación entre el microcontrolador y los módulos correspondientes.
+
+Se propone verificar progresivamente:
+
+1. Alimentación eléctrica del sistema.
+2. Encendido y funcionamiento del microcontrolador.
+3. Comunicación con la cámara o módulo de captura.
+4. Lectura de información del módulo GPS.
+5. Comunicación con los dispositivos de salida, cuando corresponda.
+6. Estabilidad del sistema durante una secuencia de operación.
+
+La integración definitiva dependerá de las características técnicas y compatibilidad de los componentes seleccionados.
+
+<p align="center">
+ <img width="1135" height="706" alt="image" src="https://github.com/user-attachments/assets/b336a009-0eef-4a61-a20a-20c3843ccf0c" />
+  <br>
+  <em>Figura 4. Esquema electrónico de las conexiones entre los componentes del sistema CrackScan.</em>
+</p>
+
+ 
+### 17.3. Integración del procesamiento de imágenes
+
+El módulo de procesamiento deberá recibir las fotografías capturadas y ejecutar el procedimiento de análisis visual seleccionado.
+
+La integración considerará:
+
+- Recepción de la imagen.
+- Preparación y procesamiento digital.
+- Identificación de posibles grietas.
+- Obtención de una región o máscara de la grieta, cuando se utilice segmentación.
+- Extracción de características visuales.
+- Almacenamiento de los resultados.
+
+Si el procesamiento requiere más capacidad computacional que la disponible en el microcontrolador, podrá ejecutarse en una computadora o plataforma externa durante las primeras pruebas de laboratorio.
+
+Esta alternativa permitirá evaluar la funcionalidad del sistema sin asumir que el modelo de inteligencia artificial puede ejecutarse directamente en cualquier placa electrónica.
+
+### 17.4. Integración geoespacial
+
+La información obtenida mediante GPS deberá asociarse al registro de inspección. Posteriormente, las coordenadas podrán utilizarse para consultar la información territorial disponible.
+
+La integración deberá conservar la correspondencia entre:
+
+- Identificador de inspección.
+- Fotografía capturada.
+- Características visuales obtenidas.
+- Coordenadas geográficas.
+- Fuente cartográfica consultada.
+- Información territorial recuperada.
+
+La asociación de estos datos permitirá mantener la trazabilidad de cada inspección.
+
+## 18. Pruebas de baja fidelidad
+
+### 18.1. Prueba de secuencia de operación
+
+**Objetivo:** comprobar que los módulos básicos pueden ejecutar una secuencia de inspección simulada.
+
+**Procedimiento propuesto:**
+
+1. Encender el prototipo.
+2. Iniciar una inspección de prueba.
+3. Capturar una fotografía de una superficie de concreto.
+4. Ejecutar el procesamiento visual disponible.
+5. Obtener o incorporar una coordenada geográfica de prueba.
+6. Consultar la información territorial correspondiente.
+7. Generar un registro con los resultados.
+8. Verificar que la información permanezca asociada al mismo identificador de inspección.
+
+**Indicadores:**
+
+| Indicador | Criterio de evaluación |
+|---|---|
+| Captura | La imagen se obtiene y almacena correctamente. |
+| Procesamiento | El módulo recibe la imagen y genera una salida. |
+| Georreferenciación | Se registra una coordenada válida o una coordenada de prueba identificada como tal. |
+| Consulta geoespacial | Se obtiene información de la fuente cartográfica seleccionada o se registra su indisponibilidad. |
+| Integración | Los resultados se asocian a un mismo registro de inspección. |
+
+### 18.2. Prueba de repetibilidad
+
+**Objetivo:** evaluar si el sistema genera registros consistentes cuando se repite una inspección bajo condiciones similares.
+
+**Procedimiento propuesto:**
+
+1. Seleccionar una superficie de concreto con una grieta visible.
+2. Capturar varias fotografías manteniendo condiciones de distancia e iluminación similares.
+3. Procesar las imágenes mediante el mismo procedimiento.
+4. Comparar las características visuales obtenidas.
+5. Registrar las variaciones observadas.
+6. Repetir el procedimiento con una superficie sin grietas.
+
+La prueba permitirá identificar si los cambios en la iluminación, orientación o distancia afectan el resultado del análisis visual.
+
+### 18.3. Prueba de trazabilidad
+
+**Objetivo:** verificar que cada registro conserve la correspondencia entre imagen, características visuales y ubicación geográfica.
+
+**Procedimiento propuesto:**
+
+1. Generar un identificador único para cada inspección.
+2. Asociar una fotografía al identificador.
+3. Incorporar las características visuales obtenidas.
+4. Registrar las coordenadas geográficas.
+5. Incorporar la información territorial consultada.
+6. Recuperar el registro y comprobar que los datos correspondan a la misma inspección.
+
+### 18.4. Prueba de funcionamiento en entorno simulado
+
+Se propone utilizar superficies de concreto, fotografías de referencia y ubicaciones geográficas de prueba para reproducir las condiciones básicas de una inspección.
+
+Esta prueba permitirá evaluar el funcionamiento del sistema sin requerir todavía una aplicación en viviendas reales.
+ 
+## 19. Matriz de validación del prototipo
+
+| Componente | Prueba | Evidencia requerida | Estado |
+|---|---|---|---|
+| Estructura física | Revisión del ensamble y distribución de componentes. | Fotografías y dimensiones del prototipo. | Pendiente de verificación. |
+| Cámara | Captura de imágenes de prueba. | Fotografías almacenadas. | Pendiente de ejecución. |
+| Procesamiento visual | Análisis de imágenes con y sin grietas. | Predicciones y métricas de evaluación. | Pendiente de ejecución. |
+| GPS | Obtención de coordenadas. | Registro de latitud y longitud. | Pendiente de ejecución. |
+| Información geoespacial | Consulta de coordenadas en una capa territorial. | Capturas y registro de atributos. | Pendiente de ejecución. |
+| Integración | Ejecución de una secuencia de inspección. | Registro completo de una prueba. | Pendiente de ejecución. |
+| Trazabilidad | Recuperación de los datos asociados a una inspección. | Registro con identificador único. | Pendiente de ejecución. |
+
+Los estados deberán actualizarse únicamente después de realizar y documentar las pruebas correspondientes.
+
+## 20. Criterios de aceptación preliminares
+
+Para considerar satisfactoria la validación de baja fidelidad, se proponen los siguientes criterios:
+
+| Criterio | Condición esperada |
+|---|---|
+| Captura de imágenes | Obtener y almacenar fotografías sin errores. |
+| Procesamiento | Recibir imágenes y generar resultados verificables. |
+| Georreferenciación | Registrar coordenadas válidas o identificar claramente datos de prueba. |
+| Consulta geoespacial | Recuperar información cuando la fuente y la capa estén disponibles. |
+| Integración | Ejecutar la secuencia básica sin perder la correspondencia entre módulos. |
+| Trazabilidad | Conservar los datos asociados a cada inspección. |
+
+Los valores cuantitativos de desempeño deberán establecerse después de obtener resultados experimentales iniciales. No se asignarán porcentajes de precisión ni tolerancias sin mediciones que los respalden.
+
+## 21. Limitaciones y aspectos pendientes
+
+Durante la validación de baja fidelidad deberán considerarse las siguientes limitaciones:
+
+1. **Variabilidad de las superficies:** las manchas, sombras, juntas y rugosidad pueden confundirse con grietas.
+2. **Calibración de medidas:** la estimación de ancho y longitud requiere una referencia física de escala.
+3. **Condiciones de captura:** la distancia, iluminación y orientación de la cámara pueden afectar el análisis.
+4. **Disponibilidad GPS:** la recepción de señal puede variar según el entorno.
+5. **Disponibilidad geoespacial:** la consulta depende de las capas, atributos y servicios disponibles.
+6. **Capacidad computacional:** el modelo de procesamiento podría requerir una plataforma externa.
+7. **Alcance de la evaluación:** la información obtenida no sustituye una inspección estructural profesional.
+
+## 22. Conclusiones del TRL 4
+
+1. Se definió una propuesta de integración de los componentes físicos, electrónicos, computacionales y geoespaciales de CrackScan.
+2. Se establecieron pruebas de baja fidelidad para evaluar el funcionamiento conjunto de los módulos en un entorno de laboratorio.
+3. La validación deberá comprobar la continuidad de la secuencia de inspección y la correspondencia entre imágenes, características visuales y coordenadas.
+4. La evaluación del procesamiento visual deberá considerar métricas específicas y conjuntos de prueba independientes.
+5. La integración funcional del prototipo y sus resultados deberán documentarse mediante evidencias experimentales antes de afirmar que se ha alcanzado la validación tecnológica correspondiente.
 
 ---
 
-## 4. Comparación de las etapas de desarrollo
+# 23. Proyección de desarrollo tecnológico
 
-| Aspecto | TRL 2 | TRL 3 | TRL 4 |
-| :--- | :--- | :--- | :--- |
-| **Enfoque** | Diseño conceptual | Prueba de concepto | Validación en laboratorio |
-| **Inteligencia artificial** | Selección y arquitectura | Implementación experimental | Integración y validación |
-| **Datos** | Definición de requerimientos | Conjunto de imágenes | Muestras controladas de concreto |
-| **Segmentación** | Diseño del procedimiento | Prueba computacional | Validación experimental |
-| **Mediciones** | Definición de métodos | Pruebas preliminares | Comparación con referencias físicas |
-| **Hardware** | Identificación de recursos | Computadora de desarrollo | Configuración experimental integrada |
-| **Evidencia** | Diagramas y especificaciones | Código y resultados experimentales | Prototipo y resultados de laboratorio |
+La evolución de CrackScan se plantea de manera progresiva, de acuerdo con los resultados que se obtengan en cada etapa.
 
----
+| Nivel | Resultado esperado | Evidencia principal |
+|---|---|---|
+| TRL 2 | Concepto tecnológico formulado. | Arquitectura funcional, diseño 3D, antecedentes científicos y análisis de patentes. |
+| TRL 3 | Viabilidad experimental de componentes principales. | Datos de ensayos y demostraciones individuales. |
+| TRL 4 | Integración básica y validación en laboratorio. | Prototipo funcional de baja fidelidad y resultados de pruebas controladas. |
 
-## 5. Continuidad tecnológica de CrackScan
-El desarrollo progresivo TRL 2, 3 y 4 permite pasar de la investigación documental a la implementación experimental y validación controlada.  
-> **Consideración:** El avance de cada nivel deberá sustentarse en los entregables y resultados efectivamente obtenidos. La formulación de una actividad o protocolo experimental no constituye por sí misma evidencia de que el nivel TRL correspondiente haya sido alcanzado.
+El desarrollo posterior deberá considerar la optimización del procesamiento visual, la mejora de la calibración geométrica, la estabilidad de la georreferenciación y la evaluación del sistema bajo condiciones de captura más cercanas a las de una inspección real.
 
 ---
-## 6. Referencias
 
-[1] K. Zhang, Y. Zhang, and H. D. Cheng, “Self-supervised structure learning for crack detection based on cycle-consistent generative adversarial networks,” Journal of Computing in Civil Engineering, vol. 34, no. 3, Art. no. 04020004, 2020, doi: 10.1061/(ASCE)CP.1943-5487.0000883. [Online]. Disponible en: https://sci-hub.ru/10.1061/(ASCE)CP.1943-5487.0000883
+# 24. Referencias bibliográficas
 
-[2] M. Oquab et al., “DINOv2: Learning robust visual features without supervision,” arXiv preprint arXiv:2304.07193, 2023, doi: 10.48550/arXiv.2304.07193. [Online]. Disponible en: https://arxiv.org/abs/2304.07193
+[1] S. Dorafshan, R. J. Thomas, and M. Maguire, “SDNET2018: An annotated image dataset for non-contact concrete crack detection using deep convolutional neural networks,” *Data in Brief*, vol. 21, pp. 1664–1668, 2018. https://doi.org/10.1016/j.dib.2018.11.015
 
-[3] M. Sohaib, M. J. Hasan, M. A. Shah, and Z. Zheng, “A robust self-supervised approach for fine-grained crack detection in concrete structures,” Scientific Reports, vol. 14, no. 1, Art. no. 12646, 2024, doi: 10.1038/s41598-024-63575-x. [Online]. Disponible en: https://doi.org/10.1038/s41598-024-63575-x
+[2] American Concrete Institute, *ACI PRC-228.4-23: Visual Condition Survey of Concrete—Guide*. ACI Committee 228, 2023. https://www.concrete.org/publications/internationalconcreteabstractsportal.aspx?id=51740314
 
-[4] T. Zhu et al., “Autonomous detection of concrete cracks using self-supervised DinoV2,” Machine Intelligence Research, vol. 23, no. 1, pp. 168–184, 2026, doi: 10.1007/s11633-025-1553-5. [Online]. Disponible en: https://doi.org/10.1007/s11633-025-1553-5
+[3] Y. Liu, J. Yao, X. Lu, R. Xie, and L. Li, “DeepCrack: A deep hierarchical feature learning architecture for crack segmentation,” *Neurocomputing*, vol. 338, pp. 139–153, 2019. https://doi.org/10.1016/j.neucom.2019.01.036
 
-[5] B. A. Kyem, J. K. Asamoah, E. Denteh, A. Danyo, and A. Aboah, “Self-supervised multi-scale transformer with Attention-Guided Fusion for efficient crack detection,” Automation in Construction, vol. 181, Art. no. 106591, 2026. [Online]. Disponible en: https://www.sciencedirect.com/science/article/pii/S0926580525006314
+[4] “Concrete structure crack inspection device and crack inspection method,” European Patent EP1813934A1, 2007. https://patents.google.com/patent/EP1813934A1/en
 
-[6] J. Cheng, Y. Sun, W. Xiong, W. Chen, Y. Li, and Y. Quan, “Defect detection in image space,” U.S. Patent 12,260,538 B2, Mar. 25, 2025. [Online]. Disponible en: https://patents.google.com/patent/US12260538B2/en
+[5] “Image-based crack detection,” U.S. Patent US8873837B2, 2014. https://patents.google.com/patent/US8873837B2/en
 
-[7] Tianjin Research Institute for Water Transport Engineering, MOT, assignee, “Concrete member crack detection method based on deep learning algorithm,” Chinese Patent CN118505597B, Nov. 7, 2025. [Online]. Disponible en: https://patents.google.com/patent/CN118505597B/en
+[6] “Electrical methods and systems for concrete testing,” Canadian Patent Application CA3122674A1, 2021. https://patents.google.com/patent/CA3122674A1/en
 
-[8] M. R. Jahanshahi and W. Tang, “Active damage detection system and method for detecting cracks in a surface,” U.S. Patent Application Publication US20250378545A1, Dec. 11, 2025. [Online]. Disponible en: https://patents.google.com/patent/US20250378545A1/en
+[7] Centro Nacional de Estimación, Prevención y Reducción del Riesgo de Desastres (CENEPRED), Sistema de Información para la Gestión del Riesgo de Desastres (SIGRID). https://sigrid.cenepred.gob.pe/
+
 
 <div align="center">
 
