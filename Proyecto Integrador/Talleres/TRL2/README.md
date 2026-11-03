@@ -278,7 +278,7 @@ La adquisición de materiales representa un avance en la preparación de la impl
 
 ---
  
-# 24. Referencias bibliográficas
+# 9. Referencias bibliográficas
 
 [1] S. Dorafshan, R. J. Thomas, and M. Maguire, “SDNET2018: An annotated image dataset for non-contact concrete crack detection using deep convolutional neural networks,” *Data in Brief*, vol. 21, pp. 1664–1668, 2018. https://doi.org/10.1016/j.dib.2018.11.015
 
